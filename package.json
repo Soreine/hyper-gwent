@@ -1,0 +1,19 @@
+{
+  "name": "hyper-gwent",
+  "version": "0.0.0",
+  "private": "true",
+  "description": "Chrome extension to enrich pages containing GwentⓇ related content. Card names quick access, terms highlight and more!",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soreine/hyper-gwent.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Soreine/hyper-gwent/issues"
+  },
+  "homepage": "https://github.com/Soreine/hyper-gwent#readme"
+}
