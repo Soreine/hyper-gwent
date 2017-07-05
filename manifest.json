@@ -1,6 +1,6 @@
 {
   "name": "Hyper Gwent",
-  "description": "Enrich pages containing GwentⓇ related content. Card names quick access, terms highlight and more! ",
+  "description": "Enrich pages containing GwentⓇ related content. Card names quick access, terms highlight and more!",
   "version": "0.1.0",
   "manifest_version": 2,
   "icons": {
