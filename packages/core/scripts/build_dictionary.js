@@ -6,7 +6,7 @@ const fileExists = require('file-exists');
 const GwentAPI = require('gwent-api-client').default;
 
 const TMP_DIR = path.join(__dirname, '../tmp/');
-const CARDS_PATH = path.join(__dirname, '../tmp/cards.json');
+const CARDS_PATH = path.join(__dirname, '../tmp/NAMES.json');
 const DICTIONARY_PATH = path.join(__dirname, '../dictionary/source.json');
 
 /*
