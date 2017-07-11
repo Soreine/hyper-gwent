@@ -16,13 +16,15 @@
     "babel": "inherit"
   },
   "dependencies": {
-    "leven": "^2.1.0"
+    "leven": "^2.1.0",
+    "seamless-immutable": "^7.1.2"
   },
   "devDependencies": {
     "ava": "^0.18.2",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
+    "babel-plugin-transform-strict-mode": "^6.24.1",
     "babel-preset-es2015": "^6.24.0",
     "babel-register": "^6.24.0",
     "bestzip": "^1.1.4",

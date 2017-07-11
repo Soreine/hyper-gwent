@@ -1,7 +1,13 @@
 import test from 'ava';
-import DICTIONARY from '../';
+import DICTIONARY, { contains } from '../';
+import NAMES from '../NAMES.json';
 
-test('foo', (t) => {
-  console.log(DICTIONARY);
-  t.pass();
+test('Dictionary was created successfully', (t) => {
+  t.truthy(DICTIONARY);
+});
+
+test('Dictionary contains all cards', (t) => {
+  NAMES.forEach((name) => {
+    t.true(contains(DICTIONARY, name));
+  });
 });

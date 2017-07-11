@@ -1,3 +1,4 @@
+import Immutable from 'seamless-immutable';
 import append from './append';
 
 /*
@@ -11,9 +12,7 @@ type Dictionary = {
  * @return {Dictionary} The built dictionary
  */
 function create(names) {
-  const dict = {};
-  names.reduce(append, dict);
-  return dict;
+  return names.reduce(append, Immutable({}));
 }
 
 export default create;
