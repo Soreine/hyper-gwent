@@ -1,11 +1,12 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src'),
+  entry: {
+    content: path.resolve(__dirname, './packages/extension/src/content.js'),
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'app.js',
+    filename: '[name].js',
   },
   module: {
     loaders: [
@@ -28,9 +29,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Hyper Gwent',
-    }),
-  ],
 };

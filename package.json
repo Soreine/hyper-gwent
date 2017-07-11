@@ -4,12 +4,12 @@
     "test": "ava",
     "test:watch": "npm test -- --watch",
     "lint": "eslint .",
-    "build:website": "webpack --config packages/website/webpack.config.js",
+    "build": "webpack",
+    "build:website": "webpack --config webpack.config.website.js",
     "predeploy": "npm run build:website",
     "deploy": "gh-pages -d packages/website/dist",
-    "build:extension": "webpack --config packages/extension/webpack.config.js",
-    "prepack": "npm run build:extension",
-    "pack": "bestzip extension.zip packages/extension/manifest.json packages/extension/icon16.png packages/extension/icon40.png packages/extension/icon48.png packages/extension/icon128.png packages/extension/dist/"
+    "prepack": "npm run build",
+    "pack": "bestzip extension.zip packages/extension/manifest.json packages/extension/icon16.png packages/extension/icon40.png packages/extension/icon48.png packages/extension/icon128.png dist/content.js"
   },
   "ava": {
     "require": "babel-register",
