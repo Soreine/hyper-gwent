@@ -1,5 +1,7 @@
 /* global window */
 
+import { createElement } from 'jsx-dom';
+
 function positionTooltip(target, tooltip) {
   const { top, right } = target.getBoundingClientRect();
 
@@ -9,20 +11,22 @@ function positionTooltip(target, tooltip) {
 }
 
 function createTooltip(target, card) {
-  const tooltip = window.document.createElement('div');
-  tooltip.style.display = 'none';
-  tooltip.style.position = 'absolute';
-  tooltip.style.zIndex = '99999999999';
-  tooltip.style.width = '200px';
-
-  tooltip.innerHTML =
-  `
-    <div style="color: #fff; background: #3d3d3d; padding: 10px;">
-      <div>${card.name}</div>
-      <img src="${card.variations[0].art.thumbnailImage}" alt="" />
-      <div>${card.info}</div>
+  const tooltip = (
+    <div
+      style={{
+        display: 'none',
+        position: 'absolute',
+        zIndex: 9999999999,
+        width: '200px',
+        color: '#fff',
+        backgroundColor: '#3d3d3d',
+      }}
+    >
+      {card.name}
+      <img src={card.variations[0].art.thumbnailImage} alt="" />
+      {card.info}
     </div>
-  `;
+  );
   window.document.body.appendChild(tooltip);
 
   target.addEventListener('mouseenter', () => positionTooltip(target, tooltip));
