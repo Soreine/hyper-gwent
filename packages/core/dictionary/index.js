@@ -3,7 +3,8 @@ import create from './create';
 import append from './append';
 import contains from './contains';
 
-const DICTIONARY = create(NAMES);
+const DICTIONARY = create(NAMES.map(name => name.toLowerCase()));
+
 export default DICTIONARY;
 
 export {
