@@ -1,14 +1,16 @@
 /**
  * @param  {Dictionary} dictionary The dictionary to search in
- * @param  {string} word The word to search for an exact match
- * @return {boolean} True if the name was matched exactly
+ * @param  {string} text The text to search for a substring match
+ * @param  {number} index The index of the start of the substring
+ * @return {boolean} True if the dictionary contains the substring
  */
-function contains(dictionary, word) {
-  if (word === '') {
+function contains(dictionary, text, index = 0) {
+  const char = text[index];
+  if (char === undefined) {
     return dictionary[''];
   }
-  const subDict = dictionary[word[0]];
-  return subDict && contains(subDict, word.slice(1));
+  const subDict = dictionary[char];
+  return subDict && contains(subDict, text, index + 1);
 }
 
 export default contains;
