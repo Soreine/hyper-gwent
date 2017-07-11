@@ -8,6 +8,7 @@ test('Dictionary was created successfully', (t) => {
 
 test('Dictionary contains all cards', (t) => {
   NAMES.forEach((name) => {
-    t.true(contains(DICTIONARY, name.toLowerCase()));
+    const exists = contains(DICTIONARY, name.toLowerCase());
+    t.true(exists);
   });
 });
