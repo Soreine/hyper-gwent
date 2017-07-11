@@ -2,15 +2,7 @@
 
 import { createElement } from 'jsx-dom';
 
-function positionTooltip(target, tooltip) {
-  const { top, right } = target.getBoundingClientRect();
-
-  tooltip.style.display = 'block';
-  tooltip.style.top = `${top}px`;
-  tooltip.style.left = `${right}px`;
-}
-
-function createTooltip(target, card) {
+function createTooltip(card, target) {
   const tooltip = (
     <div
       style={{
@@ -27,10 +19,30 @@ function createTooltip(target, card) {
       {card.info}
     </div>
   );
-  window.document.body.appendChild(tooltip);
 
-  target.addEventListener('mouseenter', () => positionTooltip(target, tooltip));
-  target.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+  tooltip.hide = () => {
+    tooltip.style.display = 'none';
+    tooltip.style.top = null;
+    tooltip.style.left = null;
+  };
+
+  tooltip.show = () => {
+    const { top, right } = target.getBoundingClientRect();
+
+    tooltip.style.display = 'block';
+    tooltip.style.top = `${top}px`;
+    tooltip.style.left = `${right}px`;
+  };
+
+  return tooltip;
 }
 
-export default createTooltip;
+function attachTooltip(card, target) {
+  const tooltip = createTooltip(card, target);
+  window.document.body.appendChild(tooltip);
+
+  target.addEventListener('mouseenter', () => tooltip.show());
+  target.addEventListener('mouseleave', () => tooltip.hide());
+}
+
+export default attachTooltip;

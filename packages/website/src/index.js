@@ -16,7 +16,7 @@ const app = (
 );
 window.document.body.appendChild(app);
 
-tooltip(target, {
+tooltip({
   name: 'Aeromancy',
   info: 'Play a Bronze or Silver Weather card from your Deck or Graveyard. Shuffle the others from your Deck back.',
   variations: [
@@ -26,4 +26,4 @@ tooltip(target, {
       },
     },
   ],
-});
+}, target);
