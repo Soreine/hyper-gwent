@@ -7,7 +7,7 @@
     "build": "webpack",
     "build:website": "webpack --config webpack.config.website.js",
     "predeploy": "npm run build:website",
-    "deploy": "gh-pages -d packages/website/dist",
+    "deploy": "gh-pages -d dist",
     "prepack": "npm run build",
     "pack": "bestzip extension.zip manifest.json icon16.png icon40.png icon48.png icon128.png dist/content.js"
   },

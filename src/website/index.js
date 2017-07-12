@@ -1,7 +1,7 @@
 /* global window */
 
 import { createElement } from 'jsx-dom';
-import tooltip from '../../core/src/tooltip';
+import tooltip from '../core/tooltip/index';
 
 const target = <span id="target" style="color: blue;">Aeromancy</span>;
 const app = (
