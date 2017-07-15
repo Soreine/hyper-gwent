@@ -22,7 +22,7 @@ tooltip({
   variations: [
     {
       art: {
-        thumbnailImage: 'https://api.gwentapi.com/media/aeromancy_thumbnail.png',
+        thumbnailImage: 'https://api.gwentapi.com/media/aeromancy-thumbnail.png',
       },
     },
   ],
