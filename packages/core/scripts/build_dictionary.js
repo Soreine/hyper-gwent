@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
 const fileExists = require('file-exists');
@@ -44,9 +43,6 @@ type Card = {
     ]
 }
 */
-
-// Polyfill for GwentAPI
-global.fetch = fetch;
 
 Promise.resolve()
 // Fetch cards from API if needed
