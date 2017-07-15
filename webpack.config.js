@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    content: path.resolve(__dirname, './packages/extension/src/content.js'),
+    content: path.resolve(__dirname, './src/extension/content.js'),
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -17,12 +17,11 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
           {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              localIdentName: '[local]',
             },
           },
         ],

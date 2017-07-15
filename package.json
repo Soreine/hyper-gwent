@@ -7,9 +7,9 @@
     "build": "webpack",
     "build:website": "webpack --config webpack.config.website.js",
     "predeploy": "npm run build:website",
-    "deploy": "gh-pages -d packages/website/dist",
+    "deploy": "gh-pages -d dist",
     "prepack": "npm run build",
-    "pack": "bestzip extension.zip packages/extension/manifest.json packages/extension/icon16.png packages/extension/icon40.png packages/extension/icon48.png packages/extension/icon128.png dist/content.js"
+    "pack": "bestzip extension.zip manifest.json icon16.png icon40.png icon48.png icon128.png dist/content.js"
   },
   "ava": {
     "require": "babel-register",
@@ -18,8 +18,11 @@
   "devDependencies": {
     "ava": "^0.18.2",
     "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^6.4.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.0",
     "bestzip": "^1.1.4",
     "css-loader": "^0.28.0",
@@ -30,5 +33,8 @@
     "html-webpack-plugin": "^2.29.0",
     "style-loader": "^0.16.1",
     "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "jsx-dom": "^5.1.2"
   }
 }
