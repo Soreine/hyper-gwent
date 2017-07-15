@@ -21,11 +21,14 @@ function findAllMatches(dictionary, text) {
   for (let i = 0; i < lowcaseText.length; i += 1) {
     const match = matches(dictionary, lowcaseText, i);
     if (match) {
+      const end = i + match.length;
       result.push({
         start: i,
-        end: i + match.length,
+        end,
         match,
       });
+
+      i = end - 1;
     }
   }
 
