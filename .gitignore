@@ -1,6 +1,7 @@
 ### Custom ###
 dist
 extension.zip
+src/core/tmp
 
 ### Node ###
 # Logs
