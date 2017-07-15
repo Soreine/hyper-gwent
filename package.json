@@ -4,6 +4,7 @@
     "test": "ava",
     "test:watch": "npm test -- --watch",
     "lint": "eslint .",
+    "dictionary": "node --harmony_trailing_commas ./src/core/scripts/build_dictionary.js",
     "build": "webpack",
     "build:website": "webpack --config webpack.config.website.js",
     "predeploy": "npm run build:website",
