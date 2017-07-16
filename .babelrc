@@ -1,6 +1,6 @@
 {
   "presets": ["es2015", "stage-0"],
   "plugins": [
-    ["transform-react-jsx", { "pragma": "createElement" }]
+    [ "transform-strict-mode", "transform-react-jsx", { "pragma": "createElement" }]
   ]
 }
