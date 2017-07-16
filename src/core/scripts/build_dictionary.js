@@ -77,5 +77,6 @@ Promise.resolve()
       JSON.stringify(dictionary, null, 2),
   );
 
+  // eslint-disable-next-line no-console
   console.log('Wrote\n', TMP_DIR, '\n', NAMES_PATH);
 });
