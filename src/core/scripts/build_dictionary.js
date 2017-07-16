@@ -5,8 +5,8 @@ const fileExists = require('file-exists');
 const GwentAPI = require('gwent-api-client').default;
 
 const TMP_DIR = path.join(__dirname, '../tmp/');
-const CARDS_PATH = path.join(__dirname, '../tmp/NAMES.json');
-const DICTIONARY_PATH = path.join(__dirname, '../dictionary/source.json');
+const CARDS_PATH = path.join(__dirname, '../tmp/source.json');
+const NAMES_PATH = path.join(__dirname, '../dictionary/NAMES.json');
 
 /*
 type Card = {
@@ -73,9 +73,9 @@ Promise.resolve()
   const dictionary = cards.map(card => card.name);
 
   fs.writeFileSync(
-      DICTIONARY_PATH,
+      NAMES_PATH,
       JSON.stringify(dictionary, null, 2),
   );
 
-  console.log('Wrote\n', TMP_DIR, '\n', DICTIONARY_PATH);
+  console.log('Wrote\n', TMP_DIR, '\n', NAMES_PATH);
 });
