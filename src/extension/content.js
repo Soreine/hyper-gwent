@@ -2,7 +2,7 @@
 
 import findAllMatches from '../core/findAllMatches';
 import replaceMatches from '../core/replaceMatches';
-import DICTIONNARY from '../core/dictionary';
+import DICTIONARY from '../core/dictionary';
 
 const walker = window.document.createTreeWalker(
   window.document.body,
@@ -12,7 +12,7 @@ const nodes = [];
 
 while (walker.nextNode()) {
   const node = walker.currentNode;
-  const matches = findAllMatches(DICTIONNARY, node.nodeValue);
+  const matches = findAllMatches(DICTIONARY, node.nodeValue);
 
   if (matches.length) {
     nodes.push({
