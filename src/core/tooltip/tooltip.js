@@ -1,5 +1,6 @@
 /* global window */
 
+// eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import styles from './tooltip.css';
 
