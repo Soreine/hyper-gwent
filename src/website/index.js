@@ -1,10 +1,12 @@
 /* global window */
 
+// eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import tooltip from '../core/tooltip/index';
 
 const target = <span id="target" style="color: blue;">Aeromancy</span>;
 const app = (
+  /* eslint-disable max-len */
   <div>
     <p>C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do, it blows away your whole leg.</p>
     <p>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
@@ -13,6 +15,7 @@ const app = (
     <p>A good programmer is someone who always looks both ways before crossing a one-way street.</p>
     <p>The perfect project plan is possible if one first documents a list of all the unknowns.</p>
   </div>
+  /* eslint-enable max-len */
 );
 window.document.body.appendChild(app);
 
