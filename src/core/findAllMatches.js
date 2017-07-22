@@ -18,15 +18,24 @@ function findAllMatches(dictionary, text) {
   const lowcaseText = text.toLowerCase();
   const result = [];
 
+  // Only match after every space character
+  let wasSpace = true;
   for (let i = 0; i < lowcaseText.length; i += 1) {
-    const match = matches(dictionary, lowcaseText, i);
-    if (match) {
-      result.push({
-        start: i,
-        end: i + match.length,
-        match,
-      });
+    if (wasSpace) {
+      const match = matches(dictionary, lowcaseText, i);
+      if (match) {
+        result.push({
+          start: i,
+          end: i + match.length,
+          match,
+        });
+
+        // Fast forward
+        i += match.length;
+      }
     }
+
+    wasSpace = /\s/.test(lowcaseText[i]);
   }
 
   return result;

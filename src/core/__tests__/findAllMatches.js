@@ -45,3 +45,15 @@ test('Should ignore case', (t) => {
     },
   ]);
 });
+
+test('Should match at beginning of words only', (t) => {
+  const text = 'Grave Hag, midRegisMatch, suffixRegis'; // Contains Regis
+  const matchedRanges = findAllMatches(DICTIONARY, text);
+  t.deepEqual(matchedRanges, [
+    {
+      match: 'grave hag',
+      start: 0,
+      end: 9,
+    },
+  ]);
+});
