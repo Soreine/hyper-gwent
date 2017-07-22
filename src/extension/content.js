@@ -24,7 +24,7 @@ while (walker.nextNode()) {
 
 nodes.forEach(({ node, matches }) => {
   const span = window.document.createElement('span');
-  span.innerHTML = replaceMatches(node.nodeValue, matches, match => `<span style="outline: 2px solid red;">${match.match}</span>`);
+  span.innerHTML = replaceMatches(node.nodeValue, matches, match => `<span style="outline: 2px solid red;">${match.entryValue}</span>`);
 
   node.parentNode.replaceChild(span, node);
 });
