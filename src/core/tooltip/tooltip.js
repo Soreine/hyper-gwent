@@ -10,7 +10,6 @@ function createTooltip(card, target) {
     position: 'fixed',
     transform: 'translate(10px, -60px)',
     zIndex: 999999999,
-    width: '200px',
   }} />;
   const shadow = wrapper.attachShadow({
     mode: 'closed',
@@ -27,11 +26,16 @@ function createTooltip(card, target) {
         className={styles.locals.tooltipImage}
       />
 
-      <div className={styles.locals.tooltipInfo}>
+      <div className={styles.locals.tooltipBlock}>
         <div className={styles.locals.tooltipName}>
           {card.name}
         </div>
-        {card.info}
+      </div>
+
+      <div className={styles.locals.tooltipBlock}>
+        <div className={styles.locals.tooltipInfo}>
+          {card.info}
+        </div>
       </div>
     </div>
   );
