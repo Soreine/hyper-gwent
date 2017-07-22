@@ -6,11 +6,11 @@
  * @return {string | undefined} Maybe the key of the found match
  */
 function matches(dictionary, text, index = 0, matchedString = '') {
-  // Have we found a match yet?
-  const isMatch = dictionary[''];
-
-  // Look up next characters
   const nextChar = text[index];
+  const endOfWord = nextChar === undefined || !/\w/.test(nextChar);
+  // Have we found a match yet?
+  const isMatch = dictionary[''] && (endOfWord);
+
   if (nextChar === undefined) {
     return isMatch && matchedString;
   }
