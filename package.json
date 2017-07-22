@@ -41,6 +41,7 @@
     "gwent-api-client": "^1.1.0",
     "html-webpack-plugin": "^2.29.0",
     "style-loader": "^0.16.1",
+    "url-loader": "^0.5.9",
     "webpack": "^3.0.0"
   }
 }
