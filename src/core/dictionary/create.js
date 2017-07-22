@@ -8,11 +8,14 @@ type Dictionary = {
 */
 
 /**
- * @param  {Array<string>} names Entries in the dictionary
+ * @param  {Array<[string, any]>} entries Entries in the dictionary
  * @return {Dictionary} The built dictionary
  */
-function create(names) {
-  return names.reduce(append, Immutable({}));
+function create(entries) {
+  return entries.reduce(
+      (dict, [name, value]) => append(dict, name, value),
+       Immutable({}),
+   );
 }
 
 export default create;
