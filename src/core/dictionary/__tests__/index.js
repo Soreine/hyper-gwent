@@ -9,7 +9,7 @@ test('Dictionary was created successfully', (t) => {
 test('Dictionary contains all cards', (t) => {
   NAMES.forEach((name) => {
     const exists = contains(DICTIONARY, name.toLowerCase());
-    t.true(exists);
+    t.truthy(exists);
   });
 });
 
@@ -18,9 +18,13 @@ test('Matches finds longest match', (t) => {
     'Ciri',
     'Ciri: Dash',
   ]
-  .map(name => name.toLowerCase())
   .forEach((name) => {
-    const match = matches(DICTIONARY, name);
-    t.is(match, name);
+    const match = matches(DICTIONARY, name.toLowerCase());
+    t.deepEqual(match, {
+      start: 0,
+      end: name.length,
+      entryKey: name.toLowerCase(),
+      entryValue: name,
+    });
   });
 });

@@ -5,7 +5,9 @@ type Match = {
     start: number,
     end: number,
     // The matched key path in the dictionary
-    key: string
+    entryKey: string
+    // The exact name of the card matched
+    entryValue: string
 }
 */
 
@@ -24,14 +26,10 @@ function findAllMatches(dictionary, text) {
     if (wasSpace) {
       const match = matches(dictionary, lowcaseText, i);
       if (match) {
-        result.push({
-          start: i,
-          end: i + match.length,
-          match,
-        });
+        result.push(match);
 
         // Fast forward
-        i += match.length;
+        i = match.end - 1;
       }
     }
 

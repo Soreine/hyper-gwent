@@ -6,7 +6,8 @@ test('it should replace a match', (t) => {
     {
       start: 4,
       end: 9,
-      match: 'there',
+      entryKey: 'there',
+      entryValue: 'There',
     },
   ], () => 'mate');
   const expected = 'Hey mate!';
@@ -19,7 +20,8 @@ test('it should replace a different match', (t) => {
     {
       start: 0,
       end: 5,
-      match: 'Hello',
+      entryKey: 'hello',
+      entryValue: 'Hello',
     },
   ], () => 'Hi');
   const expected = 'Hi world';
@@ -32,12 +34,14 @@ test('it should replace a several matches', (t) => {
     {
       start: 6,
       end: 11,
-      match: 'enjoy',
+      entryKey: 'enjoy',
+      entryValue: 'Enjoy',
     },
     {
       start: 16,
       end: 23,
-      match: 'weather',
+      entryKey: 'weather',
+      entryValue: 'Weather',
     },
   ], () => 'blabla');
   const expected = 'Let\'s blabla the blabla, while se still can.';
@@ -45,20 +49,22 @@ test('it should replace a several matches', (t) => {
   t.is(actual, expected);
 });
 
-test('it should pass the match as argument', (t) => {
+test('it should pass the matched value as argument', (t) => {
   const actual = replaceMatches('Let\'s enjoy the weather, while se still can.', [
     {
       start: 6,
       end: 11,
-      match: 'enjoy',
+      entryKey: 'enjoy',
+      entryValue: 'Enjoy',
     },
     {
       start: 16,
       end: 23,
-      match: 'weather',
+      entryKey: 'weather',
+      entryValue: 'Weather',
     },
   ], (match) => {
-    if (match.match === 'enjoy') {
+    if (match.entryValue === 'Enjoy') {
       return 'appreciate';
     }
 

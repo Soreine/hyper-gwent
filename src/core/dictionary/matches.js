@@ -3,26 +3,39 @@
  * @param  {Dictionary} dictionary
  * @param  {string} text
  * @param  {number} [index=0]
- * @return {string | undefined} Maybe the key of the found match
+ * @param  {string} acc.matchedString the piece of text matched so far
+ * @param  {string} acc.key the matched key so far
+ * @return {Match | undefined} Maybe the key of the found match
  */
-function matches(dictionary, text, index = 0, matchedString = '') {
+function matches(dictionary, text, index = 0, acc = { matchedString: '', key: '' }) {
+  const { matchedString, key } = acc;
+
   const nextChar = text[index];
   const endOfWord = nextChar === undefined || !/\w/.test(nextChar);
   // Have we found a match yet?
   const isMatch = dictionary[''] && (endOfWord);
+  const match = {
+    start: index - matchedString.length,
+    end: index,
+    entryValue: dictionary[''],
+    entryKey: key,
+  };
 
   if (nextChar === undefined) {
-    return isMatch && matchedString;
+    return isMatch && match;
   }
 
   const subDict = dictionary[nextChar];
   if (!subDict) {
-    return isMatch && matchedString;
+    return isMatch && match;
   }
 
-  const longerMatch = matches(subDict, text, index + 1, matchedString + nextChar);
+  const longerMatch = matches(subDict, text, index + 1, {
+    matchedString: matchedString + nextChar,
+    key: key + nextChar,
+  });
   // We want the longest match, or the current match
-  return longerMatch || (isMatch && matchedString);
+  return longerMatch || (isMatch && match);
 }
 
 export default matches;
