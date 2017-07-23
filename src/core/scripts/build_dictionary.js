@@ -1,12 +1,14 @@
 #!/usr/bin/env node
+
+/* eslint-disable no-console */
 const fs = require('fs');
 const path = require('path');
 const fileExists = require('file-exists');
 const GwentAPI = require('gwent-api-client').default;
 
-const TMP_DIR = path.join(__dirname, '../tmp/');
-const CARDS_PATH = path.join(__dirname, '../tmp/source.json');
-const NAMES_PATH = path.join(__dirname, '../dictionary/NAMES.json');
+const TMP_PATH = path.join(__dirname, '../tmp/cards.json');
+const CARDS_PATH = path.join(__dirname, '../data/CARDS.json');
+
 
 /*
 type Card = {
@@ -44,39 +46,42 @@ type Card = {
 }
 */
 
-Promise.resolve()
-// Fetch cards from API if needed
-.then(() => {
-  if (fileExists.sync(CARDS_PATH)) {
-    // eslint-disable-next-line
-    return require(CARDS_PATH.slice(0, -5) /* remove .json */);
+function fetchCardList() {
+  if (fileExists.sync(TMP_PATH)) {
+    console.log('Reusing cards found at ', TMP_PATH);
+    return Promise.resolve(
+      // eslint-disable-next-line
+      require(TMP_PATH.slice(0, -5)) // remove .json
+    );
   }
 
+  console.log('Fetching cards from API...');
   return GwentAPI.cards.list({ offset: 0, limit: 99999 })
-      .then(res => Promise.all(res.results.map(GwentAPI.cards.one)))
-      .then((cards) => {
-        try {
-          fs.mkdirSync(TMP_DIR);
-        } catch (e) {
-          // Already exists
-        }
+  .then((cards) => {
+    fs.writeFileSync(
+      TMP_PATH,
+      JSON.stringify(cards, null, 2),
+    );
 
-        fs.writeFileSync(
-              CARDS_PATH,
-              JSON.stringify(cards, null, 2),
-          );
+    // eslint-disable-next-line no-console
+    console.log('Dump updated at ', TMP_PATH);
+  });
+}
 
-        return cards;
-      });
-})
+// Fetch cards from API if needed
+fetchCardList()
 .then((cards) => {
-  const dictionary = cards.map(card => card.name);
+  const cardIndex = {};
+  cards.forEach((card) => {
+    cardIndex[card.name] = card.href;
+  });
 
   fs.writeFileSync(
-      NAMES_PATH,
-      JSON.stringify(dictionary, null, 2),
+    CARDS_PATH,
+    JSON.stringify(cardIndex, null, 2),
   );
 
   // eslint-disable-next-line no-console
-  console.log('Wrote\n', TMP_DIR, '\n', NAMES_PATH);
-});
+  console.log('Wrote ', CARDS_PATH);
+})
+.catch(console.log);
