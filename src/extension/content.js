@@ -1,8 +1,13 @@
-/* global window */
+/* global window, document */
 
 import findAllMatches from '../core/findAllMatches';
 import replaceMatches from '../core/replaceMatches';
+import tooltip from '../core/tooltip/index';
+import { CARDS } from '../core/data';
 import DICTIONARY from '../core/dictionary';
+
+const CLASSNAME = 'hyper-gwent-card-highlight';
+const CARD_NAME_ATTRIBUTE = 'data-card-name';
 
 const walker = window.document.createTreeWalker(
   window.document.body,
@@ -24,7 +29,16 @@ while (walker.nextNode()) {
 
 nodes.forEach(({ node, matches }) => {
   const span = window.document.createElement('span');
-  span.innerHTML = replaceMatches(node.nodeValue, matches, match => `<span style="outline: 2px solid red;">${node.nodeValue.slice(match.start, match.end)}</span>`);
+  span.innerHTML = replaceMatches(node.nodeValue, matches, match => `<span class="${CLASSNAME}" ${CARD_NAME_ATTRIBUTE}="${match.entryValue}" style="border-bottom: 1px dashed; padding-bottom: 0.1em">${node.nodeValue.slice(match.start, match.end)}</span>`);
 
   node.parentNode.replaceChild(span, node);
 });
+
+// Add tooltips
+const highlights = document.getElementsByClassName(CLASSNAME);
+for (let i = 0; i < highlights.length; i += 1) {
+  const highlight = highlights[i];
+  const cardName = highlight.getAttribute(CARD_NAME_ATTRIBUTE);
+  const card = CARDS[cardName];
+  tooltip(card, highlight);
+}
