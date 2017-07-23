@@ -4,7 +4,9 @@
 const fs = require('fs');
 const path = require('path');
 const fileExists = require('file-exists');
-const GwentAPI = require('gwent-api-client').default;
+
+const fetchCardList = require('./fetchCardList');
+const fetchCardListDetail = require('./fetchCardListDetail');
 
 const TMP_PATH = path.join(__dirname, '../tmp/cards.json');
 const CARDS_PATH = path.join(__dirname, '../data/CARDS.json');
@@ -46,7 +48,9 @@ type Card = {
 }
 */
 
-function fetchCardList() {
+// Fetch cards from API if needed
+Promise.resolve()
+.then(() => {
   if (fileExists.sync(TMP_PATH)) {
     console.log('Reusing cards found at ', TMP_PATH);
     return Promise.resolve(
@@ -55,25 +59,23 @@ function fetchCardList() {
     );
   }
 
-  console.log('Fetching cards from API...');
-  return GwentAPI.cards.list({ offset: 0, limit: 99999 })
+  return fetchCardList()
+  .then(fetchCardListDetail)
   .then((cards) => {
     fs.writeFileSync(
       TMP_PATH,
       JSON.stringify(cards, null, 2),
     );
-
     // eslint-disable-next-line no-console
     console.log('Dump updated at ', TMP_PATH);
-  });
-}
 
-// Fetch cards from API if needed
-fetchCardList()
+    return cards;
+  });
+})
 .then((cards) => {
   const cardIndex = {};
   cards.forEach((card) => {
-    cardIndex[card.name] = card.href;
+    cardIndex[card.name] = card;
   });
 
   fs.writeFileSync(
