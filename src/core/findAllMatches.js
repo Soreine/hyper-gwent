@@ -20,10 +20,11 @@ function findAllMatches(dictionary, text) {
   const lowcaseText = text.toLowerCase();
   const result = [];
 
-  // Only match after every space character
-  let wasSpace = true;
+  // Only match at beginning of words
+  let wasNotWord = true;
   for (let i = 0; i < lowcaseText.length; i += 1) {
-    if (wasSpace) {
+    const isWord = /\w/.test(lowcaseText[i]);
+    if (wasNotWord && isWord) {
       const match = matches(dictionary, lowcaseText, i);
       if (match) {
         result.push(match);
@@ -33,7 +34,7 @@ function findAllMatches(dictionary, text) {
       }
     }
 
-    wasSpace = /\s/.test(lowcaseText[i]);
+    wasNotWord = /[^\w]/.test(lowcaseText[i]);
   }
 
   return result;

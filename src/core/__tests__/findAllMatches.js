@@ -72,7 +72,7 @@ test('Should find longest match', (t) => {
 });
 
 test('Should match at beginning of words only', (t) => {
-  const text = 'Regis, prefixRegisSuffix, prefixRegis'; // Contains Regis
+  const text = 'Regis/Regis prefixRegisSuffix, prefixRegis'; // Contains Regis
   const matchedRanges = findAllMatches(DICTIONARY, text);
   t.deepEqual(matchedRanges, [
     {
@@ -80,6 +80,12 @@ test('Should match at beginning of words only', (t) => {
       entryValue: 'Regis',
       start: 0,
       end: 5,
+    },
+    {
+      entryKey: 'regis',
+      entryValue: 'Regis',
+      start: 6,
+      end: 11,
     },
   ]);
 });

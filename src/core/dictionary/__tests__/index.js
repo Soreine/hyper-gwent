@@ -1,6 +1,6 @@
 import test from 'ava';
 import DICTIONARY, { contains, matches } from '../';
-import NAMES from '../NAMES.json';
+import { NAMES } from '../../data';
 
 test('Dictionary was created successfully', (t) => {
   t.truthy(DICTIONARY);

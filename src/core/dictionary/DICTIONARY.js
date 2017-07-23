@@ -1,6 +1,6 @@
 import pluralize from 'pluralize';
 
-import NAMES from './NAMES.json';
+import { NAMES } from '../data';
 import create from './create';
 
 const DICTIONARY = create([
