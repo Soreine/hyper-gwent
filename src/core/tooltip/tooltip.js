@@ -20,14 +20,11 @@ function createTooltip(card, target) {
     <div className={styles.locals.tooltip}>
       <style>{styles.toString()}</style>
 
-      <div className={styles.locals.tooltipImage}>
-        <img
-          data-src={card.variations[0].art.thumbnailImage}
-          alt=""
-          width="320"
-          height="427"
-        />
-      </div>
+      <img
+        className={styles.locals.tooltipImage}
+        data-src={card.variations[0].art.thumbnailImage}
+        alt=""
+      />
 
       <div className={styles.locals.tooltipBlock}>
         <div className={styles.locals.tooltipName}>
