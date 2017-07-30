@@ -2,24 +2,35 @@
   font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
-  width: 240px;
+  width: 220px;
+  padding-top: 24px;
+  padding-left: 40px;
+}
+
+.tooltipImage,
+.tooltipBlock {
+  margin-bottom: 5px;
 }
 
 .tooltipImage {
-  display: block;
+  position: relative;
   width: 100%;
+  height: 300px;
+}
+
+.tooltipImage img {
+  position: absolute;
+  width: 320px;
   height: auto;
-  margin-left: -20px;
+  left: -74px;
+  bottom: -37px;
 }
 
 .tooltipBlock {
   position: relative;
   color: #e8e8e8;
-  background-color: #313131;
-  margin: 5px 20px 0 31px;
-  padding: 10px;
-  padding-left: 14px;
-  background-image: url(./irongrip.png);
+  padding: 10px 10px 10px 14px;
+  background: url(./irongrip.png) #313131;
 }
 
 .tooltipBlock::before {

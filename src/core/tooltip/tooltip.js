@@ -6,7 +6,6 @@ import styles from './tooltip.css';
 
 function createTooltip(card, target) {
   const wrapper = <hyper-gwent-tooltip style={{
-    display: 'none',
     position: 'fixed',
     transform: 'translate(10px, -60px)',
     zIndex: 999999999,
@@ -20,11 +19,12 @@ function createTooltip(card, target) {
     <div className={styles.locals.tooltip}>
       <style>{styles.toString()}</style>
 
-      <img
-        src={card.variations[0].art.thumbnailImage}
-        alt=""
-        className={styles.locals.tooltipImage}
-      />
+      <div className={styles.locals.tooltipImage}>
+        <img
+          src={card.variations[0].art.thumbnailImage}
+          alt=""
+        />
+      </div>
 
       <div className={styles.locals.tooltipBlock}>
         <div className={styles.locals.tooltipName}>
