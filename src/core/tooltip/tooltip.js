@@ -6,6 +6,7 @@ import styles from './tooltip.css';
 
 function createTooltip(card, target) {
   const wrapper = <hyper-gwent-tooltip style={{
+    display: 'none',
     position: 'fixed',
     transform: 'translate(10px, -60px)',
     zIndex: 999999999,
