@@ -20,8 +20,6 @@
 
 .tooltipImage img {
   position: absolute;
-  width: 320px;
-  height: auto;
   left: -74px;
   bottom: -37px;
 }

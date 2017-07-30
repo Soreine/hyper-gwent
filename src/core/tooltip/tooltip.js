@@ -22,8 +22,10 @@ function createTooltip(card, target) {
 
       <div className={styles.locals.tooltipImage}>
         <img
-          src={card.variations[0].art.thumbnailImage}
+          data-src={card.variations[0].art.thumbnailImage}
           alt=""
+          width="320"
+          height="427"
         />
       </div>
 
@@ -45,11 +47,15 @@ function createTooltip(card, target) {
 
   wrapper.hide = () => {
     wrapper.style.display = 'none';
-    wrapper.style.top = null;
-    wrapper.style.left = null;
   };
   wrapper.show = () => {
     const { top, right } = target.getBoundingClientRect();
+
+    const img = tooltip.querySelector('[data-src]');
+    if (img) {
+      img.setAttribute('src', img.getAttribute('data-src'));
+      img.removeAttribute('data-src');
+    }
 
     wrapper.style.display = 'block';
     wrapper.style.top = `${top}px`;
