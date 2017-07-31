@@ -8,6 +8,7 @@ function createTooltip(card, target) {
   const wrapper = <hyper-gwent-tooltip style={{
     display: 'none',
     position: 'fixed',
+    transform: 'translateY(-40%)',
     zIndex: 999999999,
   }} />;
   const shadow = wrapper.attachShadow({
@@ -45,48 +46,26 @@ function createTooltip(card, target) {
     wrapper.style.display = 'none';
   };
   wrapper.show = () => {
-    const { top, right, bottom, left } = target.getBoundingClientRect();
-    const { innerHeight, innerWidth } = window;
-    const position = {
-      // CSS property set to null actually removes it
-      // that way anything that's not set will be removed
-      top: null,
-      right: null,
-      bottom: null,
-      left: null,
-    };
-
-    if (bottom <= (innerHeight / 2)) {
-      // if the bottom side of the target is in the
-      // top half of the screen, it means there is more
-      // room at the bottom of it
-      position.top = top;
-      wrapper.style.transform = 'translateY(-20%)';
-    } else {
-      position.bottom = innerHeight - bottom;
-      wrapper.style.transform = 'translateY(20%)';
-    }
-
-    if (right <= (innerWidth / 2)) {
-      // if the right side of the target is in the
-      // left half of the screen, it means there is more
-      // room at the right of it
-      position.left = right;
-    } else {
-      position.right = innerWidth - left;
-    }
-
     const img = tooltip.querySelector('[data-src]');
     if (img) {
       img.setAttribute('src', img.getAttribute('data-src'));
       img.removeAttribute('data-src');
     }
 
-    wrapper.style.display = 'block';
+    const { top, right, left } = target.getBoundingClientRect();
+    const { innerWidth } = window;
 
-    Object.keys(position).forEach((prop) => {
-      wrapper.style[prop] = `${position[prop]}px`;
-    });
+    wrapper.style.top = `${top}px`;
+
+    if (right <= (innerWidth / 2)) {
+      wrapper.style.left = `${right}px`;
+      wrapper.style.right = null;
+    } else {
+      wrapper.style.right = `${innerWidth - left}px`;
+      wrapper.style.left = null;
+    }
+
+    wrapper.style.display = 'block';
   };
 
   return wrapper;
