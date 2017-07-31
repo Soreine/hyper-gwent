@@ -8,7 +8,6 @@ function createTooltip(card, target) {
   const wrapper = <hyper-gwent-tooltip style={{
     display: 'none',
     position: 'fixed',
-    transform: 'translate(10px, -60px)',
     zIndex: 999999999,
   }} />;
   const shadow = wrapper.attachShadow({
@@ -46,7 +45,34 @@ function createTooltip(card, target) {
     wrapper.style.display = 'none';
   };
   wrapper.show = () => {
-    const { top, right } = target.getBoundingClientRect();
+    const { top, right, bottom, left } = target.getBoundingClientRect();
+    const { innerHeight, innerWidth } = window;
+    const position = {
+      // CSS property set to null actually removes it
+      // that way anything that's not set will be removed
+      top: null,
+      right: null,
+      bottom: null,
+      left: null,
+    };
+
+    if (bottom <= (innerHeight / 2)) {
+      // if the bottom side of the target is in the
+      // top half of the screen
+      position.top = top;
+      wrapper.style.transform = 'translateY(-50%)';
+    } else {
+      position.bottom = innerHeight - bottom;
+      wrapper.style.transform = 'translateY(50%)';
+    }
+
+    if (right <= (innerWidth / 2)) {
+      // if the right side of the target is in the
+      // left half of the screen
+      position.left = right;
+    } else {
+      position.right = innerWidth - left;
+    }
 
     const img = tooltip.querySelector('[data-src]');
     if (img) {
@@ -55,8 +81,10 @@ function createTooltip(card, target) {
     }
 
     wrapper.style.display = 'block';
-    wrapper.style.top = `${top}px`;
-    wrapper.style.left = `${right}px`;
+
+    Object.keys(position).forEach((prop) => {
+      wrapper.style[prop] = `${position[prop]}px`;
+    });
   };
 
   return wrapper;

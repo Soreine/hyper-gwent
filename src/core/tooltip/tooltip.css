@@ -2,13 +2,18 @@
   font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
-  width: 220px;
+  width: 239px;
 }
 
 .tooltipImage {
   width: 260px;
-  height: auto;
   margin-bottom: -27px;
+
+  /*
+   * height of the image when it's loaded
+   * hard coding it here to prevent the tooltip from being resized
+   */
+  height: 347px;
 }
 
 .tooltipBlock {
@@ -16,7 +21,7 @@
   color: #e8e8e8;
   padding: 10px 10px 10px 14px;
   background: url(./irongrip.png) #313131;
-  margin: 0 -19px 5px 62px;
+  margin: 0 0 5px 62px;
 }
 
 .tooltipBlock::before {
