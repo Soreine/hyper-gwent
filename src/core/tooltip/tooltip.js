@@ -58,17 +58,19 @@ function createTooltip(card, target) {
 
     if (bottom <= (innerHeight / 2)) {
       // if the bottom side of the target is in the
-      // top half of the screen
+      // top half of the screen, it means there is more
+      // room at the bottom of it
       position.top = top;
-      wrapper.style.transform = 'translateY(-50%)';
+      wrapper.style.transform = 'translateY(-20%)';
     } else {
       position.bottom = innerHeight - bottom;
-      wrapper.style.transform = 'translateY(50%)';
+      wrapper.style.transform = 'translateY(20%)';
     }
 
     if (right <= (innerWidth / 2)) {
       // if the right side of the target is in the
-      // left half of the screen
+      // left half of the screen, it means there is more
+      // room at the right of it
       position.left = right;
     } else {
       position.right = innerWidth - left;
