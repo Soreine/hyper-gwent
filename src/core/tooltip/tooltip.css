@@ -1,39 +1,54 @@
 .tooltip {
   font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
-  width: 240px;
+  width: 239px;
+  /* Should not mess with hovering logic */
+  pointer-events: none;
 }
 
 .tooltipImage {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-left: -20px;
+  width: 260px;
+  margin-bottom: -27px;
+
+  /*
+   * height of the image when it's loaded
+   * hard coding it here to prevent the tooltip from being resized
+   */
+  height: 347px;
 }
 
 .tooltipBlock {
   position: relative;
   color: #e8e8e8;
-  background-color: #313131;
-  margin: 5px 20px 0 31px;
-  padding: 10px;
-  padding-left: 14px;
-  background-image: url(./irongrip.png);
+  padding: 10px 10px 10px 14px;
+  background: url(./irongrip.png) #313131;
+  margin: 0 0 5px 62px;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .tooltipBlock::before {
   content: '';
   position: absolute;
+  z-index: 0;
   top: 0;
   left: 0;
   width: 4px;
   height: 100%;
-  box-shadow:
-    inset 0 0 0 1px rgba(0, 0, 0, 0.2), /* light 1px border */
-    inset 3px 0 0 #d8d8d8, /* left lighter border */
-    inset 4px 0 0 #909090, /* right darker border */
-    0 0 2px #e8e8e8; /* subtle glow */
+  background: linear-gradient(to bottom, #5e5e5e 0%, #ababab 100%);
+  box-shadow: inset -2px 0 0 rgba(255, 255, 255, 0.4), 2px 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.tooltipBlock::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 8px 3px rgba(0, 0, 0, 0.4);
 }
 
 .tooltipName {
@@ -41,7 +56,7 @@
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
-  background: -webkit-linear-gradient(#fff, #c6c6c6);
+  background: -webkit-linear-gradient(#fff, #999999);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

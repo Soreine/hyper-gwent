@@ -8,7 +8,7 @@ function createTooltip(card, target) {
   const wrapper = <hyper-gwent-tooltip style={{
     display: 'none',
     position: 'fixed',
-    transform: 'translate(10px, -60px)',
+    transform: 'translateY(-40%)',
     zIndex: 999999999,
   }} />;
   const shadow = wrapper.attachShadow({
@@ -21,9 +21,9 @@ function createTooltip(card, target) {
       <style>{styles.toString()}</style>
 
       <img
-        src={card.variations[0].art.thumbnailImage}
-        alt=""
         className={styles.locals.tooltipImage}
+        data-src={card.variations[0].art.thumbnailImage}
+        alt=""
       />
 
       <div className={styles.locals.tooltipBlock}>
@@ -44,15 +44,28 @@ function createTooltip(card, target) {
 
   wrapper.hide = () => {
     wrapper.style.display = 'none';
-    wrapper.style.top = null;
-    wrapper.style.left = null;
   };
   wrapper.show = () => {
-    const { top, right } = target.getBoundingClientRect();
+    const img = tooltip.querySelector('[data-src]');
+    if (img) {
+      img.setAttribute('src', img.getAttribute('data-src'));
+      img.removeAttribute('data-src');
+    }
+
+    const { top, right, left } = target.getBoundingClientRect();
+    const { innerWidth } = window;
+
+    wrapper.style.top = `${top}px`;
+
+    if (right <= (innerWidth / 2)) {
+      wrapper.style.left = `${right}px`;
+      wrapper.style.right = null;
+    } else {
+      wrapper.style.right = `${innerWidth - left}px`;
+      wrapper.style.left = null;
+    }
 
     wrapper.style.display = 'block';
-    wrapper.style.top = `${top}px`;
-    wrapper.style.left = `${right}px`;
   };
 
   return wrapper;
