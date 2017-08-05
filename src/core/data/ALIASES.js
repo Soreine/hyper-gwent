@@ -4,7 +4,7 @@ const ALIASES = {
   ],
   Aelirenn: [],
   Aeromancy: [],
-  Aglais: [],
+  Aglaïs: [],
   'Alba Pikeman': [
     'pikeman',
   ],
@@ -532,7 +532,7 @@ const ALIASES = {
   'Savage Bear': [
     'bear',
   ],
-  Schirru: [],
+  Schirrú: [],
   Scorch: [],
   Serrit: [],
   Shadow: [],
@@ -542,7 +542,7 @@ const ALIASES = {
     'skaggs',
   ],
   Sigrdrifa: [],
-  'Sile de Tansarville': [
+  'Síle de Tansarville': [
     'sile',
   ],
   'Skellige Storm': [
