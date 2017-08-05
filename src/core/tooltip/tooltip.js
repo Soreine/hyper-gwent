@@ -84,18 +84,38 @@ class CardTooltip {
   }
 
   follow(mouseEvent) {
-    const { wrapper, visible } = this;
+    const { wrapper, visible, tooltip } = this;
     if (!visible) {
       return;
     }
 
     const { clientX, clientY } = mouseEvent;
 
-    const top = clientY;
-    const left = clientX;
+    const { innerWidth, innerHeight } = window;
+    const tooltipRect = tooltip.getBoundingClientRect();
+
+    let left;
+    if (left > innerWidth - tooltipRect.width) {
+      // Too far on the right
+      left = clientX - tooltipRect.width;
+    } else {
+      left = clientX;
+    }
+
+    let top = clientY;
+    // Do not go below screen
+    top = Math.min(
+      top,
+      innerHeight - (0.6 * tooltipRect.height), // Because of translateY(-40%)
+    );
+    // Do not go above screen
+    top = Math.max(
+      top,
+      0.4 * tooltipRect.height, // Because of translateY(-40%)
+    );
 
     wrapper.style.top = `${top}px`;
-
+    wrapper.style.left = `${left}px`;
   }
 }
 
