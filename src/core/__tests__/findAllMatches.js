@@ -151,7 +151,7 @@ test('Should detect plurals', (t) => {
 });
 
 test('Should detect aliases', (t) => {
-  const text = 'Frost, Yen, YenCon, QG and light cavalries';
+  const text = 'Frost, Yen, YenCon, QG and light cavalries, Schirru';
   const matchedRanges = findAllMatches(DICTIONARY, text);
   t.deepEqual(matchedRanges, [
     {
@@ -179,6 +179,19 @@ test('Should detect aliases', (t) => {
       entryValue: 'Dun Banner Light Cavalry',
       start: 27,
       end: 42,
+    },
+  ]);
+});
+
+test('Should work around accentuated letters', (t) => {
+  const text = 'Schirru';
+  const matchedRanges = findAllMatches(DICTIONARY, text);
+  t.deepEqual(matchedRanges, [
+    {
+      entryKey: 'schirru',
+      entryValue: 'Schirrú',
+      start: 0,
+      end: 7,
     },
   ]);
 });
