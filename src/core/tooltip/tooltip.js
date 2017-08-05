@@ -4,48 +4,71 @@
 import { createElement } from 'jsx-dom';
 import styles from './tooltip.css';
 
-function createTooltip(card, target) {
-  const wrapper = <hyper-gwent-tooltip style={{
-    display: 'none',
-    position: 'fixed',
-    transform: 'translateY(-40%)',
-    zIndex: 999999999,
-  }} />;
-  const shadow = wrapper.attachShadow({
-    mode: 'closed',
-  });
-  wrapper.appendChild(shadow);
+const tooltipElement = card => (
+  <div className={styles.locals.tooltip}>
+    <style>{styles.toString()}</style>
 
-  const tooltip = (
-    <div className={styles.locals.tooltip}>
-      <style>{styles.toString()}</style>
+    <img
+      className={styles.locals.tooltipImage}
+      data-src={card.variations[0].art.thumbnailImage}
+      alt=""
+    />
 
-      <img
-        className={styles.locals.tooltipImage}
-        data-src={card.variations[0].art.thumbnailImage}
-        alt=""
-      />
-
-      <div className={styles.locals.tooltipBlock}>
-        <div className={styles.locals.tooltipName}>
-          {card.name}
-        </div>
-      </div>
-
-      <div className={styles.locals.tooltipBlock}>
-        <div className={styles.locals.tooltipInfo}>
-          {card.info}
-        </div>
+    <div className={styles.locals.tooltipBlock}>
+      <div className={styles.locals.tooltipName}>
+        {card.name}
       </div>
     </div>
-  );
 
-  shadow.appendChild(tooltip);
+    <div className={styles.locals.tooltipBlock}>
+      <div className={styles.locals.tooltipInfo}>
+        {card.info}
+      </div>
+    </div>
+  </div>
+);
 
-  wrapper.hide = () => {
-    wrapper.style.display = 'none';
-  };
-  wrapper.show = () => {
+class CardTooltip {
+  // Is the tooltip visible ?
+  visible = false;
+  // Tooltipped element
+  target = null;
+  // HTML element to live in
+  wrapper = null;
+
+  constructor(card, target) {
+    this.target = target;
+
+    this.wrapper = <hyper-gwent-tooltip style={{
+      display: 'none',
+      position: 'fixed',
+      transform: 'translateY(-40%)',
+      zIndex: 999999999,
+    }} />;
+    const shadow = this.wrapper.attachShadow({
+      mode: 'closed',
+    });
+    this.wrapper.appendChild(shadow);
+
+    this.tooltip = tooltipElement(card);
+    shadow.appendChild(this.tooltip);
+  }
+
+    // Inject this tooltip in the page
+  inject() {
+    const { wrapper, target } = this;
+    window.document.body.appendChild(wrapper);
+    target.addEventListener('mouseenter', () => this.show());
+    target.addEventListener('mouseleave', () => this.hide());
+  }
+
+  hide() {
+    this.wrapper.style.display = 'none';
+  }
+
+  show() {
+    const { wrapper, target, tooltip } = this;
+
     const img = tooltip.querySelector('[data-src]');
     if (img) {
       img.setAttribute('src', img.getAttribute('data-src'));
@@ -66,17 +89,12 @@ function createTooltip(card, target) {
     }
 
     wrapper.style.display = 'block';
-  };
-
-  return wrapper;
+  }
 }
 
 function attachTooltip(card, target) {
-  const tooltip = createTooltip(card, target);
-  window.document.body.appendChild(tooltip);
-
-  target.addEventListener('mouseenter', () => tooltip.show());
-  target.addEventListener('mouseleave', () => tooltip.hide());
+  const tooltip = new CardTooltip(card, target);
+  tooltip.inject();
 }
 
 export default attachTooltip;
