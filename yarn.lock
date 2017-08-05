@@ -4479,6 +4479,10 @@ relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
 
+remove-accents@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/remove-accents/-/remove-accents-0.4.0.tgz#5e3ceab210220cc334718e77fa1f07d6740f7a37"
+
 renderkid@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/renderkid/-/renderkid-2.0.1.tgz#898cabfc8bede4b7b91135a3ffd323e58c0db319"

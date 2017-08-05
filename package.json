@@ -19,6 +19,7 @@
   "dependencies": {
     "jsx-dom": "^5.1.2",
     "pluralize": "^6.0.0",
+    "remove-accents": "^0.4.0",
     "seamless-immutable": "^7.1.2"
   },
   "devDependencies": {

@@ -151,7 +151,7 @@ test('Should detect plurals', (t) => {
 });
 
 test('Should detect aliases', (t) => {
-  const text = 'Frost, Yen, YenCon, QG and light cavalries, Schirru';
+  const text = 'Frost, Yen, YenCon, QG and light cavalries';
   const matchedRanges = findAllMatches(DICTIONARY, text);
   t.deepEqual(matchedRanges, [
     {
