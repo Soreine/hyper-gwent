@@ -149,3 +149,36 @@ test('Should detect plurals', (t) => {
     },
   ]);
 });
+
+test('Should detect aliases', (t) => {
+  const text = 'Frost, Yen, YenCon, QG and light cavalries';
+  const matchedRanges = findAllMatches(DICTIONARY, text);
+  t.deepEqual(matchedRanges, [
+    {
+      entryKey: 'frost',
+      entryValue: 'Biting Frost',
+      start: 0,
+      end: 5,
+    }, {
+      entryKey: 'yen',
+      entryValue: 'Yennefer',
+      start: 7,
+      end: 10,
+    }, {
+      entryKey: 'yencon',
+      entryValue: 'Yennefer: The Conjurer',
+      start: 12,
+      end: 18,
+    }, {
+      entryKey: 'qg',
+      entryValue: 'Queensguard',
+      start: 20,
+      end: 22,
+    }, {
+      entryKey: 'light cavalries',
+      entryValue: 'Dun Banner Light Cavalry',
+      start: 27,
+      end: 42,
+    },
+  ]);
+});
