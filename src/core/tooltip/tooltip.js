@@ -43,6 +43,7 @@ class CardTooltip {
       display: 'none',
       position: 'fixed',
       transform: 'translateY(-40%)',
+      pointerEvents: 'none',
       zIndex: 999999999,
     }} />;
     const shadow = this.wrapper.attachShadow({
@@ -60,14 +61,16 @@ class CardTooltip {
     window.document.body.appendChild(wrapper);
     target.addEventListener('mouseenter', () => this.show());
     target.addEventListener('mouseleave', () => this.hide());
+    target.addEventListener('mousemove', e => this.follow(e));
   }
 
   hide() {
     this.wrapper.style.display = 'none';
+    this.visible = false;
   }
 
   show() {
-    const { wrapper, target, tooltip } = this;
+    const { wrapper, tooltip } = this;
 
     const img = tooltip.querySelector('[data-src]');
     if (img) {
@@ -75,20 +78,24 @@ class CardTooltip {
       img.removeAttribute('data-src');
     }
 
-    const { top, right, left } = target.getBoundingClientRect();
-    const { innerWidth } = window;
+    wrapper.style.display = 'block';
+
+    this.visible = true;
+  }
+
+  follow(mouseEvent) {
+    const { wrapper, visible } = this;
+    if (!visible) {
+      return;
+    }
+
+    const { clientX, clientY } = mouseEvent;
+
+    const top = clientY;
+    const left = clientX;
 
     wrapper.style.top = `${top}px`;
 
-    if (right <= (innerWidth / 2)) {
-      wrapper.style.left = `${right}px`;
-      wrapper.style.right = null;
-    } else {
-      wrapper.style.right = `${innerWidth - left}px`;
-      wrapper.style.left = null;
-    }
-
-    wrapper.style.display = 'block';
   }
 }
 
