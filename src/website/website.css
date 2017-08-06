@@ -40,13 +40,13 @@ body {
 .download-link {
     align-self: center;
 
-    background: linear-gradient(to bottom, rgba(36,209,128,1) 0%,rgb(31, 116, 123) 100%);
+    background: linear-gradient(to bottom, rgb(21, 199, 109) 0%,rgb(16, 86, 93) 100%);
 
     padding: 1rem;
     border-radius: 0.5rem;
     border-bottom: none;
 
-    color: #fefffe;
+    color: #fff8d7;
     text-decoration: none;
     font-weight: 400;
 
