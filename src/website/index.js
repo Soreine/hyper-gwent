@@ -79,7 +79,7 @@ const htmlPage = (
     <p className="issues">
       If you find bugs, if you want to submit new acronyms, request a feature, or contribute, post an issue <a href={REPO}>here</a>.
       <br/>
-      You can also contact <a href="https://www.reddit.com/user/Soreine/">/u/Soreine</a>.</p>
+      You can also contact <a href="https://www.reddit.com/message/compose/?to=Soreine">/u/Soreine</a>.</p>
   </div>
   /* eslint-enable max-len */
 );
