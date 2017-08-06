@@ -7,10 +7,10 @@ Logo colors
  */
 
 body {
-    background-color: white;
+    background-color: #232018;
     font-family: 'Josefin Sans', Helvetica, sans-serif;
     font-size: 1.3rem;
-    color: #09484D;
+    color: #d2c8bb;
     font-weight: 300;
     line-height: 1.5;
 }
@@ -25,6 +25,7 @@ body {
 }
 
 .logo {
+    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,6 +43,7 @@ body {
 
     padding: 1rem;
     border-radius: 0.5rem;
+    border-bottom: none;
 
     color: #fefffe;
     text-decoration: none;
