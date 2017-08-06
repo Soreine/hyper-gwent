@@ -48,6 +48,34 @@ body {
     margin-bottom: 3rem;
 }
 
+.emote {
+    display: flex;
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+    align-items: center;
+}
+
+.avatar {
+    height: 100px;
+    width: 100px;
+    flex: 0 0 auto;
+    transform: scale(0.8);
+}
+
+.dandelion {
+    background: url(./dandelion.png) #313131;
+}
+
+.geralt {
+    background: url(./geralt.png) #313131;
+}
+
+.emote-text {
+    font-style: italic;
+    max-width: 400px;
+    margin-left: 3rem;
+}
+
 ul {
     list-style-type: circle;
 }

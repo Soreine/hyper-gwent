@@ -31,6 +31,7 @@ const htmlPage = (
         <a href={GWENTDB}>{'GwentDB'}</a>
         {' can be challenging if you don\'t know half the cards people are talking about.'}
       </p>
+
       <p>
         {'Did you know:'}
         <ul>
@@ -40,23 +41,17 @@ const htmlPage = (
           <li>{'Gwent has nothing to do with cooking frogs, mushrooms, or anything remotely related to french cuisine.'}</li>
         </ul>
       </p>
-      <p>
-        {'Whether you are new to the game, you want to keep up with the latest card changes, or you can\'t remember crap, Hyper Gwent is here to save the day. Hyper Gwent automatically detects card names or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them. What do you think of that, Dandelion?'}
-      </p>
-
-      <div className="emote">
-        <div className="avatar dandelion"></div>
-        <div className="emote-text">
-          {'That… Was Actually Rather Impressive. Congratulations'}
-        </div>
-      </div>
 
       <div className="emote">
         <div className="avatar geralt"></div>
         <div className="emote-text">
-          {'Not Bad. Not Bad At All'}
+          {'Not bad. Not bad at all.'}
         </div>
       </div>
+
+      <p>
+        {'Whether you are new to the game, or you want to keep up with the latest card changes, or you can\'t remember crap, Hyper Gwent is here to save the day. Hyper Gwent automatically detects card names or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them.'}
+      </p>
 
       <p>
         {'Feature list:'}
@@ -66,6 +61,16 @@ const htmlPage = (
           <li>{'Lightweight'}</li>
         </ul>
       </p>
+
+      <p>{'What do you think of that, Dandelion?'}</p>
+
+      <div className="emote">
+        <div className="avatar dandelion"></div>
+        <div className="emote-text">
+          {'That… was actually rather impressive. Congratulations.'}
+        </div>
+      </div>
+
     </div>
 
     <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
