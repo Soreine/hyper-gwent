@@ -1,3 +1,4 @@
+import removeAccents from 'remove-accents';
 import { matches } from './dictionary';
 
 /*
@@ -17,15 +18,15 @@ type Match = {
  * @return {Array<Match>} The ranges of matched text.
  */
 function findAllMatches(dictionary, text) {
-  const lowcaseText = text.toLowerCase();
+  const cleanText = removeAccents(text).toLowerCase();
   const result = [];
 
   // Only match at beginning of words
   let wasNotWord = true;
-  for (let i = 0; i < lowcaseText.length; i += 1) {
-    const isWord = /\w/.test(lowcaseText[i]);
+  for (let i = 0; i < cleanText.length; i += 1) {
+    const isWord = /\w/.test(cleanText[i]);
     if (wasNotWord && isWord) {
-      const match = matches(dictionary, lowcaseText, i);
+      const match = matches(dictionary, cleanText, i);
       if (match) {
         result.push(match);
 
@@ -34,7 +35,7 @@ function findAllMatches(dictionary, text) {
       }
     }
 
-    wasNotWord = /[^\w]/.test(lowcaseText[i]);
+    wasNotWord = /[^\w]/.test(cleanText[i]);
   }
 
   return result;

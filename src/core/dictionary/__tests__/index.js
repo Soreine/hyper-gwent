@@ -1,4 +1,5 @@
 import test from 'ava';
+import removeAccents from 'remove-accents';
 import DICTIONARY, { contains, matches } from '../';
 import { NAMES } from '../../data';
 
@@ -8,7 +9,8 @@ test('Dictionary was created successfully', (t) => {
 
 test('Dictionary contains all cards', (t) => {
   NAMES.forEach((name) => {
-    const exists = contains(DICTIONARY, name.toLowerCase());
+    const exists = contains(DICTIONARY, removeAccents(name).toLowerCase());
+
     t.truthy(exists);
   });
 });
