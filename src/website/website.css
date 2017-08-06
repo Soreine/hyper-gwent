@@ -94,10 +94,6 @@ body {
     opacity: 0.6;
 }
 
-ul {
-    list-style-type: circle;
-}
-
 a {
     color: rgb(55, 207, 136);
     text-decoration: none;
