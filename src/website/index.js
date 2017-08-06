@@ -57,7 +57,7 @@ const htmlPage = (
         {'Feature list:'}
         <ul>
           <li>{'Up to date with all existing cards'}</li>
-          <li>{'Support acronyms, plurals, lowercase, and missing accents.'}</li>
+          <li>{'Support acronyms, plurals, lowercase, and missing accents'}</li>
           <li>{'Lightweight'}</li>
         </ul>
       </p>
