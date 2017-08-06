@@ -38,7 +38,7 @@ body {
 }
 
 .nochrome {
-    padding: 1em;
+    padding: 0.8em;
     border: 1px dashed;
     opacity: 0.6;
     font-size: 0.8em;
@@ -49,7 +49,7 @@ body {
 
     background: linear-gradient(to bottom, rgb(21, 199, 109) 0%,rgb(16, 86, 93) 100%);
 
-    padding: 1em;
+    padding: 0.8em;
     border-radius: 0.5em;
     border-bottom: none;
 
@@ -90,7 +90,7 @@ body {
 }
 
 .issues {
-    font-size: 1em;
+    font-size: 0.8em;
     opacity: 0.6;
 }
 
@@ -101,7 +101,7 @@ ul {
 a {
     color: rgb(55, 207, 136);
     text-decoration: none;
-    padding-bottom: 0.8em;
+    padding-bottom: 0.1em;
     border-bottom: 1px solid;
 }
 
