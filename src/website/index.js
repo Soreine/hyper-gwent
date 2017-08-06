@@ -11,6 +11,8 @@ const GWENTDB = 'http://www.gwentdb.com/';
 const REPO = 'https://github.com/Soreine/hyper-gwent/issues';
 const EXT_LINK = '#';
 
+const notUsingChrome = !window.chrome;
+
 const htmlPage = (
   /* eslint-disable max-len */
   <div className="content">
@@ -23,6 +25,10 @@ const htmlPage = (
     </div>
 
     <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
+
+    {notUsingChrome && <p className="nochrome">
+      This extension is only available for Chrome. The demonstration on this page will not work in other browsers.
+    </p>}
 
     <div className="description">
       <p>

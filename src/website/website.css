@@ -22,7 +22,7 @@ body {
     align-items: stretch;
     margin: auto;
     max-width: 800px;
-    padding: 3rem;
+    padding: 3em;
 }
 
 .logo {
@@ -30,11 +30,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3em;
 }
 
 .logo-title {
     width: 80%;
+}
+
+.nochrome {
+    padding: 1em;
+    border: 1px dashed;
+    opacity: 0.6;
+    font-size: 0.8em;
 }
 
 .download-link {
@@ -42,20 +49,20 @@ body {
 
     background: linear-gradient(to bottom, rgb(21, 199, 109) 0%,rgb(16, 86, 93) 100%);
 
-    padding: 1rem;
-    border-radius: 0.5rem;
+    padding: 1em;
+    border-radius: 0.5em;
     border-bottom: none;
 
     color: #fff8d7;
     text-decoration: none;
     font-weight: 400;
 
-    margin-bottom: 3rem;
+    margin-bottom: 3em;
 }
 
 .emote {
     display: flex;
-    margin-bottom: 3rem;
+    margin-bottom: 3em;
     align-items: center;
     justify-content: center;
 }
@@ -79,11 +86,11 @@ body {
     font-style: italic;
     width: 400px;
     flex: 0 1 auto;
-    margin-left: 3rem;
+    margin-left: 3em;
 }
 
 .issues {
-    font-size: 1rem;
+    font-size: 1em;
     opacity: 0.6;
 }
 
@@ -94,11 +101,11 @@ ul {
 a {
     color: rgb(55, 207, 136);
     text-decoration: none;
-    padding-bottom: 0.1rem;
+    padding-bottom: 0.8em;
     border-bottom: 1px solid;
 }
 
 p {
     margin-top: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 3em;
 }
