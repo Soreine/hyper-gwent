@@ -3,6 +3,8 @@
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import walk from '../extension/walk';
+import Logo from '../../hyper-gwent.svg';
+import style from './website.css';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const GWENTDB = 'http://www.gwentdb.com/';
@@ -10,39 +12,50 @@ const EXT_LINK = '#';
 
 const htmlPage = (
   /* eslint-disable max-len */
-  <div>
+  <div className="content">
+    <style type="text/css">{style.toString()}</style>
+
     <div className="logo">
-      <div className="logo-title">Hyper Gwent</div>
-      <div className="logo-subtitle">Community Chrome extension for GWENT®: The Witcher Card Game</div>
+      <div className="logo-title"
+        innerHTML={Logo} />
+      <div className="logo-subtitle">{'Community Chrome extension for GWENT®: The Witcher Card Game'}</div>
     </div>
-    <div className="download-link">
-      <a href={EXT_LINK}>Add to Chrome</a>
-    </div>
+
+    <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
+
     <div className="description">
       <p>
-        {'None of us cannot reasonably remember every possible Gwent card\'s name and effect. Browsing '}
-        <a href={REDDIT}>r/gwent</a>
-        {' and reading a deck guide on '}
-        <a href={GWENTDB}>GwentDB</a>
-        {' can be challenging if you don\'t know half the cards they\'re talking about.'}
+        {'None of us can reasonably remember every possible Gwent card\'s name and effect. Browsing '}
+        <a href={REDDIT}>{'r/gwent'}</a>
+        {' and reading deck guides on '}
+        <a href={GWENTDB}>{'GwentDB'}</a>
+        {' can be challenging if you don\'t know half the cards people are talking about.'}
       </p>
       <p>
         {'Did you know that...'}
         <ul>
-          <li>Xmen are not what they used to be ?</li>
-          <li>ADC does not stand for Attack Damage Carry ?</li>
-          <li>There <em>are</em> worst names for a dragon than Borkh ?</li>
-          <li>Gwent has nothing to do with cooking frogs, mushrooms, or anything remotely related to french cuisine ? 🍷</li>
+          <li>{'Xmen are not what they used to be ?'}</li>
+          <li>{'ADC does not stand for Attack Damage Carry ?'}</li>
+          <li>{'There '}<em>{'are'}</em>{' worst names for a dragon than Borkh ?'}</li>
+          <li>{'Gwent has nothing to do with cooking frogs, mushrooms, or anything remotely related to french cuisine ?'}</li>
         </ul>
       </p>
       <p>
-        {'Whether you are new to the game, you want to keep up with the latest card changes,'}
-        {' or you can\'t remember 💩, you will enjoy the smart card tooltips from Hyper Gwent.'}
+        {'Whether you are new to the game, you want to keep up with the latest card changes, or you can\'t remember crap, Hyper Gwent is here to save the day. Hyper Gwent automatically detects card names or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them.'}
       </p>
-      <p className="get-it-now">
-        <a href={EXT_LINK}>Get it now!</a>
+
+      <p>
+        {'Feature list:'}
+        <ul>
+          <li>{'Up to date with all existing cards'}</li>
+          <li>{'Support acronyms, plurals, lowercase, and missing accents.'}</li>
+          <li>{'Lightweight'}</li>
+        </ul>
       </p>
     </div>
+
+    <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
+
   </div>
   /* eslint-enable max-len */
 );
