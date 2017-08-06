@@ -3,6 +3,8 @@
   font-size: 13px;
   line-height: 1.4;
   width: 239px;
+  /* Same as left image padding */
+  padding-right: 62px;
   /* Should not mess with hovering logic */
   pointer-events: none;
 }
