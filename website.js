@@ -16122,6 +16122,8 @@ var GWENTDB = 'http://www.gwentdb.com/';
 var REPO = 'https://github.com/Soreine/hyper-gwent/issues';
 var EXT_LINK = '#';
 
+var notUsingChrome = !window.chrome;
+
 var htmlPage =
 /* eslint-disable max-len */
 (0, _jsxDom.createElement)(
@@ -16147,6 +16149,11 @@ var htmlPage =
     'a',
     { className: 'download-link', href: EXT_LINK },
     'Add to Chrome'
+  ),
+  notUsingChrome && (0, _jsxDom.createElement)(
+    'p',
+    { className: 'nochrome' },
+    'This extension is only available for Chrome. The demonstration on this page will not work in other browsers.'
   ),
   (0, _jsxDom.createElement)(
     'div',
@@ -18166,13 +18173,14 @@ exports = module.exports = __webpack_require__(8)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 
 // module
-exports.push([module.i, "/*\nLogo colors\n- top: #24D180\n- bottom: #09484D\n */\n\nbody {\n    background: #232018;\n    background: linear-gradient(to bottom, rgb(35, 32, 24) 0%,rgb(23, 20, 13) 100%);\n    font-family: 'Josefin Sans', Helvetica, sans-serif;\n    font-size: 1.3rem;\n    color: #d2c8bb;\n    font-weight: 300;\n    line-height: 1.5;\n}\n\n.content {\n    display: flex;\n    flex-direction: column;\n    align-items: stretch;\n    margin: auto;\n    max-width: 800px;\n    padding: 3rem;\n}\n\n.logo {\n    align-self: center;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin-bottom: 3rem;\n}\n\n.logo-title {\n    width: 80%;\n}\n\n.download-link {\n    align-self: center;\n\n    background: linear-gradient(to bottom, rgb(21, 199, 109) 0%,rgb(16, 86, 93) 100%);\n\n    padding: 1rem;\n    border-radius: 0.5rem;\n    border-bottom: none;\n\n    color: #fff8d7;\n    text-decoration: none;\n    font-weight: 400;\n\n    margin-bottom: 3rem;\n}\n\n.emote {\n    display: flex;\n    margin-bottom: 3rem;\n    align-items: center;\n    justify-content: center;\n}\n\n.avatar {\n    height: 100px;\n    width: 100px;\n    flex: 0 0 auto;\n    transform: scale(0.8);\n}\n\n.dandelion {\n    background: url(" + __webpack_require__(30) + ") #313131;\n}\n\n.geralt {\n    background: url(" + __webpack_require__(31) + ") #313131;\n}\n\n.emote-text {\n    font-style: italic;\n    width: 400px;\n    flex: 0 1 auto;\n    margin-left: 3rem;\n}\n\n.issues {\n    font-size: 1rem;\n    opacity: 0.6;\n}\n\nul {\n    list-style-type: circle;\n}\n\na {\n    color: rgb(55, 207, 136);\n    text-decoration: none;\n    padding-bottom: 0.1rem;\n    border-bottom: 1px solid;\n}\n\np {\n    margin-top: 0;\n    margin-bottom: 3rem;\n}\n", ""]);
+exports.push([module.i, "/*\nLogo colors\n- top: #24D180\n- bottom: #09484D\n */\n\nbody {\n    background: #232018;\n    background: linear-gradient(to bottom, rgb(35, 32, 24) 0%,rgb(23, 20, 13) 100%);\n    font-family: 'Josefin Sans', Helvetica, sans-serif;\n    font-size: 1.3rem;\n    color: #d2c8bb;\n    font-weight: 300;\n    line-height: 1.5;\n}\n\n.content {\n    display: flex;\n    flex-direction: column;\n    align-items: stretch;\n    margin: auto;\n    max-width: 800px;\n    padding: 3em;\n}\n\n.logo {\n    align-self: center;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin-bottom: 3em;\n}\n\n.logo-title {\n    width: 80%;\n}\n\n.nochrome {\n    padding: 1em;\n    border: 1px dashed;\n    opacity: 0.6;\n    font-size: 0.8em;\n}\n\n.download-link {\n    align-self: center;\n\n    background: linear-gradient(to bottom, rgb(21, 199, 109) 0%,rgb(16, 86, 93) 100%);\n\n    padding: 1em;\n    border-radius: 0.5em;\n    border-bottom: none;\n\n    color: #fff8d7;\n    text-decoration: none;\n    font-weight: 400;\n\n    margin-bottom: 3em;\n}\n\n.emote {\n    display: flex;\n    margin-bottom: 3em;\n    align-items: center;\n    justify-content: center;\n}\n\n.avatar {\n    height: 100px;\n    width: 100px;\n    flex: 0 0 auto;\n    transform: scale(0.8);\n}\n\n.dandelion {\n    background: url(" + __webpack_require__(30) + ") #313131;\n}\n\n.geralt {\n    background: url(" + __webpack_require__(31) + ") #313131;\n}\n\n.emote-text {\n    font-style: italic;\n    width: 400px;\n    flex: 0 1 auto;\n    margin-left: 3em;\n}\n\n.issues {\n    font-size: 1em;\n    opacity: 0.6;\n}\n\nul {\n    list-style-type: circle;\n}\n\na {\n    color: rgb(55, 207, 136);\n    text-decoration: none;\n    padding-bottom: 0.8em;\n    border-bottom: 1px solid;\n}\n\np {\n    margin-top: 0;\n    margin-bottom: 3em;\n}\n", ""]);
 
 // exports
 exports.locals = {
 	"content": "content",
 	"logo": "logo",
 	"logo-title": "logo-title",
+	"nochrome": "nochrome",
 	"download-link": "download-link",
 	"emote": "emote",
 	"avatar": "avatar",
