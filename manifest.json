@@ -12,7 +12,8 @@
     {
       "matches": [
         "https://www.reddit.com/r/gwent/*",
-        "https://www.reddit.com/r/Competitive_Gwent/*"
+        "https://www.reddit.com/r/Competitive_Gwent/*",
+        "http://www.gwentdb.com/*"
       ],
       "js": [
         "dist/content.js"
