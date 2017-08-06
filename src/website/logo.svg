@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1773px" height="266px" viewBox="0 0 1773 266" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1770px" height="261px" viewBox="0 0 1770 261" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
     <title>Logo</title>
     <desc>Created with Sketch.</desc>
@@ -8,10 +8,14 @@
             <stop stop-color="#09484D" offset="0%"></stop>
             <stop stop-color="#24D180" offset="100%"></stop>
         </linearGradient>
+        <linearGradient x1="50%" y1="98.0189732%" x2="50%" y2="0%" id="linearGradient-2">
+            <stop stop-color="#FFD87F" offset="0%"></stop>
+            <stop stop-color="#935401" offset="100%"></stop>
+        </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Logo" fill-rule="nonzero" fill="url(#linearGradient-1)">
-            <g id="Group-5" transform="translate(5.000000, 5.000000)">
+        <g id="Logo" stroke="url(#linearGradient-2)" fill-rule="nonzero" stroke-width="6" fill="url(#linearGradient-1)">
+            <g id="Group-5" transform="translate(3.000000, 3.000000)">
                 <g id="Group-3" transform="translate(0.000000, 1.000000)">
                     <path d="M2.84217094e-14,125.5 L2.84217094e-14,1.42108547e-14 L42.5608696,1.42108547e-14 C42.5608696,17.8246377 42.5608696,27.5008696 42.5608696,29.0286957 C42.5608696,44.1978261 51.2913043,57.8391304 68.0973913,77.7008696 C69.9526087,79.8834783 127.136957,140.778261 128.337391,140.778261 C128.482899,140.778261 128.628406,93.8521739 128.773913,1.42108547e-14 L171.334783,1.42108547e-14 L171.334783,251 L128.773913,251 C128.482899,216.805797 128.191884,199.708696 127.90087,199.708696 C127.318841,199.708696 98.8721739,171.152899 42.5608696,114.041304 L42.5608696,182.575217 L42.5608696,251 L2.84217094e-14,251 L2.84217094e-14,125.5 Z" id="Shape" transform="translate(85.667391, 125.500000) scale(-1, 1) rotate(-180.000000) translate(-85.667391, -125.500000) "></path>
                     <g id="Group" transform="translate(182.000000, 39.000000)">
