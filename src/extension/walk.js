@@ -31,22 +31,26 @@ function walk() {
           FILTER_SKIP,
         } = window.NodeFilter;
 
-        // Non GwentDB
-        if (HOSTNAME !== GWENTDB_HOSTNAME) {
-          return node.nodeType === TEXT_NODE
-          ? FILTER_ACCEPT
-          : FILTER_SKIP;
-        }
-
-        // on GwentDB, we skip existing tooltips
-        if (
-          node.nodeType === ELEMENT_NODE
-          && node.getAttribute(GWENTDB_TOOLTIP_ATTR)
-        ) {
-          // Skip this node and all its children
-          return FILTER_REJECT;
-        } else if (node.nodeType === TEXT_NODE) {
+        if (node.nodeType === TEXT_NODE) {
           return FILTER_ACCEPT;
+        } else if (
+          node.nodeType === ELEMENT_NODE
+        ) {
+          // Ignore style and scripts
+          if (node.tagName === 'STYLE'
+          || node.tagName === 'SCRIPT') {
+            return FILTER_REJECT;
+          }
+
+          // on GwentDB, we skip existing tooltips
+          if (HOSTNAME === GWENTDB_HOSTNAME
+            && node.getAttribute(GWENTDB_TOOLTIP_ATTR)) {
+            // Skip this node and all its children
+            return FILTER_REJECT;
+          }
+
+          // Skip the node itself
+          return FILTER_SKIP;
         }
         return FILTER_SKIP;
       },
