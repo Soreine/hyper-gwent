@@ -8,6 +8,7 @@ import style from './website.css';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const GWENTDB = 'http://www.gwentdb.com/';
+const REPO = 'https://github.com/Soreine/hyper-gwent/issues';
 const EXT_LINK = '#';
 
 const htmlPage = (
@@ -26,7 +27,7 @@ const htmlPage = (
     <div className="description">
       <p>
         {'None of us can reasonably remember every possible Gwent card\'s name and effect. Browsing '}
-        <a href={REDDIT}>{'r/gwent'}</a>
+        <a href={REDDIT}>{'/r/gwent'}</a>
         {' and reading deck guides on '}
         <a href={GWENTDB}>{'GwentDB'}</a>
         {' can be challenging if you don\'t know half the cards people are talking about.'}
@@ -74,6 +75,8 @@ const htmlPage = (
     </div>
 
     <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
+
+    <p className="issues">If you find bugs, if you want to submit new acronyms, request a feature, or contribute, post an issue <a href={REPO}>here</a>, or send me a direct message <a href="https://www.reddit.com/user/Soreine/">/u/Soreine</a>.</p>
 
   </div>
   /* eslint-enable max-len */
