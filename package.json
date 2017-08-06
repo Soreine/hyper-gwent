@@ -19,7 +19,8 @@
   "dependencies": {
     "jsx-dom": "^5.1.2",
     "pluralize": "^6.0.0",
-    "seamless-immutable": "^7.1.2"
+    "seamless-immutable": "^7.1.2",
+    "url-parse": "^1.1.9"
   },
   "devDependencies": {
     "ava": "^0.18.2",
