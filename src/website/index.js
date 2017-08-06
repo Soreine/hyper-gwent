@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import walk from '../extension/walk';
-import Logo from './hyper-gwent.svg';
+import Logo from './logo.svg';
 import style from './website.css';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
