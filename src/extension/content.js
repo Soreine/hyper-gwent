@@ -9,7 +9,6 @@ import DICTIONARY from '../core/dictionary';
 
 const CLASSNAME = 'hyper-gwent-card-highlight';
 const CARD_NAME_ATTRIBUTE = 'data-card-name';
-// Set of classname to limit the extension to
 const GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
 const GWENTDB_HOSTNAME = 'www.gwentdb.com';
 
@@ -32,13 +31,12 @@ const walker = window.document.createTreeWalker(
 
       // Non GwentDB
       if (HOSTNAME !== GWENTDB_HOSTNAME) {
-        if (node.nodeType === TEXT_NODE) {
-          return FILTER_ACCEPT;
-        }
-        return FILTER_SKIP;
+        return node.nodeType === TEXT_NODE
+        ? FILTER_ACCEPT
+        : FILTER_SKIP;
       }
 
-      // on GwentDB
+      // on GwentDB, we skip existing tooltips
       if (
         node.nodeType === ELEMENT_NODE
         && node.getAttribute(GWENTDB_TOOLTIP_ATTR)
