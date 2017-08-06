@@ -11,6 +11,7 @@ module.exports = Object.assign({}, baseConfig, {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Hyper Gwent',
+      favicon: 'favicon.ico',
     }),
   ],
 });
