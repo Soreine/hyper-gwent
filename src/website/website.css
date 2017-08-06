@@ -18,7 +18,7 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     margin: auto;
     max-width: 800px;
     padding: 3rem;
@@ -36,6 +36,8 @@ body {
 }
 
 .download-link {
+    align-self: center;
+
     background: linear-gradient(to bottom, rgba(36,209,128,1) 0%,rgb(31, 116, 123) 100%);
 
     padding: 1rem;
@@ -51,8 +53,8 @@ body {
 .emote {
     display: flex;
     margin-bottom: 3rem;
-    margin-left: 3rem;
     align-items: center;
+    justify-content: center;
 }
 
 .avatar {
@@ -72,7 +74,8 @@ body {
 
 .emote-text {
     font-style: italic;
-    max-width: 400px;
+    width: 400px;
+    flex: 0 1 auto;
     margin-left: 3rem;
 }
 
