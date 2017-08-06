@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import walk from '../extension/walk';
-import Logo from '../../hyper-gwent.svg';
+import Logo from './hyper-gwent.svg';
 import style from './website.css';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
@@ -18,7 +18,7 @@ const htmlPage = (
     <div className="logo">
       <div className="logo-title"
         innerHTML={Logo} />
-      <div className="logo-subtitle">{'Community Chrome extension for GWENT®: The Witcher Card Game'}</div>
+      <div className="logo-subtitle">{'Chrome extension for GWENT®: The Witcher Card Game'}</div>
     </div>
 
     <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
@@ -32,17 +32,31 @@ const htmlPage = (
         {' can be challenging if you don\'t know half the cards people are talking about.'}
       </p>
       <p>
-        {'Did you know that...'}
+        {'Did you know:'}
         <ul>
-          <li>{'Xmen are not what they used to be ?'}</li>
-          <li>{'ADC does not stand for Attack Damage Carry ?'}</li>
-          <li>{'There '}<em>{'are'}</em>{' worst names for a dragon than Borkh ?'}</li>
-          <li>{'Gwent has nothing to do with cooking frogs, mushrooms, or anything remotely related to french cuisine ?'}</li>
+          <li>{'Xmen are not what they used to be.'}</li>
+          <li>{'ADC does not stand for Attack Damage Carry.'}</li>
+          <li>{'There '}<em>{'are'}</em>{' worst names for a dragon than Borkh.'}</li>
+          <li>{'Gwent has nothing to do with cooking frogs, mushrooms, or anything remotely related to french cuisine.'}</li>
         </ul>
       </p>
       <p>
-        {'Whether you are new to the game, you want to keep up with the latest card changes, or you can\'t remember crap, Hyper Gwent is here to save the day. Hyper Gwent automatically detects card names or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them.'}
+        {'Whether you are new to the game, you want to keep up with the latest card changes, or you can\'t remember crap, Hyper Gwent is here to save the day. Hyper Gwent automatically detects card names or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them. What do you think of that, Dandelion?'}
       </p>
+
+      <div className="emote">
+        <div className="avatar dandelion"></div>
+        <div className="emote-text">
+          {'That… Was Actually Rather Impressive. Congratulations'}
+        </div>
+      </div>
+
+      <div className="emote">
+        <div className="avatar geralt"></div>
+        <div className="emote-text">
+          {'Not Bad. Not Bad At All'}
+        </div>
+      </div>
 
       <p>
         {'Feature list:'}
