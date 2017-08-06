@@ -151,7 +151,7 @@ test('Should detect plurals', (t) => {
 });
 
 test('Should detect aliases', (t) => {
-  const text = 'Frost, Yen, YenCon, QG and light cavalries';
+  const text = 'Frost, Yen, YenCon, QG and light cavalries and ADC';
   const matchedRanges = findAllMatches(DICTIONARY, text);
   t.deepEqual(matchedRanges, [
     {
@@ -179,6 +179,11 @@ test('Should detect aliases', (t) => {
       entryValue: 'Dun Banner Light Cavalry',
       start: 27,
       end: 42,
+    }, {
+      entryKey: 'adc',
+      entryValue: "Alzur's Double–Cross",
+      start: 47,
+      end: 50,
     },
   ]);
 });
