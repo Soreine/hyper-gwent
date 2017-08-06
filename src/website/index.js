@@ -33,7 +33,7 @@ const htmlPage = (
       </p>
 
       <p>
-        {'Did you know:'}
+        <em>{'You might find this shocking:'}</em>
         <ul>
           <li>{'Xmen are not what they used to be.'}</li>
           <li>{'ADC does not stand for Attack Damage Carry.'}</li>
