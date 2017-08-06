@@ -15,7 +15,8 @@
       "matches": [
         "https://www.reddit.com/r/gwent/*",
         "https://www.reddit.com/r/Competitive_Gwent/*",
-        "http://www.gwentdb.com/decks/*"
+        "http://www.gwentdb.com/decks/*",
+        "http://www.gwentdb.com/forums/*"
       ],
       "js": [
         "dist/content.js"
