@@ -81,6 +81,11 @@ body {
     margin-left: 3rem;
 }
 
+.issues {
+    font-size: 1rem;
+    opacity: 0.6;
+}
+
 ul {
     list-style-type: circle;
 }

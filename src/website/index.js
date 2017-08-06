@@ -76,8 +76,10 @@ const htmlPage = (
 
     <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
 
-    <p className="issues">If you find bugs, if you want to submit new acronyms, request a feature, or contribute, post an issue <a href={REPO}>here</a>, or send me a direct message <a href="https://www.reddit.com/user/Soreine/">/u/Soreine</a>.</p>
-
+    <p className="issues">
+      If you find bugs, if you want to submit new acronyms, request a feature, or contribute, post an issue <a href={REPO}>here</a>.
+      <br/>
+      You can also contact <a href="https://www.reddit.com/user/Soreine/">/u/Soreine</a>.</p>
   </div>
   /* eslint-enable max-len */
 );
