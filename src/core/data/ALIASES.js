@@ -13,7 +13,7 @@ const ALIASES = {
   ],
   Albrich: [],
   Alchemist: [],
-  "Alzur's Double Cross": [
+  "Alzur's Double–Cross": [
     'adc',
   ],
   "Alzur's Thunder": [
@@ -299,7 +299,7 @@ const ALIASES = {
   Ghoul: [],
   'Giant Toad': [
     'toad',
-    // 'frog',
+    'frog',
   ],
   'Grave Hag': [
     // 'gh',

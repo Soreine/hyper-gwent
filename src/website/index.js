@@ -2,31 +2,95 @@
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
-import tooltip from '../core/tooltip/index';
+import walk from '../extension/walk';
+import Logo from './logo.svg';
+import style from './website.css';
 
-const target = <span id="target" style="color: blue;">Aeromancy</span>;
-const app = (
+const REDDIT = 'https://www.reddit.com/r/gwent/';
+const GWENTDB = 'http://www.gwentdb.com/';
+const REPO = 'https://github.com/Soreine/hyper-gwent/issues';
+const EXT_LINK = '#';
+
+const notUsingChrome = !window.chrome;
+
+const htmlPage = (
   /* eslint-disable max-len */
-  <div>
-    <p>C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do, it blows away your whole leg.</p>
-    <p>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
-    <p>This paragraph contains a card named {target}.</p>
-    <p>It's not a bug - it's an undocumented feature.</p>
-    <p>A good programmer is someone who always looks both ways before crossing a one-way street.</p>
-    <p>The perfect project plan is possible if one first documents a list of all the unknowns.</p>
+  <div className="content">
+    <style type="text/css">{style.toString()}</style>
+
+    <div className="logo">
+      <div className="logo-title"
+        innerHTML={Logo} />
+      <div className="logo-subtitle">{'Chrome extension for GWENT®: The Witcher Card Game'}</div>
+    </div>
+
+    <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
+
+    {notUsingChrome && <p className="nochrome">
+      This extension is only available for Chrome. The demonstration on this page will not work in other browsers.
+    </p>}
+
+    <div className="description">
+      <p>
+        {'None of us can reasonably remember every possible Gwent card\'s name and effect. Browsing '}
+        <a href={REDDIT}>{'/r/gwent'}</a>
+        {' and reading deck guides on '}
+        <a href={GWENTDB}>{'GwentDB'}</a>
+        {' can be challenging if you don\'t know half the cards people are talking about.'}
+      </p>
+
+      <p>
+        <em>{'You might find this shocking:'}</em>
+        <ul>
+          <li>{'Xmen are not what they used to be.'}</li>
+          <li>{'ADC does not stand for Attack Damage Carry.'}</li>
+          <li>{'There '}<em>{'are'}</em>{' worst names for a dragon than Borkh.'}</li>
+          <li>{'Gwent has nothing to do with cooking frogs, mushrooms, or anything remotely related to french cuisine.'}</li>
+        </ul>
+      </p>
+
+      <div className="emote">
+        <div className="avatar geralt"></div>
+        <div className="emote-text">
+          {'Not bad. Not bad at all.'}
+        </div>
+      </div>
+
+      <p>
+        {'Whether you are new to the game, or you want to keep up with the latest card changes, or you can\'t remember crap, Hyper Gwent is here to save the day. Hyper Gwent automatically detects card names or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them.'}
+      </p>
+
+      <p>
+        {'Feature list:'}
+        <ul>
+          <li>{'Up to date with all existing cards'}</li>
+          <li>{'Support acronyms, plurals, lowercase, and missing accents'}</li>
+          <li>{'Lightweight'}</li>
+        </ul>
+      </p>
+
+      <p>{'What do you think of that, Dandelion?'}</p>
+
+      <div className="emote">
+        <div className="avatar dandelion"></div>
+        <div className="emote-text">
+          {'That… was actually rather impressive. Congratulations.'}
+        </div>
+      </div>
+
+    </div>
+
+    <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
+
+    <p className="issues">
+      If you find bugs, if you want to submit new acronyms, request a feature, or contribute, post an issue <a href={REPO}>here</a>.
+      <br/>
+      You can also contact <a href="https://www.reddit.com/message/compose/?to=Soreine">/u/Soreine</a>.</p>
   </div>
   /* eslint-enable max-len */
 );
-window.document.body.appendChild(app);
+window.document.body.appendChild(htmlPage);
 
-tooltip({
-  name: 'Aeromancy',
-  info: 'Play a Bronze or Silver Weather card from your Deck or Graveyard. Shuffle the others from your Deck back.',
-  variations: [
-    {
-      art: {
-        thumbnailImage: 'https://api.gwentapi.com/media/aeromancy-thumbnail.png',
-      },
-    },
-  ],
-}, target);
+
+// Launch extension within the page
+walk();

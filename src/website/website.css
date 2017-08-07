@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/*
+Logo colors
+- top: #24D180
+- bottom: #09484D
+ */
+
+body {
+    background: #232018;
+    background: linear-gradient(to bottom, rgb(35, 32, 24) 0%,rgb(23, 20, 13) 100%);
+    font-family: 'Josefin Sans', Helvetica, sans-serif;
+    font-size: 1.3rem;
+    color: #d2c8bb;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: auto;
+    max-width: 800px;
+    padding: 3em;
+}
+
+.logo {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+.logo-title {
+    width: 80%;
+}
+
+.nochrome {
+    padding: 0.8em;
+    border: 1px dashed;
+    opacity: 0.6;
+    font-size: 0.8em;
+}
+
+.download-link {
+    align-self: center;
+
+    background: linear-gradient(to bottom, rgb(21, 199, 109) 0%,rgb(16, 86, 93) 100%);
+
+    padding: 0.8em;
+    border-radius: 0.5em;
+    border-bottom: none;
+
+    color: #fff8d7;
+    text-decoration: none;
+    font-weight: 400;
+
+    margin-bottom: 3em;
+}
+
+.emote {
+    display: flex;
+    margin-bottom: 3em;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    height: 100px;
+    width: 100px;
+    flex: 0 0 auto;
+    transform: scale(0.8);
+}
+
+.dandelion {
+    background: url(./dandelion.png) #313131;
+}
+
+.geralt {
+    background: url(./geralt.png) #313131;
+}
+
+.emote-text {
+    font-style: italic;
+    width: 400px;
+    flex: 0 1 auto;
+    margin-left: 3em;
+}
+
+.issues {
+    font-size: 0.8em;
+    opacity: 0.6;
+}
+
+a {
+    color: rgb(55, 207, 136);
+    text-decoration: none;
+    padding-bottom: 0.1em;
+    border-bottom: 1px solid;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 3em;
+}
