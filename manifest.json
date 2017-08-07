@@ -19,7 +19,7 @@
         "http://www.gwentdb.com/forums/*"
       ],
       "js": [
-        "dist/content.js"
+        "content.js"
       ]
     }
   ]
