@@ -6,9 +6,9 @@
   "description": "Show tooltips for cards in pages containing GwentⓇ related content.",
   "version": "0.1.0",
   "icons": {
-    "16": "favicon16x16.png",
-    "48": "favicon48x48.png",
-    "128": "favicon128x128.png"
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   },
   "content_scripts": [
     {
