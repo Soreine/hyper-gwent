@@ -94,12 +94,10 @@ class CardTooltip {
     const { innerWidth, innerHeight } = window;
     const tooltipRect = tooltip.getBoundingClientRect();
 
-    let left;
+    let left = clientX;
     if (left > innerWidth - tooltipRect.width) {
       // Too far on the right
       left = clientX - tooltipRect.width;
-    } else {
-      left = clientX;
     }
 
     let top = clientY;
