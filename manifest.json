@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
   "author": "Soreine & Zhouzi",
-  "homepage": "https://soreine.github.io/hyper-gwent",
+  "homepage_url": "https://soreine.github.io/hyper-gwent",
   "name": "Hyper Gwent",
   "description": "Show tooltips for cards in pages containing GwentⓇ related content.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
