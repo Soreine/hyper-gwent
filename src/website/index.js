@@ -9,7 +9,7 @@ import style from './website.css';
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const GWENTDB = 'http://www.gwentdb.com/';
 const REPO = 'https://github.com/Soreine/hyper-gwent/issues';
-const EXT_LINK = '#';
+const EXTENSION = 'https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo';
 
 const notUsingChrome = !window.chrome;
 
@@ -24,7 +24,7 @@ const htmlPage = (
       <div className="logo-subtitle">{'Chrome extension for GWENT®: The Witcher Card Game'}</div>
     </div>
 
-    <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
+    <a className="download-link" href={EXTENSION}>{'Add to Chrome'}</a>
 
     {notUsingChrome && <p className="nochrome">
       This extension is only available for Chrome. The demonstration on this page will not work in other browsers.
@@ -80,7 +80,7 @@ const htmlPage = (
 
     </div>
 
-    <a className="download-link" href={EXT_LINK}>{'Add to Chrome'}</a>
+    <a className="download-link" href={EXTENSION}>{'Add to Chrome'}</a>
 
     <p className="issues">
       If you find bugs, if you want to submit new acronyms, request a feature, or contribute, post an issue <a href={REPO}>here</a>.
