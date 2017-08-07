@@ -16120,7 +16120,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var REDDIT = 'https://www.reddit.com/r/gwent/';
 var GWENTDB = 'http://www.gwentdb.com/';
 var REPO = 'https://github.com/Soreine/hyper-gwent/issues';
-var EXT_LINK = '#';
+var EXTENSION = 'https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo';
 
 var notUsingChrome = !window.chrome;
 
@@ -16147,7 +16147,7 @@ var htmlPage =
   ),
   (0, _jsxDom.createElement)(
     'a',
-    { className: 'download-link', href: EXT_LINK },
+    { className: 'download-link', href: EXTENSION },
     'Add to Chrome'
   ),
   notUsingChrome && (0, _jsxDom.createElement)(
@@ -16271,7 +16271,7 @@ var htmlPage =
   ),
   (0, _jsxDom.createElement)(
     'a',
-    { className: 'download-link', href: EXT_LINK },
+    { className: 'download-link', href: EXTENSION },
     'Add to Chrome'
   ),
   (0, _jsxDom.createElement)(
@@ -18101,12 +18101,10 @@ var CardTooltip = function () {
 
       var tooltipRect = tooltip.getBoundingClientRect();
 
-      var left = void 0;
+      var left = clientX;
       if (left > innerWidth - tooltipRect.width) {
         // Too far on the right
         left = clientX - tooltipRect.width;
-      } else {
-        left = clientX;
       }
 
       var top = clientY;
