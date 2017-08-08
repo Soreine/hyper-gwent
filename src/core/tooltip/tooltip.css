@@ -27,7 +27,7 @@
 .tooltipBlock {
   position: relative;
   color: #e8e8e8;
-  padding: 10px 10px 10px 14px;
+  padding: 10px 10px 10px 16px;
   background-color: #313131;
   margin: 0 0 5px 62px;
   border-radius: 2px;
@@ -44,9 +44,27 @@
   left: 0;
   width: 6px;
   height: 100%;
-  background: linear-gradient(-45deg, rgb(42, 182, 249) 0%, rgb(88, 183, 228) 50%, rgb(227, 240, 247) 51%,  rgb(0, 172, 255) 100%);
   border: 1px solid rgba(0, 0, 0, 0.5);
-  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 4px rgb(156, 222, 253);
+}
+
+.tooltipBlockEpic::before {
+  background: linear-gradient(-45deg, rgb(157, 86, 216) 0%, rgb(185, 126, 239) 50%, rgb(204, 180, 251) 51%, rgb(135, 78, 210) 100%);
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(195, 170, 243, 0.6);
+}
+
+.tooltipBlockRare::before {
+  background: linear-gradient(-45deg, rgb(42, 182, 249) 0%, rgb(88, 183, 228) 50%, rgb(227, 240, 247) 51%,  rgb(0, 172, 255) 100%);
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(156, 222, 253, 0.6);
+}
+
+.tooltipBlockCommon::before {
+  background: linear-gradient(-45deg, rgb(117, 117, 117) 0%, rgb(119, 119, 119) 50%, rgb(187, 187, 187) 51%, rgb(86, 86, 86) 100%);
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(160, 160, 160, 0.6);
+}
+
+.tooltipBlockLegendary::before {
+  background: linear-gradient(-45deg, rgb(156, 125, 11) 0%, rgb(193, 157, 48) 50%, rgb(245, 226, 148) 51%, rgb(99, 73, 15) 100%);
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(210, 200, 151, 0.6);
 }
 
 .tooltipName {

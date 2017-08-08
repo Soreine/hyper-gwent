@@ -14,13 +14,13 @@ const tooltipElement = card => (
       alt=""
     />
 
-    <div className={styles.locals.tooltipBlock}>
+    <div className={`${styles.locals.tooltipBlock} ${styles.locals.tooltipBlock + card.variations[0].rarity.name}`}>
       <div className={styles.locals.tooltipName}>
         {card.name}
       </div>
     </div>
 
-    <div className={styles.locals.tooltipBlock}>
+    <div className={`${styles.locals.tooltipBlock} ${styles.locals.tooltipBlock + card.variations[0].rarity.name}`}>
       <div className={styles.locals.tooltipInfo}>
         {card.info}
       </div>
