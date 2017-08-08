@@ -12,6 +12,10 @@
 .tooltipImage {
   width: 260px;
   margin-bottom: -27px;
+  background-image: url(./card-frame.png);
+  background-size: 260px 347px;
+  background-position: top left;
+  background-repeat: no-repeat;
 
   /*
    * height of the image when it's loaded
