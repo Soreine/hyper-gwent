@@ -33,7 +33,7 @@ const htmlPage = (
     <div className="description">
       <p>
         {'None of us can reasonably remember every possible Gwent card\'s name and effect. Browsing '}
-        <a href={REDDIT}>{'/r/gwent'}</a>
+        <a href={REDDIT}>{'r/gwent'}</a>
         {' and reading deck guides on '}
         <a href={GWENTDB}>{'GwentDB'}</a>
         {' can be challenging if you don\'t know half the cards people are talking about.'}
@@ -63,9 +63,18 @@ const htmlPage = (
       <p>
         {'Feature list:'}
         <ul>
-          <li>{'Up to date with all existing cards'}</li>
-          <li>{'Support acronyms, plurals, lowercase, and missing accents'}</li>
-          <li>{'Lightweight'}</li>
+          <li>{'Includes all existing cards, up to date with the latest patch'}</li>
+          <li>{'Support abbreviations, acronyms, plurals, missing capitals, and missing accents'}</li>
+          <li>{'Non obstrusive. Add subtle highlights and does not break links.'}</li>
+          <li>{'Fast'}</li>
+        </ul>
+      </p>
+
+      <p>
+        {'Incoming features:'}
+        <ul>
+          <li>{'Enable on any website with a simple click (currently only enabled on r/gwent and GwentDB)'}</li>
+          <li>{'Even more accurate card detection'}</li>
         </ul>
       </p>
 
