@@ -14,9 +14,11 @@ const ALIASES = {
   Albrich: [],
   Alchemist: [],
   "Alzur's Double–Cross": [
+    'alzur double cross',
     'adc',
   ],
   "Alzur's Thunder": [
+    'alzur thunder',
     'thunder',
     'zap',
   ],
@@ -48,6 +50,7 @@ const ALIASES = {
     'barclay',
   ],
   "Bekker's Twisted Mirror": [
+    'bekkers twisted mirror',
     'btm',
     'bekker',
   ],
@@ -282,6 +285,7 @@ const ALIASES = {
     'fringilla',
   ],
   "Gaunter O'Dimm": [
+    'gaunter odimm',
     'gaunter',
     'god',
   ],
@@ -411,6 +415,7 @@ const ALIASES = {
     'shroom',
   ],
   'Margarita Laux–Antille': [
+    'margarita laux antille',
     'margarita',
     'rita',
   ],
@@ -420,6 +425,7 @@ const ALIASES = {
   "Merigold's Hailstorm": [
     'hailstorm',
     'hail',
+    'merigold hailstorm',
   ],
   Milva: [],
   'Monster Nest': [
@@ -458,6 +464,7 @@ const ALIASES = {
   Odrin: [],
   'Old Speartip: Asleep': [
     'speartip',
+    'old speartip asleep',
   ],
   Olgierd: [],
   Operator: [],
@@ -500,11 +507,13 @@ const ALIASES = {
   'Redanian Knight': [],
   'Redanian Knight-Elect': [
     'rke',
+    'redanian knight elect',
   ],
   Regis: [],
   'Regis: Higher Vampire': [
     'rhv',
     'higher vampire',
+    'regis higher vampire',
   ],
   'Reinforced Ballista': [
     'ballista',
@@ -556,6 +565,7 @@ const ALIASES = {
   "Stammelford's Tremors": [
     'tremors',
     'stammelford',
+    'stammelford tremors',
   ],
   'Stefan Skellen': [
     'stefan',
@@ -681,6 +691,7 @@ const ALIASES = {
   ],
   'Zoltan: Animal Tamer': [
     'zat',
+    'zoltan animal tamer',
   ],
   'Zoltan Chivay': [
     'chivay',
