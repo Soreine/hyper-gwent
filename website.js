@@ -16165,7 +16165,7 @@ var htmlPage =
       (0, _jsxDom.createElement)(
         'a',
         { href: REDDIT },
-        '/r/gwent'
+        'r/gwent'
       ),
       ' and reading deck guides on ',
       (0, _jsxDom.createElement)(
@@ -16239,17 +16239,41 @@ var htmlPage =
         (0, _jsxDom.createElement)(
           'li',
           null,
-          'Up to date with all existing cards'
+          'Includes all existing cards, up to date with the latest patch'
         ),
         (0, _jsxDom.createElement)(
           'li',
           null,
-          'Support acronyms, plurals, lowercase, and missing accents'
+          'Support abbreviations, acronyms, plurals, missing capitals, and missing accents'
         ),
         (0, _jsxDom.createElement)(
           'li',
           null,
-          'Lightweight'
+          'Non obstrusive. Add subtle highlights and does not break links.'
+        ),
+        (0, _jsxDom.createElement)(
+          'li',
+          null,
+          'Fast'
+        )
+      )
+    ),
+    (0, _jsxDom.createElement)(
+      'p',
+      null,
+      'Incoming features:',
+      (0, _jsxDom.createElement)(
+        'ul',
+        null,
+        (0, _jsxDom.createElement)(
+          'li',
+          null,
+          'Enable on any website with a simple click (currently only enabled on r/gwent and GwentDB)'
+        ),
+        (0, _jsxDom.createElement)(
+          'li',
+          null,
+          'Even more accurate card detection'
         )
       )
     ),
