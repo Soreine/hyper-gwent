@@ -13,7 +13,10 @@ const GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
 const GWENTDB_HOSTNAME = 'www.gwentdb.com';
 
 // Walk the document and highlight cards
-function walk() {
+function walk(options) {
+  console.log('OPTIONS', options);
+  const { shouldUnderline = true } = options;
+
   const HOSTNAME = urlParse(window.location.href).hostname;
 
   const walker = window.document.createTreeWalker(
@@ -73,7 +76,10 @@ function walk() {
 
   nodes.forEach(({ node, matches }) => {
     const span = window.document.createElement('span');
-    span.innerHTML = replaceMatches(node.nodeValue, matches, match => `<span class="${CLASSNAME}" ${CARD_NAME_ATTRIBUTE}="${match.entryValue}" style="border-bottom: 1px dashed; padding-bottom: 0.1em">${node.nodeValue.slice(match.start, match.end)}</span>`);
+    span.innerHTML = replaceMatches(
+      node.nodeValue,
+      matches,
+      match => `<span class="${CLASSNAME}" ${CARD_NAME_ATTRIBUTE}="${match.entryValue}" ${shouldUnderline ? 'style="border-bottom: 1px dashed; padding-bottom: 0.1em"' : ''}>${node.nodeValue.slice(match.start, match.end)}</span>`);
 
     node.parentNode.replaceChild(span, node);
   });
