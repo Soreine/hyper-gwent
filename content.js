@@ -17605,12 +17605,10 @@ var CardTooltip = function () {
 
       var tooltipRect = tooltip.getBoundingClientRect();
 
-      var left = void 0;
+      var left = clientX;
       if (left > innerWidth - tooltipRect.width) {
         // Too far on the right
         left = clientX - tooltipRect.width;
-      } else {
-        left = clientX;
       }
 
       var top = clientY;
