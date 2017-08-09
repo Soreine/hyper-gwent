@@ -4483,9 +4483,9 @@ relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
 
-remove-accents@tyxla/remove-accents#8025d6cd35900226f6c1d4dd709ad653fb74357b:
-  version "0.4.0"
-  resolved "https://codeload.github.com/tyxla/remove-accents/tar.gz/8025d6cd35900226f6c1d4dd709ad653fb74357b"
+remove-accents@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/remove-accents/-/remove-accents-0.4.1.tgz#98141bba4edf09e5fc4ca6fda6bd8ed8ad78d271"
 
 renderkid@^2.0.1:
   version "2.0.1"

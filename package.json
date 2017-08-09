@@ -19,7 +19,7 @@
   "dependencies": {
     "jsx-dom": "^5.1.2",
     "pluralize": "^6.0.0",
-    "remove-accents": "tyxla/remove-accents#8025d6cd35900226f6c1d4dd709ad653fb74357b",
+    "remove-accents": "^0.4.1",
     "seamless-immutable": "^7.1.2",
     "url-parse": "^1.1.9"
   },
