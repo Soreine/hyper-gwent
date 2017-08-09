@@ -4,7 +4,7 @@
   "homepage_url": "https://soreine.github.io/hyper-gwent",
   "name": "Hyper Gwent",
   "description": "Show tooltips for cards in pages containing GwentⓇ related content.",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
