@@ -103,6 +103,7 @@ const ALIASES = {
   Ciri: [],
   'Ciri: Dash': [
     'cdash',
+    'ciri dash',
   ],
   'Clan an Craite Raider': [
     'ccr',
@@ -291,10 +292,12 @@ const ALIASES = {
   'Geralt: Aard': [
     'aard',
     'gaard',
+    'geralt aard',
   ],
   'Geralt: Igni': [
     'igni',
     'gigni',
+    'geralt igni',
   ],
   Ghoul: [],
   'Giant Toad': [
@@ -590,6 +593,8 @@ const ALIASES = {
   ],
   'Triss: Butterfly Spell': [
     'triss butt',
+    'triss: butt',
+    'triss butterfly spell',
   ],
   'Triss Merigold': [
     'triss',
@@ -615,7 +620,7 @@ const ALIASES = {
   Vesemir: [],
   'Vicovaro Medic': [],
   'Vicovaro Novice': [
-    'novice',
+//    'novice', Too common
   ],
   Vilgefortz: [],
   Villentretenmerth: [
@@ -670,6 +675,9 @@ const ALIASES = {
   ],
   'Yennefer: The Conjurer': [
     'yencon',
+    'yen:con',
+    'yennefer the conjurer',
+    'yennefer conjurer',
   ],
   'Zoltan: Animal Tamer': [
     'zat',

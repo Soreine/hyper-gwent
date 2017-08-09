@@ -132,6 +132,19 @@ test('Should consider that non-alphabetical characters mark the end of a word', 
   ]);
 });
 
+test('Should work around non-alphabetical characters', (t) => {
+  const text = 'Avallach'; // Contains Regis
+  const matchedRanges = findAllMatches(DICTIONARY, text);
+  t.deepEqual(matchedRanges, [
+    {
+      entryKey: 'avallach',
+      entryValue: 'Avallac\'h',
+      start: 0,
+      end: 8,
+    },
+  ]);
+});
+
 test('Should detect plurals', (t) => {
   const text = 'Regises, Queensguards and Dun Banner Light Cavalries';
   const matchedRanges = findAllMatches(DICTIONARY, text);
@@ -197,6 +210,26 @@ test('Should work around accentuated letters', (t) => {
       entryValue: 'Schirrú',
       start: 0,
       end: 7,
+    },
+  ]);
+});
+
+
+test('Should find longest match with bad case', (t) => {
+  const text = 'ciri dash and ciri';
+  const matchedRanges = findAllMatches(DICTIONARY, text);
+  t.deepEqual(matchedRanges, [
+    {
+      entryKey: 'ciri dash',
+      entryValue: 'Ciri: Dash',
+      start: 0,
+      end: 9,
+    },
+    {
+      entryKey: 'ciri',
+      entryValue: 'Ciri',
+      start: 14,
+      end: 18,
     },
   ]);
 });

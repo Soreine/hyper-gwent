@@ -11,7 +11,8 @@ function matches(dictionary, text, index = 0, acc = { matchedString: '', key: ''
   const { matchedString, key } = acc;
 
   const nextChar = text[index];
-  const endOfWord = nextChar === undefined || !/\w/.test(nextChar);
+  const isSpace = !/\w/.test(nextChar);
+  const endOfWord = nextChar === undefined || isSpace;
   // Have we found a match yet?
   const isMatch = dictionary[''] && (endOfWord);
   const match = {
