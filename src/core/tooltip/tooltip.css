@@ -1,7 +1,7 @@
 .tooltip {
   font-family: Arial, sans-serif;
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 1.5;
   width: 239px;
   /* Same as left image padding */
   padding-right: 62px;
@@ -12,6 +12,10 @@
 .tooltipImage {
   width: 260px;
   margin-bottom: -27px;
+  background-image: url(./card-frame.png);
+  background-size: 260px 347px;
+  background-position: top left;
+  background-repeat: no-repeat;
 
   /*
    * height of the image when it's loaded
@@ -23,38 +27,49 @@
 .tooltipBlock {
   position: relative;
   color: #e8e8e8;
-  padding: 10px 10px 10px 14px;
-  background: url(./irongrip.png) #313131;
+  padding: 10px 10px 10px 16px;
+  background-color: #313131;
   margin: 0 0 5px 62px;
   border-radius: 2px;
   overflow: hidden;
 }
 
 .tooltipBlock::before {
+  box-sizing: border-box;
   content: '';
+  display: block;
   position: absolute;
   z-index: 0;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 6px;
   height: 100%;
-  background: linear-gradient(to bottom, #5e5e5e 0%, #ababab 100%);
-  box-shadow: inset -2px 0 0 rgba(255, 255, 255, 0.4), 2px 0 2px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.tooltipBlock::after {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow: inset 0 0 8px 3px rgba(0, 0, 0, 0.4);
+.tooltipBlockEpic::before {
+  background: linear-gradient(-45deg, rgb(157, 86, 216) 0%, rgb(185, 126, 239) 50%, rgb(204, 180, 251) 51%, rgb(135, 78, 210) 100%);
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(195, 170, 243, 0.6);
+}
+
+.tooltipBlockRare::before {
+  background: linear-gradient(-45deg, rgb(42, 182, 249) 0%, rgb(88, 183, 228) 50%, rgb(227, 240, 247) 51%,  rgb(0, 172, 255) 100%);
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(156, 222, 253, 0.6);
+}
+
+.tooltipBlockCommon::before {
+  background: linear-gradient(-45deg, rgb(117, 117, 117) 0%, rgb(119, 119, 119) 50%, rgb(187, 187, 187) 51%, rgb(86, 86, 86) 100%);
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(160, 160, 160, 0.6);
+}
+
+.tooltipBlockLegendary::before {
+  background: linear-gradient(-45deg, rgb(156, 125, 11) 0%, rgb(193, 157, 48) 50%, rgb(245, 226, 148) 51%, rgb(99, 73, 15) 100%);
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(210, 200, 151, 0.6);
 }
 
 .tooltipName {
   font-size: 15px;
+  line-height: 1.2;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
