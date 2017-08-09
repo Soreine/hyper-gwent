@@ -32,6 +32,8 @@
   margin: 0 0 5px 62px;
   border-radius: 2px;
   overflow: hidden;
+  /* Helps with readability when there is text behind */
+  box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.63);
 }
 
 .tooltipBlock::before {
@@ -68,7 +70,7 @@
 }
 
 .tooltipName {
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.2;
   color: #fff;
   text-transform: uppercase;
