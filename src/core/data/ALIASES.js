@@ -32,7 +32,7 @@ const ALIASES = {
   Archgriffin: [],
   'Aretuza Adept': [],
   Assassination: [],
-  'Assire Var Anahid': [
+  'Assire var Anahid': [
     'assire',
   ],
   Auckes: [],
@@ -101,11 +101,11 @@ const ALIASES = {
     'raider',
     'cacr',
   ],
-  'Clan An Craite Warcrier': [
+  'Clan an Craite Warcrier': [
     'warcrier',
     'cacw',
   ],
-  'Clan An Craite Warrior': [],
+  'Clan an Craite Warrior': [],
   'Clan Brokvar Archer': [
     'cba',
   ],
@@ -149,7 +149,7 @@ const ALIASES = {
     'neophyte',
   ],
   Coral: [],
-  'Crach An Craite': [
+  'Crach an Craite': [
     'crach',
   ],
   'Crone: Brewess': [
@@ -242,7 +242,7 @@ const ALIASES = {
   'Elven Wardancer': [
     'wardancer',
   ],
-  'Emhyr Var Emreis': [
+  'Emhyr var Emreis': [
     'emhyr',
   ],
   Emissary: [],
@@ -325,7 +325,7 @@ const ALIASES = {
   Iris: [],
   Isengrim: [],
   Ithlinne: [],
-  'Joachim De Wett': [
+  'Joachim de Wett': [
     'joachim',
   ],
   'John Calveit': [
@@ -584,7 +584,7 @@ const ALIASES = {
   ],
   Vabjorn: [],
   Vanhemar: [],
-  'Vattier De Rideaux': [
+  'Vattier de Rideaux': [
     'vdr',
     'vattier',
   ],
