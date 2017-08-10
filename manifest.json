@@ -4,12 +4,19 @@
   "homepage_url": "https://soreine.github.io/hyper-gwent",
   "name": "Hyper Gwent",
   "description": "Show tooltips for cards in pages containing GwentⓇ related content.",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
     "128": "icon128.png"
   },
+  "options_ui": {
+      "page": "options.html",
+      "chrome_style": true
+  },
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": [

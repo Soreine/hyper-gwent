@@ -15803,7 +15803,11 @@ var _walk2 = _interopRequireDefault(_walk);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _walk2.default)();
+chrome.storage.sync.get({
+  shouldUnderline: true
+}, function (options) {
+  (0, _walk2.default)(options);
+}); /* global chrome */
 
 /***/ }),
 /* 8 */
@@ -15848,7 +15852,12 @@ var GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
 var GWENTDB_HOSTNAME = 'www.gwentdb.com';
 
 // Walk the document and highlight cards
-function walk() {
+function walk(options) {
+  console.log('OPTIONS', options);
+  var _options$shouldUnderl = options.shouldUnderline,
+      shouldUnderline = _options$shouldUnderl === undefined ? true : _options$shouldUnderl;
+
+
   var HOSTNAME = (0, _urlParse2.default)(window.location.href).hostname;
 
   var walker = window.document.createTreeWalker(window.document.body, window.NodeFilter.SHOW_ELEMENT + window.NodeFilter.SHOW_TEXT,
@@ -15905,7 +15914,7 @@ function walk() {
 
     var span = window.document.createElement('span');
     span.innerHTML = (0, _replaceMatches2.default)(node.nodeValue, matches, function (match) {
-      return '<span class="' + CLASSNAME + '" ' + CARD_NAME_ATTRIBUTE + '="' + match.entryValue + '" style="border-bottom: 1px dashed; padding-bottom: 0.1em">' + node.nodeValue.slice(match.start, match.end) + '</span>';
+      return '<span class="' + CLASSNAME + '" ' + CARD_NAME_ATTRIBUTE + '="' + match.entryValue + '" ' + (shouldUnderline ? 'style="border-bottom: 1px dashed; padding-bottom: 0.1em"' : '') + '>' + node.nodeValue.slice(match.start, match.end) + '</span>';
     });
 
     node.parentNode.replaceChild(span, node);
@@ -16601,7 +16610,8 @@ function matches(dictionary, text) {
 
 
   var nextChar = text[index];
-  var endOfWord = nextChar === undefined || !/\w/.test(nextChar);
+  var isSpace = !/\w/.test(nextChar);
+  var endOfWord = nextChar === undefined || isSpace;
   // Have we found a match yet?
   var isMatch = dictionary[''] && endOfWord;
   var match = {
@@ -17060,8 +17070,8 @@ var ALIASES = {
   'Alba Spearmen': ['spearmen'],
   Albrich: [],
   Alchemist: [],
-  "Alzur's Double–Cross": ['adc'],
-  "Alzur's Thunder": ['thunder', 'zap'],
+  "Alzur's Double–Cross": ['alzur double cross', 'adc'],
+  "Alzur's Thunder": ['alzur thunder', 'thunder', 'zap'],
   Ambassador: [],
   'Ancient Foglet': [
     // 'af',
@@ -17081,7 +17091,7 @@ var ALIASES = {
   "Avallac'h": ['avallach'],
   Ballista: [],
   'Barclay Els': ['barclay'],
-  "Bekker's Twisted Mirror": ['btm', 'bekker'],
+  "Bekker's Twisted Mirror": ['bekkers twisted mirror', 'btm', 'bekker'],
   'Berserker Marauder': [
     // 'bm',
   ],
@@ -17112,7 +17122,7 @@ var ALIASES = {
   Chort: [],
   Ciaran: [],
   Ciri: [],
-  'Ciri: Dash': ['cdash'],
+  'Ciri: Dash': ['cdash', 'ciri dash'],
   'Clan an Craite Raider': ['ccr', 'raider', 'cacr'],
   'Clan An Craite Warcrier': ['warcrier',
   // 'warcry',
@@ -17194,11 +17204,11 @@ var ALIASES = {
   Francesca: [],
   Frightener: [],
   'Fringilla Vigo': ['fringilla'],
-  "Gaunter O'Dimm": ['gaunter', 'god'],
+  "Gaunter O'Dimm": ['gaunter odimm', 'gaunter', 'god'],
   "Ge'els": ['geels'],
   Geralt: [],
-  'Geralt: Aard': ['aard', 'gaard'],
-  'Geralt: Igni': ['igni', 'gigni'],
+  'Geralt: Aard': ['aard', 'gaard', 'geralt aard'],
+  'Geralt: Igni': ['igni', 'gigni', 'geralt igni'],
   Ghoul: [],
   'Giant Toad': ['toad', 'frog'],
   'Grave Hag': [
@@ -17260,9 +17270,9 @@ var ALIASES = {
     // 'mo',
   ],
   Mardroeme: ['mushroom', 'shroom'],
-  'Margarita Laux–Antille': ['margarita', 'rita'],
+  'Margarita Laux–Antille': ['margarita laux antille', 'margarita', 'rita'],
   'Menno Coehoorn': ['menno'],
-  "Merigold's Hailstorm": ['hailstorm', 'hail'],
+  "Merigold's Hailstorm": ['hailstorm', 'hail', 'merigold hailstorm'],
   Milva: [],
   'Monster Nest': ['nest'],
   Morenn: [],
@@ -17286,7 +17296,7 @@ var ALIASES = {
   Nithral: [],
   Ocvist: [],
   Odrin: [],
-  'Old Speartip: Asleep': ['speartip'],
+  'Old Speartip: Asleep': ['speartip', 'old speartip asleep'],
   Olgierd: [],
   Operator: [],
   Overdose: [],
@@ -17307,9 +17317,9 @@ var ALIASES = {
   'Reaver Scout': [],
   'Redanian Elite': [],
   'Redanian Knight': [],
-  'Redanian Knight-Elect': ['rke'],
+  'Redanian Knight-Elect': ['rke', 'redanian knight elect'],
   Regis: [],
-  'Regis: Higher Vampire': ['rhv', 'higher vampire'],
+  'Regis: Higher Vampire': ['rhv', 'higher vampire', 'regis higher vampire'],
   'Reinforced Ballista': ['ballista'],
   'Reinforced Siege Tower': ['rst', 'siege tower'],
   'Reinforced Trebuchet': [
@@ -17337,7 +17347,7 @@ var ALIASES = {
   'Skellige Storm': ['ss'],
   Skjall: [],
   Spotter: [],
-  "Stammelford's Tremors": ['tremors', 'stammelford'],
+  "Stammelford's Tremors": ['tremors', 'stammelford', 'stammelford tremors'],
   'Stefan Skellen': ['stefan'],
   Succubus: [],
   'Summoning Circle': [],
@@ -17355,7 +17365,7 @@ var ALIASES = {
   Treason: [],
   Trebuchet: [],
   'Tridam Infantryman': ['tridam'],
-  'Triss: Butterfly Spell': ['triss butt'],
+  'Triss: Butterfly Spell': ['triss butt', 'triss: butt', 'triss butterfly spell'],
   'Triss Merigold': ['triss'],
   Trollololo: ['trololo'],
   Udalryk: [],
@@ -17367,7 +17377,9 @@ var ALIASES = {
   Ves: [],
   Vesemir: [],
   'Vicovaro Medic': [],
-  'Vicovaro Novice': ['novice'],
+  'Vicovaro Novice': [
+    //    'novice', Too common
+  ],
   Vilgefortz: [],
   Villentretenmerth: ['borkh'],
   'Vran Warrior': ['vran'],
@@ -17390,8 +17402,8 @@ var ALIASES = {
   Yaevinn: [],
   'Yarpen Zigrin': ['yarpen'],
   Yennefer: ['yen'],
-  'Yennefer: The Conjurer': ['yencon'],
-  'Zoltan: Animal Tamer': ['zat'],
+  'Yennefer: The Conjurer': ['yencon', 'yen:con', 'yennefer the conjurer', 'yennefer conjurer'],
+  'Zoltan: Animal Tamer': ['zat', 'zoltan animal tamer'],
   'Zoltan Chivay': ['chivay']
 };
 
