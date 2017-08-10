@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.4] - 2017-08-10
+
+- Fixed aliases for
+  - Assire var Anahid
+  - Clan an Craite Warcrier
+  - Clan an Craite Warrior
+  - Crach an Craite
+  - Emhyr var Emreis
+  - Joachim de Wett
+  - Vattier de Rideaux
+
+
 ## [1.0.3] - 2017-08-10
 
 - Fixed package installation
