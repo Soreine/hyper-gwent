@@ -23,20 +23,14 @@ const ALIASES = {
     'zap',
   ],
   Ambassador: [],
-  'Ancient Foglet': [
-    // 'af',
-  ],
+  'Ancient Foglet': [],
   Arachas: [],
   'Arachas Behemoth': [
     'behemoth',
   ],
-  'Arachas Venom': [
-    // 'av',
-  ],
+  'Arachas Venom': [],
   Archgriffin: [],
-  'Aretuza Adept': [
-    // 'aa',
-  ],
+  'Aretuza Adept': [],
   Assassination: [],
   'Assire Var Anahid': [
     'assire',
@@ -54,9 +48,7 @@ const ALIASES = {
     'btm',
     'bekker',
   ],
-  'Berserker Marauder': [
-    // 'bm',
-  ],
+  'Berserker Marauder': [],
   'Birna Bran': [
     'birna',
   ],
@@ -66,9 +58,7 @@ const ALIASES = {
   'Black Infantry Arbalest': [
     'arbalest',
   ],
-  'Bloodcurdling Roar': [
-    // 'br',
-  ],
+  'Bloodcurdling Roar': [],
   'Bloody Baron': [
     'baron',
   ],
@@ -94,9 +84,7 @@ const ALIASES = {
   Caranthir: [],
   Caretaker: [],
   Ceallach: [],
-  'Celaeno Harpy': [
-    // 'harpy',
-  ],
+  'Celaeno Harpy': [],
   Cerys: [],
   'Champion of Champions': [
     'coc',
@@ -115,7 +103,6 @@ const ALIASES = {
   ],
   'Clan An Craite Warcrier': [
     'warcrier',
-    // 'warcry',
     'cacw',
   ],
   'Clan An Craite Warrior': [],
@@ -156,7 +143,6 @@ const ALIASES = {
     'engineer',
   ],
   "Commander's Horn": [
-    // 'ch',
     'horn',
   ],
   'Commando Neophyte': [
@@ -265,18 +251,13 @@ const ALIASES = {
   Ermion: [],
   Eskel: [],
   'Fake Ciri': [],
-  'Field Medic': [
-    // 'fm',
-  ],
+  'Field Medic': [],
   Fiend: [],
   'Fire Elemental': [],
   'Fire Scorpion': [
-    // 'fs',
     'scorpion',
   ],
-  'First Light': [
-    // 'fl',
-  ],
+  'First Light': [],
   Foglet: [],
   Foltest: [],
   Francesca: [],
@@ -308,9 +289,7 @@ const ALIASES = {
     'toad',
     'frog',
   ],
-  'Grave Hag': [
-    // 'gh',
-  ],
+  'Grave Hag': [],
   Gremist: [],
   Griffin: [],
   'Harald the Cripple': [
@@ -333,9 +312,7 @@ const ALIASES = {
     'ida',
   ],
   Imlerith: [],
-  'Immune Boost': [
-    // 'blizzard',
-  ],
+  'Immune Boost': [],
   'Impenetrable Fog': [
     'fog',
   ],
@@ -364,7 +341,6 @@ const ALIASES = {
   ],
   'Kaedweni Sergeant': [
     'sergeant',
-    // 'ks',
   ],
   'Kaedweni Siege Platform': [
     'ksp',
@@ -407,9 +383,7 @@ const ALIASES = {
   Mangonel: [],
   Manticore: [],
   'Manticore Venom': [],
-  'Marching Orders': [
-    // 'mo',
-  ],
+  'Marching Orders': [],
   Mardroeme: [
     'mushroom',
     'shroom',
@@ -442,9 +416,7 @@ const ALIASES = {
     'myrgta',
     'brakke',
   ],
-  "Nature's Gift": [
-    // 'ng',
-  ],
+  "Nature's Gift": [],
   'Nauzicaa Brigade': [],
   'Nauzicaa Standard Bearer': [
     'nsb',
@@ -452,13 +424,9 @@ const ALIASES = {
   ],
   Necromancy: [],
   Nekker: [],
-  'Nekker Warrior': [
-    // 'nw',
-  ],
+  'Nekker Warrior': [],
   Nenneke: [],
-  'Nilfgaardian Knight': [
-    // 'nk',
-  ],
+  'Nilfgaardian Knight': [],
   Nithral: [],
   Ocvist: [],
   Odrin: [],
@@ -522,9 +490,7 @@ const ALIASES = {
     'rst',
     'siege tower',
   ],
-  'Reinforced Trebuchet': [
-    // 'rt',
-  ],
+  'Reinforced Trebuchet': [],
   Reinforcement: [],
   Renew: [],
   Restore: [
@@ -629,9 +595,7 @@ const ALIASES = {
   Ves: [],
   Vesemir: [],
   'Vicovaro Medic': [],
-  'Vicovaro Novice': [
-//    'novice', Too common
-  ],
+  'Vicovaro Novice': [],
   Vilgefortz: [],
   Villentretenmerth: [
     'borkh',
