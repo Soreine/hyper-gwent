@@ -14,7 +14,6 @@ const GWENTDB_HOSTNAME = 'www.gwentdb.com';
 
 // Walk the document and highlight cards
 function walk(options) {
-  console.log('OPTIONS', options);
   const { shouldUnderline = true } = options;
 
   const HOSTNAME = urlParse(window.location.href).hostname;
