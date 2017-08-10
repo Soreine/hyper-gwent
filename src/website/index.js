@@ -91,6 +91,18 @@ const htmlPage = (
 
     <a className="download-link" href={EXTENSION}>{'Add to Chrome'}</a>
 
+    <p>
+      {'Special thanks and credit:'}
+      <ul>
+        <li>
+          Thanks to <a href="https://github.com/Zhouzi">Zhouzi</a> for all the work he did on this. Props to him for the great looking tooltips.
+        </li>
+        <li>
+          Thanks to <a href="https://twitter.com/GwentAPI">@GwentAPI</a> for maintaining the API which this extension is built upon. All cards infos come from here.
+        </li>
+      </ul>
+    </p>
+
     <p className="issues">
       If you find bugs, if you want to submit new acronyms, request a feature, or contribute, post an issue <a href={REPO}>here</a>.
       <br/>
