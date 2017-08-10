@@ -1,7 +1,23 @@
 # hyper-gwent
 
-Chrome extension to enrich pages containing GwentⓇ related content.
-Card names quick access, terms highlight and more!
+Chrome extension to preview cards on pages containing GwentⓇ related content.
+
+## Suggesting alternatives for card names
+
+You can suggest new alternate names for cards. The complete list is here: https://github.com/Soreine/hyper-gwent/blob/master/src/core/data/ALIASES.js
+
+These include:
+
+- Acronyms such as "ADC"
+- Abbreviations such as "gigni"
+- Incomplete names such as "fringilla".
+
+The following don't need to be in this list though:
+
+- Alternate case. For example "cIrI DASH" is automatically handled.
+- Plurals. For example "QGs" for Queensguard and "dun banner light cavalries" are automatically handled.
+- Alternate accentuation. For example "Schirru" is automatically recognized as Schirrú.
+
 
 ## Contribute
 
