@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.3] - 2017-08-10
+
+- Fixed package installation
+
 ## [1.0.2] - 2017-08-09
 
 - Add option to underline card names
