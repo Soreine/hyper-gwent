@@ -1,8 +1,9 @@
-/* global chrome */
+/* global browser */
 
+import 'webextension-polyfill';
 import walk from './walk';
 
-chrome.storage.sync.get({
+browser.storage.sync.get({
   shouldUnderline: true,
 }, (options) => {
   walk(options);

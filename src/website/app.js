@@ -1,12 +1,9 @@
-/* global window */
-
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import Logo from './logo.svg';
 import style from './website.css';
 
 function app() {
-  const notUsingChrome = !window.chrome;
   const REDDIT = 'https://www.reddit.com/r/gwent/';
   const GWENTDB = 'http://www.gwentdb.com/';
   const REPO = 'https://github.com/Soreine/hyper-gwent/issues';
@@ -20,14 +17,10 @@ function app() {
       <div className="logo">
         <div className="logo-title"
              innerHTML={Logo} />
-        <div className="logo-subtitle">{'Chrome extension for GWENT®: The Witcher Card Game'}</div>
+        <div className="logo-subtitle">{'Browser extension for GWENT®: The Witcher Card Game'}</div>
       </div>
 
       <a className="download-link" href={EXTENSION}>{'Add to Chrome'}</a>
-
-      {notUsingChrome && <p className="nochrome">
-        This extension is only available for Chrome. The demonstration on this page will not work in other browsers.
-      </p>}
 
       <div className="description">
         <p>

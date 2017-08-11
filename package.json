@@ -23,7 +23,8 @@
     "pluralize": "^6.0.0",
     "remove-accents": "^0.4.1",
     "seamless-immutable": "^7.1.2",
-    "url-parse": "^1.1.9"
+    "url-parse": "^1.1.9",
+    "webextension-polyfill": "^0.1.1"
   },
   "devDependencies": {
     "ava": "^0.18.2",
