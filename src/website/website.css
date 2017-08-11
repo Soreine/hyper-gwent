@@ -37,6 +37,13 @@ body {
     width: 80%;
 }
 
+.nochrome {
+    padding: 0.8em;
+    border: 1px dashed;
+    opacity: 0.6;
+    font-size: 0.8em;
+}
+
 .download-link {
     align-self: center;
 
