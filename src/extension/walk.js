@@ -13,9 +13,7 @@ const GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
 const GWENTDB_HOSTNAME = 'www.gwentdb.com';
 
 // Walk the document and highlight cards
-function walk(options) {
-  const { shouldUnderline = true } = options;
-
+function walk({ shouldUnderline = true } = {}) {
   const HOSTNAME = urlParse(window.location.href).hostname;
 
   const walker = window.document.createTreeWalker(
