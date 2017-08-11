@@ -1,6 +1,6 @@
-/* global browser, document */
+/* global document */
 
-import 'webextension-polyfill';
+import browser from 'webextension-polyfill';
 
 // Saves options to browser.storage.sync.
 function saveOptions() {
@@ -8,7 +8,7 @@ function saveOptions() {
 
   browser.storage.sync.set({
     shouldUnderline,
-  }, () => {
+  }).then(() => {
     // Update status to let user know options were saved.
     const status = document.getElementById('status');
     status.setAttribute('class', 'visible');
@@ -24,7 +24,7 @@ function restoreOptions() {
     // Use default value color = 'red' and likesColor = true.
   browser.storage.sync.get({
     shouldUnderline: true,
-  }, (items) => {
+  }).then((items) => {
     document.getElementById('underline').checked = items.shouldUnderline;
   });
 }

@@ -1,10 +1,8 @@
-/* global browser */
-
-import 'webextension-polyfill';
+import browser from 'webextension-polyfill';
 import walk from './walk';
 
 browser.storage.sync.get({
   shouldUnderline: true,
-}, (options) => {
+}).then((options) => {
   walk(options);
 });
