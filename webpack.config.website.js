@@ -7,7 +7,6 @@ module.exports = Object.assign({}, baseConfig, {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'website.js',
-    chunkFilename: '[chunkhash].js',
   },
   plugins: [
     new HtmlWebpackPlugin({
