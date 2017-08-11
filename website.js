@@ -16399,11 +16399,10 @@ var GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
 var GWENTDB_HOSTNAME = 'www.gwentdb.com';
 
 // Walk the document and highlight cards
-function walk(options) {
-  console.log('OPTIONS', options);
-  var _options$shouldUnderl = options.shouldUnderline,
-      shouldUnderline = _options$shouldUnderl === undefined ? true : _options$shouldUnderl;
-
+function walk() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      _ref$shouldUnderline = _ref.shouldUnderline,
+      shouldUnderline = _ref$shouldUnderline === undefined ? true : _ref$shouldUnderline;
 
   var HOSTNAME = (0, _urlParse2.default)(window.location.href).hostname;
 
@@ -16455,9 +16454,9 @@ function walk(options) {
     }
   }
 
-  nodes.forEach(function (_ref) {
-    var node = _ref.node,
-        matches = _ref.matches;
+  nodes.forEach(function (_ref2) {
+    var node = _ref2.node,
+        matches = _ref2.matches;
 
     var span = window.document.createElement('span');
     span.innerHTML = (0, _replaceMatches2.default)(node.nodeValue, matches, function (match) {
@@ -17620,34 +17619,24 @@ var ALIASES = {
   "Alzur's Double–Cross": ['alzur double cross', 'adc'],
   "Alzur's Thunder": ['alzur thunder', 'thunder', 'zap'],
   Ambassador: [],
-  'Ancient Foglet': [
-    // 'af',
-  ],
+  'Ancient Foglet': [],
   Arachas: [],
   'Arachas Behemoth': ['behemoth'],
-  'Arachas Venom': [
-    // 'av',
-  ],
+  'Arachas Venom': [],
   Archgriffin: [],
-  'Aretuza Adept': [
-    // 'aa',
-  ],
+  'Aretuza Adept': [],
   Assassination: [],
-  'Assire Var Anahid': ['assire'],
+  'Assire var Anahid': ['assire'],
   Auckes: [],
   "Avallac'h": ['avallach'],
   Ballista: [],
   'Barclay Els': ['barclay'],
   "Bekker's Twisted Mirror": ['bekkers twisted mirror', 'btm', 'bekker'],
-  'Berserker Marauder': [
-    // 'bm',
-  ],
+  'Berserker Marauder': [],
   'Birna Bran': ['birna'],
   'Biting Frost': ['frost'],
   'Black Infantry Arbalest': ['arbalest'],
-  'Bloodcurdling Roar': [
-    // 'br',
-  ],
+  'Bloodcurdling Roar': [],
   'Bloody Baron': ['baron'],
   'Blue Mountain Commando': ['bmc'],
   'Blue Stripes Commando': ['bsc'],
@@ -17661,9 +17650,7 @@ var ALIASES = {
   Caranthir: [],
   Caretaker: [],
   Ceallach: [],
-  'Celaeno Harpy': [
-    // 'harpy',
-  ],
+  'Celaeno Harpy': [],
   Cerys: [],
   'Champion of Champions': ['coc'],
   Chort: [],
@@ -17671,10 +17658,8 @@ var ALIASES = {
   Ciri: [],
   'Ciri: Dash': ['cdash', 'ciri dash'],
   'Clan an Craite Raider': ['ccr', 'raider', 'cacr'],
-  'Clan An Craite Warcrier': ['warcrier',
-  // 'warcry',
-  'cacw'],
-  'Clan An Craite Warrior': [],
+  'Clan an Craite Warcrier': ['warcrier', 'cacw'],
+  'Clan an Craite Warrior': [],
   'Clan Brokvar Archer': ['cba'],
   'Clan Brokvar Hunter': ['cbh'],
   'Clan Dimun Pirate': ['cdp'],
@@ -17687,12 +17672,10 @@ var ALIASES = {
   'Clan Tuirseach Skirmishers': ['skirmisher'],
   Cleaver: [],
   'Combat Engineer': ['engineer'],
-  "Commander's Horn": [
-  // 'ch',
-  'horn'],
+  "Commander's Horn": ['horn'],
   'Commando Neophyte': ['neophyte'],
   Coral: [],
-  'Crach An Craite': ['crach'],
+  'Crach an Craite': ['crach'],
   'Crone: Brewess': ['brewess'],
   'Crone: Weavess': ['weavess'],
   'Crone: Whispess': ['whispess'],
@@ -17728,24 +17711,18 @@ var ALIASES = {
   "Ele'yas": ['eleyas'],
   'Elven Mercenary': ['merc'],
   'Elven Wardancer': ['wardancer'],
-  'Emhyr Var Emreis': ['emhyr'],
+  'Emhyr var Emreis': ['emhyr'],
   Emissary: [],
   Epidemic: [],
   Eredin: [],
   Ermion: [],
   Eskel: [],
   'Fake Ciri': [],
-  'Field Medic': [
-    // 'fm',
-  ],
+  'Field Medic': [],
   Fiend: [],
   'Fire Elemental': [],
-  'Fire Scorpion': [
-  // 'fs',
-  'scorpion'],
-  'First Light': [
-    // 'fl',
-  ],
+  'Fire Scorpion': ['scorpion'],
+  'First Light': [],
   Foglet: [],
   Foltest: [],
   Francesca: [],
@@ -17758,9 +17735,7 @@ var ALIASES = {
   'Geralt: Igni': ['igni', 'gigni', 'geralt igni'],
   Ghoul: [],
   'Giant Toad': ['toad', 'frog'],
-  'Grave Hag': [
-    // 'gh',
-  ],
+  'Grave Hag': [],
   Gremist: [],
   Griffin: [],
   'Harald the Cripple': ['htc', 'harald'],
@@ -17774,9 +17749,7 @@ var ALIASES = {
   'Ice Giant': [],
   'Ida Emean': ['ida'],
   Imlerith: [],
-  'Immune Boost': [
-    // 'blizzard',
-  ],
+  'Immune Boost': [],
   'Impenetrable Fog': ['fog'],
   'Impera Brigade': [],
   'Impera Enforcers': [],
@@ -17785,7 +17758,7 @@ var ALIASES = {
   Iris: [],
   Isengrim: [],
   Ithlinne: [],
-  'Joachim De Wett': ['joachim'],
+  'Joachim de Wett': ['joachim'],
   'John Calveit': ['calveit'],
   'John Natalis': ['natalis'],
   Johnny: [],
@@ -17813,9 +17786,7 @@ var ALIASES = {
   Mangonel: [],
   Manticore: [],
   'Manticore Venom': [],
-  'Marching Orders': [
-    // 'mo',
-  ],
+  'Marching Orders': [],
   Mardroeme: ['mushroom', 'shroom'],
   'Margarita Laux–Antille': ['margarita laux antille', 'margarita', 'rita'],
   'Menno Coehoorn': ['menno'],
@@ -17826,20 +17797,14 @@ var ALIASES = {
   Morkvarg: ['wolf'],
   'Morvran Voorhis': ['morvran'],
   Myrgtabrakke: ['myrgta', 'brakke'],
-  "Nature's Gift": [
-    // 'ng',
-  ],
+  "Nature's Gift": [],
   'Nauzicaa Brigade': [],
   'Nauzicaa Standard Bearer': ['nsb', 'standard bearer'],
   Necromancy: [],
   Nekker: [],
-  'Nekker Warrior': [
-    // 'nw',
-  ],
+  'Nekker Warrior': [],
   Nenneke: [],
-  'Nilfgaardian Knight': [
-    // 'nk',
-  ],
+  'Nilfgaardian Knight': [],
   Nithral: [],
   Ocvist: [],
   Odrin: [],
@@ -17869,9 +17834,7 @@ var ALIASES = {
   'Regis: Higher Vampire': ['rhv', 'higher vampire', 'regis higher vampire'],
   'Reinforced Ballista': ['ballista'],
   'Reinforced Siege Tower': ['rst', 'siege tower'],
-  'Reinforced Trebuchet': [
-    // 'rt',
-  ],
+  'Reinforced Trebuchet': [],
   Reinforcement: [],
   Renew: [],
   Restore: ['restoration'],
@@ -17919,14 +17882,12 @@ var ALIASES = {
   'Unseen Elder': ['elder'],
   Vabjorn: [],
   Vanhemar: [],
-  'Vattier De Rideaux': ['vdr', 'vattier'],
+  'Vattier de Rideaux': ['vdr', 'vattier'],
   'Vernon Roche': ['vernon', 'roche'],
   Ves: [],
   Vesemir: [],
   'Vicovaro Medic': [],
-  'Vicovaro Novice': [
-    //    'novice', Too common
-  ],
+  'Vicovaro Novice': [],
   Vilgefortz: [],
   Villentretenmerth: ['borkh'],
   'Vran Warrior': ['vran'],

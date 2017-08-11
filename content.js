@@ -15803,11 +15803,7 @@ var _walk2 = _interopRequireDefault(_walk);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-chrome.storage.sync.get({
-  shouldUnderline: true
-}, function (options) {
-  (0, _walk2.default)(options);
-}); /* global chrome */
+(0, _walk2.default)();
 
 /***/ }),
 /* 8 */
@@ -15852,12 +15848,7 @@ var GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
 var GWENTDB_HOSTNAME = 'www.gwentdb.com';
 
 // Walk the document and highlight cards
-function walk(options) {
-  console.log('OPTIONS', options);
-  var _options$shouldUnderl = options.shouldUnderline,
-      shouldUnderline = _options$shouldUnderl === undefined ? true : _options$shouldUnderl;
-
-
+function walk() {
   var HOSTNAME = (0, _urlParse2.default)(window.location.href).hostname;
 
   var walker = window.document.createTreeWalker(window.document.body, window.NodeFilter.SHOW_ELEMENT + window.NodeFilter.SHOW_TEXT,
@@ -15914,7 +15905,7 @@ function walk(options) {
 
     var span = window.document.createElement('span');
     span.innerHTML = (0, _replaceMatches2.default)(node.nodeValue, matches, function (match) {
-      return '<span class="' + CLASSNAME + '" ' + CARD_NAME_ATTRIBUTE + '="' + match.entryValue + '" ' + (shouldUnderline ? 'style="border-bottom: 1px dashed; padding-bottom: 0.1em"' : '') + '>' + node.nodeValue.slice(match.start, match.end) + '</span>';
+      return '<span class="' + CLASSNAME + '" ' + CARD_NAME_ATTRIBUTE + '="' + match.entryValue + '" style="border-bottom: 1px dashed; padding-bottom: 0.1em">' + node.nodeValue.slice(match.start, match.end) + '</span>';
     });
 
     node.parentNode.replaceChild(span, node);
@@ -16610,8 +16601,7 @@ function matches(dictionary, text) {
 
 
   var nextChar = text[index];
-  var isSpace = !/\w/.test(nextChar);
-  var endOfWord = nextChar === undefined || isSpace;
+  var endOfWord = nextChar === undefined || !/\w/.test(nextChar);
   // Have we found a match yet?
   var isMatch = dictionary[''] && endOfWord;
   var match = {
@@ -17070,8 +17060,8 @@ var ALIASES = {
   'Alba Spearmen': ['spearmen'],
   Albrich: [],
   Alchemist: [],
-  "Alzur's Double–Cross": ['alzur double cross', 'adc'],
-  "Alzur's Thunder": ['alzur thunder', 'thunder', 'zap'],
+  "Alzur's Double–Cross": ['adc'],
+  "Alzur's Thunder": ['thunder', 'zap'],
   Ambassador: [],
   'Ancient Foglet': [
     // 'af',
@@ -17091,7 +17081,7 @@ var ALIASES = {
   "Avallac'h": ['avallach'],
   Ballista: [],
   'Barclay Els': ['barclay'],
-  "Bekker's Twisted Mirror": ['bekkers twisted mirror', 'btm', 'bekker'],
+  "Bekker's Twisted Mirror": ['btm', 'bekker'],
   'Berserker Marauder': [
     // 'bm',
   ],
@@ -17122,7 +17112,7 @@ var ALIASES = {
   Chort: [],
   Ciaran: [],
   Ciri: [],
-  'Ciri: Dash': ['cdash', 'ciri dash'],
+  'Ciri: Dash': ['cdash'],
   'Clan an Craite Raider': ['ccr', 'raider', 'cacr'],
   'Clan An Craite Warcrier': ['warcrier',
   // 'warcry',
@@ -17204,11 +17194,11 @@ var ALIASES = {
   Francesca: [],
   Frightener: [],
   'Fringilla Vigo': ['fringilla'],
-  "Gaunter O'Dimm": ['gaunter odimm', 'gaunter', 'god'],
+  "Gaunter O'Dimm": ['gaunter', 'god'],
   "Ge'els": ['geels'],
   Geralt: [],
-  'Geralt: Aard': ['aard', 'gaard', 'geralt aard'],
-  'Geralt: Igni': ['igni', 'gigni', 'geralt igni'],
+  'Geralt: Aard': ['aard', 'gaard'],
+  'Geralt: Igni': ['igni', 'gigni'],
   Ghoul: [],
   'Giant Toad': ['toad', 'frog'],
   'Grave Hag': [
@@ -17270,9 +17260,9 @@ var ALIASES = {
     // 'mo',
   ],
   Mardroeme: ['mushroom', 'shroom'],
-  'Margarita Laux–Antille': ['margarita laux antille', 'margarita', 'rita'],
+  'Margarita Laux–Antille': ['margarita', 'rita'],
   'Menno Coehoorn': ['menno'],
-  "Merigold's Hailstorm": ['hailstorm', 'hail', 'merigold hailstorm'],
+  "Merigold's Hailstorm": ['hailstorm', 'hail'],
   Milva: [],
   'Monster Nest': ['nest'],
   Morenn: [],
@@ -17296,7 +17286,7 @@ var ALIASES = {
   Nithral: [],
   Ocvist: [],
   Odrin: [],
-  'Old Speartip: Asleep': ['speartip', 'old speartip asleep'],
+  'Old Speartip: Asleep': ['speartip'],
   Olgierd: [],
   Operator: [],
   Overdose: [],
@@ -17317,9 +17307,9 @@ var ALIASES = {
   'Reaver Scout': [],
   'Redanian Elite': [],
   'Redanian Knight': [],
-  'Redanian Knight-Elect': ['rke', 'redanian knight elect'],
+  'Redanian Knight-Elect': ['rke'],
   Regis: [],
-  'Regis: Higher Vampire': ['rhv', 'higher vampire', 'regis higher vampire'],
+  'Regis: Higher Vampire': ['rhv', 'higher vampire'],
   'Reinforced Ballista': ['ballista'],
   'Reinforced Siege Tower': ['rst', 'siege tower'],
   'Reinforced Trebuchet': [
@@ -17347,7 +17337,7 @@ var ALIASES = {
   'Skellige Storm': ['ss'],
   Skjall: [],
   Spotter: [],
-  "Stammelford's Tremors": ['tremors', 'stammelford', 'stammelford tremors'],
+  "Stammelford's Tremors": ['tremors', 'stammelford'],
   'Stefan Skellen': ['stefan'],
   Succubus: [],
   'Summoning Circle': [],
@@ -17365,7 +17355,7 @@ var ALIASES = {
   Treason: [],
   Trebuchet: [],
   'Tridam Infantryman': ['tridam'],
-  'Triss: Butterfly Spell': ['triss butt', 'triss: butt', 'triss butterfly spell'],
+  'Triss: Butterfly Spell': ['triss butt'],
   'Triss Merigold': ['triss'],
   Trollololo: ['trololo'],
   Udalryk: [],
@@ -17377,9 +17367,7 @@ var ALIASES = {
   Ves: [],
   Vesemir: [],
   'Vicovaro Medic': [],
-  'Vicovaro Novice': [
-    //    'novice', Too common
-  ],
+  'Vicovaro Novice': ['novice'],
   Vilgefortz: [],
   Villentretenmerth: ['borkh'],
   'Vran Warrior': ['vran'],
@@ -17402,8 +17390,8 @@ var ALIASES = {
   Yaevinn: [],
   'Yarpen Zigrin': ['yarpen'],
   Yennefer: ['yen'],
-  'Yennefer: The Conjurer': ['yencon', 'yen:con', 'yennefer the conjurer', 'yennefer conjurer'],
-  'Zoltan: Animal Tamer': ['zat', 'zoltan animal tamer'],
+  'Yennefer: The Conjurer': ['yencon'],
+  'Zoltan: Animal Tamer': ['zat'],
   'Zoltan Chivay': ['chivay']
 };
 
@@ -17874,7 +17862,7 @@ exports = module.exports = __webpack_require__(26)(undefined);
 
 
 // module
-exports.push([module.i, ".tooltip {\n  font-family: Arial, sans-serif;\n  font-size: 13px;\n  line-height: 1.5;\n  width: 239px;\n  /* Same as left image padding */\n  padding-right: 62px;\n  /* Should not mess with hovering logic */\n  pointer-events: none;\n}\n\n.tooltipImage {\n  width: 260px;\n  margin-bottom: -27px;\n  background-image: url(" + __webpack_require__(27) + ");\n  background-size: 260px 347px;\n  background-position: top left;\n  background-repeat: no-repeat;\n\n  /*\n   * height of the image when it's loaded\n   * hard coding it here to prevent the tooltip from being resized\n   */\n  height: 347px;\n}\n\n.tooltipBlock {\n  position: relative;\n  color: #e8e8e8;\n  padding: 10px 10px 10px 16px;\n  background-color: #313131;\n  margin: 0 0 5px 62px;\n  border-radius: 2px;\n  overflow: hidden;\n  /* Helps with readability when there is text behind */\n  box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.63);\n}\n\n.tooltipBlock::before {\n  box-sizing: border-box;\n  content: '';\n  display: block;\n  position: absolute;\n  z-index: 0;\n  top: 0;\n  left: 0;\n  width: 6px;\n  height: 100%;\n  border: 1px solid rgba(0, 0, 0, 0.5);\n}\n\n.tooltipBlockEpic::before {\n  background: linear-gradient(-45deg, rgb(157, 86, 216) 0%, rgb(185, 126, 239) 50%, rgb(204, 180, 251) 51%, rgb(135, 78, 210) 100%);\n  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(195, 170, 243, 0.6);\n}\n\n.tooltipBlockRare::before {\n  background: linear-gradient(-45deg, rgb(42, 182, 249) 0%, rgb(88, 183, 228) 50%, rgb(227, 240, 247) 51%,  rgb(0, 172, 255) 100%);\n  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(156, 222, 253, 0.6);\n}\n\n.tooltipBlockCommon::before {\n  background: linear-gradient(-45deg, rgb(117, 117, 117) 0%, rgb(119, 119, 119) 50%, rgb(187, 187, 187) 51%, rgb(86, 86, 86) 100%);\n  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(160, 160, 160, 0.6);\n}\n\n.tooltipBlockLegendary::before {\n  background: linear-gradient(-45deg, rgb(156, 125, 11) 0%, rgb(193, 157, 48) 50%, rgb(245, 226, 148) 51%, rgb(99, 73, 15) 100%);\n  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(210, 200, 151, 0.6);\n}\n\n.tooltipName {\n  font-size: 13px;\n  line-height: 1.2;\n  color: #fff;\n  text-transform: uppercase;\n  font-weight: bold;\n  background: -webkit-linear-gradient(#fff, #999999);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n\n.tooltipInfo {\n}\n", ""]);
+exports.push([module.i, ".tooltip {\n  font-family: Arial, sans-serif;\n  font-size: 13px;\n  line-height: 1.5;\n  width: 239px;\n  /* Same as left image padding */\n  padding-right: 62px;\n  /* Should not mess with hovering logic */\n  pointer-events: none;\n}\n\n.tooltipImage {\n  width: 260px;\n  margin-bottom: -27px;\n  background-image: url(" + __webpack_require__(27) + ");\n  background-size: 260px 347px;\n  background-position: top left;\n  background-repeat: no-repeat;\n\n  /*\n   * height of the image when it's loaded\n   * hard coding it here to prevent the tooltip from being resized\n   */\n  height: 347px;\n}\n\n.tooltipBlock {\n  position: relative;\n  color: #e8e8e8;\n  padding: 10px 10px 10px 16px;\n  background-color: #313131;\n  margin: 0 0 5px 62px;\n  border-radius: 2px;\n  overflow: hidden;\n}\n\n.tooltipBlock::before {\n  box-sizing: border-box;\n  content: '';\n  display: block;\n  position: absolute;\n  z-index: 0;\n  top: 0;\n  left: 0;\n  width: 6px;\n  height: 100%;\n  border: 1px solid rgba(0, 0, 0, 0.5);\n}\n\n.tooltipBlockEpic::before {\n  background: linear-gradient(-45deg, rgb(157, 86, 216) 0%, rgb(185, 126, 239) 50%, rgb(204, 180, 251) 51%, rgb(135, 78, 210) 100%);\n  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(195, 170, 243, 0.6);\n}\n\n.tooltipBlockRare::before {\n  background: linear-gradient(-45deg, rgb(42, 182, 249) 0%, rgb(88, 183, 228) 50%, rgb(227, 240, 247) 51%,  rgb(0, 172, 255) 100%);\n  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(156, 222, 253, 0.6);\n}\n\n.tooltipBlockCommon::before {\n  background: linear-gradient(-45deg, rgb(117, 117, 117) 0%, rgb(119, 119, 119) 50%, rgb(187, 187, 187) 51%, rgb(86, 86, 86) 100%);\n  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(160, 160, 160, 0.6);\n}\n\n.tooltipBlockLegendary::before {\n  background: linear-gradient(-45deg, rgb(156, 125, 11) 0%, rgb(193, 157, 48) 50%, rgb(245, 226, 148) 51%, rgb(99, 73, 15) 100%);\n  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.6), 0 0 8px rgba(210, 200, 151, 0.6);\n}\n\n.tooltipName {\n  font-size: 15px;\n  line-height: 1.2;\n  color: #fff;\n  text-transform: uppercase;\n  font-weight: bold;\n  background: -webkit-linear-gradient(#fff, #999999);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n\n.tooltipInfo {\n}\n", ""]);
 
 // exports
 exports.locals = {
