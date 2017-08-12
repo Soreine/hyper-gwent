@@ -10,7 +10,7 @@ const REDDIT = 'https://www.reddit.com/r/gwent/';
 const GWENTDB = 'http://www.gwentdb.com/';
 const REPO = 'https://github.com/Soreine/hyper-gwent/issues';
 const CHROME_EXTENSION = 'https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo';
-const FIREFOX_EXTENSION = '';
+const FIREFOX_EXTENSION = 'https://addons.mozilla.org/en-US/firefox/addon/hyper-gwent/';
 
 const browser =
      (/firefox/.test(window.navigator.userAgent.toLowerCase()) && 'firefox')
