@@ -6,7 +6,7 @@ module.exports = {
     options: path.resolve(__dirname, './src/extension/options.js'),
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './dist/chrome'),
     filename: '[name].js',
   },
   module: {

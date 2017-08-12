@@ -1,6 +1,7 @@
 ### Custom ###
 dist
-extension.zip
+chrome.zip
+firefox.zip
 src/core/tmp
 
 ### Node ###

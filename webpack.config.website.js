@@ -5,7 +5,7 @@ const baseConfig = require('./webpack.config');
 module.exports = Object.assign({}, baseConfig, {
   entry: path.resolve(__dirname, './src/website'),
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './dist/website'),
     filename: 'website.js',
   },
   plugins: [

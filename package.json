@@ -5,12 +5,14 @@
     "test:watch": "npm test -- --watch",
     "lint": "eslint .",
     "dictionary": "node --harmony_trailing_commas ./src/core/scripts/build_dictionary.js",
-    "build": "webpack; cp icon*.png manifest.json src/extension/options.html dist/",
+    "build": "npm run build:chrome && npm run build:firefox",
+    "build:chrome": "webpack && cp icon*.png manifest.json src/extension/options.html dist/chrome/",
+    "build:firefox": "mkdir -p dist/firefox && cp dist/chrome/** dist/firefox/ && node --harmony_trailing_commas scripts/buildFirefox.js",
     "build:website": "webpack --config webpack.config.website.js",
     "predeploy": "npm run build:website",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist/website",
     "prepack": "npm run build",
-    "pack": "bestzip extension.zip dist/"
+    "pack": "bestzip chrome.zip dist/chrome/ && bestzip firefox.zip dist/firefox/"
   },
   "ava": {
     "require": "babel-register",
