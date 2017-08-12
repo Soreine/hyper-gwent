@@ -12,7 +12,7 @@
     "predeploy": "npm run build:website",
     "deploy": "gh-pages -d dist/website",
     "prepack": "npm run build",
-    "pack": "bestzip chrome.zip dist/chrome/ && bestzip firefox.zip dist/firefox/"
+    "pack": "bestzip chrome.zip dist/chrome/** && bestzip firefox.zip dist/firefox/**"
   },
   "ava": {
     "require": "babel-register",
