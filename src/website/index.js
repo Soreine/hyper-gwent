@@ -9,9 +9,12 @@ import style from './website.css';
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const GWENTDB = 'http://www.gwentdb.com/';
 const REPO = 'https://github.com/Soreine/hyper-gwent/issues';
-const EXTENSION = 'https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo';
+const CHROME_EXTENSION = 'https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo';
+const FIREFOX_EXTENSION = '';
 
-const notUsingChrome = !window.chrome;
+const browser =
+     (/firefox/.test(window.navigator.userAgent.toLowerCase()) && 'firefox')
+  || (window.chrome && 'chrome');
 
 const htmlPage = (
   /* eslint-disable max-len */
@@ -21,13 +24,19 @@ const htmlPage = (
     <div className="logo">
       <div className="logo-title"
         innerHTML={Logo} />
-      <div className="logo-subtitle">{'Chrome extension for GWENT®: The Witcher Card Game'}</div>
+      <div className="logo-subtitle">{'Browser extension for GWENT®: The Witcher Card Game'}</div>
     </div>
 
-    <a className="download-link" href={EXTENSION}>{'Add to Chrome'}</a>
+    {browser === 'chrome' && (
+      <a className="download-link" href={CHROME_EXTENSION}>{'Add to Chrome'}</a>
+    )}
 
-    {notUsingChrome && <p className="nochrome">
-      This extension is only available for Chrome. The demonstration on this page will not work in other browsers.
+    {browser === 'firefox' && (
+      <a className="download-link" href={FIREFOX_EXTENSION}>{'Add to Firefox'}</a>
+    )}
+
+    {!browser && <p className="noextension">
+      Although the demonstration should work in your browser, the extension is only available for Chrome and Firefox.
     </p>}
 
     <div className="description">
@@ -89,7 +98,13 @@ const htmlPage = (
 
     </div>
 
-    <a className="download-link" href={EXTENSION}>{'Add to Chrome'}</a>
+    {browser === 'chrome' && (
+      <a className="download-link" href={CHROME_EXTENSION}>{'Add to Chrome'}</a>
+    )}
+
+    {browser === 'firefox' && (
+      <a className="download-link" href={FIREFOX_EXTENSION}>{'Add to Firefox'}</a>
+    )}
 
     <p>
       {'Special thanks and credit:'}

@@ -37,7 +37,7 @@ body {
     width: 80%;
 }
 
-.nochrome {
+.noextension {
     padding: 0.8em;
     border: 1px dashed;
     opacity: 0.6;
