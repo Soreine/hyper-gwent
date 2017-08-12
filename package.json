@@ -22,7 +22,7 @@
     "remove-accents": "^0.4.1",
     "seamless-immutable": "^7.1.2",
     "url-parse": "^1.1.9",
-    "webextension-polyfill": "^0.1.1"
+    "webextension-polyfill": "zhouzi/webextension-polyfill#d20fa663dd9dba3f09451db54f6748ee5ff86e4b"
   },
   "devDependencies": {
     "ava": "^0.18.2",
