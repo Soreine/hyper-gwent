@@ -18,24 +18,24 @@ The following don't need to be in this list though:
 - Plurals. For example "QGs" for Queensguard and "dun banner light cavalries" are automatically handled.
 - Alternate accentuation. For example "Schirru" is automatically recognized as Schirrú.
 
+## Installation
 
-## Contribute
+1. [Install Node.js](https://nodejs.org/)
+2. Install yarn: `npm install yarn --global`
 
-Install dependencies
+Now, run the following commands to generate the extension code from the sources:
 
 ```
 yarn
-```
-
-Start by building the extension:
-
-```
 yarn run build
 ```
 
-To add the development version of the extension:
-- In Chrome go to More Tools > Extensions.
-- Enable developer mode and click "Load unpacked extension..."
-- Select `dist/` in repository folder
+The generated code is now available in `dist/chrome` and `dist/firefox`.
+Choose the relevant directory in order to load the unpacked extension for development.
 
-The extension should now be installed. To reload the extension from the sources, simply refresh the "Extensions" page. You can also click on "Reload".
+Note: you can also build the sources with the regular `npm` command, simply replace `yarn` with `npm`:
+
+```
+npm
+npm run build
+```
