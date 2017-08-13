@@ -5,6 +5,7 @@
     "test:watch": "npm test -- --watch",
     "lint": "eslint .",
     "dictionary": "node --harmony_trailing_commas ./src/core/scripts/build_dictionary.js",
+    "prebuild": "rm -rf dist",
     "build": "npm run build:chrome && npm run build:firefox",
     "build:chrome": "webpack && cp icon*.png src/extension/options.html dist/chrome/ && node --harmony_trailing_commas scripts/buildChrome.js",
     "build:firefox": "mkdir -p dist/firefox && cp dist/chrome/** dist/firefox/ && node --harmony_trailing_commas scripts/buildFirefox.js",
