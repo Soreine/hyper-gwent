@@ -4,11 +4,12 @@
 import { createElement } from 'jsx-dom';
 import styles from './tooltip.css';
 
-const tooltipElement = card => (
+const tooltipElement = (card, { cardFrame = null } = {}) => (
   <div className={styles.locals.hyperGwentTooltip}>
     <img
       className={styles.locals.hyperGwentTooltipImage}
       data-src={card.variations[0].art.thumbnailImage}
+      style={cardFrame ? `background-image: url(${cardFrame});` : ''}
       alt=""
     />
 
@@ -36,10 +37,10 @@ class CardTooltip {
   // HTML element to live in
   wrapper = null;
 
-  constructor(card, target) {
+  constructor(card, target, assets) {
     this.target = target;
 
-    const tooltip = tooltipElement(card);
+    const tooltip = tooltipElement(card, assets);
     const wrapper = <div style={{
       display: 'none',
       position: 'fixed',
@@ -132,8 +133,8 @@ class CardTooltip {
   }
 }
 
-function attachTooltip(card, target) {
-  const tooltip = new CardTooltip(card, target);
+function attachTooltip(card, target, assets) {
+  const tooltip = new CardTooltip(card, target, assets);
   tooltip.inject();
 }
 

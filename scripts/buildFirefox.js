@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const manifest = require('../manifest.json');
+const manifest = require('../dist/chrome/manifest.json');
 
 fs.writeFileSync(
   path.join(__dirname, '../dist/firefox/manifest.json'),
