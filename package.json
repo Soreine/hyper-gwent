@@ -8,6 +8,7 @@
     "build": "npm run build:chrome && npm run build:firefox",
     "build:chrome": "webpack && cp icon*.png src/extension/options.html dist/chrome/ && node --harmony_trailing_commas scripts/buildChrome.js",
     "build:firefox": "mkdir -p dist/firefox && cp dist/chrome/** dist/firefox/ && node --harmony_trailing_commas scripts/buildFirefox.js",
+    "postbuild:firefox": "mkdir -p dist/firefox/sources && git clone -b firefox git@github.com:Soreine/hyper-gwent.git dist/firefox/sources",
     "build:website": "webpack --config webpack.config.website.js",
     "predeploy": "npm run build:website",
     "deploy": "gh-pages -d dist/website",
