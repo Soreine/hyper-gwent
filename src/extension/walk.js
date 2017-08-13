@@ -3,7 +3,7 @@
 import urlParse from 'url-parse';
 import findAllMatches from '../core/findAllMatches';
 import replaceMatches from '../core/replaceMatches';
-import tooltip from '../core/tooltip/index';
+import tooltip from '../core/tooltip';
 import { CARDS } from '../core/data';
 import DICTIONARY from '../core/dictionary';
 
