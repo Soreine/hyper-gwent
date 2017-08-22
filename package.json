@@ -7,8 +7,8 @@
     "dictionary": "node --harmony_trailing_commas ./src/core/scripts/build_dictionary.js",
     "prebuild": "rm -rf dist",
     "build": "npm run build:chrome && npm run build:firefox",
-    "build:chrome": "webpack && cp icon*.png src/extension/options.html dist/chrome/ && node --harmony_trailing_commas scripts/buildChrome.js",
-    "build:firefox": "mkdir -p dist/firefox && cp dist/chrome/** dist/firefox/ && node --harmony_trailing_commas scripts/buildFirefox.js",
+    "build:chrome": "webpack && cp icon*.png src/extension/options.html dist/chrome/ && node scripts/buildChrome.js",
+    "build:firefox": "mkdir -p dist/firefox && cp dist/chrome/** dist/firefox/ && node scripts/buildFirefox.js",
     "build:website": "webpack --config webpack.config.website.js",
     "predeploy": "npm run build:website",
     "deploy": "gh-pages -d dist/website",
@@ -25,7 +25,7 @@
     "remove-accents": "^0.4.1",
     "seamless-immutable": "^7.1.2",
     "url-parse": "^1.1.9",
-    "webextension-polyfill": "zhouzi/webextension-polyfill#d20fa663dd9dba3f09451db54f6748ee5ff86e4b"
+    "webextension-polyfill": "^0.1.1"
   },
   "devDependencies": {
     "ava": "^0.18.2",
