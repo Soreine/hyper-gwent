@@ -39,3 +39,29 @@ Note: you can also build the sources with the regular `npm` command, simply repl
 npm
 npm run build
 ```
+
+## Updating cards
+
+After every Gwent patch release, the cards data need to be updated. Here's how:
+
+- Clear cached data `rm src/core/tmp/cards.json`
+- Fetch the new cards list `yarn run dictionary`
+- Update the `ALIASES.js` list with missing entries (in the case of new cards).
+  You can easily determine differences by running the tests: `yarn run test`. One test checks for missing cards in `ALIASES.js`.
+- Check that all tests pass: `yarn run test`.
+- Commit the updated data.
+
+## Releasing a new version
+
+To release a new version:
+
+- Make sure all tests pass `yarn run test`.
+- Determine the new version number (using SEMVER) and update `CHANGELOG.md`
+- Set the new version in `manifest.json`
+- Build `yarn run build` and test extensions locally (Chrome and Firefox).
+- Release on Chrome (ask @Soreine)
+  - `yarn run pack`
+  - Upload `chrome.zip` to the Chrome Web Store.
+- Release on Firefox (ask @Zhouzi)
+  - `yarn run pack`
+  - Upload `firefox.zip` to the Firefox store.
