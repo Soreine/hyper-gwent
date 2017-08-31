@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.1.0] - 2017-08-31
 
+- Add support for Firefox
 - Gold Immunity Patch: Updated with updated and new cards and artworks.
 - Enabled extension on https://forums.cdprojektred.com/forum/en/gwent
 - Fixed a bug where editing areas were cleared (for example when modifying a post on Reddit).
