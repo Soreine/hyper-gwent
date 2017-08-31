@@ -12,6 +12,28 @@ const CARD_NAME_ATTRIBUTE = 'data-card-name';
 const GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
 const GWENTDB_HOSTNAME = 'www.gwentdb.com';
 
+const IGNORED_TAGS = [
+  'STYLE',
+  'SCRIPT',
+  'TEXTAREA',
+  'INPUT',
+  'SELECT',
+  'BUTTON',
+  'CANVAS',
+  'CODE',
+  'EMBED',
+  'IFRAME',
+  'IMG',
+  'META',
+  'HEAD',
+  'NOSCRIPT',
+  'OPTGROUP',
+  'OPTION',
+  'VIDEO',
+  'AUDIO',
+  'VAR',
+];
+
 // Walk the document and highlight cards
 function walk({ shouldUnderline = true } = {}, assets) {
   const HOSTNAME = urlParse(window.location.href).hostname;
@@ -36,9 +58,8 @@ function walk({ shouldUnderline = true } = {}, assets) {
         } else if (
           node.nodeType === ELEMENT_NODE
         ) {
-          // Ignore style and scripts
-          if (node.tagName === 'STYLE'
-          || node.tagName === 'SCRIPT') {
+          // Ignore some tags
+          if (IGNORED_TAGS.indexOf(node.tagName) !== -1) {
             return FILTER_REJECT;
           }
 
