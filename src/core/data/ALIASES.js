@@ -348,7 +348,7 @@ const ALIASES = {
     'golem',
   ],
   'Imperial Manticore': [
-    'Manticore',
+    'manticore',
   ],
   Infiltrator: [],
   Iorveth: [],
@@ -487,7 +487,7 @@ const ALIASES = {
     'philippa',
   ],
   'Poor Flanking Infantry': [
-    'Flanking Infantry',
+    'flanking infantry',
   ],
   'Priestess of Freya': [
     'priestess',
