@@ -1,12 +1,14 @@
-/* global chrome, document */
+/* global document */
 
-// Saves options to chrome.storage.sync.
+import browser from 'webextension-polyfill';
+
+// Saves options to browser.storage.sync.
 function saveOptions() {
   const shouldUnderline = document.getElementById('underline').checked;
 
-  chrome.storage.sync.set({
+  browser.storage.sync.set({
     shouldUnderline,
-  }, () => {
+  }).then(() => {
     // Update status to let user know options were saved.
     const status = document.getElementById('status');
     status.setAttribute('class', 'visible');
@@ -17,12 +19,12 @@ function saveOptions() {
 }
 
 // Restores select box and checkbox state using the preferences
-// stored in chrome.storage.
+// stored in browser.storage.
 function restoreOptions() {
     // Use default value color = 'red' and likesColor = true.
-  chrome.storage.sync.get({
+  browser.storage.sync.get({
     shouldUnderline: true,
-  }, (items) => {
+  }).then((items) => {
     document.getElementById('underline').checked = items.shouldUnderline;
   });
 }

@@ -5,12 +5,15 @@
     "test:watch": "npm test -- --watch",
     "lint": "eslint .",
     "dictionary": "node --harmony_trailing_commas ./src/core/scripts/build_dictionary.js",
-    "build": "webpack; cp icon*.png manifest.json src/extension/options.html dist/",
+    "prebuild": "rm -rf dist",
+    "build": "npm run build:chrome && npm run build:firefox",
+    "build:chrome": "webpack && cp icon*.png src/extension/options.html dist/chrome/ && node scripts/buildChrome.js",
+    "build:firefox": "mkdir -p dist/firefox && cp dist/chrome/** dist/firefox/ && node scripts/buildFirefox.js",
     "build:website": "webpack --config webpack.config.website.js",
     "predeploy": "npm run build:website",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist/website",
     "prepack": "npm run build",
-    "pack": "bestzip extension.zip dist/"
+    "pack": "bestzip chrome.zip dist/chrome/** && bestzip firefox.zip dist/firefox/**"
   },
   "ava": {
     "require": "babel-register",
@@ -21,7 +24,8 @@
     "pluralize": "^6.0.0",
     "remove-accents": "^0.4.1",
     "seamless-immutable": "^7.1.2",
-    "url-parse": "^1.1.9"
+    "url-parse": "^1.1.9",
+    "webextension-polyfill": "^0.1.1"
   },
   "devDependencies": {
     "ava": "^0.18.2",
@@ -40,12 +44,12 @@
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0",
     "file-exists": "^4.0.0",
+    "file-loader": "^0.11.2",
     "gh-pages": "^1.0.0",
     "gwent-api-client": "^1.1.0",
     "html-webpack-plugin": "^2.29.0",
     "style-loader": "^0.16.1",
     "svg-inline-loader": "^0.8.0",
-    "url-loader": "^0.5.9",
     "webpack": "^3.0.0"
   }
 }

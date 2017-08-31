@@ -1,9 +1,11 @@
-/* global chrome */
-
+import browser from 'webextension-polyfill';
 import walk from './walk';
+import cardFrame from '../core/tooltip/card-frame.png';
 
-chrome.storage.sync.get({
+browser.storage.sync.get({
   shouldUnderline: true,
-}, (options) => {
-  walk(options);
+}).then((options) => {
+  walk(options, {
+    cardFrame: browser.extension.getURL(cardFrame),
+  });
 });

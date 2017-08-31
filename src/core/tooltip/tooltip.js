@@ -4,24 +4,23 @@
 import { createElement } from 'jsx-dom';
 import styles from './tooltip.css';
 
-const tooltipElement = card => (
-  <div className={styles.locals.tooltip}>
-    <style>{styles.toString()}</style>
-
+const tooltipElement = (card, { cardFrame = null } = {}) => (
+  <div className={styles.locals.hyperGwentTooltip}>
     <img
-      className={styles.locals.tooltipImage}
+      className={styles.locals.hyperGwentTooltipImage}
       data-src={card.variations[0].art.thumbnailImage}
+      style={cardFrame ? `background-image: url(${cardFrame});` : ''}
       alt=""
     />
 
-    <div className={`${styles.locals.tooltipBlock} ${styles.locals.tooltipBlock + card.variations[0].rarity.name}`}>
-      <div className={styles.locals.tooltipName}>
+    <div className={`${styles.locals.hyperGwentTooltipBlock} ${styles.locals.hyperGwentTooltipBlock + card.variations[0].rarity.name}`}>
+      <div className={styles.locals.hyperGwentTooltipName}>
         {card.name}
       </div>
     </div>
 
-    <div className={`${styles.locals.tooltipBlock} ${styles.locals.tooltipBlock + card.variations[0].rarity.name}`}>
-      <div className={styles.locals.tooltipInfo}>
+    <div className={`${styles.locals.hyperGwentTooltipBlock} ${styles.locals.hyperGwentTooltipBlock + card.variations[0].rarity.name}`}>
+      <div className={styles.locals.hyperGwentTooltipInfo}>
         {card.info}
       </div>
     </div>
@@ -33,32 +32,49 @@ class CardTooltip {
   visible = false;
   // Tooltipped element
   target = null;
+  // Outer element used to scope CSS
+  outer = null;
   // HTML element to live in
   wrapper = null;
 
-  constructor(card, target) {
+  constructor(card, target, assets) {
     this.target = target;
 
-    this.wrapper = <hyper-gwent-tooltip style={{
+    const tooltip = tooltipElement(card, assets);
+    const wrapper = <div style={{
       display: 'none',
       position: 'fixed',
       transform: 'translateY(-40%)',
       pointerEvents: 'none',
       zIndex: 999999999,
     }} />;
-    const shadow = this.wrapper.attachShadow({
-      mode: 'closed',
-    });
-    this.wrapper.appendChild(shadow);
+    // Outer's name attribute is just there for easier inspection
+    const outer = (
+      <div
+        className={styles.locals.hyperGwentTooltipOuter}
+        data-card-name={card.name}
+      />
+    );
 
-    this.tooltip = tooltipElement(card);
-    shadow.appendChild(this.tooltip);
+    wrapper.appendChild(tooltip);
+    outer.appendChild(wrapper);
+
+    this.outer = outer;
+    this.wrapper = wrapper;
   }
 
     // Inject this tooltip in the page
   inject() {
-    const { wrapper, target } = this;
-    window.document.body.appendChild(wrapper);
+    const { outer, target } = this;
+
+    window.document.body.appendChild(outer);
+
+    const STYLE_ID = 'hyperGwentStyle';
+    if (window.document.getElementById(STYLE_ID) == null) {
+      const style = <style type="text/css" id={STYLE_ID}>{styles.toString()}</style>;
+      window.document.head.appendChild(style);
+    }
+
     target.addEventListener('mouseenter', () => this.show());
     target.addEventListener('mouseleave', () => this.hide());
     target.addEventListener('mousemove', e => this.follow(e));
@@ -70,9 +86,9 @@ class CardTooltip {
   }
 
   show() {
-    const { wrapper, tooltip } = this;
+    const { wrapper } = this;
 
-    const img = tooltip.querySelector('[data-src]');
+    const img = wrapper.querySelector('[data-src]');
     if (img) {
       img.setAttribute('src', img.getAttribute('data-src'));
       img.removeAttribute('data-src');
@@ -84,7 +100,7 @@ class CardTooltip {
   }
 
   follow(mouseEvent) {
-    const { wrapper, visible, tooltip } = this;
+    const { wrapper, visible } = this;
     if (!visible) {
       return;
     }
@@ -92,24 +108,24 @@ class CardTooltip {
     const { clientX, clientY } = mouseEvent;
 
     const { innerWidth, innerHeight } = window;
-    const tooltipRect = tooltip.getBoundingClientRect();
+    const wrapperRect = wrapper.getBoundingClientRect();
 
     let left = clientX;
-    if (left > innerWidth - tooltipRect.width) {
+    if (left > innerWidth - wrapperRect.width) {
       // Too far on the right
-      left = clientX - tooltipRect.width;
+      left = clientX - wrapperRect.width;
     }
 
     let top = clientY;
     // Do not go below screen
     top = Math.min(
       top,
-      innerHeight - (0.6 * tooltipRect.height), // Because of translateY(-40%)
+      innerHeight - (0.6 * wrapperRect.height), // Because of translateY(-40%)
     );
     // Do not go above screen
     top = Math.max(
       top,
-      0.4 * tooltipRect.height, // Because of translateY(-40%)
+      0.4 * wrapperRect.height, // Because of translateY(-40%)
     );
 
     wrapper.style.top = `${top}px`;
@@ -117,8 +133,8 @@ class CardTooltip {
   }
 }
 
-function attachTooltip(card, target) {
-  const tooltip = new CardTooltip(card, target);
+function attachTooltip(card, target, assets) {
+  const tooltip = new CardTooltip(card, target, assets);
   tooltip.inject();
 }
 

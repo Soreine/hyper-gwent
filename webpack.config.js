@@ -6,13 +6,14 @@ module.exports = {
     options: path.resolve(__dirname, './src/extension/options.js'),
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './dist/chrome'),
     filename: '[name].js',
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: 'babel-loader',
       },
       {
@@ -29,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: 'url-loader',
+        use: 'file-loader',
       },
       {
         test: /\.svg$/,
