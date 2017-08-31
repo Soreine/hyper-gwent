@@ -8,7 +8,7 @@ test('Should find several exact matches in a text', (t) => {
   t.deepEqual(matchedRanges, [
     {
       entryKey: 'grave hag',
-      entryValue: 'Grave Hag',
+      entryValue: 'Mourntart',
       start: 9,
       end: 18,
     },
@@ -33,7 +33,7 @@ test('Should ignore case', (t) => {
   t.deepEqual(matchedRanges, [
     {
       entryKey: 'grave hag',
-      entryValue: 'Grave Hag',
+      entryValue: 'Mourntart',
       start: 9,
       end: 18,
     },

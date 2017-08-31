@@ -1,10 +1,16 @@
 const ALIASES = {
+  Abaya: [
+    'water hag',
+  ],
   'Adrenaline Rush': [
     'arush',
   ],
   Aelirenn: [],
   Aeromancy: [],
   Aglaïs: [],
+  'Alba Armored Cavalry': [
+    'armored cavalry',
+  ],
   'Alba Pikeman': [
     'pikeman',
   ],
@@ -29,9 +35,16 @@ const ALIASES = {
     'behemoth',
   ],
   'Arachas Venom': [],
+  Archespore: [],
   Archgriffin: [],
   'Aretuza Adept': [],
-  Assassination: [],
+  'Artefact Compression': [
+    'artefact',
+  ],
+  Assassin: [],
+  Assassination: [
+    'assassinate',
+  ],
   'Assire var Anahid': [
     'assire',
   ],
@@ -40,9 +53,11 @@ const ALIASES = {
     'avallach',
   ],
   Ballista: [],
+  'Ban Ard Tutor': [],
   'Barclay Els': [
     'barclay',
   ],
+  'Battering Ram': [],
   "Bekker's Twisted Mirror": [
     'bekkers twisted mirror',
     'btm',
@@ -89,7 +104,6 @@ const ALIASES = {
   'Champion of Champions': [
     'coc',
   ],
-  Chort: [],
   Ciaran: [],
   Ciri: [],
   'Ciri: Dash': [
@@ -121,6 +135,9 @@ const ALIASES = {
   'Clan Drummond Shieldmaiden': [
     'cds',
   ],
+  'Clan Drummond Warmonger': [
+    'warmonger',
+  ],
   'Clan Heymaey Skald': [
     'skald',
   ],
@@ -138,7 +155,12 @@ const ALIASES = {
   'Clan Tuirseach Skirmishers': [
     'skirmisher',
   ],
+  'Clan Tuirseach Veteran': [],
+  'Clan an Craite Greatsword': [
+    'greatsword',
+  ],
   Cleaver: [],
+  Cockatrice: [],
   'Combat Engineer': [
     'engineer',
   ],
@@ -161,6 +183,7 @@ const ALIASES = {
   'Crone: Whispess': [
     'whispess',
   ],
+  Cyclops: [],
   Cynthia: [],
   'Cyprian Wiley': [
     'wiley',
@@ -208,6 +231,7 @@ const ALIASES = {
     'donar',
     'hindar',
   ],
+  Dorregaray: [],
   'Draig Bon–Dhu': [
     'draig',
     'bon-dhu',
@@ -224,6 +248,7 @@ const ALIASES = {
     'dblc',
     'light cavalry',
   ],
+  'Dwarven Agitator': ['agitator'],
   'Dwarven Mercenary': [],
   'Dwarven Skirmisher': [],
   'Earth Elemental': [],
@@ -251,9 +276,9 @@ const ALIASES = {
   Ermion: [],
   Eskel: [],
   'Fake Ciri': [],
+  Farseer: [],
   'Field Medic': [],
   Fiend: [],
-  'Fire Elemental': [],
   'Fire Scorpion': [
     'scorpion',
   ],
@@ -265,10 +290,13 @@ const ALIASES = {
   'Fringilla Vigo': [
     'fringilla',
   ],
+  'Full Moon Potion': [
+    'full moon',
+    'immunity boost',
+  ],
   "Gaunter O'Dimm": [
     'gaunter odimm',
     'gaunter',
-    'god',
   ],
   "Ge'els": [
     'geels',
@@ -285,11 +313,6 @@ const ALIASES = {
     'geralt igni',
   ],
   Ghoul: [],
-  'Giant Toad': [
-    'toad',
-    'frog',
-  ],
-  'Grave Hag': [],
   Gremist: [],
   Griffin: [],
   'Harald the Cripple': [
@@ -303,6 +326,7 @@ const ALIASES = {
   ],
   'Hawker Support': [],
   Henselt: [],
+  Herbalist: [],
   Hjalmar: [],
   'Holger Blackhand': [
     'holger',
@@ -311,8 +335,10 @@ const ALIASES = {
   'Ida Emean': [
     'ida',
   ],
+  Ifrit: [
+    'fire elemental',
+  ],
   Imlerith: [],
-  'Immune Boost': [],
   'Impenetrable Fog': [
     'fog',
   ],
@@ -321,6 +347,10 @@ const ALIASES = {
   'Imperial Golem': [
     'golem',
   ],
+  'Imperial Manticore': [
+    'manticore',
+  ],
+  Infiltrator: [],
   Iorveth: [],
   Iris: [],
   Isengrim: [],
@@ -342,9 +372,10 @@ const ALIASES = {
   'Kaedweni Sergeant': [
     'sergeant',
   ],
-  'Kaedweni Siege Platform': [
-    'ksp',
-    'siege platform',
+  'Kaedweni Siege Master': [
+    'kaedweni siege platform',
+    'ksm',
+    'siege master',
   ],
   'Kaedweni Siege Support': [
     'kss',
@@ -374,14 +405,18 @@ const ALIASES = {
   ],
   Lubberkin: [],
   'Madman Lugos': [],
+  'Magne Division': [],
   'Mahakam Defender': [
     'defender',
     'dorf',
   ],
   'Mahakam Guard': [],
+  'Mahakam Marauder': [],
+  'Mahakam Pyrotechnician': [
+    'pyrotechnician',
+  ],
   Malena: [],
   Mangonel: [],
-  Manticore: [],
   'Manticore Venom': [],
   'Marching Orders': [],
   Mardroeme: [
@@ -412,6 +447,12 @@ const ALIASES = {
   'Morvran Voorhis': [
     'morvran',
   ],
+  Morvudd: [
+    'fiend',
+  ],
+  Mourntart: [
+    'grave hag',
+  ],
   Myrgtabrakke: [
     'myrgta',
     'brakke',
@@ -420,13 +461,13 @@ const ALIASES = {
   'Nauzicaa Brigade': [],
   'Nauzicaa Standard Bearer': [
     'nsb',
-    'standard bearer',
   ],
   Necromancy: [],
   Nekker: [],
   'Nekker Warrior': [],
   Nenneke: [],
   'Nilfgaardian Knight': [],
+  'Nilfgaardian Standard Bearer': [],
   Nithral: [],
   Ocvist: [],
   Odrin: [],
@@ -444,6 +485,9 @@ const ALIASES = {
   ],
   'Philippa Eilhart': [
     'philippa',
+  ],
+  'Poor Flanking Infantry': [
+    'flanking infantry',
   ],
   'Priestess of Freya': [
     'priestess',
@@ -498,6 +542,7 @@ const ALIASES = {
   ],
   Roach: [],
   'Rot Tosser': [],
+  Rotfiend: [],
   'Royal Decree': [
     'decree',
   ],
@@ -505,12 +550,16 @@ const ALIASES = {
     'sabrina',
   ],
   Saesenthessis: [],
+  Sage: [],
   Sarah: [],
   Saskia: [],
   'Savage Bear': [
     'bear',
   ],
   Schirrú: [],
+  'School of the Wolf: Eskel': [],
+  'School of the Wolf: Lambert': [],
+  'School of the Wolf: Vesemir': [],
   Scorch: [],
   Serrit: [],
   Shadow: [],
@@ -543,6 +592,7 @@ const ALIASES = {
     'swallow',
   ],
   Sweers: [],
+  'Temerian Drummer': [],
   'Temerian Infantryman': [],
   Thaler: [],
   'The Guardian': [
@@ -557,6 +607,11 @@ const ALIASES = {
   ],
   'Tibor Eggebracht': [
     'tibor',
+  ],
+  'Toad Prince': [
+    'giant toad',
+    'toad',
+    'frog',
   ],
   'Torrential Rain': [
     'rain',
@@ -612,10 +667,10 @@ const ALIASES = {
     'sapper',
   ],
   'Vrihedd Vanguard': [],
-  'War Longship': [
-    'war ship',
+  'War Longship': [],
+  'Whale Harpooner': [
+    'harpooner',
   ],
-  'Water Hag': [],
   'White Frost': [],
   'Wild Boar of the Sea': [
     'wild boar',
@@ -623,6 +678,7 @@ const ALIASES = {
   'Wild Hunt Hound': [
     'hound',
   ],
+  'Wild Hunt Longship': [],
   'Wild Hunt Navigator': [
     'navigator',
   ],
@@ -633,6 +689,7 @@ const ALIASES = {
   'Wild Hunt Warrior': [
     'whw',
   ],
+  'Witch Hunter': [],
   'Woodland Spirit': [
     'leshen',
   ],

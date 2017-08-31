@@ -8,3 +8,10 @@ test('Should be defined for every cards', (t) => {
       Object.keys(CARDS).sort(),
   );
 });
+
+test('Should be lowercase', (t) => {
+  Object.keys(ALIASES).forEach((key) => {
+    const aliases = ALIASES[key];
+    aliases.forEach(alias => t.true(alias.toLowerCase() === alias));
+  });
+});
