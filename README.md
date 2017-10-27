@@ -2,6 +2,10 @@
 
 Chrome extension to preview cards on pages containing GwentⓇ related content.
 
+## Looking for maintainers
+
+This project has become stale. The main reason is because of [#44](https://github.com/Soreine/hyper-gwent/issues/44). Since we have paused playing the game, no update are planned for now.
+
 ## Suggesting alternatives for card names
 
 You can suggest new alternate names for cards. The complete list is here: https://github.com/Soreine/hyper-gwent/blob/master/src/core/data/ALIASES.js
