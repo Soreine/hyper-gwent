@@ -1,9 +1,8 @@
-/* eslint-disable no-console */
+require('isomorphic-fetch');
 const GwentAPI = require('gwent-api-client').default;
 
-
 function fetchCardList() {
-  return GwentAPI.cards.list({ offset: 0, limit: 99999 })
+  return GwentAPI.cards({ offset: 0, limit: 99999 })
   .then(({ results }) => results);
 }
 

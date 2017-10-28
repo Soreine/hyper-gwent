@@ -27,7 +27,8 @@
       {
         "art": {
           "artist": "Adrian Smith",
-          "thumbnailImage": "https://api.gwentapi.com/media/abaya-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/abaya-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/abaya-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -78,7 +79,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/adrenaline-rush-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/adrenaline-rush-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/adrenaline-rush-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -130,7 +132,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/aelirenn-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/aelirenn-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/aelirenn-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -181,7 +184,8 @@
       {
         "art": {
           "artist": "Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/aeromancy-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/aeromancy-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/aeromancy-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -225,7 +229,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/aglais-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/aglais-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/aglais-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -269,13 +274,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 3,
+    "strength": 4,
     "uuid": "oSnyqiN2V4SVdIiByrJzgA",
     "variations": [
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/alba-armored-cavalry-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/alba-armored-cavalry-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/alba-armored-cavalry-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -325,7 +331,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/alba-pikeman-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/alba-pikeman-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/alba-pikeman-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -375,7 +382,8 @@
       {
         "art": {
           "artist": "Bruno Biazotto",
-          "thumbnailImage": "https://api.gwentapi.com/media/alba-spearmen-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/alba-spearmen-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/alba-spearmen-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -423,7 +431,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/albrich-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/albrich-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/albrich-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -463,7 +472,9 @@
     "info": "Deploy: Reveal a card.",
     "name": "Alchemist",
     "positions": [
-      "Ranged"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 8,
     "uuid": "gycZySRxV-2wgUFMzdNuFw",
@@ -471,7 +482,8 @@
       {
         "art": {
           "artist": "Sławomir Maniak",
-          "thumbnailImage": "https://api.gwentapi.com/media/alchemist-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/alchemist-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/alchemist-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -522,7 +534,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/alzur-s-double-cross-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/alzur-s-double-cross-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/alzur-s-double-cross-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -573,7 +586,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/alzur-s-thunder-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/alzur-s-thunder-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/alzur-s-thunder-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -623,7 +637,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/ambassador-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ambassador-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ambassador-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -673,7 +688,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/ancient-foglet-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ancient-foglet-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ancient-foglet-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -721,7 +737,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/arachas-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/arachas-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/arachas-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -769,7 +786,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/arachas-behemoth-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/arachas-behemoth-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/arachas-behemoth-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -820,7 +838,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/arachas-venom-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/arachas-venom-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/arachas-venom-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -857,7 +876,7 @@
       "name": "Bronze"
     },
     "href": "https://api.gwentapi.com/v0/cards/iaz45IvYX1-P4EFdFVb0Pg",
-    "info": "Every turn, at the start of your turn, move this Unit to a random row on its side, Damage a random Enemy by 1 and Reset self.\nDeathwish: Damage a random Enemy by 4.",
+    "info": "Every turn, at the start of your turn, move this Unit to a random row on its side, Damage a random Enemy by 1 and, if Damaged, Reset self.\nDeathwish: Damage a random Enemy by 4.",
     "name": "Archespore",
     "positions": [
       "Melee",
@@ -870,7 +889,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/archespore-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/archespore-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/archespore-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -920,7 +940,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/archgriffin-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/archgriffin-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/archgriffin-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -964,6 +985,8 @@
     "info": "Deploy: Play a random Bronze Weather card from your Deck.",
     "name": "Aretuza Adept",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 3,
@@ -972,7 +995,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/aretuza-adept-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/aretuza-adept-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/aretuza-adept-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1023,7 +1047,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/artefact-compression-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/artefact-compression-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/artefact-compression-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1073,7 +1098,8 @@
       {
         "art": {
           "artist": "Bryan Sola, Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/assassin-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/assassin-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/assassin-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1124,7 +1150,8 @@
       {
         "art": {
           "artist": "Alicja Kapustka",
-          "thumbnailImage": "https://api.gwentapi.com/media/assassination-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/assassination-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/assassination-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1172,7 +1199,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/assire-var-anahid-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/assire-var-anahid-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/assire-var-anahid-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1212,7 +1240,9 @@
     "info": "Deploy: Toggle 2 Units' Lock. If Enemies, Damage them by 1 as well.",
     "name": "Auckes",
     "positions": [
-      "Ranged"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 5,
     "uuid": "8OVcWAxgXDGUZo2qz_ezsA",
@@ -1220,7 +1250,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/auckes-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/auckes-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/auckes-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1270,7 +1301,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/avallac-h-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/avallac-h-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/avallac-h-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1320,7 +1352,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/ballista-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ballista-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ballista-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1361,9 +1394,11 @@
       "name": "Bronze"
     },
     "href": "https://api.gwentapi.com/v0/cards/V2Jw9cvkU4y5L-V7hm_CZw",
-    "info": "Deploy: You may Mulligan a card in your Hand, but choose a Bronze Spell or Alchemy card from your Deck to replace it. Then shuffle your Deck.",
+    "info": "Deploy: You may Mulligan a card, but choose a Bronze Spell or Alchemy card from your Deck to replace it. Then shuffle your Deck.",
     "name": "Ban Ard Tutor",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 9,
@@ -1372,7 +1407,8 @@
       {
         "art": {
           "artist": "Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/ban-ard-tutor-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ban-ard-tutor-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ban-ard-tutor-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1424,7 +1460,8 @@
       {
         "art": {
           "artist": "Grafit Studio ",
-          "thumbnailImage": "https://api.gwentapi.com/media/barclay-els-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/barclay-els-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/barclay-els-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1461,7 +1498,7 @@
       "name": "Bronze"
     },
     "href": "https://api.gwentapi.com/v0/cards/_K9r7i-JUamE7Pkrw1N-1g",
-    "info": "Deploy: Damage an Enemy by 3. If it was Destroyed, Damage another Enemy by 2.\nFresh Crew: Increase the initial Damage by 1.",
+    "info": "Deploy: Damage an Enemy by 2. If it was Destroyed, Damage another Enemy by 3.\nFresh Crew: Increase the initial Damage by 1.",
     "name": "Battering Ram",
     "positions": [
       "Melee",
@@ -1474,7 +1511,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/battering-ram-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/battering-ram-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/battering-ram-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1525,7 +1563,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/bekker-s-twisted-mirror-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/bekker-s-twisted-mirror-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/bekker-s-twisted-mirror-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1573,7 +1612,9 @@
     "info": "Regressing.\nDeploy: Strengthen self by 1 for each Damaged and for each Cursed Ally, then Damage self by 1.",
     "name": "Berserker Marauder",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 8,
     "uuid": "QQKrmedUVbSNfIRJHasS6A",
@@ -1581,7 +1622,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/berserker-marauder-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/berserker-marauder-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/berserker-marauder-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1635,7 +1677,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Katarzyna Redesiuk",
-          "thumbnailImage": "https://api.gwentapi.com/media/birna-bran-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/birna-bran-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/birna-bran-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1689,7 +1732,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/biting-frost-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/biting-frost-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/biting-frost-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1739,7 +1783,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/black-infantry-arbalest-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/black-infantry-arbalest-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/black-infantry-arbalest-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1790,7 +1835,8 @@
       {
         "art": {
           "artist": "Alicja Użarowska",
-          "thumbnailImage": "https://api.gwentapi.com/media/bloodcurdling-roar-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/bloodcurdling-roar-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/bloodcurdling-roar-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1844,7 +1890,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/bloody-baron-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/bloody-baron-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/bloody-baron-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1898,7 +1945,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/blue-mountain-commando-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/blue-mountain-commando-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/blue-mountain-commando-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -1939,7 +1987,7 @@
       "name": "Bronze"
     },
     "href": "https://api.gwentapi.com/v0/cards/hk8QrWJKUNO6shF2lfLHng",
-    "info": "Whenever a different Ally with the same Power as this Unit is played, play this Unit from your Deck (1 copy max) and place it on that Ally's row.",
+    "info": "Whenever a different Temerian Ally with the same Power as this Unit is played, play this Unit from your Deck (1 copy max) and place it on that Ally's row.",
     "name": "Blue Stripes Commando",
     "positions": [
       "Melee",
@@ -1952,7 +2000,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/blue-stripes-commando-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/blue-stripes-commando-3-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/blue-stripes-commando-3-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2006,7 +2055,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/blue-stripes-scout-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/blue-stripes-scout-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/blue-stripes-scout-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2052,13 +2102,14 @@
     "positions": [
       "Melee"
     ],
-    "strength": 7,
+    "strength": 8,
     "uuid": "CRhj7cBlWeSIByK1_kymog",
     "variations": [
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/blueboy-lugos-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/blueboy-lugos-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/blueboy-lugos-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2106,7 +2157,8 @@
       {
         "art": {
           "artist": "Katarzyna Redesiuk",
-          "thumbnailImage": "https://api.gwentapi.com/media/botchling-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/botchling-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/botchling-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2140,7 +2192,9 @@
     "info": "Deploy: Damage an Enemy by this Unit's Power.",
     "name": "Braenn",
     "positions": [
-      "Ranged"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 5,
     "uuid": "F_rXaZNeVuKwn_aKwoCjLQ",
@@ -2148,7 +2202,8 @@
       {
         "art": {
           "artist": "Miles Johnston, Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/braenn-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/braenn-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/braenn-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2200,7 +2255,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/brouver-hoog-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/brouver-hoog-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/brouver-hoog-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2258,7 +2314,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/cahir-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/cahir-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/cahir-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2312,7 +2369,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/cantarella-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/cantarella-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/cantarella-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2366,7 +2424,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/caranthir-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/caranthir-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/caranthir-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2416,7 +2475,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/caretaker-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/caretaker-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/caretaker-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2464,7 +2524,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/ceallach-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ceallach-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ceallach-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2514,7 +2575,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/celaeno-harpy-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/celaeno-harpy-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/celaeno-harpy-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2568,7 +2630,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/cerys-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/cerys-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/cerys-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2618,7 +2681,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/champion-of-champions-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/champion-of-champions-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/champion-of-champions-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2672,7 +2736,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/ciaran-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ciaran-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ciaran-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2722,7 +2787,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/ciri-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ciri-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ciri-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2772,7 +2838,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/ciri-dash-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ciri-dash-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ciri-dash-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2816,15 +2883,18 @@
     "info": "Deploy: Damage 3 Units by 1.",
     "name": "Clan Brokvar Archer",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
-    "strength": 7,
+    "strength": 8,
     "uuid": "irbdjPrfX1ezExZQ1ZkyxA",
     "variations": [
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-brokvar-archer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-brokvar-archer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-brokvar-archer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2876,13 +2946,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 5,
+    "strength": 6,
     "uuid": "m-pK_rH7WRuVvx7JY8YHDw",
     "variations": [
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-brokvar-hunter-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-brokvar-hunter-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-brokvar-hunter-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2936,7 +3007,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-dimun-pirate-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-dimun-pirate-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-dimun-pirate-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -2990,7 +3062,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-dimun-pirate-captain-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-dimun-pirate-captain-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-dimun-pirate-captain-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3042,7 +3115,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-drummond-shieldmaiden-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-drummond-shieldmaiden-3-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-drummond-shieldmaiden-3-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3094,7 +3168,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-drummond-warmonger-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-drummond-warmonger-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-drummond-warmonger-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3148,7 +3223,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-heymaey-skald-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-heymaey-skald-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-heymaey-skald-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3202,7 +3278,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-tordarroch-armorsmith-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-tordarroch-armorsmith-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-tordarroch-armorsmith-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3246,6 +3323,8 @@
     "info": "Deploy: Strengthen an Ally by 2 and give it 2 Armor.",
     "name": "Clan Tordarroch Shieldsmith",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 7,
@@ -3254,7 +3333,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-tordarroch-shieldsmith-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-tordarroch-shieldsmith-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-tordarroch-shieldsmith-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3302,13 +3382,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 3,
+    "strength": 5,
     "uuid": "OBwsQEtRWgWvZWqQ04w1Pw",
     "variations": [
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-tuirseach-axeman-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-tuirseach-axeman-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-tuirseach-axeman-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3360,7 +3441,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-tuirseach-skirmishers-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-tuirseach-skirmishers-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-tuirseach-skirmishers-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3401,10 +3483,12 @@
       "name": "Bronze"
     },
     "href": "https://api.gwentapi.com/v0/cards/AkHt1c6nUB-eZcaINk0B7w",
-    "info": "Veteran 1\nDeploy: Trigger all your different Tuirseach Units' Veteran abilities, wherever they are.",
+    "info": "Veteran 1\nDeploy: Trigger all your other Tuirseach Units' Veteran abilities, wherever they are.",
     "name": "Clan Tuirseach Veteran",
     "positions": [
-      "Ranged"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 7,
     "uuid": "AkHt1c6nUB-eZcaINk0B7w",
@@ -3412,7 +3496,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-tuirseach-veteran-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-tuirseach-veteran-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-tuirseach-veteran-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3466,7 +3551,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-an-craite-greatsword-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-an-craite-greatsword-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-an-craite-greatsword-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3518,7 +3604,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-an-craite-raider-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-an-craite-raider-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-an-craite-raider-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3572,7 +3659,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-an-craite-warcrier-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-an-craite-warcrier-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-an-craite-warcrier-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3616,15 +3704,18 @@
     "info": "Deploy: Damage self by 1.",
     "name": "Clan an Craite Warrior",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
-    "strength": 10,
+    "strength": 11,
     "uuid": "4aafCWy6XE6Vzrcwpk_JVQ",
     "variations": [
       {
         "art": {
           "artist": "Grafit Studio, Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/clan-an-craite-warrior-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/clan-an-craite-warrior-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/clan-an-craite-warrior-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3664,7 +3755,9 @@
     "info": "Deploy: Toggle a Unit's Lock.",
     "name": "Cleaver",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 9,
     "uuid": "cvrYlp_0XQmj-2LvlZVnFQ",
@@ -3672,7 +3765,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/cleaver-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/cleaver-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/cleaver-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3722,7 +3816,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/cockatrice-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/cockatrice-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/cockatrice-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3762,6 +3857,8 @@
     "info": "Deploy: Toggle a Bronze or Silver Unit's Resilience.",
     "name": "Combat Engineer",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 6,
@@ -3770,7 +3867,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/combat-engineer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/combat-engineer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/combat-engineer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3821,7 +3919,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/commander-s-horn-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/commander-s-horn-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/commander-s-horn-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3865,7 +3964,9 @@
     "info": "Whenever you draw a card, Damage a random Enemy by 2.",
     "name": "Commando Neophyte",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 7,
     "uuid": "K28cA2TGWrGm4yItVifZdQ",
@@ -3873,7 +3974,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/commando-neophyte-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/commando-neophyte-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/commando-neophyte-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3923,7 +4025,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/coral-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/coral-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/coral-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -3975,7 +4078,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/crach-an-craite-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/crach-an-craite-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/crach-an-craite-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4027,7 +4131,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/crone-brewess-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/crone-brewess-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/crone-brewess-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4079,7 +4184,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/crone-weavess-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/crone-weavess-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/crone-weavess-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4131,7 +4237,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/crone-whispess-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/crone-whispess-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/crone-whispess-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4179,7 +4286,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/cyclops-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/cyclops-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/cyclops-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4219,7 +4327,9 @@
     "info": "Deploy: Reveal the Highest Unit in your opponent's Hand and Boost self by its Power.",
     "name": "Cynthia",
     "positions": [
-      "Ranged"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 5,
     "uuid": "UTSsWC-XXSad7PMdXsqYhQ",
@@ -4227,7 +4337,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/cynthia-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/cynthia-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/cynthia-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4264,7 +4375,7 @@
       "name": "Silver"
     },
     "href": "https://api.gwentapi.com/v0/cards/FpYlvbJwU3GVcCiM72ZUXw",
-    "info": "Deploy: Weaken a Unit by 3 or Destroy a face-down Ambush Unit before it triggers.",
+    "info": "Deploy: Weaken a Unit by 3 or Destroy a face-down Ambush Unit.",
     "name": "Cyprian Wiley",
     "positions": [
       "Siege"
@@ -4275,7 +4386,8 @@
       {
         "art": {
           "artist": "Alicja Kapustka",
-          "thumbnailImage": "https://api.gwentapi.com/media/cyprian-wiley-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/cyprian-wiley-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/cyprian-wiley-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4323,7 +4435,8 @@
       {
         "art": {
           "artist": "Alicja Kapustka",
-          "thumbnailImage": "https://api.gwentapi.com/media/daerlan-foot-soldiers-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/daerlan-foot-soldiers-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/daerlan-foot-soldiers-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4369,13 +4482,14 @@
     "positions": [
       "Event"
     ],
-    "strength": 6,
+    "strength": 5,
     "uuid": "a8bdVQGjV6KaullcE8mc9Q",
     "variations": [
       {
         "art": {
           "artist": "Alejandro Mirabal",
-          "thumbnailImage": "https://api.gwentapi.com/media/dagon-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dagon-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dagon-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4425,7 +4539,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/dandelion-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dandelion-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dandelion-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4476,7 +4591,8 @@
       {
         "art": {
           "artist": "Alicja Użarowska",
-          "thumbnailImage": "https://api.gwentapi.com/media/decoy-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/decoy-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/decoy-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4520,7 +4636,9 @@
     "info": "Deploy: Strengthen all other Dwarves in your Deck, Hand and on your side of the Board by 1.",
     "name": "Dennis Cranmer",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 8,
     "uuid": "8qI4jHv4XQqEumzjxOZXTg",
@@ -4528,7 +4646,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/dennis-cranmer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dennis-cranmer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dennis-cranmer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4580,7 +4699,8 @@
       {
         "art": {
           "artist": "Lasahido Lius",
-          "thumbnailImage": "https://api.gwentapi.com/media/dethmold-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dethmold-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dethmold-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4632,13 +4752,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 3,
+    "strength": 4,
     "uuid": "f1KVhgFIViqvMH_o5VTBNA",
     "variations": [
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/dijkstra-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dijkstra-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dijkstra-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4689,7 +4810,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/dimeritium-bomb-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dimeritium-bomb-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dimeritium-bomb-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4740,7 +4862,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/dimeritium-shackles-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dimeritium-shackles-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dimeritium-shackles-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4790,7 +4913,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/djenge-frett-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/djenge-frett-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/djenge-frett-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4834,7 +4958,9 @@
     "info": "Deploy: Damage Enemies by 3 and then 1.",
     "name": "Dol Blathanna Archer",
     "positions": [
-      "Ranged"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 6,
     "uuid": "Vhp_DlSyXROg2jOmNeQCFA",
@@ -4842,7 +4968,8 @@
       {
         "art": {
           "artist": "Ilker Serdar Yildiz",
-          "thumbnailImage": "https://api.gwentapi.com/media/dol-blathanna-archer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dol-blathanna-archer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dol-blathanna-archer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4896,7 +5023,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/dol-blathanna-marksman-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dol-blathanna-marksman-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dol-blathanna-marksman-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -4950,7 +5078,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/dol-blathanna-protector-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dol-blathanna-protector-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dol-blathanna-protector-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5002,7 +5131,8 @@
       {
         "art": {
           "artist": "Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/dol-blathanna-trapper-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dol-blathanna-trapper-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dol-blathanna-trapper-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5054,7 +5184,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/donar-an-hindar-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/donar-an-hindar-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/donar-an-hindar-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5102,7 +5233,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/dorregaray-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dorregaray-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dorregaray-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5150,7 +5282,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/draig-bon-dhu-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/draig-bon-dhu-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/draig-bon-dhu-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5204,7 +5337,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/draug-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/draug-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/draug-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5255,7 +5389,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/drought-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/drought-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/drought-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5305,7 +5440,8 @@
       {
         "art": {
           "artist": "Adrian Smith",
-          "thumbnailImage": "https://api.gwentapi.com/media/drowner-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/drowner-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/drowner-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5355,7 +5491,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/dudu-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dudu-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dudu-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5399,15 +5536,18 @@
     "info": "Deploy: Remove Armor from a Unit and Boost self by the amount of Armor removed.",
     "name": "Dun Banner Heavy Cavalry",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
-    "strength": 8,
+    "strength": 7,
     "uuid": "eVAFOwdNU6ip9AyvBm8DWQ",
     "variations": [
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/dun-banner-heavy-cavalry-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dun-banner-heavy-cavalry-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dun-banner-heavy-cavalry-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5459,7 +5599,8 @@
       {
         "art": {
           "artist": "Lasahido Lius",
-          "thumbnailImage": "https://api.gwentapi.com/media/dun-banner-light-cavalry-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dun-banner-light-cavalry-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dun-banner-light-cavalry-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5507,13 +5648,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 3,
+    "strength": 2,
     "uuid": "gz2KEIIWXpq0v3ry2GZfnA",
     "variations": [
       {
         "art": {
           "artist": "Grafit Studio, Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/dwarven-agitator-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dwarven-agitator-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dwarven-agitator-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5567,7 +5709,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/dwarven-mercenary-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dwarven-mercenary-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dwarven-mercenary-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5611,6 +5754,8 @@
     "info": "Deploy: Damage an Enemy by 3. If it was not Destroyed, Strengthen self by 2.",
     "name": "Dwarven Skirmisher",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 6,
@@ -5619,7 +5764,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/dwarven-skirmisher-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/dwarven-skirmisher-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/dwarven-skirmisher-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5667,7 +5813,8 @@
       {
         "art": {
           "artist": "Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/earth-elemental-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/earth-elemental-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/earth-elemental-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5715,7 +5862,8 @@
       {
         "art": {
           "artist": "Dário Coelho",
-          "thumbnailImage": "https://api.gwentapi.com/media/eithne-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/eithne-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/eithne-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5765,7 +5913,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/ekimmara-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ekimmara-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ekimmara-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5819,7 +5968,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/ele-yas-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ele-yas-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ele-yas-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5873,7 +6023,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/elven-mercenary-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/elven-mercenary-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/elven-mercenary-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5921,13 +6072,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 4,
+    "strength": 3,
     "uuid": "Xf2XAN9mXJ26xMlCGPRWYg",
     "variations": [
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/elven-wardancer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/elven-wardancer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/elven-wardancer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -5973,13 +6125,14 @@
     "positions": [
       "Event"
     ],
-    "strength": 6,
+    "strength": 7,
     "uuid": "l0iUO6eWWMSA7Z0jLWXRSw",
     "variations": [
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/emhyr-var-emreis-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/emhyr-var-emreis-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/emhyr-var-emreis-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6029,7 +6182,8 @@
       {
         "art": {
           "artist": "Bruno Biazotto",
-          "thumbnailImage": "https://api.gwentapi.com/media/emissary-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/emissary-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/emissary-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6080,7 +6234,8 @@
       {
         "art": {
           "artist": "Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/epidemic-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/epidemic-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/epidemic-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6132,7 +6287,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/eredin-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/eredin-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/eredin-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6182,7 +6338,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/ermion-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ermion-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ermion-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6232,7 +6389,8 @@
       {
         "art": {
           "artist": "Chris Rallis, Alicja Kapustka",
-          "thumbnailImage": "https://api.gwentapi.com/media/eskel-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/eskel-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/eskel-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6282,7 +6440,8 @@
       {
         "art": {
           "artist": "Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/fake-ciri-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/fake-ciri-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/fake-ciri-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6323,7 +6482,7 @@
       "name": "Bronze"
     },
     "href": "https://api.gwentapi.com/v0/cards/Wm7LhekBVS2FYsq_hc5edQ",
-    "info": "If a different Ally or Unit in your Hand or Deck is Boosted during your turn, Boost self by 2 at the end of the turn.",
+    "info": "If a different Ally or Unit in your Hand is Boosted during your turn, Boost self by 2 at the end of the turn.",
     "name": "Farseer",
     "positions": [
       "Melee",
@@ -6336,7 +6495,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/farseer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/farseer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/farseer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6376,6 +6536,8 @@
     "info": "Deploy: Choose a different Bronze Ally and shuffle it back into your Deck, then play a random Bronze Unit from your Deck.",
     "name": "Field Medic",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 6,
@@ -6384,7 +6546,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/field-medic-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/field-medic-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/field-medic-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6434,7 +6597,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/fiend-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/fiend-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/fiend-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6482,7 +6646,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/fire-scorpion-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/fire-scorpion-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/fire-scorpion-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6529,7 +6694,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/first-light-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/first-light-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/first-light-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6579,7 +6745,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/foglet-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/foglet-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/foglet-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6625,13 +6792,14 @@
     "positions": [
       "Event"
     ],
-    "strength": 4,
+    "strength": 5,
     "uuid": "Zk8arw13UJqR9A3Ego82XA",
     "variations": [
       {
         "art": {
           "artist": "KD Stanton",
-          "thumbnailImage": "https://api.gwentapi.com/media/foltest-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/foltest-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/foltest-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6653,6 +6821,10 @@
   },
   "Francesca": {
     "categories": [
+      {
+        "href": "https://api.gwentapi.com/v0/categories/HfaxmUTjWtO4xGZDRNRzvQ",
+        "name": "Mage"
+      },
       {
         "href": "https://api.gwentapi.com/v0/categories/OmmwzaNVX3y8Tum_hmXs7A",
         "name": "Leader"
@@ -6683,7 +6855,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/francesca-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/francesca-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/francesca-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6741,7 +6914,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/frightener-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/frightener-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/frightener-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6795,7 +6969,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/fringilla-vigo-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/fringilla-vigo-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/fringilla-vigo-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6846,7 +7021,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/full-moon-potion-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/full-moon-potion-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/full-moon-potion-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6896,7 +7072,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/gaunter-o-dimm-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/gaunter-o-dimm-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/gaunter-o-dimm-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -6950,7 +7127,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/ge-els-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ge-els-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ge-els-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7000,7 +7178,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/geralt-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/geralt-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/geralt-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7050,7 +7229,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/geralt-aard-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/geralt-aard-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/geralt-aard-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7100,7 +7280,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/geralt-igni-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/geralt-igni-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/geralt-igni-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7140,7 +7321,9 @@
     "info": "Deploy: Consume a Bronze Unit from your Graveyard.",
     "name": "Ghoul",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 4,
     "uuid": "h-JdQJhcWC23Ml8rXWra2g",
@@ -7148,7 +7331,8 @@
       {
         "art": {
           "artist": "Adrian Smith",
-          "thumbnailImage": "https://api.gwentapi.com/media/ghoul-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ghoul-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ghoul-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7196,7 +7380,8 @@
       {
         "art": {
           "artist": "Bruno Biazotto",
-          "thumbnailImage": "https://api.gwentapi.com/media/gremist-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/gremist-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/gremist-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7236,15 +7421,18 @@
     "info": "Deploy: Trigger the Deathwish of a Bronze Ally.",
     "name": "Griffin",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
-    "strength": 8,
+    "strength": 9,
     "uuid": "VJP1zx2JVFSv70nFW1aygQ",
     "variations": [
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/griffin-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/griffin-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/griffin-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7285,18 +7473,19 @@
       "name": "Leader"
     },
     "href": "https://api.gwentapi.com/v0/cards/QZioC31FWQCiwJfvIO9Bmw",
-    "info": "Doomed, Stubborn.\nEvery turn, at the start of your turn, Damage the Lowest Enemy on the opposite row by 1 (ignoring Armor).\nDeploy: Damage a random Enemy on the opposite row by 1 (ignoring Armor). Repeat 4 times.",
+    "info": "Doomed, Stubborn.\nEvery turn, at the start of your turn, Damage the Lowest Enemy on the opposite row by 1 (ignoring Armor).\nDeploy: Damage a random Enemy on the opposite row by 2 (ignoring Armor). Repeat 4 times.",
     "name": "Harald the Cripple",
     "positions": [
       "Event"
     ],
-    "strength": 6,
+    "strength": 5,
     "uuid": "QZioC31FWQCiwJfvIO9Bmw",
     "variations": [
       {
         "art": {
           "artist": "Tokkun Studio, Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/harald-the-cripple-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/harald-the-cripple-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/harald-the-cripple-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7333,7 +7522,7 @@
       "name": "Bronze"
     },
     "href": "https://api.gwentapi.com/v0/cards/7YljdPHXX7ur0qmSjmCKyw",
-    "info": "Counter 3: While this Unit is in your Deck, decrease the Counter whenever an Allied Beast appears. When the Counter reaches 0, play this Unit on a random row from your Deck. Note: only 1 Harpy's Counter is active at a time.\nDeploy: Damage the Lowest Enemy by 1.",
+    "info": "Counter 3: While this Unit is in your Deck, decrease the Counter whenever you play a Beast Ally. When the Counter reaches 0, play this Unit on a random row from your Deck. Note: only 1 Harpy's Counter is active at a time.\nDeploy: Damage the Lowest Enemy by 1.",
     "name": "Harpy",
     "positions": [
       "Melee",
@@ -7346,7 +7535,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/harpy-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/harpy-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/harpy-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7400,7 +7590,8 @@
       {
         "art": {
           "artist": "Ilker Serdar Yildiz",
-          "thumbnailImage": "https://api.gwentapi.com/media/hawker-healer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/hawker-healer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/hawker-healer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7454,7 +7645,8 @@
       {
         "art": {
           "artist": "Ilker Serdar Yildiz",
-          "thumbnailImage": "https://api.gwentapi.com/media/hawker-smuggler-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/hawker-smuggler-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/hawker-smuggler-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7502,7 +7694,8 @@
       {
         "art": {
           "artist": "Ilker Serdar Yildiz",
-          "thumbnailImage": "https://api.gwentapi.com/media/hawker-support-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/hawker-support-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/hawker-support-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7543,7 +7736,7 @@
       "name": "Leader"
     },
     "href": "https://api.gwentapi.com/v0/cards/lsF-j3LrVWyS01whktOyyg",
-    "info": "Doomed, Stubborn.\nDeploy: Choose a Bronze Support, Machine or Kaedwen Ally. Play all copies of it from your Deck.\nCrewmen 1.",
+    "info": "Doomed, Stubborn.\nDeploy: Choose a Bronze Support, Machine or Kaedweni Ally. Play all copies of it from your Deck.\nCrewmen 1.",
     "name": "Henselt",
     "positions": [
       "Event"
@@ -7554,7 +7747,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Marek Madej.",
-          "thumbnailImage": "https://api.gwentapi.com/media/henselt-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/henselt-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/henselt-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7600,13 +7794,14 @@
     "positions": [
       "Ranged"
     ],
-    "strength": 1,
+    "strength": 2,
     "uuid": "2sqfLQABXmOUg8IVTGdtbA",
     "variations": [
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/herbalist-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/herbalist-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/herbalist-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7660,7 +7855,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/hjalmar-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/hjalmar-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/hjalmar-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7712,7 +7908,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/holger-blackhand-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/holger-blackhand-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/holger-blackhand-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7762,7 +7959,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/ice-giant-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ice-giant-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ice-giant-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7814,7 +8012,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/ida-emean-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ida-emean-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ida-emean-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7862,7 +8061,8 @@
       {
         "art": {
           "artist": "Bayard Wu ",
-          "thumbnailImage": "https://api.gwentapi.com/media/ifrit-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ifrit-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ifrit-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7916,7 +8116,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/imlerith-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/imlerith-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/imlerith-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -7970,7 +8171,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/impenetrable-fog-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/impenetrable-fog-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/impenetrable-fog-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8020,7 +8222,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/impera-brigade-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/impera-brigade-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/impera-brigade-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8070,7 +8273,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/impera-enforcers-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/impera-enforcers-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/impera-enforcers-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8118,7 +8322,8 @@
       {
         "art": {
           "artist": "Ilker Serdar Yildiz",
-          "thumbnailImage": "https://api.gwentapi.com/media/imperial-golem-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/imperial-golem-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/imperial-golem-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8158,6 +8363,8 @@
     "info": "No ability.",
     "name": "Imperial Manticore",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 12,
@@ -8166,7 +8373,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/imperial-manticore-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/imperial-manticore-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/imperial-manticore-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8216,7 +8424,8 @@
       {
         "art": {
           "artist": "Bruno Biazotto",
-          "thumbnailImage": "https://api.gwentapi.com/media/infiltrator-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/infiltrator-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/infiltrator-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8270,7 +8479,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/iorveth-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/iorveth-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/iorveth-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8315,7 +8525,7 @@
       "name": "Silver"
     },
     "href": "https://api.gwentapi.com/v0/cards/T7oAkMz1WZ6MTKQJ7w2qFA",
-    "info": "Deathwish: Boost all Units on the other side of the Board by 3.",
+    "info": "Deathwish: Boost 5 random Units on the other side of the Board by 5.",
     "name": "Iris",
     "positions": [
       "Melee",
@@ -8328,7 +8538,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/iris-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/iris-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/iris-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8382,7 +8593,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/isengrim-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/isengrim-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/isengrim-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8407,10 +8619,6 @@
       {
         "href": "https://api.gwentapi.com/v0/categories/HfaxmUTjWtO4xGZDRNRzvQ",
         "name": "Mage"
-      },
-      {
-        "href": "https://api.gwentapi.com/v0/categories/PfQfTIQrVfG0lpvjNOieKw",
-        "name": "Agent"
       },
       {
         "href": "https://api.gwentapi.com/v0/categories/x9Kd2sk1U2mnrvC2n6MI7w",
@@ -8440,7 +8648,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/ithlinne-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ithlinne-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ithlinne-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8494,7 +8703,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/joachim-de-wett-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/joachim-de-wett-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/joachim-de-wett-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8546,7 +8756,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/john-calveit-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/john-calveit-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/john-calveit-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8600,7 +8811,8 @@
       {
         "art": {
           "artist": "Grafit Studio ",
-          "thumbnailImage": "https://api.gwentapi.com/media/john-natalis-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/john-natalis-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/john-natalis-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8640,6 +8852,8 @@
     "info": "Deploy: You may Discard a card from your Hand and create a base copy in your Hand of a random card of the same color in your opponent's Deck (if there are any - if not, keep your card).",
     "name": "Johnny",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 8,
@@ -8648,7 +8862,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/johnny-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/johnny-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/johnny-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8698,7 +8913,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/jotunn-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/jotunn-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/jotunn-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8742,7 +8958,9 @@
     "info": "Veteran 1.\nDeploy: Damage self by 1.",
     "name": "Jutta an Dimun",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 12,
     "uuid": "jJ53AXQ2XSea6Gp5F9oNZg",
@@ -8750,7 +8968,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/jutta-an-dimun-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/jutta-an-dimun-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/jutta-an-dimun-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8804,7 +9023,8 @@
       {
         "art": {
           "artist": " Ilker Serdar Yildiz",
-          "thumbnailImage": "https://api.gwentapi.com/media/kaedweni-sergeant-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/kaedweni-sergeant-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/kaedweni-sergeant-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8858,7 +9078,8 @@
       {
         "art": {
           "artist": "Form Language Studio, Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/kaedweni-siege-master-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/kaedweni-siege-master-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/kaedweni-siege-master-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8912,7 +9133,8 @@
       {
         "art": {
           "artist": "Filipe Pagliuso, Alicja Kapustka",
-          "thumbnailImage": "https://api.gwentapi.com/media/kaedweni-siege-support-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/kaedweni-siege-support-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/kaedweni-siege-support-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -8949,7 +9171,7 @@
       "name": "Gold"
     },
     "href": "https://api.gwentapi.com/v0/cards/R_Y8f2-qVwOjRJyJ28Iydw",
-    "info": "Doomed.\nDeathwish: Spawn Hemdall on the other side of the Board.",
+    "info": "Doomed.\nDeathwish: Spawn Hemdall.",
     "name": "Kambi",
     "positions": [
       "Melee",
@@ -8962,7 +9184,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/kambi-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/kambi-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/kambi-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9010,7 +9233,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/katakan-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/katakan-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/katakan-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9060,7 +9284,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/kayran-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/kayran-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/kayran-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9114,7 +9339,8 @@
       {
         "art": {
           "artist": "Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/keira-metz-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/keira-metz-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/keira-metz-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9166,7 +9392,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/king-bran-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/king-bran-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/king-bran-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9218,7 +9445,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/king-of-beggars-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/king-of-beggars-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/king-of-beggars-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9272,7 +9500,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/lacerate-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/lacerate-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/lacerate-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9322,7 +9551,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/lambert-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/lambert-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/lambert-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9372,7 +9602,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/leo-bonhart-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/leo-bonhart-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/leo-bonhart-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9426,7 +9657,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/letho-of-gulet-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/letho-of-gulet-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/letho-of-gulet-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9484,7 +9716,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/light-longship-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/light-longship-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/light-longship-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9532,7 +9765,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/lubberkin-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/lubberkin-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/lubberkin-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9586,7 +9820,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/madman-lugos-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/madman-lugos-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/madman-lugos-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9636,7 +9871,8 @@
       {
         "art": {
           "artist": "Bruno Biazotto",
-          "thumbnailImage": "https://api.gwentapi.com/media/magne-division-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/magne-division-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/magne-division-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9688,7 +9924,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/mahakam-defender-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/mahakam-defender-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/mahakam-defender-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9732,7 +9969,9 @@
     "info": "Deploy: Boost an Ally by 4. If it's a Dwarf, Strengthen it by 3 instead.",
     "name": "Mahakam Guard",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 6,
     "uuid": "g__c5lOwV3yyY2TL1kyKCg",
@@ -9740,7 +9979,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/mahakam-guard-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/mahakam-guard-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/mahakam-guard-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9788,13 +10028,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 8,
+    "strength": 7,
     "uuid": "hVwc5_czVYS-uSeTlVWpYQ",
     "variations": [
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/mahakam-marauder-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/mahakam-marauder-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/mahakam-marauder-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9848,7 +10089,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/mahakam-pyrotechnician-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/mahakam-pyrotechnician-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/mahakam-pyrotechnician-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9902,7 +10144,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/malena-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/malena-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/malena-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -9942,6 +10185,8 @@
     "info": "Whenever you Reveal a card in either player's Hand, Damage a random Enemy by 2.",
     "name": "Mangonel",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 7,
@@ -9950,7 +10195,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/mangonel-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/mangonel-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/mangonel-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10001,7 +10247,8 @@
       {
         "art": {
           "artist": "Alicja Kapustka",
-          "thumbnailImage": "https://api.gwentapi.com/media/manticore-venom-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/manticore-venom-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/manticore-venom-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10052,7 +10299,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/marching-orders-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/marching-orders-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/marching-orders-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10103,7 +10351,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/mardroeme-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/mardroeme-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/mardroeme-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10155,7 +10404,8 @@
       {
         "art": {
           "artist": "Filipe Pagliuso, Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/margarita-laux-antille-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/margarita-laux-antille-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/margarita-laux-antille-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10205,7 +10455,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/menno-coehoorn-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/menno-coehoorn-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/menno-coehoorn-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10246,7 +10497,7 @@
       "name": "Silver"
     },
     "href": "https://api.gwentapi.com/v0/cards/e8-2AShUXZ-EYGRjCY1h9g",
-    "info": "Damage all Units on a row by half their Power (rounding up and ignoring Armor).",
+    "info": "Damage all Bronze and Silver Units on a row by half their Power (rounding up and ignoring Armor).",
     "name": "Merigold's Hailstorm",
     "positions": [
       "Melee",
@@ -10259,7 +10510,8 @@
       {
         "art": {
           "artist": "Bruno Biazotto",
-          "thumbnailImage": "https://api.gwentapi.com/media/merigold-s-hailstorm-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/merigold-s-hailstorm-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/merigold-s-hailstorm-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10309,7 +10561,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/milva-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/milva-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/milva-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10360,7 +10613,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/monster-nest-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/monster-nest-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/monster-nest-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10404,13 +10658,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 8,
+    "strength": 7,
     "uuid": "Sswu68AcXpGccwTVJ43puQ",
     "variations": [
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/morenn-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/morenn-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/morenn-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10458,7 +10713,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/morkvarg-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/morkvarg-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/morkvarg-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10504,13 +10760,14 @@
     "positions": [
       "Event"
     ],
-    "strength": 6,
+    "strength": 7,
     "uuid": "AQkgzstLXZq9GwDdBheEuQ",
     "variations": [
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/morvran-voorhis-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/morvran-voorhis-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/morvran-voorhis-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10558,7 +10815,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/morvudd-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/morvudd-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/morvudd-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10608,7 +10866,8 @@
       {
         "art": {
           "artist": "Adrian Smith",
-          "thumbnailImage": "https://api.gwentapi.com/media/mourntart-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/mourntart-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/mourntart-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10648,7 +10907,9 @@
     "info": "Deploy: Damage Units by 2, 2 and then 1.",
     "name": "Myrgtabrakke",
     "positions": [
-      "Ranged"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 7,
     "uuid": "X-K0NrOnUCqHTH1Tdvte6w",
@@ -10656,7 +10917,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/myrgtabrakke-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/myrgtabrakke-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/myrgtabrakke-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10707,7 +10969,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/nature-s-gift-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/nature-s-gift-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/nature-s-gift-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10757,7 +11020,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/nauzicaa-brigade-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/nauzicaa-brigade-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/nauzicaa-brigade-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10811,7 +11075,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/nauzicaa-standard-bearer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/nauzicaa-standard-bearer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/nauzicaa-standard-bearer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10862,7 +11127,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/necromancy-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/necromancy-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/necromancy-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10910,7 +11176,8 @@
       {
         "art": {
           "artist": "Katarzyna Redesiuk",
-          "thumbnailImage": "https://api.gwentapi.com/media/nekker-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/nekker-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/nekker-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10950,7 +11217,9 @@
     "info": "Deploy: Choose a Bronze Ally and create 2 base copies of it on the bottom of your Deck.",
     "name": "Nekker Warrior",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 7,
     "uuid": "ikJuWdcZW0OOuCyhiD2lWg",
@@ -10958,7 +11227,8 @@
       {
         "art": {
           "artist": "Adrian Smith",
-          "thumbnailImage": "https://api.gwentapi.com/media/nekker-warrior-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/nekker-warrior-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/nekker-warrior-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -10999,9 +11269,11 @@
       "name": "Silver"
     },
     "href": "https://api.gwentapi.com/v0/cards/lvGOfYlGUwW2tvkoiHmjkw",
-    "info": "Deploy: Shuffle up to 3 Bronze or Silver cards from your Graveyard into your Deck.",
+    "info": "Deploy: Shuffle up to 3 Bronze or Silver Units from your Graveyard into your Deck.",
     "name": "Nenneke",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 8,
@@ -11010,7 +11282,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/nenneke-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/nenneke-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/nenneke-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11050,7 +11323,9 @@
     "info": "Deploy: Gain 2 Armor.\nDeploy: Reveal a random card from your Hand.",
     "name": "Nilfgaardian Knight",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 10,
     "uuid": "quc_DfieVC6SUblOZPEL5A",
@@ -11058,7 +11333,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/nilfgaardian-knight-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/nilfgaardian-knight-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/nilfgaardian-knight-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11112,7 +11388,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/nilfgaardian-standard-bearer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/nilfgaardian-standard-bearer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/nilfgaardian-standard-bearer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11166,7 +11443,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/nithral-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/nithral-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/nithral-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11206,6 +11484,8 @@
     "info": "After 4 turns, at the start of your turn, Damage all Enemies by 1, return this Unit to your Hand and transform it into Exhausted Ocvist.",
     "name": "Ocvist",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 7,
@@ -11214,7 +11494,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/ocvist-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ocvist-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ocvist-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11255,7 +11536,7 @@
       "name": "Silver"
     },
     "href": "https://api.gwentapi.com/v0/cards/YAEQacp_XZCX-atgXMKJ6A",
-    "info": "Every turn, at the start of your turn, move this Unit to a random row and Boost all Units on it by 1.",
+    "info": "Every turn, at the start of your turn, move this Unit to a random row and Boost all other Units on it by 1.",
     "name": "Odrin",
     "positions": [
       "Melee",
@@ -11268,7 +11549,8 @@
       {
         "art": {
           "artist": "Darek Zabrocki & Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/odrin-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/odrin-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/odrin-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11318,7 +11600,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/old-speartip-asleep-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/old-speartip-asleep-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/old-speartip-asleep-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11370,7 +11653,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/olgierd-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/olgierd-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/olgierd-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11422,7 +11706,9 @@
     "info": "Doomed, Stubborn.\nDeploy: If neither player has passed, choose a Bronze Unit in your Hand and create a base copy of it in both players' Hands.",
     "name": "Operator",
     "positions": [
-      "Ranged"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 7,
     "uuid": "i9Of-MRPUve7IkfgM1gbeA",
@@ -11430,7 +11716,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/operator-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/operator-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/operator-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11481,7 +11768,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/overdose-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/overdose-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/overdose-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11525,7 +11813,9 @@
     "info": "Deploy: If neither player has passed, shuffle the Lowest different Bronze or Silver Ally into your Deck, then shuffle the Lowest different Bronze or Silver Enemy into your opponent's Deck.",
     "name": "Pavetta",
     "positions": [
-      "Ranged"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 7,
     "uuid": "m9WdA2QAUROdwJY7sU0YNA",
@@ -11533,7 +11823,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/pavetta-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/pavetta-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/pavetta-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11581,7 +11872,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/peter-saar-gwynleve-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/peter-saar-gwynleve-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/peter-saar-gwynleve-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11635,7 +11927,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/philippa-eilhart-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/philippa-eilhart-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/philippa-eilhart-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11687,7 +11980,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/poor-flanking-infantry-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/poor-flanking-infantry-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/poor-flanking-infantry-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11739,7 +12033,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/priestess-of-freya-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/priestess-of-freya-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/priestess-of-freya-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11780,7 +12075,7 @@
       "name": "Silver"
     },
     "href": "https://api.gwentapi.com/v0/cards/fDGf9QP2U1Gan0VhJnGTqw",
-    "info": "Deploy: Play the top Loyal Bronze or Silver Unit in your Deck and give it 5 Armor.\nDeploy: Gain 5 Armor.",
+    "info": "Deploy: Play the top Loyal Bronze or Silver Unit in your Deck and give it 5 Armor.\nDeploy: Gain 3 Armor.",
     "name": "Prince Stennis",
     "positions": [
       "Melee",
@@ -11793,7 +12088,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/prince-stennis-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/prince-stennis-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/prince-stennis-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11843,7 +12139,8 @@
       {
         "art": {
           "artist": "Tokkun Studio, Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/priscilla-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/priscilla-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/priscilla-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11897,7 +12194,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/prize-winning-cow-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/prize-winning-cow-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/prize-winning-cow-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -11949,7 +12247,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/queensguard-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/queensguard-3-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/queensguard-3-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12000,7 +12299,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/quen-sign-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/quen-sign-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/quen-sign-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12052,7 +12352,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/radovid-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/radovid-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/radovid-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12110,7 +12411,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/ragh-nar-roog-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ragh-nar-roog-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ragh-nar-roog-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12164,7 +12466,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/raging-berserker-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/raging-berserker-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/raging-berserker-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12214,7 +12517,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/rainfarn-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/rainfarn-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/rainfarn-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12262,13 +12566,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 4,
+    "strength": 5,
     "uuid": "tiWv2TVzUXuK4i6VJw70fA",
     "variations": [
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/reaver-hunter-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/reaver-hunter-3-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/reaver-hunter-3-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12320,7 +12625,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/reaver-scout-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/reaver-scout-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/reaver-scout-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12374,7 +12680,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/redanian-elite-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/redanian-elite-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/redanian-elite-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12428,7 +12735,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/redanian-knight-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/redanian-knight-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/redanian-knight-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12482,7 +12790,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/redanian-knight-elect-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/redanian-knight-elect-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/redanian-knight-elect-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12532,7 +12841,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/regis-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/regis-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/regis-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12582,7 +12892,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/regis-higher-vampire-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/regis-higher-vampire-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/regis-higher-vampire-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12632,7 +12943,8 @@
       {
         "art": {
           "artist": "Noah Bradley",
-          "thumbnailImage": "https://api.gwentapi.com/media/reinforced-ballista-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/reinforced-ballista-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/reinforced-ballista-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12682,7 +12994,8 @@
       {
         "art": {
           "artist": "Noah Bradley",
-          "thumbnailImage": "https://api.gwentapi.com/media/reinforced-siege-tower-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/reinforced-siege-tower-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/reinforced-siege-tower-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12722,6 +13035,8 @@
     "info": "Every turn, at the start of your turn, Damage a random Enemy by 1 (ignoring Armor).",
     "name": "Reinforced Trebuchet",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 7,
@@ -12730,7 +13045,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/reinforced-trebuchet-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/reinforced-trebuchet-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/reinforced-trebuchet-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12781,7 +13097,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/reinforcement-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/reinforcement-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/reinforcement-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12832,7 +13149,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/renew-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/renew-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/renew-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12873,7 +13191,7 @@
       "name": "Silver"
     },
     "href": "https://api.gwentapi.com/v0/cards/PJHCgdD7VTapBBUDhXIpiw",
-    "info": "Return a Bronze or Silver An Craite, Tuirseach or Dimun Unit from your Graveyard to your Hand and Strengthen it by 2, then play a card from your Hand.",
+    "info": "Return a Bronze or Silver Unit from your Graveyard to your Hand and set its base Power to 10, then play a card from your Hand.",
     "name": "Restore",
     "positions": [
       "Event"
@@ -12883,7 +13201,8 @@
       {
         "art": {
           "artist": "Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/restore-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/restore-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/restore-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12933,7 +13252,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/roach-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/roach-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/roach-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -12981,7 +13301,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/rot-tosser-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/rot-tosser-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/rot-tosser-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13031,7 +13352,8 @@
       {
         "art": {
           "artist": "Adrian Smith",
-          "thumbnailImage": "https://api.gwentapi.com/media/rotfiend-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/rotfiend-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/rotfiend-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13072,7 +13394,7 @@
       "name": "Gold"
     },
     "href": "https://api.gwentapi.com/v0/cards/HkSUMkUrW8i68mBWEkHbGQ",
-    "info": "Play a Gold card from your Deck. If it is a Unit, Boost it by 2. Shuffle the others back.",
+    "info": "Play a Gold card from your Deck. If it is a Unit (but not an Agent or Double Agent), Boost it by 2. Shuffle the others back.",
     "name": "Royal Decree",
     "positions": [
       "Event"
@@ -13082,7 +13404,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/royal-decree-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/royal-decree-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/royal-decree-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13140,7 +13463,8 @@
       {
         "art": {
           "artist": "Paweł Świeżak, Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/sabrina-glevissig-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/sabrina-glevissig-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/sabrina-glevissig-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13190,7 +13514,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/saesenthessis-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/saesenthessis-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/saesenthessis-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13231,7 +13556,7 @@
       "name": "Bronze"
     },
     "href": "https://api.gwentapi.com/v0/cards/UXx0-P8UV0OCLsKwSOUHPg",
-    "info": "Deploy: Resurrect a Bronze Alchemy or Spell card.",
+    "info": "Deploy: Resurrect a Bronze Alchemy or Spell card and Banish it.",
     "name": "Sage",
     "positions": [
       "Siege"
@@ -13242,7 +13567,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/sage-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/sage-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/sage-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13282,6 +13608,8 @@
     "info": "Deploy: You may Mulligan a card, but draw a card of the same color to replace it.",
     "name": "Sarah",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 9,
@@ -13290,7 +13618,8 @@
       {
         "art": {
           "artist": "Aleksandra Wojtas",
-          "thumbnailImage": "https://api.gwentapi.com/media/sarah-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/sarah-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/sarah-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13331,7 +13660,7 @@
       "name": "Gold"
     },
     "href": "https://api.gwentapi.com/v0/cards/6t4SO9xBW2yMswUdq29Xog",
-    "info": "Deploy: Mulligan up to 2 cards in your Hand, but choose any Bronze cards from your Deck to replace them. Then shuffle your Deck.",
+    "info": "Deploy: Mulligan up to 2 cards, but choose any Bronze cards from your Deck to replace them. Then shuffle your Deck.",
     "name": "Saskia",
     "positions": [
       "Melee",
@@ -13344,7 +13673,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/saskia-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/saskia-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/saskia-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13400,7 +13730,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/savage-bear-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/savage-bear-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/savage-bear-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13454,7 +13785,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/schirru-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/schirru-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/schirru-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13496,13 +13828,14 @@
     "positions": [
       "Melee"
     ],
-    "strength": 5,
+    "strength": 6,
     "uuid": "D3eNpXsvWqGSuKT4h61Rhw",
     "variations": [
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/school-of-the-wolf-eskel-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/school-of-the-wolf-eskel-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/school-of-the-wolf-eskel-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13550,7 +13883,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/school-of-the-wolf-lambert-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/school-of-the-wolf-lambert-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/school-of-the-wolf-lambert-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13598,7 +13932,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/school-of-the-wolf-vesemir-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/school-of-the-wolf-vesemir-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/school-of-the-wolf-vesemir-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13649,7 +13984,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/scorch-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/scorch-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/scorch-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13697,7 +14033,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/serrit-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/serrit-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/serrit-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13737,7 +14074,9 @@
     "info": "Deploy: Play a Bronze Monster Deathwish Unit from your Deck. Shuffle the others back.",
     "name": "Shadow",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 4,
     "uuid": "put9Gcm8VpGtJ8epFuvpWg",
@@ -13745,7 +14084,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/shadow-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/shadow-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/shadow-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13786,7 +14126,7 @@
       "name": "Gold"
     },
     "href": "https://api.gwentapi.com/v0/cards/O7ckSKb7XTGdWCltsQNhLA",
-    "info": "Deploy: Resurrect a Bronze or Silver Unit and add 5 Armor to it.",
+    "info": "Deploy: Resurrect a Bronze or Silver Unit and add 2 Armor to it.",
     "name": "Shani",
     "positions": [
       "Melee",
@@ -13799,7 +14139,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/shani-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/shani-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/shani-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13853,7 +14194,8 @@
       {
         "art": {
           "artist": "Paweł Świeżak",
-          "thumbnailImage": "https://api.gwentapi.com/media/sheldon-skaggs-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/sheldon-skaggs-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/sheldon-skaggs-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13905,7 +14247,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/sigrdrifa-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/sigrdrifa-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/sigrdrifa-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -13959,7 +14302,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/skellige-storm-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/skellige-storm-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/skellige-storm-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14003,6 +14347,8 @@
     "info": "Deploy: Play a random Bronze or Silver Cursed Unit from your Deck.",
     "name": "Skjall",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 5,
@@ -14011,7 +14357,8 @@
       {
         "art": {
           "artist": "Bruno Biazotto",
-          "thumbnailImage": "https://api.gwentapi.com/media/skjall-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/skjall-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/skjall-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14061,7 +14408,8 @@
       {
         "art": {
           "artist": "Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/spotter-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/spotter-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/spotter-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14102,7 +14450,7 @@
       "name": "Bronze"
     },
     "href": "https://api.gwentapi.com/v0/cards/T7eomqsgUtef8CCe2_4CqA",
-    "info": "Damage all Units by 1. If any were Destroyed, Spawn an Earth Elemental on your side.",
+    "info": "Damage all Units by 1. If any were Destroyed, Spawn a Lesser Guardian on your side.",
     "name": "Stammelford's Tremors",
     "positions": [
       "Event"
@@ -14112,7 +14460,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/stammelford-s-tremors-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/stammelford-s-tremors-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/stammelford-s-tremors-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14162,7 +14511,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/stefan-skellen-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/stefan-skellen-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/stefan-skellen-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14212,7 +14562,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł, Alicja Kapustka, Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/succubus-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/succubus-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/succubus-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14235,6 +14586,10 @@
   "Summoning Circle": {
     "categories": [
       {
+        "href": "https://api.gwentapi.com/v0/categories/jwrOszYUXryMMDUtuJOb-g",
+        "name": "Doomed"
+      },
+      {
         "href": "https://api.gwentapi.com/v0/categories/wWqBTy3SWJubVk7yUYbBTA",
         "name": "Special"
       },
@@ -14253,7 +14608,7 @@
       "name": "Silver"
     },
     "href": "https://api.gwentapi.com/v0/cards/WQgk3RBAXn-NA5fTNWqRLA",
-    "info": "Spawn a base copy of the last Bronze or Silver Unit any player placed on the Board. Leaders cannot be copied.",
+    "info": "Doomed.\nSpawn a base copy of the last Bronze or Silver Unit any player placed on the Board. Leaders cannot be copied.",
     "name": "Summoning Circle",
     "positions": [
       "Event"
@@ -14263,7 +14618,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/summoning-circle-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/summoning-circle-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/summoning-circle-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14315,7 +14671,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/svanrige-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/svanrige-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/svanrige-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14366,7 +14723,8 @@
       {
         "art": {
           "artist": "Aleksandra Wojtas",
-          "thumbnailImage": "https://api.gwentapi.com/media/swallow-potion-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/swallow-potion-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/swallow-potion-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14406,7 +14764,9 @@
     "info": "Deploy: Choose an Enemy or a Revealed opposing Unit and move all copies of it from your opponent's Deck to their Graveyard. Weaken self by 1 for each card moved.",
     "name": "Sweers",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 9,
     "uuid": "_H-PZKA4WOCjgEsODtIBpw",
@@ -14414,7 +14774,8 @@
       {
         "art": {
           "artist": "Chris Rallis",
-          "thumbnailImage": "https://api.gwentapi.com/media/sweers-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/sweers-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/sweers-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14454,7 +14815,9 @@
     "info": "Deploy: You may play a Bronze Special card from your Hand and draw the top card from your Deck.",
     "name": "Síle de Tansarville",
     "positions": [
-      "Ranged"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 7,
     "uuid": "o3N-tilfUL2jNh0_TnxwOw",
@@ -14462,7 +14825,8 @@
       {
         "art": {
           "artist": "Form Language Studio, Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/sile-de-tansarville-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/sile-de-tansarville-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/sile-de-tansarville-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14516,7 +14880,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/temerian-drummer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/temerian-drummer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/temerian-drummer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14570,7 +14935,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/temerian-infantryman-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/temerian-infantryman-3-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/temerian-infantryman-3-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14628,7 +14994,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/thaler-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/thaler-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/thaler-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14676,7 +15043,8 @@
       {
         "art": {
           "artist": "James Daly",
-          "thumbnailImage": "https://api.gwentapi.com/media/the-guardian-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/the-guardian-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/the-guardian-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14727,7 +15095,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/the-last-wish-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/the-last-wish-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/the-last-wish-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14778,7 +15147,8 @@
       {
         "art": {
           "artist": "Aleksandra Wojtas & Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/thunderbolt-potion-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/thunderbolt-potion-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/thunderbolt-potion-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14822,13 +15192,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 8,
+    "strength": 10,
     "uuid": "xD5U2Q-sUBaYJ1dTGybXMA",
     "variations": [
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/tibor-eggebracht-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/tibor-eggebracht-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/tibor-eggebracht-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14878,7 +15249,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/toad-prince-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/toad-prince-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/toad-prince-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14932,7 +15304,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/torrential-rain-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/torrential-rain-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/torrential-rain-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -14990,7 +15363,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/toruviel-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/toruviel-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/toruviel-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15041,7 +15415,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/treason-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/treason-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/treason-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15091,7 +15466,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/trebuchet-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/trebuchet-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/trebuchet-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15131,7 +15507,9 @@
     "info": "Deploy: Gain 3 Armor. If you have any Officers in your Hand, gain 4 Armor and Boost self by 2 instead.",
     "name": "Tridam Infantryman",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
     "strength": 8,
     "uuid": "_SOxfoqAXl-DlnUWpen5dg",
@@ -15139,7 +15517,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/tridam-infantryman-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/tridam-infantryman-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/tridam-infantryman-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15193,7 +15572,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/triss-merigold-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/triss-merigold-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/triss-merigold-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15247,7 +15627,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/triss-butterfly-spell-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/triss-butterfly-spell-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/triss-butterfly-spell-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15305,7 +15686,8 @@
       {
         "art": {
           "artist": "Hugo Richard, Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/trollololo-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/trollololo-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/trollololo-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15371,7 +15753,8 @@
       {
         "art": {
           "artist": "Grafit Studio, Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/udalryk-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/udalryk-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/udalryk-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15423,7 +15806,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/unseen-elder-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/unseen-elder-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/unseen-elder-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15477,7 +15861,8 @@
       {
         "art": {
           "artist": "Sławomir Maniak",
-          "thumbnailImage": "https://api.gwentapi.com/media/vabjorn-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vabjorn-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vabjorn-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15525,7 +15910,8 @@
       {
         "art": {
           "artist": "Chris Rallis",
-          "thumbnailImage": "https://api.gwentapi.com/media/vanhemar-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vanhemar-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vanhemar-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15575,7 +15961,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/vattier-de-rideaux-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vattier-de-rideaux-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vattier-de-rideaux-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15629,7 +16016,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/vernon-roche-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vernon-roche-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vernon-roche-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15683,7 +16071,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/ves-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/ves-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/ves-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15733,7 +16122,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/vesemir-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vesemir-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vesemir-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15785,7 +16175,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/vicovaro-medic-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vicovaro-medic-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vicovaro-medic-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15835,7 +16226,8 @@
       {
         "art": {
           "artist": "Bruno Biazotto",
-          "thumbnailImage": "https://api.gwentapi.com/media/vicovaro-novice-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vicovaro-novice-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vicovaro-novice-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15885,7 +16277,8 @@
       {
         "art": {
           "artist": "Nemanja Stankovic",
-          "thumbnailImage": "https://api.gwentapi.com/media/vilgefortz-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vilgefortz-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vilgefortz-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15935,7 +16328,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/villentretenmerth-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/villentretenmerth-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/villentretenmerth-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -15985,7 +16379,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/vran-warrior-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vran-warrior-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vran-warrior-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16039,7 +16434,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/vrihedd-brigade-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vrihedd-brigade-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vrihedd-brigade-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16091,7 +16487,8 @@
       {
         "art": {
           "artist": "Bartłomiej Gaweł",
-          "thumbnailImage": "https://api.gwentapi.com/media/vrihedd-dragoon-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vrihedd-dragoon-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vrihedd-dragoon-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16132,20 +16529,21 @@
       "name": "Bronze"
     },
     "href": "https://api.gwentapi.com/v0/cards/cwN2cUY3V-qCJohLa8tPPg",
-    "info": "Deploy: You may Mulligan a card in your Hand and Boost self by the drawn card's base Power (or by 5 if it's a Special card).",
+    "info": "Deploy: You may Mulligan a card and Boost self by the Mulliganed card's base Power (or by 5 if it's a Special card).",
     "name": "Vrihedd Officer",
     "positions": [
       "Melee",
       "Ranged",
       "Siege"
     ],
-    "strength": 6,
+    "strength": 4,
     "uuid": "cwN2cUY3V-qCJohLa8tPPg",
     "variations": [
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/vrihedd-officer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vrihedd-officer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vrihedd-officer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16203,7 +16601,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/vrihedd-sappers-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vrihedd-sappers-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vrihedd-sappers-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16257,7 +16656,8 @@
       {
         "art": {
           "artist": "Bryan Sola",
-          "thumbnailImage": "https://api.gwentapi.com/media/vrihedd-vanguard-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/vrihedd-vanguard-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/vrihedd-vanguard-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16301,15 +16701,18 @@
     "info": "Whenever you Discard a Unit, Damage a random Enemy by 2.",
     "name": "War Longship",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
-    "strength": 6,
+    "strength": 7,
     "uuid": "_c0hpwPnVmiyv-BhfSuCAg",
     "variations": [
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/war-longship-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/war-longship-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/war-longship-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16363,7 +16766,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/whale-harpooner-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/whale-harpooner-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/whale-harpooner-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16416,7 +16820,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/white-frost-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/white-frost-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/white-frost-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16470,7 +16875,8 @@
       {
         "art": {
           "artist": "Bogna Gawrońska",
-          "thumbnailImage": "https://api.gwentapi.com/media/wild-boar-of-the-sea-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/wild-boar-of-the-sea-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/wild-boar-of-the-sea-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16514,15 +16920,18 @@
     "info": "Deploy: Play a Biting Frost card from your Deck.",
     "name": "Wild Hunt Hound",
     "positions": [
-      "Melee"
+      "Melee",
+      "Ranged",
+      "Siege"
     ],
-    "strength": 3,
+    "strength": 4,
     "uuid": "qc42Cjh9Uy-f65Jzds97bQ",
     "variations": [
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/wild-hunt-hound-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/wild-hunt-hound-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/wild-hunt-hound-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16576,7 +16985,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/wild-hunt-longship-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/wild-hunt-longship-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/wild-hunt-longship-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16599,6 +17009,10 @@
   "Wild Hunt Navigator": {
     "categories": [
       {
+        "href": "https://api.gwentapi.com/v0/categories/HfaxmUTjWtO4xGZDRNRzvQ",
+        "name": "Mage"
+      },
+      {
         "href": "https://api.gwentapi.com/v0/categories/et6pGJ0UXcCP9q5aSIhq5Q",
         "name": "Soldier"
       },
@@ -16620,6 +17034,8 @@
     "info": "Deploy: Choose a different Bronze Wild Hunt Ally. Play a copy of it from your Deck.",
     "name": "Wild Hunt Navigator",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 3,
@@ -16628,7 +17044,8 @@
       {
         "art": {
           "artist": "Diego de Almeida",
-          "thumbnailImage": "https://api.gwentapi.com/media/wild-hunt-navigator-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/wild-hunt-navigator-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/wild-hunt-navigator-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16676,13 +17093,14 @@
       "Ranged",
       "Siege"
     ],
-    "strength": 8,
+    "strength": 9,
     "uuid": "oNE58vzwWs-oW_mOwZzr4g",
     "variations": [
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/wild-hunt-rider-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/wild-hunt-rider-3-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/wild-hunt-rider-3-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16736,7 +17154,8 @@
       {
         "art": {
           "artist": "Marta Dettlaff",
-          "thumbnailImage": "https://api.gwentapi.com/media/wild-hunt-warrior-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/wild-hunt-warrior-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/wild-hunt-warrior-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16790,7 +17209,8 @@
       {
         "art": {
           "artist": "Lorenzo Mastroianni",
-          "thumbnailImage": "https://api.gwentapi.com/media/witch-hunter-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/witch-hunter-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/witch-hunter-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16840,7 +17260,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/woodland-spirit-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/woodland-spirit-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/woodland-spirit-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16880,6 +17301,8 @@
     "info": "Deploy: Damage an Enemy by 3. If you have any Draconids in your Hand, Strengthen self by 2.",
     "name": "Wyvern",
     "positions": [
+      "Melee",
+      "Ranged",
       "Siege"
     ],
     "strength": 6,
@@ -16888,7 +17311,8 @@
       {
         "art": {
           "artist": "Alejandro Mirabal",
-          "thumbnailImage": "https://api.gwentapi.com/media/wyvern-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/wyvern-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/wyvern-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -16938,7 +17362,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/xarthisius-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/xarthisius-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/xarthisius-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -17000,7 +17425,8 @@
       {
         "art": {
           "artist": "Ilker Serdar Yildiz",
-          "thumbnailImage": "https://api.gwentapi.com/media/yaevinn-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/yaevinn-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/yaevinn-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -17052,7 +17478,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/yarpen-zigrin-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/yarpen-zigrin-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/yarpen-zigrin-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -17106,7 +17533,8 @@
       {
         "art": {
           "artist": "Anna Podedworna",
-          "thumbnailImage": "https://api.gwentapi.com/media/yennefer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/yennefer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/yennefer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -17160,7 +17588,8 @@
       {
         "art": {
           "artist": "Marek Madej",
-          "thumbnailImage": "https://api.gwentapi.com/media/yennefer-the-conjurer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/yennefer-the-conjurer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/yennefer-the-conjurer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -17214,7 +17643,8 @@
       {
         "art": {
           "artist": "James Daly",
-          "thumbnailImage": "https://api.gwentapi.com/media/zoltan-chivay-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/zoltan-chivay-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/zoltan-chivay-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
@@ -17268,7 +17698,8 @@
       {
         "art": {
           "artist": "Grafit Studio",
-          "thumbnailImage": "https://api.gwentapi.com/media/zoltan-animal-tamer-thumbnail.png"
+          "mediumsizeImage": "https://api.gwentapi.com/media/zoltan-animal-tamer-1-medium.png",
+          "thumbnailImage": "https://api.gwentapi.com/media/zoltan-animal-tamer-1-medium.png"
         },
         "availability": "BaseSet",
         "craft": {
