@@ -2,7 +2,6 @@
 dist
 chrome.zip
 firefox.zip
-src/core/tmp
 
 ### Node ###
 # Logs
