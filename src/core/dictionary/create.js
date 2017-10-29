@@ -12,10 +12,10 @@ type Dictionary = {
  * @return {Dictionary} The built dictionary
  */
 function create(entries) {
-  return entries.reduce(
-      (dict, [name, value]) => append(dict, name, value),
-       Immutable({}),
-   );
+    return entries.reduce(
+        (dict, [name, value]) => append(dict, name, value),
+        Immutable({})
+    );
 }
 
 export default create;

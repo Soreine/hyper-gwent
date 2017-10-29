@@ -6,9 +6,4 @@ import DICTIONARY from './DICTIONARY';
 
 export default DICTIONARY;
 
-export {
-    create,
-    contains,
-    append,
-    matches,
-};
+export { create, contains, append, matches };

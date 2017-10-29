@@ -18,27 +18,27 @@ type Match = {
  * @return {Array<Match>} The ranges of matched text.
  */
 function findAllMatches(dictionary, text) {
-  const cleanText = removeAccents(text).toLowerCase();
-  const result = [];
+    const cleanText = removeAccents(text).toLowerCase();
+    const result = [];
 
-  // Only match at beginning of words
-  let wasNotWord = true;
-  for (let i = 0; i < cleanText.length; i += 1) {
-    const isWord = /\w/.test(cleanText[i]);
-    if (wasNotWord && isWord) {
-      const match = matches(dictionary, cleanText, i);
-      if (match) {
-        result.push(match);
+    // Only match at beginning of words
+    let wasNotWord = true;
+    for (let i = 0; i < cleanText.length; i += 1) {
+        const isWord = /\w/.test(cleanText[i]);
+        if (wasNotWord && isWord) {
+            const match = matches(dictionary, cleanText, i);
+            if (match) {
+                result.push(match);
 
-        // Fast forward
-        i = match.end - 1;
-      }
+                // Fast forward
+                i = match.end - 1;
+            }
+        }
+
+        wasNotWord = /[^\w]/.test(cleanText[i]);
     }
 
-    wasNotWord = /[^\w]/.test(cleanText[i]);
-  }
-
-  return result;
+    return result;
 }
 
 export default findAllMatches;

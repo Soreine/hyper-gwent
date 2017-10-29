@@ -5,12 +5,12 @@
  * @return {boolean} True if the dictionary contains the substring
  */
 function contains(dictionary, text, index = 0) {
-  const char = text[index];
-  if (char === undefined) {
-    return dictionary[''];
-  }
-  const subDict = dictionary[char];
-  return subDict && contains(subDict, text, index + 1);
+    const char = text[index];
+    if (char === undefined) {
+        return dictionary[''];
+    }
+    const subDict = dictionary[char];
+    return subDict && contains(subDict, text, index + 1);
 }
 
 export default contains;

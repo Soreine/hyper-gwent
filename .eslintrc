@@ -1,14 +1,14 @@
 {
-  "parser": "babel-eslint",
-  "extends": "airbnb-base",
+  "extends": "gitbook",
   "rules": {
+    "react/react-in-jsx-scope": ["off"],
     "import/no-extraneous-dependencies": [
       "error",
       {
         "devDependencies": [
-          "**/webpack.config.*.js",
-          "**/__tests__/**",
-          "**/scripts/**"
+          "webpack.config.*.js",
+          "**/scripts/**",
+          "**/__tests__/**"
         ]
       }
     ]

@@ -11,7 +11,6 @@ const fetchCardListDetail = require('./fetchCardListDetail');
 const TMP_PATH = path.join(__dirname, '../tmp/cards.json');
 const CARDS_PATH = path.join(__dirname, '../data/CARDS.json');
 
-
 /*
 type Card = {
     categories: [
@@ -50,40 +49,34 @@ type Card = {
 
 // Fetch cards from API if needed
 Promise.resolve()
-.then(() => {
-  if (fileExists.sync(TMP_PATH)) {
-    console.log('Reusing cards found at ', TMP_PATH);
-    return Promise.resolve(
-      // eslint-disable-next-line
+    .then(() => {
+        if (fileExists.sync(TMP_PATH)) {
+            console.log('Reusing cards found at ', TMP_PATH);
+            return Promise.resolve(
+                // eslint-disable-next-line
       require(TMP_PATH.slice(0, -5)) // remove .json
-    );
-  }
+            );
+        }
 
-  return fetchCardList()
-  .then(fetchCardListDetail)
-  .then((cards) => {
-    fs.writeFileSync(
-      TMP_PATH,
-      JSON.stringify(cards, null, 2),
-    );
-    // eslint-disable-next-line no-console
-    console.log('Dump updated at ', TMP_PATH);
+        return fetchCardList()
+            .then(fetchCardListDetail)
+            .then(cards => {
+                fs.writeFileSync(TMP_PATH, JSON.stringify(cards, null, 2));
+                // eslint-disable-next-line no-console
+                console.log('Dump updated at ', TMP_PATH);
 
-    return cards;
-  });
-})
-.then((cards) => {
-  const cardIndex = {};
-  cards.forEach((card) => {
-    cardIndex[card.name] = card;
-  });
+                return cards;
+            });
+    })
+    .then(cards => {
+        const cardIndex = {};
+        cards.forEach(card => {
+            cardIndex[card.name] = card;
+        });
 
-  fs.writeFileSync(
-    CARDS_PATH,
-    JSON.stringify(cardIndex, null, 2),
-  );
+        fs.writeFileSync(CARDS_PATH, JSON.stringify(cardIndex, null, 2));
 
-  // eslint-disable-next-line no-console
-  console.log('Wrote ', CARDS_PATH);
-})
-.catch(console.log);
+        // eslint-disable-next-line no-console
+        console.log('Wrote ', CARDS_PATH);
+    })
+    .catch(console.log);
