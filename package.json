@@ -19,7 +19,8 @@
     "babel": "inherit"
   },
   "dependencies": {
-    "jsx-dom": "^5.1.2",
+    "@babel/polyfill": "^7.0.0",
+    "jsx-dom": "^6.2.1",
     "pluralize": "^6.0.0",
     "remove-accents": "^0.4.1",
     "seamless-immutable": "^7.1.2",
@@ -29,7 +30,10 @@
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "ava": "^0.25.0",
     "bestzip": "^1.1.4",
     "css-loader": "^0.28.0",
