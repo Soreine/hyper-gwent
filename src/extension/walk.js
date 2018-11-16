@@ -55,7 +55,8 @@ function walk({ shouldUnderline = true } = {}, assets) {
 
                 if (node.nodeType === TEXT_NODE) {
                     return FILTER_ACCEPT;
-                } else if (node.nodeType === ELEMENT_NODE) {
+                }
+                if (node.nodeType === ELEMENT_NODE) {
                     // Ignore some tags
                     if (IGNORED_TAGS.indexOf(node.tagName) !== -1) {
                         return FILTER_REJECT;
@@ -98,12 +99,13 @@ function walk({ shouldUnderline = true } = {}, assets) {
             node.nodeValue,
             matches,
             match =>
-                `<span class="${CLASSNAME}" ${CARD_NAME_ATTRIBUTE}="${match.entryValue}" ${shouldUnderline
-                    ? 'style="border-bottom: 1px dashed; padding-bottom: 0.1em"'
-                    : ''}>${node.nodeValue.slice(
-                    match.start,
-                    match.end
-                )}</span>`
+                `<span class="${CLASSNAME}" ${CARD_NAME_ATTRIBUTE}="${
+                    match.entryValue
+                }" ${
+                    shouldUnderline
+                        ? 'style="border-bottom: 1px dashed; padding-bottom: 0.1em"'
+                        : ''
+                }>${node.nodeValue.slice(match.start, match.end)}</span>`
         );
 
         node.parentNode.replaceChild(span, node);

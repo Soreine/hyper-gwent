@@ -54,22 +54,22 @@ const htmlPage = (
                 {
                     "None of us can reasonably remember every possible Gwent card's name and effect. Browsing "
                 }
-                <a href={REDDIT}>{'r/gwent'}</a>
+                <a href={REDDIT}>r/gwent</a>
                 {' and reading deck guides on '}
-                <a href={GWENTDB}>{'GwentDB'}</a>
+                <a href={GWENTDB}>GwentDB</a>
                 {
                     " can be challenging if you don't know half the cards people are talking about."
                 }
             </p>
 
             <p>
-                <em>{'You might find this shocking:'}</em>
+                <em>You might find this shocking:</em>
                 <ul>
-                    <li>{'Xmen are not what they used to be.'}</li>
-                    <li>{'ADC does not stand for Attack Damage Carry.'}</li>
+                    <li>Xmen are not what they used to be.</li>
+                    <li>ADC does not stand for Attack Damage Carry.</li>
                     <li>
                         {'There '}
-                        <em>{'are'}</em>
+                        <em>are</em>
                         {' worst names for a dragon than Borkh.'}
                     </li>
                     <li>
@@ -82,7 +82,7 @@ const htmlPage = (
 
             <div className="emote">
                 <div className="avatar geralt" />
-                <div className="emote-text">{'Not bad. Not bad at all.'}</div>
+                <div className="emote-text">Not bad. Not bad at all.</div>
             </div>
 
             <p>
@@ -109,7 +109,7 @@ const htmlPage = (
                             'Non obstrusive. Add subtle highlights and does not break links.'
                         }
                     </li>
-                    <li>{'Fast'}</li>
+                    <li>Fast</li>
                 </ul>
             </p>
 
@@ -121,11 +121,11 @@ const htmlPage = (
                             'Enable on any website with a simple click (currently only enabled on r/gwent and GwentDB)'
                         }
                     </li>
-                    <li>{'Even more accurate card detection'}</li>
+                    <li>Even more accurate card detection</li>
                 </ul>
             </p>
 
-            <p>{'What do you think of that, Dandelion?'}</p>
+            <p>What do you think of that, Dandelion?</p>
 
             <div className="emote">
                 <div className="avatar dandelion" />
@@ -171,7 +171,8 @@ const htmlPage = (
             You can also contact{' '}
             <a href="https://www.reddit.com/message/compose/?to=Soreine">
                 /u/Soreine
-            </a>.
+            </a>
+            .
         </p>
     </div>
     /* eslint-enable max-len */

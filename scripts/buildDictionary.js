@@ -35,7 +35,9 @@ Promise.resolve(pathExists(OUT_DIR))
                     GwentAPI.one(card, {
                         fields: ['variations']
                     }).then(fullCard => {
-                        spinner.text = `Downloading the cards: ${index}/${cards.length}`;
+                        spinner.text = `Downloading the cards: ${index}/${
+                            cards.length
+                        }`;
                         return acc.concat([fullCard]);
                     })
                 ),

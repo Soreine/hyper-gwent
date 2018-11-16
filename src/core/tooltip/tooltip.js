@@ -36,10 +36,13 @@ const tooltipElement = (card, { cardFrame = null } = {}) => (
 class CardTooltip {
     // Is the tooltip visible ?
     visible = false;
+
     // Tooltipped element
     target = null;
+
     // Outer element used to scope CSS
     outer = null;
+
     // HTML element to live in
     wrapper = null;
 

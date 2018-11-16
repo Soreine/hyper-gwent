@@ -1,6 +1,6 @@
 import test from 'ava';
 import removeAccents from 'remove-accents';
-import DICTIONARY, { contains, matches } from '../';
+import DICTIONARY, { contains, matches } from '..';
 import { NAMES } from '../../data';
 
 test('Dictionary was created successfully', t => {
