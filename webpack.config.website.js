@@ -1,18 +1,31 @@
-const path = require('path');
+const Path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 const baseConfig = require('./webpack.config');
+
+function path(p) {
+    return Path.resolve(__dirname, p);
+}
 
 module.exports = Object.assign({}, baseConfig, {
     mode: 'development',
-    entry: path.resolve(__dirname, './src/website'),
+    optimization: {
+        usedExports: true
+    },
+    entry: path('./src/website'),
     output: {
-        path: path.resolve(__dirname, './dist/website'),
+        path: path('./dist/website'),
         filename: 'website.js'
     },
+    devServer: {
+        contentBase: path('./dist/website')
+    },
     plugins: [
+        new CleanWebpackPlugin([path('./dist/website')]),
         new HtmlWebpackPlugin({
             title: 'Hyper Gwent',
-            favicon: './src/website/favicon.ico'
+            favicon: path('./src/website/favicon.ico')
         })
     ]
 });
