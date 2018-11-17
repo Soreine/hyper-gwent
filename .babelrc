@@ -10,7 +10,7 @@
     [
       "@babel/preset-react",
       {
-        "pragma": "h"
+        "pragma": "createElement"
       }
     ],
     "@babel/preset-flow"

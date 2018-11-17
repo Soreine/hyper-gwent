@@ -4,7 +4,6 @@
 import { createElement } from 'jsx-dom';
 import walk from '../extension/walk';
 import Logo from './logo.svg';
-import style from './website.css';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const GWENTDB = 'http://www.gwentdb.com/';
@@ -21,10 +20,8 @@ const browser =
 const htmlPage = (
     /* eslint-disable max-len */
     <div className="content">
-        <style type="text/css">{style.toString()}</style>
-
         <div className="logo">
-            <div className="logo-title" innerHTML={Logo} />
+            <img src={Logo} className="logo-title" />
             <div className="logo-subtitle">
                 {'Browser extension for GWENT®: The Witcher Card Game'}
             </div>

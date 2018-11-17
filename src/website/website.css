@@ -6,7 +6,7 @@ Logo colors
 - bottom: #09484D
  */
 
-body {
+html {
     background: #232018;
     background: linear-gradient(to bottom, rgb(35, 32, 24) 0%,rgb(23, 20, 13) 100%);
     font-family: 'Josefin Sans', Helvetica, sans-serif;
