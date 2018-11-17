@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const baseConfig = require('./webpack.config');
 
 module.exports = Object.assign({}, baseConfig, {
+    mode: 'development',
     entry: path.resolve(__dirname, './src/website'),
     output: {
         path: path.resolve(__dirname, './dist/website'),
@@ -11,7 +12,7 @@ module.exports = Object.assign({}, baseConfig, {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Hyper Gwent',
-            favicon: 'favicon.ico'
+            favicon: './src/website/favicon.ico'
         })
     ]
 });
