@@ -9,7 +9,7 @@ function path(p) {
 }
 
 module.exports = Object.assign({}, baseConfig, {
-    mode: 'production',
+    mode: 'development',
     optimization: {
         usedExports: true
     },

@@ -7,17 +7,14 @@
     "dictionary": "node ./scripts/buildDictionary.js",
     "prebuild": "rm -rf dist",
     "build": "npm run build:chrome && npm run build:firefox",
-    "build:chrome": "webpack --config ./webpack/extension.js && cp icon*.png src/extension/options.html dist/chrome/ && node --harmony_trailing_commas scripts/buildChrome.js",
+    "build:chrome": "webpack --config ./webpack/extension.js --mode production && cp icon*.png src/extension/options.html dist/chrome/ && node --harmony_trailing_commas scripts/buildChrome.js",
     "build:firefox": "mkdir -p dist/firefox && cp dist/chrome/** dist/firefox/ && node --harmony_trailing_commas scripts/buildFirefox.js",
-    "build:website": "webpack --config ./webpack/website.js",
+    "build:website": "webpack --config ./webpack/website.js --mode production",
     "start": "webpack-dev-server --config ./webpack/website.js",
     "predeploy": "npm run build:website && npm run dictionary",
     "deploy": "gh-pages -d dist/website",
     "prepack": "npm run build",
     "pack": "bestzip chrome.zip dist/chrome/** && bestzip firefox.zip dist/firefox/**"
-  },
-  "ava": {
-    "babel": "inherit"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
@@ -35,7 +32,8 @@
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "ava": "^0.25.0",
+    "@babel/register": "^7.0.0",
+    "ava": "^1.0.0-rc.2",
     "babel-loader": "^8.0.4",
     "bestzip": "^2.1.2",
     "clean-webpack-plugin": "^1.0.0",
@@ -61,6 +59,11 @@
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
+  },
+  "ava": {
+    "require": [
+      "@babel/register"
+    ]
   },
   "sideEffects": []
 }

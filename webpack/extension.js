@@ -7,7 +7,7 @@ function path(p) {
 }
 
 module.exports = Object.assign({}, baseConfig, {
-    mode: 'production',
+    mode: 'development',
     entry: {
         content: path('src/extension/content.js'),
         options: path('src/extension/options.js')
