@@ -3,35 +3,43 @@
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import styles from './tooltip.css';
+import NEW_CARD from './NEW_CARD';
 
-const tooltipElement = (card, { cardFrame = null } = {}) => (
-    <div className={styles.locals.hyperGwentTooltip}>
-        <img
-            className={styles.locals.hyperGwentTooltipImage}
-            data-src={card.variations[0].art.thumbnailImage}
-            style={cardFrame ? `background-image: url(${cardFrame});` : ''}
-            alt=""
-        />
+const tooltipElement = (card, { cardFrame = null } = {}) => {
+    const variation = card.variations[`${card.ingameId}00`];
 
-        <div
-            className={`${styles.locals.hyperGwentTooltipBlock} ${styles.locals
-                .hyperGwentTooltipBlock + card.variations[0].rarity.name}`}
-        >
-            <div className={styles.locals.hyperGwentTooltipName}>
-                {card.name}
+    const { rarity } = variation;
+    const name = card.name['en-US'];
+    const info = card.info['en-US'];
+
+    return (
+        <div className={styles.locals.hyperGwentTooltip}>
+            {/* <img
+                className={styles.locals.hyperGwentTooltipImage}
+                data-src={variation.art.low}
+                alt=""
+            /> */}
+
+            <div
+                className={`${styles.locals.hyperGwentTooltipBlock} ${styles
+                    .locals.hyperGwentTooltipBlock + rarity}`}
+            >
+                <div className={styles.locals.hyperGwentTooltipName}>
+                    {name}
+                </div>
+            </div>
+
+            <div
+                className={`${styles.locals.hyperGwentTooltipBlock} ${styles
+                    .locals.hyperGwentTooltipBlock + rarity}`}
+            >
+                <div className={styles.locals.hyperGwentTooltipInfo}>
+                    {info}
+                </div>
             </div>
         </div>
-
-        <div
-            className={`${styles.locals.hyperGwentTooltipBlock} ${styles.locals
-                .hyperGwentTooltipBlock + card.variations[0].rarity.name}`}
-        >
-            <div className={styles.locals.hyperGwentTooltipInfo}>
-                {card.info}
-            </div>
-        </div>
-    </div>
-);
+    );
+};
 
 class CardTooltip {
     // Is the tooltip visible ?
@@ -151,7 +159,7 @@ class CardTooltip {
 }
 
 function attachTooltip(card, target, assets) {
-    const tooltip = new CardTooltip(card, target, assets);
+    const tooltip = new CardTooltip(NEW_CARD, target, assets);
     tooltip.inject();
 }
 
