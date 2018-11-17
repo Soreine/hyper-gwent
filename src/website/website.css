@@ -7,13 +7,18 @@ Logo colors
  */
 
 html {
-    background: #232018;
+    background: rgb(23, 20, 13);
+}
+
+body {
     background: linear-gradient(to bottom, rgb(35, 32, 24) 0%,rgb(23, 20, 13) 100%);
     font-family: 'Josefin Sans', Helvetica, sans-serif;
     font-size: 1.3rem;
     color: #d2c8bb;
     font-weight: 300;
     line-height: 1.5;
+    margin: 0;
+    padding: 0;
 }
 
 .content {
