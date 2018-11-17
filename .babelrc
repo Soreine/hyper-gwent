@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": "defaults",
+        "useBuiltIns": "usage"
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "pragma": "h"
+      }
+    ],
+    "@babel/preset-flow"
+  ],
+  "plugins": ["@babel/plugin-proposal-class-properties"]
+}
