@@ -17,23 +17,32 @@
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 1.5;
-  width: 274px;
+  width: 228px;
   /* Should not mess with hovering logic */
   pointer-events: none;
 }
 
-.art {
-  /* margin-bottom: -27px; */
+.artFrame {
   /*
    * height of the image when it's loaded
    * hard coding it here to prevent the tooltip from being resized
    */
-  width: 274px;
-  height: 366px;
-  background-image: url(./card-frame.png);
-  background-size: 274px 366px;
-  background-position: top left;
+  width: 228px;
+  height: 341px;
+  position: relative;
+}
+
+.art {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  /* Compensate alpha around the card art */
+  background-position: top -13px left -23px;
   background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .tooltip {

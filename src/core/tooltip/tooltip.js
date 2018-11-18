@@ -25,7 +25,14 @@ const styles = TooltipCSS.locals;
 
 const tooltipElement = (card, { cardFrame = null } = {}) => (
     <div className={styles.card}>
-        <img className={styles.art} data-src={card.art.low} alt="" />
+        <div className={styles.artFrame}>
+            <div
+                className={styles.art}
+                style={{
+                    backgroundImage: `url(${card.art.low})`
+                }}
+            />
+        </div>
 
         <div className={styles.tooltip}>
             <div className={styles.name}>{card.name}</div>
@@ -54,8 +61,10 @@ class CardTooltip {
         const wrapper = (
             <div
                 style={{
-                    display: 'none',
+                    display: 'block',
                     position: 'fixed',
+                    top: '50%',
+                    left: '50%',
                     transform: 'translateY(-40%)',
                     pointerEvents: 'none',
                     zIndex: 999999999
@@ -96,7 +105,7 @@ class CardTooltip {
     }
 
     hide() {
-        this.wrapper.style.display = 'none';
+        // this.wrapper.style.display = 'none';
         this.visible = false;
     }
 
