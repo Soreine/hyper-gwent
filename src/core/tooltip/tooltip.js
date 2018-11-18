@@ -2,8 +2,10 @@
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
-import styles from './tooltip.css';
+import TooltipCSS from './tooltip.css';
 import NEW_CARD from './NEW_CARD';
+
+const styles = TooltipCSS.locals;
 
 const tooltipElement = (card, { cardFrame = null } = {}) => {
     const variation = card.variations[`${card.ingameId}00`];
@@ -13,29 +15,12 @@ const tooltipElement = (card, { cardFrame = null } = {}) => {
     const info = card.info['en-US'];
 
     return (
-        <div className={styles.locals.hyperGwentTooltip}>
-            {/* <img
-                className={styles.locals.hyperGwentTooltipImage}
-                data-src={variation.art.low}
-                alt=""
-            /> */}
+        <div className={styles.card}>
+            <img className={styles.art} data-src={variation.art.low} alt="" />
 
-            <div
-                className={`${styles.locals.hyperGwentTooltipBlock} ${styles
-                    .locals.hyperGwentTooltipBlock + rarity}`}
-            >
-                <div className={styles.locals.hyperGwentTooltipName}>
-                    {name}
-                </div>
-            </div>
-
-            <div
-                className={`${styles.locals.hyperGwentTooltipBlock} ${styles
-                    .locals.hyperGwentTooltipBlock + rarity}`}
-            >
-                <div className={styles.locals.hyperGwentTooltipInfo}>
-                    {info}
-                </div>
+            <div className={styles.tooltip}>
+                <div className={styles.name}>{name}</div>
+                <div className={styles.info}>{info}</div>
             </div>
         </div>
     );
@@ -71,10 +56,7 @@ class CardTooltip {
         );
         // Outer's name attribute is just there for easier inspection
         const outer = (
-            <div
-                className={styles.locals.hyperGwentTooltipOuter}
-                data-card-name={card.name}
-            />
+            <div className={styles.outer} data-card-name={card.name} />
         );
 
         wrapper.appendChild(tooltip);
@@ -94,7 +76,7 @@ class CardTooltip {
         if (window.document.getElementById(STYLE_ID) == null) {
             const style = (
                 <style type="text/css" id={STYLE_ID}>
-                    {styles.toString()}
+                    {TooltipCSS.toString()}
                 </style>
             );
             window.document.head.appendChild(style);
