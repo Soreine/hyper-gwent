@@ -37,6 +37,7 @@
     "babel-loader": "^8.0.4",
     "bestzip": "^2.1.2",
     "clean-webpack-plugin": "^1.0.0",
+    "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-config-gitbook": "^4.0.1",

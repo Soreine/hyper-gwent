@@ -13,7 +13,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             modules: true,
-                            localIdentName: '[local]'
+                            localIdentName: 'hyper_gwent_[local]--[hash:5]'
                         }
                     }
                 ]

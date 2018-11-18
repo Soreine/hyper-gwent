@@ -1,6 +1,6 @@
 const Path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const baseConfig = require('./base');
 
@@ -23,9 +23,16 @@ module.exports = Object.assign({}, baseConfig, {
     },
     plugins: [
         new CleanWebpackPlugin([path('dist/website')]),
-        new HtmlWebpackPlugin({
-            title: 'Hyper Gwent',
-            favicon: path('src/website/favicon.ico')
-        })
+        new CopyWebpackPlugin([
+            {
+                from: path('src/website/public/'),
+                to: path('dist/website/')
+            }
+        ])
+        // new HtmlWebpackPlugin({
+        //     title: 'Hyper Gwent',
+        //     favicon: path('src/website/favicon.ico'),
+        //     chunks: [path('src/website/website.css')]
+        // })
     ]
 });
