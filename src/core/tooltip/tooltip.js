@@ -5,26 +5,34 @@ import { createElement } from 'jsx-dom';
 import TooltipCSS from './tooltip.css';
 import NEW_CARD from './NEW_CARD';
 
+// Convert a card from gwent-data to our own format
+function formatCard(cardJson) {
+    const variation = cardJson.variations[`${cardJson.ingameId}00`];
+
+    const { rarity, art } = variation;
+    const name = cardJson.name['en-US'];
+    const info = cardJson.info['en-US'];
+
+    return {
+        name,
+        info,
+        rarity,
+        art
+    };
+}
+
 const styles = TooltipCSS.locals;
 
-const tooltipElement = (card, { cardFrame = null } = {}) => {
-    const variation = card.variations[`${card.ingameId}00`];
+const tooltipElement = (card, { cardFrame = null } = {}) => (
+    <div className={styles.card}>
+        <img className={styles.art} data-src={card.art.low} alt="" />
 
-    const { rarity } = variation;
-    const name = card.name['en-US'];
-    const info = card.info['en-US'];
-
-    return (
-        <div className={styles.card}>
-            <img className={styles.art} data-src={variation.art.low} alt="" />
-
-            <div className={styles.tooltip}>
-                <div className={styles.name}>{name}</div>
-                <div className={styles.info}>{info}</div>
-            </div>
+        <div className={styles.tooltip}>
+            <div className={styles.name}>{card.name}</div>
+            <div className={styles.info}>{card.info}</div>
         </div>
-    );
-};
+    </div>
+);
 
 class CardTooltip {
     // Is the tooltip visible ?
@@ -141,7 +149,7 @@ class CardTooltip {
 }
 
 function attachTooltip(card, target, assets) {
-    const tooltip = new CardTooltip(NEW_CARD, target, assets);
+    const tooltip = new CardTooltip(formatCard(NEW_CARD), target, assets);
     tooltip.inject();
 }
 
