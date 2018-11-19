@@ -12,11 +12,13 @@ function formatCard(cardJson) {
     const { rarity, art } = variation;
     const name = cardJson.name['en-US'];
     const info = cardJson.info['en-US'];
+    const infoRaw = cardJson.infoRaw['en-US'];
     const { faction } = cardJson;
 
     return {
         name,
         info,
+        infoRaw,
         rarity,
         art,
         faction
@@ -25,7 +27,7 @@ function formatCard(cardJson) {
 
 const styles = TooltipCSS.locals;
 
-const tooltipElement = (card, { cardFrame = null } = {}) => (
+const TooltipElement = ({ card }) => (
     <div className={styles.card}>
         <div className={styles.artFrame}>
             <div
@@ -43,11 +45,28 @@ const tooltipElement = (card, { cardFrame = null } = {}) => (
             >
                 <div className={styles.name}>{card.name}</div>
             </div>
-
-            <div className={styles.tooltipInfo}>{card.info}</div>
+            <TooltipInfo infoRaw={card.infoRaw} />
         </div>
     </div>
 );
+
+function TooltipInfo({ infoRaw }) {
+    const keywordRe = /<keyword=\w*>(.*?)<\/keyword>/g;
+    const children = [];
+    let result;
+    let consumedCount = 0;
+    // eslint-disable-next-line
+    while ((result = keywordRe.exec(infoRaw)) !== null) {
+        const previousText = infoRaw.slice(consumedCount, result.index);
+        const keywordText = result[1];
+        children.push(previousText);
+        children.push(<strong>{keywordText}</strong>);
+        consumedCount = consumedCount + previousText.length + result[0].length;
+    }
+    children.push(infoRaw.slice(consumedCount));
+
+    return <div className={styles.tooltipInfo}>{children}</div>;
+}
 
 class CardTooltip {
     // Is the tooltip visible ?
@@ -65,7 +84,7 @@ class CardTooltip {
     constructor(card, target, assets) {
         this.target = target;
 
-        const tooltip = tooltipElement(card, assets);
+        const tooltip = <TooltipElement card={card} />;
         const wrapper = (
             <div
                 style={{
