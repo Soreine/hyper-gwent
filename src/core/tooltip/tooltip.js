@@ -65,7 +65,17 @@ function TooltipInfo({ infoRaw }) {
     }
     children.push(infoRaw.slice(consumedCount));
 
-    return <div className={styles.tooltipInfo}>{children}</div>;
+    return (
+        <div className={styles.tooltipInfo}>
+            <div className={styles.tooltipInfoBackground}>
+                {children}
+                {children}
+                {children}
+                {children}
+                {children}
+            </div>
+        </div>
+    );
 }
 
 class CardTooltip {

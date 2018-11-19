@@ -15,7 +15,8 @@
 /* Gwent Fonts */
 @font-face {
   font-family: Gwent;
-  src: url("../../../assets/fonts/hinted-GWENT-ExtraBold.eot") format("embedded-opentype"),
+  src: url("../../../assets/fonts/hinted-GWENT-ExtraBold.eot")
+      format("embedded-opentype"),
     url("../../../assets/fonts/hinted-GWENT-ExtraBold.woff") format("woff"),
     url("../../../assets/fonts/hinted-GWENT-ExtraBold.woff2") format("woff2"),
     url("../../../assets/fonts/hinted-GWENT-ExtraBold.ttf") format("truetype");
@@ -26,7 +27,8 @@
 
 @font-face {
   font-family: HalisGR-Regular;
-  src: url("../../../assets/fonts/hinted-HalisGR-Regular.eot") format("embedded-opentype"),
+  src: url("../../../assets/fonts/hinted-HalisGR-Regular.eot")
+      format("embedded-opentype"),
     url("../../../assets/fonts/hinted-HalisGR-Regular.woff2") format("woff2"),
     url("../../../assets/fonts/hinted-HalisGR-Regular.woff") format("woff"),
     url("../../../assets/fonts/hinted-HalisGR-Regular.ttf") format("truetype");
@@ -122,7 +124,7 @@
 @keyword-color: #610a03;
 
 .tooltipInfo {
-  font-family: 'HalisGR-Regular', sans-serif;
+  font-family: "HalisGR-Regular", sans-serif;
   font-size: 14px;
   line-height: 1.2;
   color: #222;
@@ -131,4 +133,16 @@
   strong {
     color: @keyword-color;
   }
+
+  background-image: url("../../../assets/tooltip-text-background-repeat.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+
+.tooltipInfoBackground {
+  background-image: url("../../../assets/tooltip-text-background-bottom.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+  padding: 15px 15px;
 }
