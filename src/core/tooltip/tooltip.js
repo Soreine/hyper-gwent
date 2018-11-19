@@ -2,7 +2,7 @@
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
-import TooltipCSS from './tooltip.css';
+import TooltipCSS from './tooltip.less';
 import NEW_CARD from './NEW_CARD';
 
 // Convert a card from gwent-data to our own format
@@ -12,12 +12,14 @@ function formatCard(cardJson) {
     const { rarity, art } = variation;
     const name = cardJson.name['en-US'];
     const info = cardJson.info['en-US'];
+    const { faction } = cardJson;
 
     return {
         name,
         info,
         rarity,
-        art
+        art,
+        faction
     };
 }
 
@@ -35,8 +37,14 @@ const tooltipElement = (card, { cardFrame = null } = {}) => (
         </div>
 
         <div className={styles.tooltip}>
-            <div className={styles.name}>{card.name}</div>
-            <div className={styles.info}>{card.info}</div>
+            <div
+                className={styles.tooltipHeader}
+                data-card-faction={card.faction}
+            >
+                <div className={styles.name}>{card.name}</div>
+            </div>
+
+            <div className={styles.tooltipInfo}>{card.info}</div>
         </div>
     </div>
 );

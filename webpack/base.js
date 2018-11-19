@@ -7,7 +7,7 @@ module.exports = {
                 use: 'babel-loader'
             },
             {
-                test: /\.css$/,
+                test: /\.less$/,
                 use: [
                     {
                         loader: 'css-loader',
@@ -15,6 +15,9 @@ module.exports = {
                             modules: true,
                             localIdentName: 'hyper_gwent_[local]--[hash:5]'
                         }
+                    },
+                    {
+                        loader: 'less-loader' // compiles Less to CSS
                     }
                 ]
             },

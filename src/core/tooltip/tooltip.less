@@ -1,0 +1,113 @@
+@art-width: 228px;
+@art-height: 341px;
+
+.outer {
+  all: initial;
+}
+
+.outer *,
+.outer *::before,
+.outer *::after {
+  all: unset;
+  box-sizing: border-box;
+}
+
+/* Gwent Fonts */
+@font-face {
+  font-family: Gwent;
+  src: url("../../../assets/fonts/hinted-GWENT-ExtraBold.eot%3F") format("embedded-opentype"),
+    url("../../../assets/fonts/hinted-GWENT-ExtraBold.woff") format("woff"),
+    url("../../../assets/fonts/hinted-GWENT-ExtraBold.woff2") format("woff2"),
+    url("../../../assets/fonts/hinted-GWENT-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+}
+
+.card,
+.card div,
+.card img {
+  display: block;
+}
+.card {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  width: @art-width;
+  /* Should not mess with hovering logic */
+  pointer-events: none;
+}
+
+.artFrame {
+  /*
+   * height of the image when it's loaded
+   * hard coding it here to prevent the tooltip from being resized
+   */
+  width: @art-width;
+  height: @art-height;
+  position: relative;
+}
+
+.art {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  /* Compensate alpha around the card art */
+  background-position: top -13px left -23px;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.tooltip {
+  position: relative;
+  overflow: hidden;
+}
+
+@header-count: 6;
+
+.tooltipHeader {
+  height: 72px;
+  padding: 15px 10px 0px;
+
+  background-image: url("../../../assets/tooltip-header-sprite.png");
+  /* background-size based on amount of assets in the sprite. */
+  background-size: (@header-count * 100%);
+  background-repeat: no-repeat;
+
+  &[data-card-faction="Neutral"] {
+    background-position: 0% center;
+  }
+  &[data-card-faction="Northern Realms"] {
+    background-position: 20% center;
+  }
+  &[data-card-faction="Scoiatael"] {
+    background-position: 40% center;
+  }
+  &[data-card-faction="Monsters"] {
+    background-position: 60% center;
+  }
+  &[data-card-faction="Skellige"] {
+    background-position: 80% center;
+  }
+  &[data-card-faction="Nilfgaard"] {
+    background-position: 100% center;
+  }
+}
+
+.name {
+  font-family: Gwent, sans-serif;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: -webkit-linear-gradient(#fff, #999999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tooltipInfo {
+}
