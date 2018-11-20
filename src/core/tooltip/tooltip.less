@@ -37,21 +37,18 @@
   text-rendering: optimizeLegibility;
 }
 
-.card,
-.card div,
-.card img {
-  display: block;
-}
 .card {
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 1.5;
-  width: @art-width;
+  display: flex;
+  flex-direction: row;
   /* Should not mess with hovering logic */
   pointer-events: none;
 }
 
 .artFrame {
+  display: block;
   /*
    * height of the image when it's loaded
    * hard coding it here to prevent the tooltip from being resized
@@ -62,6 +59,7 @@
 }
 
 .art {
+  display: block;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -75,13 +73,15 @@
 }
 
 .tooltip {
+  display: block;
   position: relative;
-  overflow: hidden;
+  width: @art-width;
 }
 
 @header-count: 6;
 
 .tooltipHeader {
+  display: block;
   height: 72px;
   padding: 15px 10px 0px;
 
@@ -111,6 +111,7 @@
 }
 
 .name {
+  display: inline;
   font-family: Gwent, sans-serif;
   text-align: center;
   font-size: 20px;
@@ -124,25 +125,51 @@
 @keyword-color: #610a03;
 
 .tooltipInfo {
+  display: block;
   font-family: "HalisGR-Regular", sans-serif;
   font-size: 14px;
   line-height: 1.2;
   color: #222;
-  background: white;
+  position: relative;
 
   strong {
     color: @keyword-color;
   }
-
-  background-image: url("../../../assets/tooltip-text-background-repeat.png");
-  background-repeat: repeat-y;
-  background-size: contain;
 }
 
 .tooltipInfoBackground {
-  background-image: url("../../../assets/tooltip-text-background-bottom.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center bottom;
-  padding: 15px 15px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: start;
+
+
+  &:before {
+    display: block;
+    content: "";
+    z-index: 0;
+    flex: 1 1 auto;
+    height: 100%;
+    background-image: url("../../../assets/tooltip-text-background-repeat.png");
+    background-repeat: repeat-y;
+    background-size: contain;
+  }
+
+  &:after {
+    display: block;
+    content: "";
+    z-index: 1;
+    flex: 0 0 auto;
+    height: 43px;
+    background-image: url("../../../assets/tooltip-text-background-bottom.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+  }
 }

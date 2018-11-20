@@ -67,13 +67,13 @@ function TooltipInfo({ infoRaw }) {
 
     return (
         <div className={styles.tooltipInfo}>
-            <div className={styles.tooltipInfoBackground}>
-                {children}
-                {children}
-                {children}
-                {children}
-                {children}
-            </div>
+            <div className={styles.tooltipInfoBackground} />
+
+            {children}
+            {children}
+            {children}
+            {children}
+            {children}
         </div>
     );
 }
