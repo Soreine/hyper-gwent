@@ -27,28 +27,40 @@ function formatCard(cardJson) {
 
 const styles = TooltipCSS.locals;
 
-const TooltipElement = ({ card }) => (
-    <div className={styles.card}>
-        <div className={styles.artFrame}>
-            <div
-                className={styles.art}
-                style={{
-                    backgroundImage: `url(${card.art.low})`
-                }}
-            />
-        </div>
-
-        <div className={styles.tooltip}>
-            <div
-                className={styles.tooltipHeader}
-                data-card-faction={card.faction}
-            >
-                <div className={styles.name}>{card.name}</div>
+function TooltipElement({ card }) {
+    return (
+        <div className={styles.card}>
+            <div className={styles.artFrame}>
+                <div
+                    className={styles.art}
+                    style={{
+                        backgroundImage: `url(${card.art.low})`
+                    }}
+                />
             </div>
-            <TooltipInfo infoRaw={card.infoRaw} />
+
+            <div className={styles.tooltip}>
+                <TooltipHeader faction={card.faction} name={card.name} />
+                <TooltipInfo infoRaw={card.infoRaw} />
+            </div>
         </div>
-    </div>
-);
+    );
+}
+
+function TooltipHeader({ faction, name }) {
+    return (
+        <div className={styles.tooltipHeader}>
+            <div
+                className={styles.tooltipHeaderBackground}
+                data-card-faction={faction}
+            />
+
+            <div className={styles.tooltipHeaderText}>
+                <div className={styles.tooltipHeaderName}>{name}</div>
+            </div>
+        </div>
+    );
+}
 
 function TooltipInfo({ infoRaw }) {
     const keywordRe = /<keyword=\w*>(.*?)<\/keyword>/g;
