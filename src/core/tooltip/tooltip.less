@@ -131,6 +131,7 @@
   line-height: 1.2;
   color: #222;
   position: relative;
+  padding: 16px;
 
   strong {
     color: @keyword-color;
@@ -139,6 +140,7 @@
 
 .tooltipInfoBackground {
   position: absolute;
+  z-index: -1;
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -153,18 +155,16 @@
   &:before {
     display: block;
     content: "";
-    z-index: 0;
     flex: 1 1 auto;
     height: 100%;
+    background-size: 100%;
     background-image: url("../../../assets/tooltip-text-background-repeat.png");
     background-repeat: repeat-y;
-    background-size: contain;
   }
 
   &:after {
     display: block;
     content: "";
-    z-index: 1;
     flex: 0 0 auto;
     height: 43px;
     background-image: url("../../../assets/tooltip-text-background-bottom.png");
