@@ -142,7 +142,7 @@ class CardTooltip {
     // HTML element to live in
     wrapper = null;
 
-    constructor(card, target, assets) {
+    constructor(card, target) {
         this.target = target;
 
         const tooltip = <TooltipElement card={card} />;
@@ -182,6 +182,8 @@ class CardTooltip {
         target.addEventListener('mouseenter', () => this.show());
         target.addEventListener('mouseleave', () => this.hide());
         target.addEventListener('mousemove', e => this.follow(e));
+
+        this.show();
     }
 
     hide() {
@@ -262,8 +264,8 @@ function injectStylesIfNeeded() {
     }
 }
 
-function attachTooltip(card, target, assets) {
-    const tooltip = new CardTooltip(formatCard(NEW_CARD), target, assets);
+function attachTooltip(card, target) {
+    const tooltip = new CardTooltip(formatCard(NEW_CARD), target);
     tooltip.inject();
 }
 
