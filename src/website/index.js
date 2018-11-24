@@ -58,24 +58,6 @@ const htmlPage = (
                 }
             </p>
 
-            <p>
-                <em>You might find this shocking:</em>
-                <ul>
-                    <li>Xmen are not what they used to be.</li>
-                    <li>ADC does not stand for Attack Damage Carry.</li>
-                    <li>
-                        {'There '}
-                        <em>are</em>
-                        {' worst names for a dragon than Borkh.'}
-                    </li>
-                    <li>
-                        {
-                            'Gwent has nothing to do with cooking frogs, mushrooms, or anything remotely related to french cuisine.'
-                        }
-                    </li>
-                </ul>
-            </p>
-
             <div className="emote">
                 <div className="avatar geralt" />
                 <div className="emote-text">Not bad. Not bad at all.</div>
