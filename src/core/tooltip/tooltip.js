@@ -13,7 +13,7 @@ function formatCard(cardJson) {
     const name = cardJson.name['en-US'];
     const info = cardJson.info['en-US'];
     const infoRaw = cardJson.infoRaw['en-US'];
-    const { faction } = cardJson;
+    const { faction, categories } = cardJson;
 
     return {
         name,
@@ -21,7 +21,8 @@ function formatCard(cardJson) {
         infoRaw,
         rarity,
         art,
-        faction
+        faction,
+        categories
     };
 }
 
@@ -30,24 +31,33 @@ const styles = TooltipCSS.locals;
 function TooltipElement({ card }) {
     return (
         <div className={styles.card}>
-            <div className={styles.artFrame}>
-                <div
-                    className={styles.art}
-                    style={{
-                        backgroundImage: `url(${card.art.low})`
-                    }}
-                />
-            </div>
-
+            <CardArt art={card.art} />
             <div className={styles.tooltip}>
-                <TooltipHeader faction={card.faction} name={card.name} />
+                <TooltipHeader
+                    faction={card.faction}
+                    name={card.name}
+                    categories={card.categories}
+                />
                 <TooltipInfo infoRaw={card.infoRaw} />
             </div>
         </div>
     );
 }
 
-function TooltipHeader({ faction, name }) {
+function CardArt({ art }) {
+    return (
+        <div className={styles.artFrame}>
+            <div
+                className={styles.art}
+                style={{
+                    backgroundImage: `url(${art.low})`
+                }}
+            />
+        </div>
+    );
+}
+
+function TooltipHeader({ faction, name, categories }) {
     return (
         <div className={styles.tooltipHeader}>
             <div
@@ -56,7 +66,10 @@ function TooltipHeader({ faction, name }) {
             />
 
             <div className={styles.tooltipHeaderText}>
-                <div className={styles.tooltipHeaderName}>{name}</div>
+                <div className={styles.tooltipName}>{name}</div>
+                <div className={styles.tooltipCategories}>
+                    {categories.join(', ')}
+                </div>
             </div>
         </div>
     );

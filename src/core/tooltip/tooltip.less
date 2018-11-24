@@ -122,24 +122,37 @@
 }
 
 .tooltipHeaderText {
-  display: block;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 15px 10px 0px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   text-align: center;
 }
 
-.tooltipHeaderName {
-  display: inline;
+.tooltipName {
+  display: inline-flex;
   font-family: Gwent, sans-serif;
   font-size: 20px;
   line-height: 1.2;
-  color: #fff;
   text-transform: uppercase;
   font-weight: bold;
+  color: #fff;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.tooltipCategories {
+  display: inline-flex;
+  font-family: "HalisGR-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  // font-weight: bold;
+  color: #fff;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
