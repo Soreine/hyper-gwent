@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-
 /* Gwent Fonts */
 @font-face {
   font-family: "Gwent";
@@ -10,6 +8,18 @@
     url("../assets/fonts/hinted-GWENT-ExtraBold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "HalisGR-Book";
+  src: url("../../assets/fonts/hinted-HalisGR-Book.eot")
+      format("embedded-opentype"),
+    url("../../assets/fonts/hinted-HalisGR-Book.woff2") format("woff2"),
+    url("../../assets/fonts/hinted-HalisGR-Book.woff") format("woff"),
+    url("../../assets/fonts/hinted-HalisGR-Book.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
 }
 
@@ -24,7 +34,7 @@ html {
 }
 
 body {
-  font-family: "Josefin Sans", Helvetica, sans-serif;
+  font-family: "HalisGR-Book", Helvetica, sans-serif;
   font-size: 1.3rem;
   color: rgb(217, 216, 203);
   font-weight: 300;
