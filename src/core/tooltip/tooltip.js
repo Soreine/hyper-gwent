@@ -131,7 +131,7 @@ class CardTooltip {
         const wrapper = (
             <div
                 style={{
-                    display: 'block',
+                    display: 'none',
                     position: 'fixed',
                     top: '50%',
                     left: '50%',
@@ -164,10 +164,12 @@ class CardTooltip {
         target.addEventListener('mouseenter', () => this.show());
         target.addEventListener('mouseleave', () => this.hide());
         target.addEventListener('mousemove', e => this.follow(e));
+
+        this.show();
     }
 
     hide() {
-        // this.wrapper.style.display = 'none';
+        this.wrapper.style.display = 'none';
         this.visible = false;
     }
 
