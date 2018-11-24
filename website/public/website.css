@@ -1,4 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+/* Gwent Fonts */
+@font-face {
+  font-family: "Gwent";
+  src: url("../assets/fonts/hinted-GWENT-ExtraBold.eot")
+      format("embedded-opentype"),
+    url("../assets/fonts/hinted-GWENT-ExtraBold.woff") format("woff"),
+    url("../assets/fonts/hinted-GWENT-ExtraBold.woff2") format("woff2"),
+    url("../assets/fonts/hinted-GWENT-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+}
 
 /*
 Logo colors
@@ -7,106 +20,112 @@ Logo colors
  */
 
 html {
-    background: rgb(23, 20, 13);
+  background: #19191d;
 }
 
 body {
-    background: linear-gradient(to bottom, rgb(35, 32, 24) 0%,rgb(23, 20, 13) 100%);
-    font-family: 'Josefin Sans', Helvetica, sans-serif;
-    font-size: 1.3rem;
-    color: #d2c8bb;
-    font-weight: 300;
-    line-height: 1.5;
-    margin: 0px;
-    padding: 0px;
+  font-family: "Josefin Sans", Helvetica, sans-serif;
+  font-size: 1.3rem;
+  color: rgb(217, 216, 203);
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0px;
+  padding: 0px;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    margin: auto;
-    max-width: 800px;
-    padding: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: auto;
+  max-width: 800px;
+  padding: 3em;
 }
 
 .logo {
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3em;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3em;
 }
 
 .logo-title {
-    width: 80%;
+  font-family: "Gwent", sans-serif;
+  font-size: 4em;
+  background: -webkit-linear-gradient(rgb(28, 255, 141), rgb(16, 86, 93));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .noextension {
-    padding: 0.8em;
-    border: 1px dashed;
-    opacity: 0.6;
-    font-size: 0.8em;
+  padding: 0.8em;
+  border: 1px dashed;
+  opacity: 0.6;
+  font-size: 0.8em;
 }
 
 .download-link {
-    align-self: center;
+  align-self: center;
+  font-family: "Gwent", sans-serif;
 
-    background: linear-gradient(to bottom, rgb(21, 199, 109) 0%,rgb(16, 86, 93) 100%);
+  background: linear-gradient(to bottom, #f2d259 0%, #ba862b 100%);
 
-    padding: 0.8em;
-    border-radius: 0.5em;
-    border-bottom: none;
+  padding: 0.6em;
+  border-radius: 0.2em;
+  border-bottom: none;
 
-    color: #fff8d7;
-    text-decoration: none;
-    font-weight: 400;
+  color: rgb(27, 22, 10);
+  text-shadow: rgb(255, 216, 107) 0px 1px 0px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
 
-    margin-bottom: 3em;
+  margin-bottom: 3em;
 }
 
 .emote {
-    display: flex;
-    margin-bottom: 3em;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  margin-bottom: 3em;
+  align-items: center;
+  justify-content: center;
 }
 
 .avatar {
-    height: 100px;
-    width: 100px;
-    flex: 0 0 auto;
-    transform: scale(0.8);
+  height: 100px;
+  width: 100px;
+  flex: 0 0 auto;
+  transform: scale(0.8);
 }
 
 .dandelion {
-    background: url(./dandelion.png) #313131;
+  background: url(./dandelion.png) #313131;
 }
 
 .geralt {
-    background: url(./geralt.png) #313131;
+  background: url(./geralt.png) #313131;
 }
 
 .emote-text {
-    font-style: italic;
-    width: 400px;
-    flex: 0 1 auto;
-    margin-left: 3em;
+  font-style: italic;
+  width: 400px;
+  flex: 0 1 auto;
+  margin-left: 3em;
 }
 
 .issues {
-    font-size: 0.8em;
-    opacity: 0.6;
+  font-size: 0.8em;
+  opacity: 0.6;
 }
 
 a {
-    color: rgb(55, 207, 136);
-    text-decoration: none;
-    padding-bottom: 0.1em;
-    border-bottom: 1px solid;
+  color: rgb(227, 185, 87);
+  text-decoration: none;
+  padding-bottom: 0.1em;
+  border-bottom: 1px solid;
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 3em;
+  margin-top: 0;
+  margin-bottom: 3em;
 }

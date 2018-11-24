@@ -13,7 +13,7 @@ module.exports = Object.assign({}, baseConfig, {
     optimization: {
         usedExports: true
     },
-    entry: path('src/website'),
+    entry: path('website'),
     output: {
         path: path('dist/website'),
         filename: 'website.js'
@@ -25,14 +25,14 @@ module.exports = Object.assign({}, baseConfig, {
         new CleanWebpackPlugin([path('dist/website')]),
         new CopyWebpackPlugin([
             {
-                from: path('src/website/public/'),
+                from: path('website/public/'),
                 to: path('dist/website/')
             }
         ])
         // new HtmlWebpackPlugin({
         //     title: 'Hyper Gwent',
-        //     favicon: path('src/website/favicon.ico'),
-        //     chunks: [path('src/website/website.css')]
+        //     favicon: path('website/favicon.ico'),
+        //     chunks: [path('website/website.css')]
         // })
     ]
 });

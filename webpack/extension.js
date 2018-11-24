@@ -9,8 +9,8 @@ function path(p) {
 module.exports = Object.assign({}, baseConfig, {
     mode: 'development',
     entry: {
-        content: path('src/extension/content.js'),
-        options: path('src/extension/options.js')
+        content: path('extension/content.js'),
+        options: path('extension/options.js')
     },
     output: {
         path: path('dist/chrome'),

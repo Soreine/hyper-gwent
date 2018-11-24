@@ -1,6 +1,5 @@
 import browser from 'webextension-polyfill';
 import walk from './walk';
-import cardFrame from '../core/tooltip/card-frame.png';
 
 browser.storage.sync
     .get({
@@ -8,6 +7,6 @@ browser.storage.sync
     })
     .then(options => {
         walk(options, {
-            cardFrame: browser.extension.getURL(cardFrame)
+            // cardFrame: browser.extension.getURL(cardFrame)
         });
     });

@@ -3,7 +3,6 @@
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import walk from '../extension/walk';
-import Logo from './logo.svg';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const GWENTDB = 'http://www.gwentdb.com/';
@@ -20,9 +19,9 @@ const browser =
 const htmlPage = (
     <div className="content">
         <div className="logo">
-            <div className="logo-title" innerHTML={Logo} />
+            <div className="logo-title">Hyper Gwent</div>
             <div className="logo-subtitle">
-                {'Browser extension for GWENT®: The Witcher Card Game'}
+                {'Fan-made browser extension for GWENT®: The Witcher Card Game'}
             </div>
         </div>
 
@@ -161,6 +160,9 @@ const htmlPage = (
         </p>
 
         <p className="issues">
+            This is an unofficial fan work under the Gwent Fan Content
+            Guidelines. Not approved/endorsed by CD PROJEKT RED.
+            <br />
             If you find bugs, if you want to submit new acronyms, request a
             feature, or contribute, post an issue <a href={REPO}>here</a>.
             <br />

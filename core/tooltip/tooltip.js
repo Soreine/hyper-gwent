@@ -8,7 +8,7 @@ import flatmap from 'flatmap';
 
 import TooltipCSS from './tooltip.less';
 
-import CARDS from '../../../gwentgenerator.com/cards';
+import CARDS from '../../gwentgenerator.com/cards';
 
 const CARDS_LIST = Object.keys(CARDS).map(key => CARDS[key]);
 
