@@ -182,8 +182,6 @@ class CardTooltip {
         target.addEventListener('mouseenter', () => this.show());
         target.addEventListener('mouseleave', () => this.hide());
         target.addEventListener('mousemove', e => this.follow(e));
-
-        this.show();
     }
 
     hide() {
