@@ -176,29 +176,9 @@
   bottom: 0px;
   left: 0px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
+  display: block;
 
-  &:before {
-    display: block;
-    content: "";
-    flex: 1 1 auto;
-    height: 100%;
-    background-size: 100%;
-    background-image: url("../../../assets/tooltip-text-background-repeat.png");
-    background-repeat: repeat-y;
-  }
-
-  &:after {
-    display: block;
-    content: "";
-    flex: 0 0 auto;
-    height: 43px;
-    background-image: url("../../../assets/tooltip-text-background-bottom.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center bottom;
-  }
+  background-image: url("../../../assets/tooltip-text-background.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
