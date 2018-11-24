@@ -3,6 +3,8 @@
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import BigText from 'big-text.js';
+import intercalate from 'intercalate';
+import flatmap from 'flatmap';
 
 import TooltipCSS from './tooltip.less';
 
@@ -94,26 +96,37 @@ function TooltipHeader({ faction, name, categories }) {
 }
 
 function TooltipInfo({ infoRaw }) {
-    const keywordRe = /<keyword=\w*>(.*?)<\/keyword>/g;
-    const children = [];
-    let result;
-    let consumedCount = 0;
-    // eslint-disable-next-line
-    while ((result = keywordRe.exec(infoRaw)) !== null) {
-        const previousText = infoRaw.slice(consumedCount, result.index);
-        const keywordText = result[1];
-        children.push(previousText);
-        children.push(<strong>{keywordText}</strong>);
-        consumedCount = consumedCount + previousText.length + result[0].length;
-    }
-    children.push(infoRaw.slice(consumedCount));
-
     return (
         <div className={styles.tooltipInfo}>
             <div className={styles.tooltipInfoBackground} />
-            {children}
+            {infoRawToHtml(infoRaw)}
         </div>
     );
+}
+
+function infoRawToHtml(infoRaw) {
+    const newLines = /\n/g;
+    const lines = infoRaw.trim().split(newLines);
+
+    return flatmap(intercalate(lines.map(tagKeywords), <br />), x => x);
+}
+
+function tagKeywords(text) {
+    const keywordRe = /<keyword=\w*>(.*?)<\/keyword>/g;
+    const elements = [];
+    let result;
+    let consumedCount = 0;
+    // eslint-disable-next-line
+    while ((result = keywordRe.exec(text)) !== null) {
+        const previousText = text.slice(consumedCount, result.index);
+        const keywordText = result[1];
+        elements.push(previousText);
+        elements.push(<strong>{keywordText}</strong>);
+        consumedCount = consumedCount + previousText.length + result[0].length;
+    }
+    elements.push(text.slice(consumedCount));
+
+    return elements;
 }
 
 class CardTooltip {
@@ -229,9 +242,10 @@ class CardTooltip {
 }
 
 function autoSizeCardName(tooltipElement) {
-    const nameText = tooltipElement.querySelector('[data-card-name-text]');
+    const nameElement = tooltipElement.querySelector('[data-card-name-text]');
+    // This makes sure any redraw was performed
     window.requestAnimationFrame(() =>
-        BigText(nameText, {
+        BigText(nameElement, {
             limitingDimension: 'width',
             maximumFontSize: 24
         })

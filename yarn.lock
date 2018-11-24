@@ -3069,6 +3069,10 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
+flatmap@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/flatmap/-/flatmap-0.0.3.tgz#1f18a4d938152d495965f9c958d923ab2dd669b4"
+
 flush-write-stream@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.0.3.tgz#c5d586ef38af6097650b49bc41b55fabb19f35bd"
@@ -3662,6 +3666,10 @@ inquirer@^6.1.0:
     string-width "^2.1.0"
     strip-ansi "^4.0.0"
     through "^2.3.6"
+
+intercalate@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/intercalate/-/intercalate-0.1.2.tgz#81efd022d16c7349ff1f3027c4e4efb447b4d012"
 
 internal-ip@^3.0.1:
   version "3.0.1"
