@@ -5,7 +5,12 @@ import { createElement } from 'jsx-dom';
 import BigText from 'big-text.js';
 
 import TooltipCSS from './tooltip.less';
-import NEW_CARD from './NEW_CARD';
+
+import CARDS from '../../../gwentgenerator.com/cards';
+
+const CARDS_LIST = Object.keys(CARDS).map(key => CARDS[key]);
+
+const NEW_CARD = CARDS_LIST[Math.floor(Math.random() * CARDS_LIST.length)];
 
 // Convert a card from gwent-data to our own format
 function formatCard(cardJson) {
