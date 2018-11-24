@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "big-text.js": "^1.0.1",
     "jsx-dom": "^6.2.1",
     "pluralize": "^6.0.0",
     "remove-accents": "^0.4.1",

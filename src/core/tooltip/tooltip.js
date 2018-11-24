@@ -2,6 +2,8 @@
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
+import BigText from 'big-text.js';
+
 import TooltipCSS from './tooltip.less';
 import NEW_CARD from './NEW_CARD';
 
@@ -58,6 +60,8 @@ function CardArt({ art }) {
 }
 
 function TooltipHeader({ faction, name, categories }) {
+    const categoryText = categories.join(', ').trim();
+
     return (
         <div className={styles.tooltipHeader}>
             <div
@@ -66,10 +70,19 @@ function TooltipHeader({ faction, name, categories }) {
             />
 
             <div className={styles.tooltipHeaderText}>
-                <div className={styles.tooltipName}>{name}</div>
-                <div className={styles.tooltipCategories}>
-                    {categories.join(', ')}
+                {/* Necessary parent block for BigText to work */}
+                <div style={{ width: '100%', display: 'block' }}>
+                    <span data-card-name-text className={styles.tooltipName}>
+                        {name}
+                    </span>
                 </div>
+                {categoryText && (
+                    <div>
+                        <span className={styles.tooltipCategories}>
+                            {categoryText}
+                        </span>
+                    </div>
+                )}
             </div>
         </div>
     );
@@ -146,15 +159,7 @@ class CardTooltip {
 
         window.document.body.appendChild(outer);
 
-        const STYLE_ID = 'hyperGwentStyle';
-        if (window.document.getElementById(STYLE_ID) == null) {
-            const style = (
-                <style type="text/css" id={STYLE_ID}>
-                    {TooltipCSS.toString()}
-                </style>
-            );
-            window.document.head.appendChild(style);
-        }
+        injectStylesIfNeeded();
 
         target.addEventListener('mouseenter', () => this.show());
         target.addEventListener('mouseleave', () => this.hide());
@@ -178,6 +183,8 @@ class CardTooltip {
         wrapper.style.display = 'block';
 
         this.visible = true;
+
+        autoSizeCardName(this.outer);
     }
 
     follow(mouseEvent) {
@@ -211,6 +218,28 @@ class CardTooltip {
 
         wrapper.style.top = `${top}px`;
         wrapper.style.left = `${left}px`;
+    }
+}
+
+function autoSizeCardName(tooltipElement) {
+    const nameText = tooltipElement.querySelector('[data-card-name-text]');
+    window.requestAnimationFrame(() =>
+        BigText(nameText, {
+            limitingDimension: 'width',
+            maximumFontSize: 24
+        })
+    );
+}
+
+function injectStylesIfNeeded() {
+    const STYLE_ID = 'hyperGwentStyle';
+    if (window.document.getElementById(STYLE_ID) == null) {
+        const style = (
+            <style type="text/css" id={STYLE_ID}>
+                {TooltipCSS.toString()}
+            </style>
+        );
+        window.document.head.appendChild(style);
     }
 }
 
