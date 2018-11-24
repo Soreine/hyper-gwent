@@ -154,7 +154,7 @@ class CardTooltip {
                     top: '50%',
                     left: '50%',
                     transform: 'translateY(-40%)',
-                    // pointerEvents: 'none',
+                    pointerEvents: 'none',
                     zIndex: 999999999
                 }}
             />
