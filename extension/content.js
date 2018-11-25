@@ -1,5 +1,5 @@
 import browser from 'webextension-polyfill';
-import walk from './walk';
+import walk from '../core/walk';
 
 browser.storage.sync
     .get({
