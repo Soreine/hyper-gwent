@@ -1,5 +1,5 @@
 // @flow
-import type { Card, CardJSON } from './types';
+import type { Card } from '../types';
 
 function parseCard(cardJson: CardJSON): Card {
     const { ingameId: id, faction, categories } = cardJson;

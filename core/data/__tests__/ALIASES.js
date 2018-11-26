@@ -1,7 +1,7 @@
 // @flow
 import test from 'ava';
 import ALIASES from '../ALIASES';
-import CARDS from '../CARDS.json';
+import CARDS from '../CARDS';
 
 test('Should be defined for every cards', t => {
     t.deepEqual(Object.keys(ALIASES).sort(), Object.keys(CARDS).sort());

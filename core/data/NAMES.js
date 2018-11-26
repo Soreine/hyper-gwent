@@ -1,6 +1,6 @@
 // @flow
-import CARDS from './CARDS.json';
+import CARD_LIST from './CARD_LIST';
 
-const NAMES = Object.keys(CARDS);
+const NAMES: string[] = CARD_LIST.map(card => card.name);
 
 export default NAMES;

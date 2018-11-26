@@ -9,7 +9,7 @@ import intercalate from 'intercalate';
 import flatmap from 'flatmap';
 
 import TooltipCSS from './tooltip.less';
-import type { Card, CardArt, Faction } from '../types';
+import type { Card } from '../types';
 
 const styles = TooltipCSS.locals;
 

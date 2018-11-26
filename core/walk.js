@@ -6,17 +6,10 @@ import urlParse from 'url-parse';
 import findAllMatches from './findAllMatches';
 import replaceMatches from './replaceMatches';
 import tooltip from './tooltip';
-import { CARDS } from './data';
-import DICTIONARY from './dictionary';
-import parseCard from './parseCard';
-
-import NEW_CARDS from '../gwentgenerator.com/cards';
-
-const CARDS_LIST = Object.keys(NEW_CARDS).map(key => parseCard(NEW_CARDS[key]));
-const NEW_CARD = CARDS_LIST[Math.floor(Math.random() * CARDS_LIST.length)];
+import { CARDS, DICTIONARY } from './data';
 
 const CLASSNAME = 'hyper-gwent-card-highlight';
-const CARD_NAME_ATTRIBUTE = 'data-card-name';
+const CARD_ID_ATTRIBUTE = 'data-card-id';
 const GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
 const GWENTDB_HOSTNAME = 'www.gwentdb.com';
 
@@ -113,7 +106,7 @@ function walk(
             node.nodeValue,
             matches,
             match =>
-                `<span class="${CLASSNAME}" ${CARD_NAME_ATTRIBUTE}="${
+                `<span class="${CLASSNAME}" ${CARD_ID_ATTRIBUTE}="${
                     match.entryValue
                 }" ${
                     shouldUnderline
@@ -131,10 +124,10 @@ function walk(
     const highlights = document.getElementsByClassName(CLASSNAME);
     for (let i = 0; i < highlights.length; i += 1) {
         const highlight = highlights[i];
-        const cardName = highlight.getAttribute(CARD_NAME_ATTRIBUTE);
-        const card = CARDS[cardName];
+        const cardId: CardID = (highlight.getAttribute(CARD_ID_ATTRIBUTE): any);
+        const card = CARDS[cardId];
 
-        tooltip(NEW_CARD, highlight, assets);
+        tooltip(card, highlight);
     }
 }
 

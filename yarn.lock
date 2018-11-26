@@ -3410,6 +3410,10 @@ gwent-api-client@^3.0.0:
   dependencies:
     query-string "^4.3.4"
 
+gwent-data-release@GwentCommunityDevelopers/gwent-data-release#039f508ee2dabe5d108dba91310a849de3185b99:
+  version "0.0.0"
+  resolved "https://codeload.github.com/GwentCommunityDevelopers/gwent-data-release/tar.gz/039f508ee2dabe5d108dba91310a849de3185b99"
+
 handle-thing@^1.2.5:
   version "1.2.5"
   resolved "http://registry.npmjs.org/handle-thing/-/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"

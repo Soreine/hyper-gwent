@@ -27,7 +27,7 @@ function matches<T>(
         ? {
               start: index - matchedString.length,
               end: index,
-              entryValue: dictionary[''],
+              entryValue: ((dictionary['']: any): T),
               entryKey: key
           }
         : null;

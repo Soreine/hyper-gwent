@@ -1,3 +1,3 @@
 // @flow
 
-export { default as parseCard } from './parseCard';
+export { default as walk } from './walk';

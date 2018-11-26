@@ -1,7 +1,5 @@
-// @flow
 const path = require('path');
 const fs = require('fs');
-// eslint-disable-next-line import/no-unresolved
 const manifest = require('../dist/chrome/manifest.json');
 
 fs.writeFileSync(
