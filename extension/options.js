@@ -3,9 +3,27 @@
 
 import browser from 'webextension-polyfill';
 
+// Access to settings UI elements
+const UI = {
+    get save(): HTMLButtonElement {
+        // $FlowFixMe
+        return document.getElementById('save');
+    },
+
+    get shouldUnderline(): HTMLInputElement {
+        // $FlowFixMe
+        return document.getElementById('underline');
+    },
+
+    get status(): HTMLElement {
+        // $FlowFixMe
+        return document.getElementById('status');
+    }
+};
+
 // Saves options to browser.storage.sync.
 function saveOptions() {
-    const shouldUnderline = document.getElementById('underline').checked;
+    const shouldUnderline = UI.shouldUnderline.checked;
 
     browser.storage.sync
         .set({
@@ -13,10 +31,10 @@ function saveOptions() {
         })
         .then(() => {
             // Update status to let user know options were saved.
-            const status = document.getElementById('status');
-            status.setAttribute('class', 'visible');
+
+            UI.status.setAttribute('class', 'visible');
             setTimeout(() => {
-                status.setAttribute('class', 'hidden');
+                UI.status.setAttribute('class', 'hidden');
             }, 1000);
         });
 }
@@ -30,9 +48,9 @@ function restoreOptions() {
             shouldUnderline: true
         })
         .then(items => {
-            document.getElementById('underline').checked =
-                items.shouldUnderline;
+            UI.shouldUnderline.checked = items.shouldUnderline;
         });
 }
+
 document.addEventListener('DOMContentLoaded', restoreOptions);
-document.getElementById('save').addEventListener('click', saveOptions);
+UI.save.addEventListener('click', saveOptions);
