@@ -138,8 +138,6 @@ class CardTooltip {
                 style={{
                     display: 'none',
                     position: 'fixed',
-                    top: '50%',
-                    left: '50%',
                     transform: 'translateY(-40%)',
                     pointerEvents: 'none',
                     zIndex: 999999999
@@ -169,8 +167,6 @@ class CardTooltip {
         target.addEventListener('mouseenter', () => this.show());
         target.addEventListener('mouseleave', () => this.hide());
         target.addEventListener('mousemove', (e: MouseEvent) => this.follow(e));
-
-        this.show();
     }
 
     hide() {
