@@ -1,3 +1,4 @@
+// @flow
 import browser from 'webextension-polyfill';
 import walk from '../core/walk';
 

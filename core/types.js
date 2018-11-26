@@ -95,11 +95,11 @@ export type Dictionary<T> = {
 };
 
 // A range of matched text
-export type Match = {
+export type Match<T> = {
     start: number,
     end: number,
     // The matched key path in the dictionary
     entryKey: string,
-    // The exact name of the card matched
-    entryValue: string
+    // The value at the dictionary's entry
+    entryValue: T
 };

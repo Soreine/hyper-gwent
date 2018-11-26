@@ -5,8 +5,8 @@ import type { Dictionary, Match } from '../types';
 /**
  * Find the longest match at the given index in the text
  */
-function matches(
-    dictionary: Dictionary,
+function matches<T>(
+    dictionary: Dictionary<T>,
     text: string,
     index: number = 0,
     acc: {
@@ -15,7 +15,7 @@ function matches(
         // the matched key so far
         key: string
     } = { matchedString: '', key: '' }
-): ?Match {
+): ?Match<T> {
     const { matchedString, key } = acc;
 
     const nextChar = text[index];

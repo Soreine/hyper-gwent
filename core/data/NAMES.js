@@ -1,3 +1,4 @@
+// @flow
 import CARDS from './CARDS.json';
 
 const NAMES = Object.keys(CARDS);

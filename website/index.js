@@ -1,4 +1,5 @@
 /* global window */
+// @flow
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';

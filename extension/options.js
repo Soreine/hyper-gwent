@@ -1,3 +1,4 @@
+// @flow
 /* global document */
 
 import browser from 'webextension-polyfill';

@@ -1,3 +1,4 @@
+// @flow
 import test from 'ava';
 import removeAccents from 'remove-accents';
 import DICTIONARY, { contains, matches } from '..';

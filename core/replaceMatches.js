@@ -5,10 +5,10 @@ import type { Match } from './types';
 /*
  * Map all match ranges in the string using the given reducer
  */
-function replaceMatches(
+function replaceMatches<T>(
     str: string,
-    matches: Array<Match>,
-    reducer: Match => string
+    matches: Array<Match<T>>,
+    reducer: (Match<T>) => string
 ): string {
     let acc = str;
 

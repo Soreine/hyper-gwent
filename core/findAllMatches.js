@@ -4,7 +4,10 @@ import { matches } from './dictionary';
 
 import type { Dictionary, Match } from './types';
 
-function findAllMatches(dictionary: Dictionary, text: string): Array<Match> {
+function findAllMatches<T>(
+    dictionary: Dictionary<T>,
+    text: string
+): Array<Match<T>> {
     const cleanText = removeAccents(text).toLowerCase();
     const result = [];
 

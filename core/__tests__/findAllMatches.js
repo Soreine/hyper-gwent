@@ -1,3 +1,4 @@
+// @flow
 import test from 'ava';
 import DICTIONARY from '../dictionary';
 import findAllMatches from '../findAllMatches';

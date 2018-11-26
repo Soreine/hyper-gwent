@@ -1,3 +1,4 @@
+// @flow
 const ALIASES = {
     Abaya: ['water hag'],
     'Adrenaline Rush': ['arush'],

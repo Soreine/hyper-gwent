@@ -1,3 +1,4 @@
+// @flow
 import test from 'ava';
 import ALIASES from '../ALIASES';
 import CARDS from '../CARDS.json';
