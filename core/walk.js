@@ -43,10 +43,16 @@ const IGNORED_TAGS = [
 ];
 
 // Walk the document and highlight cards
-function walk({ shouldUnderline = true } = {}, assets) {
+function walk(
+    { shouldUnderline = true }: { shouldUnderline?: boolean } = {},
+    assets: any
+) {
     const HOSTNAME = urlParse(window.location.href).hostname;
 
-    const walker = window.document.createTreeWalker(
+    const walker: TreeWalker<
+        Document,
+        Element | Text
+    > = window.document.createTreeWalker(
         window.document.body,
         window.NodeFilter.SHOW_ELEMENT + window.NodeFilter.SHOW_TEXT,
         // Filter out GwentDB tooltips
@@ -116,7 +122,9 @@ function walk({ shouldUnderline = true } = {}, assets) {
                 }>${node.nodeValue.slice(match.start, match.end)}</span>`
         );
 
-        node.parentNode.replaceChild(span, node);
+        if (node.parentNode) {
+            node.parentNode.replaceChild(span, node);
+        }
     });
 
     // Add tooltips

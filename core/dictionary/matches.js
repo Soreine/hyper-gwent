@@ -1,18 +1,21 @@
+// @flow
+
+import type { Dictionary, Match } from '../types';
+
 /**
  * Find the longest match at the given index in the text
- * @param  {Dictionary} dictionary
- * @param  {string} text
- * @param  {number} [index=0]
- * @param  {string} acc.matchedString the piece of text matched so far
- * @param  {string} acc.key the matched key so far
- * @return {Match | undefined} Maybe the key of the found match
  */
 function matches(
-    dictionary,
-    text,
-    index = 0,
-    acc = { matchedString: '', key: '' }
-) {
+    dictionary: Dictionary,
+    text: string,
+    index: number = 0,
+    acc: {
+        // the piece of text matched so far
+        matchedString: string,
+        // the matched key so far
+        key: string
+    } = { matchedString: '', key: '' }
+): ?Match {
     const { matchedString, key } = acc;
 
     const nextChar = text[index];
@@ -20,20 +23,22 @@ function matches(
     const endOfWord = nextChar === undefined || isSpace;
     // Have we found a match yet?
     const isMatch = dictionary[''] && endOfWord;
-    const match = {
-        start: index - matchedString.length,
-        end: index,
-        entryValue: dictionary[''],
-        entryKey: key
-    };
+    const match = isMatch
+        ? {
+              start: index - matchedString.length,
+              end: index,
+              entryValue: dictionary[''],
+              entryKey: key
+          }
+        : null;
 
     if (nextChar === undefined) {
-        return isMatch && match;
+        return match;
     }
 
     const subDict = dictionary[nextChar];
     if (!subDict) {
-        return isMatch && match;
+        return match;
     }
 
     const longerMatch = matches(subDict, text, index + 1, {
@@ -41,7 +46,11 @@ function matches(
         key: key + nextChar
     });
     // We want the longest match, or the current match
-    return longerMatch || (isMatch && match);
+    if (longerMatch) {
+        return longerMatch;
+    }
+
+    return match;
 }
 
 export default matches;

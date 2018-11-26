@@ -1,23 +1,10 @@
+// @flow
 import removeAccents from 'remove-accents';
 import { matches } from './dictionary';
 
-/*
-type Match = {
-    start: number,
-    end: number,
-    // The matched key path in the dictionary
-    entryKey: string
-    // The exact name of the card matched
-    entryValue: string
-}
-*/
+import type { Dictionary, Match } from './types';
 
-/**
- * @param  {Dictionary} dictionary
- * @param  {string} text
- * @return {Array<Match>} The ranges of matched text.
- */
-function findAllMatches(dictionary, text) {
+function findAllMatches(dictionary: Dictionary, text: string): Array<Match> {
     const cleanText = removeAccents(text).toLowerCase();
     const result = [];
 

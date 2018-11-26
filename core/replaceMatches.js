@@ -1,4 +1,15 @@
-function replaceMatches(str, matches, reducer) {
+// @flow
+
+import type { Match } from './types';
+
+/*
+ * Map all match ranges in the string using the given reducer
+ */
+function replaceMatches(
+    str: string,
+    matches: Array<Match>,
+    reducer: Match => string
+): string {
     let acc = str;
 
     for (let i = 0, diff = 0; i < matches.length; i += 1) {

@@ -1,11 +1,16 @@
+// @flow
 import pluralize from 'pluralize';
 import removeAccents from 'remove-accents';
 import { NAMES, ALIASES } from '../data';
 import create from './create';
 
-const DICTIONARY = create(
+import type { Dictionary } from '../types';
+
+type CardName = string;
+
+const DICTIONARY: Dictionary<CardName> = create(
     NAMES.reduce((array, name) => {
-        const cleanName = removeAccents(name).toLowerCase();
+        const cleanName: string = removeAccents(name).toLowerCase();
 
         // Standard
         array.push([cleanName, name]);

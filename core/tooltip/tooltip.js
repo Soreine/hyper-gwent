@@ -98,10 +98,13 @@ function infoRawToHtml(infoRaw: string): Array<string | HTMLElement> {
 function tagKeywords(text): Array<string | HTMLElement> {
     const keywordRe = /<keyword=\w*>(.*?)<\/keyword>/g;
     const elements = [];
-    let result;
     let consumedCount = 0;
     // eslint-disable-next-line
-    while ((result = keywordRe.exec(text)) !== null) {
+    while (true) {
+        const result = keywordRe.exec(text);
+        if (result == null) {
+            break;
+        }
         const previousText = text.slice(consumedCount, result.index);
         const keywordText = result[1];
         elements.push(previousText);
@@ -165,7 +168,7 @@ class CardTooltip {
 
         target.addEventListener('mouseenter', () => this.show());
         target.addEventListener('mouseleave', () => this.hide());
-        target.addEventListener('mousemove', e => this.follow(e));
+        target.addEventListener('mousemove', (e: MouseEvent) => this.follow(e));
 
         this.show();
     }
@@ -191,7 +194,7 @@ class CardTooltip {
         autoSizeCardName(this.outer);
     }
 
-    follow(mouseEvent) {
+    follow(mouseEvent: MouseEvent) {
         const { wrapper, visible } = this;
         if (!visible) {
             return;
