@@ -2,7 +2,6 @@
 <PROJECT_ROOT>/dist/*
 <PROJECT_ROOT>/assets/*
 <PROJECT_ROOT>/.cache/*
-<PROJECT_ROOT>/gwentgenerator.com/*
 
 [include]
 
