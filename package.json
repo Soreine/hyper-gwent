@@ -17,17 +17,18 @@
     "pack": "bestzip chrome.zip dist/chrome/** && bestzip firefox.zip dist/firefox/**"
   },
   "dependencies": {
+    "@babel/node": "^7.0.0",
     "@babel/polyfill": "^7.0.0",
     "big-text.js": "^1.0.1",
     "flatmap": "^0.0.3",
+    "gwent-data-release": "GwentCommunityDevelopers/gwent-data-release#039f508ee2dabe5d108dba91310a849de3185b99",
     "intercalate": "^0.1.2",
     "jsx-dom": "^6.2.1",
     "pluralize": "^6.0.0",
     "remove-accents": "^0.4.1",
     "seamless-immutable": "^7.1.2",
     "url-parse": "^1.1.9",
-    "webextension-polyfill": "^0.1.1",
-    "gwent-data-release": "GwentCommunityDevelopers/gwent-data-release#039f508ee2dabe5d108dba91310a849de3185b99"
+    "webextension-polyfill": "^0.1.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
