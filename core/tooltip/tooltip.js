@@ -1,3 +1,5 @@
+// @flow
+/* @jsx createElement */
 /* global window */
 
 // eslint-disable-next-line no-unused-vars
@@ -7,40 +9,14 @@ import intercalate from 'intercalate';
 import flatmap from 'flatmap';
 
 import TooltipCSS from './tooltip.less';
-
-import CARDS from '../../gwentgenerator.com/cards';
-
-const CARDS_LIST = Object.keys(CARDS).map(key => CARDS[key]);
-
-const NEW_CARD = CARDS_LIST[Math.floor(Math.random() * CARDS_LIST.length)];
-
-// Convert a card from gwent-data to our own format
-function formatCard(cardJson) {
-    const variation = cardJson.variations[`${cardJson.ingameId}00`];
-
-    const { rarity, art } = variation;
-    const name = cardJson.name['en-US'];
-    const info = cardJson.info['en-US'];
-    const infoRaw = cardJson.infoRaw['en-US'];
-    const { faction, categories } = cardJson;
-
-    return {
-        name,
-        info,
-        infoRaw,
-        rarity,
-        art,
-        faction,
-        categories
-    };
-}
+import type { Card } from '../types';
 
 const styles = TooltipCSS.locals;
 
-function TooltipElement({ card }) {
+function TooltipElement({ card }: { card: Card }): HTMLElement {
     return (
         <div className={styles.card}>
-            <CardArt art={card.art} />
+            <CardArtImage art={card.art} />
             <div className={styles.tooltip}>
                 <TooltipHeader
                     faction={card.faction}
@@ -53,7 +29,7 @@ function TooltipElement({ card }) {
     );
 }
 
-function CardArt({ art }) {
+function CardArtImage({ art }: { art: CardArt }): HTMLElement {
     return (
         <div className={styles.artFrame}>
             <div
@@ -66,7 +42,15 @@ function CardArt({ art }) {
     );
 }
 
-function TooltipHeader({ faction, name, categories }) {
+function TooltipHeader({
+    faction,
+    name,
+    categories
+}: {
+    faction: Faction,
+    name: string,
+    categories: Array<string>
+}): HTMLElement {
     const categoryText = categories.join(', ').trim();
 
     return (
@@ -95,7 +79,7 @@ function TooltipHeader({ faction, name, categories }) {
     );
 }
 
-function TooltipInfo({ infoRaw }) {
+function TooltipInfo({ infoRaw }: { infoRaw: string }): HTMLElement {
     return (
         <div className={styles.tooltipInfo}>
             <div className={styles.tooltipInfoBackground} />
@@ -104,20 +88,23 @@ function TooltipInfo({ infoRaw }) {
     );
 }
 
-function infoRawToHtml(infoRaw) {
+function infoRawToHtml(infoRaw: string): Array<string | HTMLElement> {
     const newLines = /\n/g;
     const lines = infoRaw.trim().split(newLines);
 
     return flatmap(intercalate(lines.map(tagKeywords), <br />), x => x);
 }
 
-function tagKeywords(text) {
+function tagKeywords(text): Array<string | HTMLElement> {
     const keywordRe = /<keyword=\w*>(.*?)<\/keyword>/g;
     const elements = [];
-    let result;
     let consumedCount = 0;
     // eslint-disable-next-line
-    while ((result = keywordRe.exec(text)) !== null) {
+    while (true) {
+        const result = keywordRe.exec(text);
+        if (result == null) {
+            break;
+        }
         const previousText = text.slice(consumedCount, result.index);
         const keywordText = result[1];
         elements.push(previousText);
@@ -134,15 +121,15 @@ class CardTooltip {
     visible = false;
 
     // Tooltipped element
-    target = null;
+    target = <span />;
 
     // Outer element used to scope CSS
-    outer = null;
+    outer = <div />;
 
     // HTML element to live in
-    wrapper = null;
+    wrapper = <div />;
 
-    constructor(card, target) {
+    constructor(card: Card, target: HTMLElement) {
         this.target = target;
 
         const tooltip = <TooltipElement card={card} />;
@@ -151,8 +138,6 @@ class CardTooltip {
                 style={{
                     display: 'none',
                     position: 'fixed',
-                    top: '50%',
-                    left: '50%',
                     transform: 'translateY(-40%)',
                     pointerEvents: 'none',
                     zIndex: 999999999
@@ -181,9 +166,7 @@ class CardTooltip {
 
         target.addEventListener('mouseenter', () => this.show());
         target.addEventListener('mouseleave', () => this.hide());
-        target.addEventListener('mousemove', e => this.follow(e));
-
-        this.show();
+        target.addEventListener('mousemove', (e: MouseEvent) => this.follow(e));
     }
 
     hide() {
@@ -207,7 +190,7 @@ class CardTooltip {
         autoSizeCardName(this.outer);
     }
 
-    follow(mouseEvent) {
+    follow(mouseEvent: MouseEvent) {
         const { wrapper, visible } = this;
         if (!visible) {
             return;
@@ -264,8 +247,8 @@ function injectStylesIfNeeded() {
     }
 }
 
-function attachTooltip(card, target) {
-    const tooltip = new CardTooltip(formatCard(NEW_CARD), target);
+function attachTooltip(card: Card, target: HTMLElement) {
+    const tooltip = new CardTooltip(card, target);
     tooltip.inject();
 }
 

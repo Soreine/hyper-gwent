@@ -1,13 +1,20 @@
+// @flow
+import type { Dictionary } from '../types';
+
 /**
- * @param  {Dictionary} dictionary The dictionary to search in
- * @param  {string} text The text to search for a substring match
- * @param  {number} index The index of the start of the substring
- * @return {boolean} True if the dictionary contains the substring
+ * True if the dictionary contains the substring
  */
-function contains(dictionary, text, index = 0) {
+function contains(
+    // The dictionary to search in
+    dictionary: Dictionary<any>,
+    // The text to search for a substring match
+    text: string,
+    // The index of the start of the substring
+    index: number = 0
+) {
     const char = text[index];
     if (char === undefined) {
-        return dictionary[''];
+        return dictionary[''] !== undefined;
     }
     const subDict = dictionary[char];
     return subDict && contains(subDict, text, index + 1);

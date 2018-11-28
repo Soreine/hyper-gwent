@@ -1,14 +1,25 @@
+// @flow
 import test from 'ava';
 import ALIASES from '../ALIASES';
-import CARDS from '../CARDS.json';
 
-test('Should be defined for every cards', t => {
-    t.deepEqual(Object.keys(ALIASES).sort(), Object.keys(CARDS).sort());
-});
+// Shouldtnot have aliases matching multiple cards
+{
+    const list = Object.keys(ALIASES).map(id => ({ id, aliases: ALIASES[id] }));
 
-test('Should be lowercase', t => {
-    Object.keys(ALIASES).forEach(key => {
-        const aliases = ALIASES[key];
-        aliases.forEach(alias => t.true(alias.toLowerCase() === alias));
+    const aliasCount = list.reduce((acc, { id, aliases }) => {
+        aliases.forEach(alias => {
+            acc[alias] = acc[alias] || [];
+            acc[alias].push(id);
+        });
+
+        return acc;
+    }, {});
+
+    Object.keys(aliasCount).forEach(alias => {
+        test(`No multiple matching cards for alias: ${alias} ${
+            aliasCount[alias]
+        }`, t => {
+            t.is(aliasCount[alias].length, 1);
+        });
     });
-});
+}

@@ -1,8 +1,10 @@
 /* global window */
+/* @jsx createElement */
+// @flow
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
-import walk from '../extension/walk';
+import walk from '../core/walk';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const GWENTDB = 'http://www.gwentdb.com/';

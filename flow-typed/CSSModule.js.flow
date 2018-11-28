@@ -1,0 +1,5 @@
+// @flow
+
+declare module CSSModule {
+    declare export var locals: { [key: string]: string };
+}

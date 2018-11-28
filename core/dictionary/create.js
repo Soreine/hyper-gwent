@@ -1,19 +1,16 @@
+// @flow
 import Immutable from 'seamless-immutable';
 import append from './append';
 
-/*
-type Dictionary = {
-    [string]: Dictionary | true
-}
-*/
+import type { Dictionary } from '../types';
 
 /**
  * @param  {Array<[string, any]>} entries Entries in the dictionary
  * @return {Dictionary} The built dictionary
  */
-function create(entries) {
+function create<T>(entries: Array<[string, T]>): Dictionary<T> {
     return entries.reduce(
-        (dict, [name, value]) => append(dict, name, value),
+        (dict: Dictionary<T>, [name, value]) => append(dict, name, value),
         Immutable({})
     );
 }

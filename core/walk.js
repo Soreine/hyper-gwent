@@ -1,14 +1,15 @@
+// @flow
 /* global window, document */
 
 import urlParse from 'url-parse';
-import findAllMatches from '../core/findAllMatches';
-import replaceMatches from '../core/replaceMatches';
-import tooltip from '../core/tooltip';
-import { CARDS } from '../core/data';
-import DICTIONARY from '../core/dictionary';
+
+import findAllMatches from './findAllMatches';
+import replaceMatches from './replaceMatches';
+import tooltip from './tooltip';
+import { CARDS, DICTIONARY } from './data';
 
 const CLASSNAME = 'hyper-gwent-card-highlight';
-const CARD_NAME_ATTRIBUTE = 'data-card-name';
+const CARD_ID_ATTRIBUTE = 'data-card-id';
 const GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
 const GWENTDB_HOSTNAME = 'www.gwentdb.com';
 
@@ -35,10 +36,16 @@ const IGNORED_TAGS = [
 ];
 
 // Walk the document and highlight cards
-function walk({ shouldUnderline = true } = {}, assets) {
+function walk(
+    { shouldUnderline = true }: { shouldUnderline?: boolean } = {},
+    assets: any
+) {
     const HOSTNAME = urlParse(window.location.href).hostname;
 
-    const walker = window.document.createTreeWalker(
+    const walker: TreeWalker<
+        Document,
+        Element | Text
+    > = window.document.createTreeWalker(
         window.document.body,
         window.NodeFilter.SHOW_ELEMENT + window.NodeFilter.SHOW_TEXT,
         // Filter out GwentDB tooltips
@@ -99,7 +106,7 @@ function walk({ shouldUnderline = true } = {}, assets) {
             node.nodeValue,
             matches,
             match =>
-                `<span class="${CLASSNAME}" ${CARD_NAME_ATTRIBUTE}="${
+                `<span class="${CLASSNAME}" ${CARD_ID_ATTRIBUTE}="${
                     match.entryValue
                 }" ${
                     shouldUnderline
@@ -108,16 +115,19 @@ function walk({ shouldUnderline = true } = {}, assets) {
                 }>${node.nodeValue.slice(match.start, match.end)}</span>`
         );
 
-        node.parentNode.replaceChild(span, node);
+        if (node.parentNode) {
+            node.parentNode.replaceChild(span, node);
+        }
     });
 
     // Add tooltips
     const highlights = document.getElementsByClassName(CLASSNAME);
     for (let i = 0; i < highlights.length; i += 1) {
         const highlight = highlights[i];
-        const cardName = highlight.getAttribute(CARD_NAME_ATTRIBUTE);
-        const card = CARDS[cardName];
-        tooltip(card, highlight, assets);
+        const cardId: CardID = (highlight.getAttribute(CARD_ID_ATTRIBUTE): any);
+        const card = CARDS[cardId];
+
+        tooltip(card, highlight);
     }
 }
 

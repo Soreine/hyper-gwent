@@ -1,12 +1,19 @@
+// @flow
 import Immutable from 'seamless-immutable';
 
+import type { Dictionary } from '../types';
+
 /**
- * @param  {Dictionary} dictionary The dictionary to append to
- * @param  {string} name Entry name to add to the dictionary
- * @param  {any} value Value to store at the given entry
- * @return {Dictionary}  A dictionary with the added entry
+ * Add an entry to a dictionary
  */
-function append(dictionary, name, value) {
+function append<T>(
+    //  The dictionary to append to
+    dictionary: Dictionary<T>,
+    //  Entry name to add to the dictionary
+    name: string,
+    //  Value to store at the given entry
+    value: T
+): Dictionary<T> {
     const result = dictionary;
 
     if (name === '') {

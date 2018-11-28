@@ -1,3 +1,3 @@
 dist
-src/core/data/CARDS.json
-src/core/tmp/
+flow-typed
+node_modules

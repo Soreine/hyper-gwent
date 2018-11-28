@@ -1,6 +1,22 @@
+// @flow
 import test from 'ava';
-import DICTIONARY from '../dictionary';
+import { DICTIONARY } from '../data';
 import findAllMatches from '../findAllMatches';
+
+const Mourntart = '132202';
+const Foglet = '132301';
+const Avallach = '132105';
+const CiriDash = '112110';
+const Ciri = '112101';
+const Regis = '112104';
+const Spotter = '162303';
+const ArmoredCavalry = '200296';
+const Alzur = '113209';
+const Gigni = '112102';
+const YenneferConjurer = '112113';
+const Yennefer = '112108';
+const BitingFrost = '113302';
+const Schirru = '142108';
 
 test('Should find several exact matches in a text', t => {
     const text = "I have a Grave Hag, a Foglet, and a Avallac'h in my hand";
@@ -8,19 +24,19 @@ test('Should find several exact matches in a text', t => {
     t.deepEqual(matchedRanges, [
         {
             entryKey: 'grave hag',
-            entryValue: 'Mourntart',
+            entryValue: Mourntart,
             start: 9,
             end: 18
         },
         {
             entryKey: 'foglet',
-            entryValue: 'Foglet',
+            entryValue: Foglet,
             start: 22,
             end: 28
         },
         {
             entryKey: "avallac'h",
-            entryValue: "Avallac'h",
+            entryValue: Avallach,
             start: 36,
             end: 45
         }
@@ -33,19 +49,19 @@ test('Should ignore case', t => {
     t.deepEqual(matchedRanges, [
         {
             entryKey: 'grave hag',
-            entryValue: 'Mourntart',
+            entryValue: Mourntart,
             start: 9,
             end: 18
         },
         {
             entryKey: 'foglet',
-            entryValue: 'Foglet',
+            entryValue: Foglet,
             start: 22,
             end: 28
         },
         {
             entryKey: "avallac'h",
-            entryValue: "Avallac'h",
+            entryValue: Avallach,
             start: 36,
             end: 45
         }
@@ -58,13 +74,13 @@ test('Should find longest match', t => {
     t.deepEqual(matchedRanges, [
         {
             entryKey: 'ciri: dash',
-            entryValue: 'Ciri: Dash',
+            entryValue: CiriDash,
             start: 0,
             end: 10
         },
         {
             entryKey: 'ciri',
-            entryValue: 'Ciri',
+            entryValue: Ciri,
             start: 15,
             end: 19
         }
@@ -77,13 +93,13 @@ test('Should match at beginning of words only', t => {
     t.deepEqual(matchedRanges, [
         {
             entryKey: 'regis',
-            entryValue: 'Regis',
+            entryValue: Regis,
             start: 0,
             end: 5
         },
         {
             entryKey: 'regis',
-            entryValue: 'Regis',
+            entryValue: Regis,
             start: 6,
             end: 11
         }
@@ -96,7 +112,7 @@ test('Should match until end of words (and not just prefix)', t => {
     t.deepEqual(matchedRanges, [
         {
             entryKey: 'regis',
-            entryValue: 'Regis',
+            entryValue: Regis,
             start: 0,
             end: 5
         }
@@ -109,25 +125,25 @@ test('Should consider that non-alphabetical characters mark the end of a word', 
     t.deepEqual(matchedRanges, [
         {
             entryKey: 'regis',
-            entryValue: 'Regis',
+            entryValue: Regis,
             start: 0,
             end: 5
         },
         {
             entryKey: 'regis',
-            entryValue: 'Regis',
+            entryValue: Regis,
             start: 7,
             end: 12
         },
         {
             entryKey: 'regis',
-            entryValue: 'Regis',
+            entryValue: Regis,
             start: 16,
             end: 21
         },
         {
             entryKey: 'regis',
-            entryValue: 'Regis',
+            entryValue: Regis,
             start: 28,
             end: 33
         }
@@ -140,7 +156,7 @@ test('Should work around non-alphabetical characters', t => {
     t.deepEqual(matchedRanges, [
         {
             entryKey: 'avallach',
-            entryValue: "Avallac'h",
+            entryValue: Avallach,
             start: 0,
             end: 8
         }
@@ -148,63 +164,63 @@ test('Should work around non-alphabetical characters', t => {
 });
 
 test('Should detect plurals', t => {
-    const text = 'Regises, Queensguards and Dun Banner Light Cavalries';
+    const text = 'Regises, Spotters and Alba Armored Cavalries';
     const matchedRanges = findAllMatches(DICTIONARY, text);
     t.deepEqual(matchedRanges, [
         {
-            entryKey: 'queensguards',
-            entryValue: 'Queensguard',
+            entryKey: 'spotters',
+            entryValue: Spotter,
             start: 9,
-            end: 21
+            end: 17
         },
         {
-            entryKey: 'dun banner light cavalries',
-            entryValue: 'Dun Banner Light Cavalry',
-            start: 26,
-            end: 52
+            entryKey: 'alba armored cavalries',
+            entryValue: ArmoredCavalry,
+            start: 22,
+            end: 44
         }
     ]);
 });
 
 test('Should detect aliases', t => {
-    const text = 'Frost, Yen, YenCon, QG and light cavalries and ADC';
+    const text = 'Frost, Yen, YenCon, GIGNI and armored cavalries and ADC';
     const matchedRanges = findAllMatches(DICTIONARY, text);
     t.deepEqual(matchedRanges, [
         {
             entryKey: 'frost',
-            entryValue: 'Biting Frost',
+            entryValue: BitingFrost,
             start: 0,
             end: 5
         },
         {
             entryKey: 'yen',
-            entryValue: 'Yennefer',
+            entryValue: Yennefer,
             start: 7,
             end: 10
         },
         {
             entryKey: 'yencon',
-            entryValue: 'Yennefer: The Conjurer',
+            entryValue: YenneferConjurer,
             start: 12,
             end: 18
         },
         {
-            entryKey: 'qg',
-            entryValue: 'Queensguard',
+            entryKey: 'gigni',
+            entryValue: Gigni,
             start: 20,
-            end: 22
+            end: 25
         },
         {
-            entryKey: 'light cavalries',
-            entryValue: 'Dun Banner Light Cavalry',
-            start: 27,
-            end: 42
+            entryKey: 'armored cavalries',
+            entryValue: ArmoredCavalry,
+            start: 30,
+            end: 47
         },
         {
             entryKey: 'adc',
-            entryValue: "Alzur's Double–Cross",
-            start: 47,
-            end: 50
+            entryValue: Alzur,
+            start: 52,
+            end: 55
         }
     ]);
 });
@@ -215,7 +231,7 @@ test('Should work around accentuated letters', t => {
     t.deepEqual(matchedRanges, [
         {
             entryKey: 'schirru',
-            entryValue: 'Schirrú',
+            entryValue: Schirru,
             start: 0,
             end: 7
         }
@@ -228,13 +244,13 @@ test('Should find longest match with bad case', t => {
     t.deepEqual(matchedRanges, [
         {
             entryKey: 'ciri dash',
-            entryValue: 'Ciri: Dash',
+            entryValue: CiriDash,
             start: 0,
             end: 9
         },
         {
             entryKey: 'ciri',
-            entryValue: 'Ciri',
+            entryValue: Ciri,
             start: 14,
             end: 18
         }

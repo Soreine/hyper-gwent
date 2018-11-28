@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const manifest = require('../manifest.json');
+const manifest = require('../extension/manifest.json');
 
 const assets = fs
     .readdirSync(path.join(__dirname, '../dist/chrome'))
