@@ -7,21 +7,23 @@ import { create } from '../dictionary';
 
 import type { Dictionary, Card } from '../types';
 
+/*
+ * Normalize an alias by removing anything that is not needed
+ */
+function normalizeAlias(alias: string): string {
+    return removeAccents(alias).toLowerCase();
+}
+
 const DICTIONARY: Dictionary<CardID> = create(
     CARD_LIST.reduce((array: Array<[string, CardID]>, card: Card) => {
-        const { id, name } = card;
-        const cleanName: string = removeAccents(name).toLowerCase();
-
-        // Standard
-        array.push([cleanName, id]);
-        // Plural
-        array.push([pluralize(cleanName), id]);
-
-        // Aliases
+        const { id } = card;
         const aliases = ALIASES[id] || [];
+
         aliases.forEach(alias => {
-            array.push([alias, id]);
-            array.push([pluralize(alias), id]);
+            const cleanAlias = normalizeAlias(alias);
+
+            array.push([cleanAlias, id]);
+            array.push([pluralize(cleanAlias), id]);
         });
 
         return array;
