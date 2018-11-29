@@ -6,7 +6,7 @@
 import { createElement } from 'jsx-dom';
 import BigText from 'big-text.js';
 
-import type { Card } from '../types';
+import type { Card, ExtensionAssets } from '../types';
 import TooltipCSS from './tooltip.less';
 import TooltipElement from './TooltipElement';
 
@@ -25,10 +25,10 @@ class CardTooltip {
     // HTML element to live in
     wrapper = <div />;
 
-    constructor(card: Card, target: HTMLElement) {
+    constructor(card: Card, target: HTMLElement, assets: ExtensionAssets) {
         this.target = target;
 
-        const tooltip = <TooltipElement card={card} />;
+        const tooltip = <TooltipElement card={card} assets={assets} />;
         const wrapper = (
             <div
                 style={{
@@ -143,8 +143,12 @@ function injectStylesIfNeeded() {
     }
 }
 
-function attachTooltip(card: Card, target: HTMLElement) {
-    const tooltip = new CardTooltip(card, target);
+function attachTooltip(
+    card: Card,
+    target: HTMLElement,
+    assets: ExtensionAssets
+) {
+    const tooltip = new CardTooltip(card, target, assets);
     tooltip.inject();
 }
 
