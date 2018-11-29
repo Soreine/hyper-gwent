@@ -71,7 +71,7 @@ const ALIASES = {
     '113311': ['Thunderbolt'],
     '113312': ['Torrential Rain', 'rain'],
     '113313': ['An Craite Warcrier'],
-    '113315': ["Bekker's Dark Mirror"],
+    '113315': ["Bekker's Dark Mirror", 'dark mirror'],
     '113316': ['Renew'],
     '113319': ['Dimeritium Shackles', 'shackles', 'dshackles', 'lock'],
     '113320': ['Mardroeme', 'mushroom', 'shroom'],
@@ -315,7 +315,12 @@ const ALIASES = {
     '200049': ['Battering Ram'],
     '200050': ['Vreemde'],
     '200052': ['Golyat'],
-    '200053': ['Artefact Compression', 'artefact'],
+    '200053': [
+        'Artefact Compression',
+        'artefact',
+        'artifact',
+        'artifact compression'
+    ],
     '200055': ['Unseen Elder', 'elder'],
     '200056': ['Aguara: True Form'],
     '200058': ["Uma's Curse"],
