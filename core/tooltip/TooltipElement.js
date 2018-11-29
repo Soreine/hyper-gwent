@@ -7,11 +7,17 @@ import intercalate from 'intercalate';
 import flatmap from 'flatmap';
 
 import TooltipCSS from './tooltip.less';
-import type { Card } from '../types';
+import type { Card, ExtensionAssets } from '../types';
 
 const styles = TooltipCSS.locals;
 
-function TooltipElement({ card }: { card: Card }): HTMLElement {
+function TooltipElement({
+    card,
+    assets
+}: {
+    card: Card,
+    assets: ExtensionAssets
+}): HTMLElement {
     return (
         <div className={styles.card}>
             <CardArtImage art={card.art} />
@@ -19,9 +25,13 @@ function TooltipElement({ card }: { card: Card }): HTMLElement {
                 <TooltipHeader
                     faction={card.faction}
                     name={card.name}
+                    background={assets.cardInfoHeader}
                     categories={card.categories}
                 />
-                <TooltipInfo infoRaw={card.infoRaw} />
+                <TooltipInfo
+                    infoRaw={card.infoRaw}
+                    background={assets.cardInfoBackground}
+                />
             </div>
         </div>
     );
@@ -33,7 +43,7 @@ function CardArtImage({ art }: { art: CardArt }): HTMLElement {
             <div
                 className={styles.art}
                 style={{
-                    backgroundImage: `url(${art.low})`
+                    backgroundImage: `url(${art.thumbnail})`
                 }}
             />
         </div>
@@ -43,11 +53,13 @@ function CardArtImage({ art }: { art: CardArt }): HTMLElement {
 function TooltipHeader({
     faction,
     name,
-    categories
+    categories,
+    background
 }: {
     faction: Faction,
     name: string,
-    categories: Array<string>
+    categories: Array<string>,
+    background: string
 }): HTMLElement {
     const categoryText = categories.join(', ').trim();
 
@@ -55,6 +67,7 @@ function TooltipHeader({
         <div className={styles.tooltipHeader}>
             <div
                 className={styles.tooltipHeaderBackground}
+                style={{ backgroundImage: `url(${background})` }}
                 data-card-faction={faction}
             />
 
@@ -77,10 +90,19 @@ function TooltipHeader({
     );
 }
 
-function TooltipInfo({ infoRaw }: { infoRaw: string }): HTMLElement {
+function TooltipInfo({
+    infoRaw,
+    background
+}: {
+    infoRaw: string,
+    background: string
+}): HTMLElement {
     return (
         <div className={styles.tooltipInfo}>
-            <div className={styles.tooltipInfoBackground} />
+            <div
+                className={styles.tooltipInfoBackground}
+                style={{ backgroundImage: `url(${background})` }}
+            />
             {infoRawToHtml(infoRaw)}
         </div>
     );

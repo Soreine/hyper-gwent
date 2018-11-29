@@ -1,6 +1,10 @@
 // @flow
 import browser from 'webextension-polyfill';
 import walk from '../core/walk';
+// $FlowFixMe
+import cardInfoHeader from '../assets/tooltip-header-sprite.png';
+// $FlowFixMe
+import cardInfoBackground from '../assets/tooltip-text-background.png';
 
 browser.storage.sync
     .get({
@@ -8,6 +12,7 @@ browser.storage.sync
     })
     .then(options => {
         walk(options, {
-            // cardFrame: browser.extension.getURL(cardFrame)
+            cardInfoHeader: browser.extension.getURL(cardInfoHeader),
+            cardInfoBackground: browser.extension.getURL(cardInfoBackground)
         });
     });

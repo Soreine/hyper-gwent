@@ -5,6 +5,10 @@
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import walk from '../core/walk';
+// $FlowFixMe
+import cardInfoHeader from '../assets/tooltip-header-sprite.png';
+// $FlowFixMe
+import cardInfoBackground from '../assets/tooltip-text-background.png';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const GWENTDB = 'http://www.gwentdb.com/';
@@ -180,4 +184,10 @@ const htmlPage = (
 window.document.body.appendChild(htmlPage);
 
 // Launch extension within the page
-walk();
+walk(
+    { shouldUnderline: true },
+    {
+        cardInfoHeader,
+        cardInfoBackground
+    }
+);

@@ -32,3 +32,9 @@ export type Match<T> = {
     // The value at the dictionary's entry
     entryValue: T
 };
+
+// Assets packaged in extension
+export type ExtensionAssets = {
+    cardInfoHeader: string,
+    cardInfoBackground: string
+};
