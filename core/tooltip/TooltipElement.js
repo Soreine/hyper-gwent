@@ -43,7 +43,7 @@ function CardArtImage({ art }: { art: CardArt }): HTMLElement {
             <div
                 className={styles.art}
                 style={{
-                    backgroundImage: `url(${art.thumbnail})`
+                    backgroundImage: `url(${art.low})`
                 }}
             />
         </div>
