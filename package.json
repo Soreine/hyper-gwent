@@ -6,7 +6,7 @@
     "lint": "eslint .",
     "prebuild": "rm -rf dist",
     "build": "npm run build:chrome && npm run build:firefox",
-    "build:chrome": "webpack --config ./webpack/extension.js --mode production && cp extension/icon*.png extension/options.html dist/chrome/ && node scripts/buildChrome.js",
+    "build:chrome": "webpack --config ./webpack/extension.js --mode production && cp extension/icon*.png extension/options.html dist/chrome/",
     "build:firefox": "mkdir -p dist/firefox && cp dist/chrome/** dist/firefox/ && node scripts/buildFirefox.js",
     "build:website": "webpack --config ./webpack/website.js --mode production",
     "start": "webpack-dev-server --config ./webpack/website.js",
