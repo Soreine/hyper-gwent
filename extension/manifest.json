@@ -20,6 +20,7 @@
   "content_scripts": [
     {
       "matches": [
+        "http://127.0.0.1/*",
         "https://www.reddit.com/r/gwent/*",
         "https://www.reddit.com/r/Competitive_Gwent/*",
         "http://www.gwentdb.com/decks/*",
