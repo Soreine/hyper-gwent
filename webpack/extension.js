@@ -18,7 +18,9 @@ module.exports = Object.assign({}, baseConfig, {
         filename: '[name].js'
     },
     plugins: [
-        new CleanWebpackPlugin([path('dist/chrome')]),
+        new CleanWebpackPlugin([path('dist/chrome')], {
+            root: process.cwd()
+        }),
         new CopyWebpackPlugin([
             {
                 from: path('assets/'),
