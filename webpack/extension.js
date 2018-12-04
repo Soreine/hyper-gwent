@@ -21,17 +21,21 @@ module.exports = Object.assign({}, baseConfig, {
         new CleanWebpackPlugin([path('dist/chrome')], {
             root: process.cwd()
         }),
-        new CopyWebpackPlugin([
-            {
-                from: path('assets/'),
-                to: path('dist/chrome/assets')
-            }
-        ]),
-        new CopyWebpackPlugin([
-            {
-                from: path('assets/icon*.png'),
-                to: path('dist/chrome/')
-            }
-        ])
+        new CopyWebpackPlugin(
+            [
+                // Copy icons
+                {
+                    context: '../extensions/',
+                    from: 'icon*',
+                    to: path('dist/chrome/')
+                },
+                // Copy options
+                {
+                    from: path('extension/options.html'),
+                    to: path('dist/chrome/')
+                }
+            ],
+            { debug: true }
+        )
     ]
 });
