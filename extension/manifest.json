@@ -14,9 +14,7 @@
     "page": "options.html",
     "chrome_style": true
   },
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": [
@@ -27,13 +25,11 @@
         "http://www.gwentdb.com/forums/*",
         "https://forums.cdprojektred.com/forum/en/gwent/*"
       ],
-      "js": [
-        "content.js"
-      ]
+      "js": ["content.js"]
     }
   ],
   "web_accessible_resources": [
-    "tooltip-header-sprite.png",
-    "tooltip-text-background.png"
+    "*.png",
+    "fonts/*"
   ]
 }

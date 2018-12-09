@@ -2,6 +2,7 @@
 set -o errexit
 set -o pipefail
 set -o nounset
+set -o xtrace
 # ----------
 
 DIST=./dist/chrome
@@ -9,6 +10,9 @@ DIST=./dist/chrome
 # Cleanup
 rm -rf $DIST
 mkdir -p $DIST
+
+# Copy manifest
+cp ./extension/manifest.json $DIST
 
 # Copy resources
 cp ./extension/icon*.png $DIST
