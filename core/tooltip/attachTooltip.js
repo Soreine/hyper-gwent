@@ -31,8 +31,8 @@ class CardTooltip {
         const tooltip = <TooltipElement card={card} assets={assets} />;
         const wrapper = (
             <div
+                className={styles.wrapperHidden}
                 style={{
-                    display: 'none',
                     position: 'fixed',
                     transform: 'translateY(-40%)',
                     pointerEvents: 'none',
@@ -66,7 +66,7 @@ class CardTooltip {
     }
 
     hide() {
-        this.wrapper.style.display = 'none';
+        this.wrapper.className = styles.wrapperHidden;
         this.visible = false;
     }
 
@@ -79,7 +79,7 @@ class CardTooltip {
             img.removeAttribute('data-src');
         }
 
-        wrapper.style.display = 'block';
+        wrapper.className = styles.wrapperVisible;
 
         this.visible = true;
 
