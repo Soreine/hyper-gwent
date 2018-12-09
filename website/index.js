@@ -32,14 +32,14 @@ const htmlPage = (
         </div>
 
         {browser === 'chrome' && (
-            <a className="download-link" href={CHROME_EXTENSION}>
-                {'Add to Chrome'}
+            <a className="download-link" href="#">
+                {'Coming soon'}
             </a>
         )}
 
         {browser === 'firefox' && (
-            <a className="download-link" href={FIREFOX_EXTENSION}>
-                {'Add to Firefox'}
+            <a className="download-link" href="#">
+                {'Coming soon'}
             </a>
         )}
 
@@ -56,28 +56,31 @@ const htmlPage = (
                     "None of us can reasonably remember every possible Gwent card's name and effect. Browsing "
                 }
                 <a href={REDDIT}>r/gwent</a>
-                {' and reading deck guides on '}
-                <a href={GWENTDB}>GwentDB</a>
                 {
-                    " can be challenging if you don't know half the cards people are talking about."
+                    " or reading deck guides can be challenging if you don't know half the cards people are talking about."
                 }
             </p>
 
             <p>
-                <em>You might find this shocking:</em>
+                {
+                    'Hyper Gwent is an extension that detects card mentions and adds tooltip to them. It is running on this page. See by yourself:'
+                }
                 <ul>
-                    <li>Xmen are not what they used to be.</li>
+                    <li>
+                        Speartip asleep is almost as scary as Speartip awake.
+                    </li>
                     <li>ADC does not stand for Attack Damage Carry.</li>
                     <li>
-                        {'There '}
-                        <em>are</em>
-                        {' worst names for a dragon than Borkh.'}
+                        {
+                            "Villentretenmerth is hard to pronounce. But Borkh isn't!"
+                        }
                     </li>
                     <li>
                         {
-                            'Gwent has nothing to do with cooking frogs, mushrooms, or anything remotely related to french cuisine.'
+                            'I know a joke, it goes like this. Three guys named Gigni, Gyrden, Gaard enter a bar...'
                         }
                     </li>
+                    <li>One recruit, two recruits, three recruits...</li>
                 </ul>
             </p>
 
@@ -88,7 +91,7 @@ const htmlPage = (
 
             <p>
                 {
-                    "Whether you are new to the game, or you want to keep up with the latest card changes, or you can't remember crap, Hyper Gwent is here to save the day. Hyper Gwent automatically detects card names or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them."
+                    "Whether you are new to the game, or you want to keep up with the latest card changes, or you can't remember crap, Hyper Gwent is here to save the day. Hyper Gwent automatically detects card names, aliases or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them."
                 }
             </p>
 
@@ -102,7 +105,7 @@ const htmlPage = (
                     </li>
                     <li>
                         {
-                            'Support abbreviations, acronyms, plurals, missing capitals, and missing accents'
+                            'Support abbreviations, acronyms, plurals, missing capitals, missing accents, and missing punctuation'
                         }
                     </li>
                     <li>
@@ -110,7 +113,11 @@ const htmlPage = (
                             'Non obstrusive. Add subtle highlights and does not break links.'
                         }
                     </li>
-                    <li>Fast</li>
+                    <li>
+                        {
+                            "Fast. You could enable it on any website, you would not feel it's here."
+                        }
+                    </li>
                 </ul>
             </p>
 
@@ -122,7 +129,7 @@ const htmlPage = (
                             'Enable on any website with a simple click (currently only enabled on r/gwent and GwentDB)'
                         }
                     </li>
-                    <li>Even more accurate card detection</li>
+                    <li>Automatic card updates</li>
                 </ul>
             </p>
 
@@ -137,33 +144,16 @@ const htmlPage = (
         </div>
 
         {browser === 'chrome' && (
-            <a className="download-link" href={CHROME_EXTENSION}>
-                {'Add to Chrome'}
+            <a className="download-link" href="#">
+                {'Coming soon'}
             </a>
         )}
 
         {browser === 'firefox' && (
-            <a className="download-link" href={FIREFOX_EXTENSION}>
-                {'Add to Firefox'}
+            <a className="download-link" href="#">
+                {'Coming soon'}
             </a>
         )}
-
-        <p>
-            {'Special thanks and credit:'}
-            <ul>
-                <li>
-                    Thanks to <a href="https://github.com/Zhouzi">Zhouzi</a> for
-                    all the work he did on this. Props to him for the great
-                    looking tooltips.
-                </li>
-                <li>
-                    Thanks to{' '}
-                    <a href="https://twitter.com/GwentAPI">@GwentAPI</a> for
-                    maintaining the API which this extension is built upon. All
-                    cards infos come from here.
-                </li>
-            </ul>
-        </p>
 
         <p className="issues">
             This is an unofficial fan work under the Gwent Fan Content
