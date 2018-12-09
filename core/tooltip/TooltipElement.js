@@ -109,10 +109,17 @@ function TooltipInfo({
 }
 
 function infoRawToHtml(infoRaw: string): Array<string | HTMLElement> {
-    const newLines = /\n/g;
-    const lines = infoRaw.trim().split(newLines);
+    const BREAK = {};
 
-    return flatmap(intercalate(lines.map(tagKeywords), <br />), x => x);
+    const newLines = /\n/g;
+    // Don't intercalate with a `<br />` directly because it would be the
+    // same `<br />` instance everywhere
+    const lines = intercalate(infoRaw.trim().split(newLines), BREAK);
+
+    return flatmap(
+        lines.map(x => (x === BREAK ? <br /> : tagKeywords(x))),
+        x => x
+    );
 }
 
 function tagKeywords(text): Array<string | HTMLElement> {
