@@ -12,11 +12,7 @@
 /* Gwent Fonts */
 @font-face {
   font-family: "Gwent";
-  src: url("../../assets/fonts/hinted-GWENT-ExtraBold.eot")
-      format("embedded-opentype"),
-    url("../../assets/fonts/hinted-GWENT-ExtraBold.woff") format("woff"),
-    url("../../assets/fonts/hinted-GWENT-ExtraBold.woff2") format("woff2"),
-    url("../../assets/fonts/hinted-GWENT-ExtraBold.ttf") format("truetype");
+  src: url("../../assets/fonts/hinted-GWENT-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   text-rendering: optimizeLegibility;
@@ -24,31 +20,22 @@
 
 @font-face {
   font-family: "HalisGR";
-  src: url("../../assets/fonts/hinted-HalisGR-Regular.eot")
-      format("embedded-opentype"),
-    url("../../assets/fonts/hinted-HalisGR-Regular.woff2") format("woff2"),
-    url("../../assets/fonts/hinted-HalisGR-Regular.woff") format("woff"),
-    url("../../assets/fonts/hinted-HalisGR-Regular.ttf") format("truetype");
+  src: url("../../assets/fonts/hinted-HalisGR-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   text-rendering: optimizeLegibility;
 }
 
-
 @font-face {
   font-family: "HalisGR";
-  src: url("../../assets/fonts/hinted-HalisGR-Bold.eot")
-      format("embedded-opentype"),
-    url("../../assets/fonts/hinted-HalisGR-Bold.woff2") format("woff2"),
-    url("../../assets/fonts/hinted-HalisGR-Bold.woff") format("woff"),
-    url("../../assets/fonts/hinted-HalisGR-Bold.ttf") format("truetype");
+  src: url("../../assets/fonts/hinted-HalisGR-Bold.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   text-rendering: optimizeLegibility;
 }
 
 .shadow {
-   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .card {
@@ -81,7 +68,7 @@
   position: relative;
   width: @art-width;
   max-width: 15vw;
-  .shadow()
+  .shadow();
 }
 
 .art {
@@ -90,7 +77,7 @@
   height: 0;
   padding-top: @art-ratio;
   /* Compensate alpha around the card art by centering it and zooming it */
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   background-size: 121%;
   background-position: top 50% left 50%;
   background-repeat: no-repeat;
@@ -102,7 +89,7 @@
   margin-left: 10px;
   width: 300px;
   max-width: 20vw;
-  .shadow()
+  .shadow();
 }
 
 @header-count: 6;
