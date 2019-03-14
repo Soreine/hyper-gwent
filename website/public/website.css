@@ -1,7 +1,7 @@
 /* Gwent Fonts */
 @font-face {
   font-family: "Gwent";
-  src: url(".fonts/hinted-GWENT-ExtraBold.woff2") format("woff2");
+  src: url("./fonts/hinted-GWENT-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
   font-weight: 700;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "HalisGR-Book";
-  src: url(".fonts/hinted-HalisGR-Book.woff2") format("woff2");
+  src: url("./fonts/hinted-HalisGR-Book.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
   font-weight: 400;

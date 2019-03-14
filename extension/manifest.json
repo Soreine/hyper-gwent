@@ -30,6 +30,6 @@
   ],
   "web_accessible_resources": [
     "*.png",
-    "fonts/*"
+    "*.woff2"
   ]
 }
