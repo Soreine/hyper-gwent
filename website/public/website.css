@@ -1,15 +1,17 @@
 /* Gwent Fonts */
 @font-face {
   font-family: "Gwent";
-  src: url("../assets/fonts/hinted-GWENT-ExtraBold.woff2") format("woff2");
+  src: url(".fonts/hinted-GWENT-ExtraBold.woff2") format("woff2");
   font-style: normal;
+  font-display: swap;
   font-weight: 700;
   text-rendering: optimizeLegibility;
 }
 
 @font-face {
   font-family: "HalisGR-Book";
-  src: url("../../assets/fonts/hinted-HalisGR-Book.woff2") format("woff2");
+  src: url(".fonts/hinted-HalisGR-Book.woff2") format("woff2");
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
   text-rendering: optimizeLegibility;
