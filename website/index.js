@@ -9,6 +9,12 @@ import walk from '../core/walk';
 import cardInfoHeader from '../assets/tooltip-header-sprite.png';
 // $FlowFixMe
 import cardInfoBackground from '../assets/tooltip-text-background.png';
+// $FlowFixMe
+import Gwent from '../assets/fonts/hinted-GWENT-ExtraBold.woff2';
+// $FlowFixMe
+import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
+// $FlowFixMe
+import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const GWENTDB = 'http://www.gwentdb.com/';
@@ -177,7 +183,14 @@ window.document.body.appendChild(htmlPage);
 walk(
     { shouldUnderline: true },
     {
-        cardInfoHeader,
-        cardInfoBackground
+        images: {
+            cardInfoHeader,
+            cardInfoBackground
+        },
+        fonts: {
+            Gwent,
+            HalisGRRegular,
+            HalisGRBold
+        }
     }
 );

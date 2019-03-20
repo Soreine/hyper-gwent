@@ -35,6 +35,13 @@ export type Match<T> = {
 
 // Assets packaged in extension
 export type ExtensionAssets = {
-    cardInfoHeader: string,
-    cardInfoBackground: string
+    images: {
+        cardInfoHeader: string,
+        cardInfoBackground: string
+    },
+    fonts: {
+        Gwent: string,
+        HalisGRRegular: string,
+        HalisGRBold: string
+    }
 };
