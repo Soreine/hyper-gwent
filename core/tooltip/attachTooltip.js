@@ -9,6 +9,7 @@ import BigText from 'big-text.js';
 import type { Card, ExtensionAssets } from '../types';
 import TooltipCSS from './tooltip.less';
 import TooltipElement from './TooltipElement';
+import injectStyles from './injectStyles';
 
 const styles = TooltipCSS.locals;
 
@@ -25,7 +26,10 @@ class CardTooltip {
     // HTML element to live in
     wrapper = <div />;
 
+    assets: ExtensionAssets;
+
     constructor(card: Card, target: HTMLElement, assets: ExtensionAssets) {
+        this.assets = assets;
         this.target = target;
 
         const tooltip = <TooltipElement card={card} assets={assets} />;
@@ -58,7 +62,7 @@ class CardTooltip {
 
         window.document.body.appendChild(outer);
 
-        injectStylesIfNeeded();
+        injectStyles(this.assets);
 
         target.addEventListener('mouseenter', () => this.show());
         target.addEventListener('mouseleave', () => this.hide());
@@ -129,18 +133,6 @@ function autoSizeCardName(tooltipElement) {
             maximumFontSize: 24
         })
     );
-}
-
-function injectStylesIfNeeded() {
-    const STYLE_ID = 'hyperGwentStyle';
-    if (window.document.getElementById(STYLE_ID) == null) {
-        const style = (
-            <style type="text/css" id={STYLE_ID}>
-                {TooltipCSS.toString()}
-            </style>
-        );
-        window.document.head.appendChild(style);
-    }
 }
 
 function attachTooltip(

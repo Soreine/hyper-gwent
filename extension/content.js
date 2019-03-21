@@ -12,20 +12,18 @@ import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
 // $FlowFixMe
 import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
 
+const ASSETS = {
+    cardInfoHeader: browser.extension.getURL(cardInfoHeader),
+    cardInfoBackground: browser.extension.getURL(cardInfoBackground),
+    Gwent: browser.extension.getURL(Gwent),
+    HalisGRRegular: browser.extension.getURL(HalisGRRegular),
+    HalisGRBold: browser.extension.getURL(HalisGRBold)
+};
+
 browser.storage.sync
     .get({
         shouldUnderline: true
     })
     .then(options => {
-        walk(options, {
-            images: {
-                cardInfoHeader: browser.extension.getURL(cardInfoHeader),
-                cardInfoBackground: browser.extension.getURL(cardInfoBackground)
-            },
-            fonts: {
-                Gwent: browser.extension.getURL(Gwent),
-                HalisGRRegular: browser.extension.getURL(HalisGRRegular),
-                HalisGRBold: browser.extension.getURL(HalisGRBold)
-            }
-        });
+        walk(options, ASSETS);
     });

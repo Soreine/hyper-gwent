@@ -183,14 +183,10 @@ window.document.body.appendChild(htmlPage);
 walk(
     { shouldUnderline: true },
     {
-        images: {
-            cardInfoHeader,
-            cardInfoBackground
-        },
-        fonts: {
-            Gwent,
-            HalisGRRegular,
-            HalisGRBold
-        }
+        cardInfoHeader,
+        cardInfoBackground,
+        Gwent,
+        HalisGRRegular,
+        HalisGRBold
     }
 );
