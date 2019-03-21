@@ -110,9 +110,7 @@ function walk(
                 `<span class="${CLASSNAME}" ${CARD_ID_ATTRIBUTE}="${
                     match.entryValue
                 }" ${
-                    shouldUnderline
-                        ? 'style="border-bottom: 1px dashed; padding-bottom: 0.1em"'
-                        : ''
+                    shouldUnderline ? 'style="border-bottom: 1px dashed"' : ''
                 }>${node.nodeValue.slice(match.start, match.end)}</span>`
         );
 
