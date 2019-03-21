@@ -5,8 +5,9 @@ import urlParse from 'url-parse';
 
 import findAllMatches from './findAllMatches';
 import replaceMatches from './replaceMatches';
-import tooltip from './tooltip';
+import { attachTooltip } from './tooltip';
 import { CARDS, DICTIONARY } from './data';
+import type { ExtensionAssets } from './types';
 
 const CLASSNAME = 'hyper-gwent-card-highlight';
 const CARD_ID_ATTRIBUTE = 'data-card-id';
@@ -38,7 +39,7 @@ const IGNORED_TAGS = [
 // Walk the document and highlight cards
 function walk(
     { shouldUnderline = true }: { shouldUnderline?: boolean } = {},
-    assets: any
+    assets: ExtensionAssets
 ) {
     const HOSTNAME = urlParse(window.location.href).hostname;
 
@@ -109,9 +110,7 @@ function walk(
                 `<span class="${CLASSNAME}" ${CARD_ID_ATTRIBUTE}="${
                     match.entryValue
                 }" ${
-                    shouldUnderline
-                        ? 'style="border-bottom: 1px dashed; padding-bottom: 0.1em"'
-                        : ''
+                    shouldUnderline ? 'style="border-bottom: 1px dashed"' : ''
                 }>${node.nodeValue.slice(match.start, match.end)}</span>`
         );
 
@@ -127,7 +126,7 @@ function walk(
         const cardId: CardID = (highlight.getAttribute(CARD_ID_ATTRIBUTE): any);
         const card = CARDS[cardId];
 
-        tooltip(card, highlight);
+        attachTooltip(card, highlight, assets);
     }
 }
 

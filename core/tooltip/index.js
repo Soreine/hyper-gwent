@@ -1,2 +1,2 @@
 // @flow
-export { default } from './tooltip';
+export { default as attachTooltip } from './attachTooltip';

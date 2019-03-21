@@ -22,7 +22,9 @@ module.exports = Object.assign({}, baseConfig, {
         contentBase: path('dist/website')
     },
     plugins: [
-        new CleanWebpackPlugin([path('dist/website')]),
+        new CleanWebpackPlugin([path('dist/website')], {
+            root: process.cwd()
+        }),
         new CopyWebpackPlugin([
             {
                 from: path('website/public/'),

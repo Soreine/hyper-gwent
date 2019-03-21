@@ -14,21 +14,22 @@
     "page": "options.html",
     "chrome_style": true
   },
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": [
+        "http://127.0.0.1/*",
         "https://www.reddit.com/r/gwent/*",
         "https://www.reddit.com/r/Competitive_Gwent/*",
         "http://www.gwentdb.com/decks/*",
         "http://www.gwentdb.com/forums/*",
         "https://forums.cdprojektred.com/forum/en/gwent/*"
       ],
-      "js": [
-        "content.js"
-      ]
+      "js": ["content.js"]
     }
+  ],
+  "web_accessible_resources": [
+    "*.png",
+    "*.woff2"
   ]
 }

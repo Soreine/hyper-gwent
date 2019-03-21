@@ -32,3 +32,14 @@ export type Match<T> = {
     // The value at the dictionary's entry
     entryValue: T
 };
+
+// Assets packaged in extension
+export type ExtensionAssets = {
+    // Images
+    cardInfoHeader: string,
+    cardInfoBackground: string,
+    // Fonts
+    Gwent: string,
+    HalisGRRegular: string,
+    HalisGRBold: string
+};

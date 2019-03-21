@@ -1,5 +1,4 @@
 const Path = require('path');
-
 const baseConfig = require('./base');
 
 function path(p) {
@@ -15,5 +14,6 @@ module.exports = Object.assign({}, baseConfig, {
     output: {
         path: path('dist/chrome'),
         filename: '[name].js'
-    }
+    },
+    plugins: []
 });
