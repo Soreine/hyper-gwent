@@ -17,7 +17,6 @@ import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
 import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
-const GWENTDB = 'http://www.gwentdb.com/';
 const REPO = 'https://github.com/Soreine/hyper-gwent/issues';
 const CHROME_EXTENSION =
     'https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo';
@@ -28,6 +27,31 @@ const browser =
     (/firefox/.test(window.navigator.userAgent.toLowerCase()) && 'firefox') ||
     (window.chrome && 'chrome');
 
+function downloadButton() {
+    switch (browser) {
+        case 'chrome':
+            return (
+                <a className="download-link" href={CHROME_EXTENSION}>
+                    Install
+                </a>
+            );
+
+        case 'firefox':
+            return (
+                <a className="download-link" href={FIREFOX_EXTENSION}>
+                    Install
+                </a>
+            );
+        default:
+            return (
+                <p className="noextension">
+                    The Hyper Gwent extension is only available for Chrome and
+                    Firefox.
+                </p>
+            );
+    }
+}
+
 const htmlPage = (
     <div className="content">
         <div className="logo">
@@ -37,24 +61,7 @@ const htmlPage = (
             </div>
         </div>
 
-        {browser === 'chrome' && (
-            <a className="download-link" href="#">
-                {'Coming soon'}
-            </a>
-        )}
-
-        {browser === 'firefox' && (
-            <a className="download-link" href="#">
-                {'Coming soon'}
-            </a>
-        )}
-
-        {!browser && (
-            <p className="noextension">
-                Although the demonstration should work in your browser, the
-                extension is only available for Chrome and Firefox.
-            </p>
-        )}
+        {downloadButton()}
 
         <div className="description">
             <p>
@@ -149,17 +156,7 @@ const htmlPage = (
             </div>
         </div>
 
-        {browser === 'chrome' && (
-            <a className="download-link" href="#">
-                {'Coming soon'}
-            </a>
-        )}
-
-        {browser === 'firefox' && (
-            <a className="download-link" href="#">
-                {'Coming soon'}
-            </a>
-        )}
+        {downloadButton()}
 
         <p className="issues">
             This is an unofficial fan work under the Gwent Fan Content
