@@ -5,16 +5,26 @@ import findAllMatches from './findAllMatches';
 import replaceMatches from './replaceMatches';
 import { attachTooltip } from './tooltip';
 import { CARDS, DICTIONARY } from './data';
-import { createWalker } from './createWalker';
-import type { ExtensionAssets } from './types';
+import createWalker from './createWalker';
+import type { ExtensionAssets, Card, Dictionary } from './types';
 
 const CLASSNAME = 'hyper-gwent-card-highlight';
 const CARD_ID_ATTRIBUTE = 'data-card-id';
 
 // Walk the document and highlight cards
 function walk(
-    { shouldUnderline = true }: { shouldUnderline?: boolean } = {},
-    assets: ExtensionAssets
+    {
+        assets,
+        cards,
+        dictionary
+    }: {
+        assets: ExtensionAssets,
+        cards: {
+            [CardID]: Card
+        },
+        dictionary: Dictionary<CardID>
+    },
+    { shouldUnderline = true }: { shouldUnderline?: boolean } = {}
 ) {
     // Find and highlight card names in texts
     forEachNodes(node => {

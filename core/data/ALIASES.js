@@ -1,5 +1,5 @@
 // @flow
-const ALIASES = {
+const ALIASES: { [CardID]: string[] } = {
     '112101': ['Ciri'],
     '112102': ['Geralt: Igni', 'igni', 'gigni', 'geralt igni'],
     '112103': ['Geralt of Rivia'],

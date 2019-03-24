@@ -76,4 +76,4 @@ function createWalker(window: any): TreeWalker<Document, Element | Text> {
     return walker;
 }
 
-export { createWalker };
+export default createWalker;
