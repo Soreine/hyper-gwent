@@ -4,7 +4,6 @@
 import findAllMatches from './findAllMatches';
 import replaceMatches from './replaceMatches';
 import { attachTooltip } from './tooltip';
-import { CARDS, DICTIONARY } from './data';
 import createWalker from './createWalker';
 import type { ExtensionAssets, Card, Dictionary } from './types';
 
@@ -26,9 +25,11 @@ function walk(
     },
     { shouldUnderline = true }: { shouldUnderline?: boolean } = {}
 ) {
+    const nodesToInspect = findNodesToInspect();
+
     // Find and highlight card names in texts
-    forEachNodes(node => {
-        const matches = findAllMatches(DICTIONARY, node.nodeValue);
+    nodesToInspect.forEach(node => {
+        const matches = findAllMatches(dictionary, node.nodeValue);
         if (matches.length === 0) {
             return;
         }
@@ -55,18 +56,20 @@ function walk(
     for (let i = 0; i < highlights.length; i += 1) {
         const highlight = highlights[i];
         const cardId: CardID = (highlight.getAttribute(CARD_ID_ATTRIBUTE): any);
-        const card = CARDS[cardId];
+        const card = cards[cardId];
 
         attachTooltip(card, highlight, assets);
     }
 }
 
-function forEachNodes(callback) {
-    const walker = createWalker();
+function findNodesToInspect() {
+    const nodes = [];
+    const walker = createWalker(window);
     while (walker.nextNode()) {
         const node = walker.currentNode;
-        callback(node);
+        nodes.push(node);
     }
+    return nodes;
 }
 
 export default walk;

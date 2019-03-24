@@ -15,6 +15,7 @@ import Gwent from '../assets/fonts/hinted-GWENT-ExtraBold.woff2';
 import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
 // $FlowFixMe
 import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
+import { DICTIONARY, CARDS } from '../core/data';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const REPO = 'https://github.com/Soreine/hyper-gwent/issues';
@@ -178,12 +179,16 @@ window.document.body.appendChild(htmlPage);
 
 // Launch extension within the page
 walk(
-    { shouldUnderline: true },
     {
-        cardInfoHeader,
-        cardInfoBackground,
-        Gwent,
-        HalisGRRegular,
-        HalisGRBold
-    }
+        cards: CARDS,
+        dictionary: DICTIONARY,
+        assets: {
+            cardInfoHeader,
+            cardInfoBackground,
+            Gwent,
+            HalisGRRegular,
+            HalisGRBold
+        }
+    },
+    { shouldUnderline: true }
 );

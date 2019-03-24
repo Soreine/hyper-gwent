@@ -1,5 +1,6 @@
 // @flow
 import browser from 'webextension-polyfill';
+import { CARDS, DICTIONARY } from '../core/data';
 import walk from '../core/walk';
 // $FlowFixMe
 import cardInfoHeader from '../assets/tooltip-header-sprite.png';
@@ -24,6 +25,13 @@ browser.storage.sync
     .get({
         shouldUnderline: true
     })
-    .then(options => {
-        walk(options, ASSETS);
+    .then((options: { shouldUnderline?: boolean }) => {
+        walk(
+            {
+                cards: CARDS,
+                dictionary: DICTIONARY,
+                assets: ASSETS
+            },
+            options
+        );
     });
