@@ -1,8 +1,8 @@
 // @flow
 import test from 'ava';
 import removeAccents from 'remove-accents';
-import DICTIONARY from '../DICTIONARY';
-import NAMES from '../NAMES';
+import DICTIONARY from '../static/DICTIONARY';
+import NAMES from '../static/NAMES';
 import { contains } from '../../dictionary';
 
 test('Dictionary was created successfully', t => {

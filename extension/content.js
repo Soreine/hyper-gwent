@@ -1,6 +1,7 @@
 // @flow
 import browser from 'webextension-polyfill';
-import { CARDS, DICTIONARY } from '../core/data';
+import DICTIONARY from '../core/data/static/DICTIONARY';
+import CARDS from '../core/data/static/CARDS';
 import walk from '../core/walk';
 // $FlowFixMe
 import cardInfoHeader from '../assets/tooltip-header-sprite.png';

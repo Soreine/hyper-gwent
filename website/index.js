@@ -15,7 +15,8 @@ import Gwent from '../assets/fonts/hinted-GWENT-ExtraBold.woff2';
 import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
 // $FlowFixMe
 import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
-import { DICTIONARY, CARDS } from '../core/data';
+import DICTIONARY from '../core/data/static/DICTIONARY';
+import CARDS from '../core/data/static/CARDS';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const REPO = 'https://github.com/Soreine/hyper-gwent/issues';

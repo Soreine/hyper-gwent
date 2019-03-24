@@ -1,8 +1,8 @@
 // @flow
 import RAW_CARDS from 'gwent-data-release/cards';
-import IGNORED from './IGNORED';
-import type { Card } from '../types';
-import parseCard from './parseCard';
+import IGNORED from '../IGNORED';
+import type { Card } from '../../types';
+import parseCard from '../parseCard';
 
 const CARDS: {
     [CardID]: Card
