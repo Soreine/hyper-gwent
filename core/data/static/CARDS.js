@@ -1,18 +1,11 @@
 // @flow
 import RAW_CARDS from 'gwent-data-release/cards';
-import IGNORED from '../IGNORED';
 import type { Card } from '../../types';
-import parseCard from '../parseCard';
+import convertGwentDataReleaseCards from '../convertGwentDataReleaseCards';
+import IGNORED from './IGNORED';
 
 const CARDS: {
     [CardID]: Card
-} = {};
-
-Object.keys(RAW_CARDS).forEach(key => {
-    const card = parseCard(RAW_CARDS[key]);
-    if (!IGNORED[card.id]) {
-        CARDS[card.id] = card;
-    }
-});
+} = convertGwentDataReleaseCards(RAW_CARDS, IGNORED);
 
 export default CARDS;

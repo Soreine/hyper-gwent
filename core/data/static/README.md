@@ -1,4 +1,5 @@
-All files in `core/data/static` are for data generated from the statically imported `gwent-data-release`.
-These are used for testing purpose and for the website.
+All files in `core/data/static` are data that should not be bundled in the extension. They will evolve with time. They depend on `gwent-data-release` in particular.
 
-The extension does not use them. Instead it fetches the updated data from a Web API.
+They are exposed here for testing purpose and to build the card data API on the website,
+
+If the extension needs something there, it should instead fetch an updated version from a Web API.

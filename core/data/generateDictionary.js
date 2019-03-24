@@ -37,4 +37,5 @@ function generateDictionary(
 
     return dictionary.create(entries);
 }
+
 export default generateDictionary;

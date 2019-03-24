@@ -1,5 +1,9 @@
+/* @flow */
+
 // Ignored cards, because several cards have the same name
-const IGNORED = [
+const IGNORED: {
+    [CardID]: true
+} = [
     // Shupe: Mage
     '201725',
     '201726',

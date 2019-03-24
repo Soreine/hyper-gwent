@@ -1,5 +1,5 @@
 // @flow
-import ALIASES from './ALIASES';
 import generateDictionary from './generateDictionary';
+import convertGwentDataReleaseCards from './convertGwentDataReleaseCards';
 
-export { generateDictionary, ALIASES };
+export { generateDictionary, convertGwentDataReleaseCards };
