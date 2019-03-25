@@ -30,6 +30,12 @@ module.exports = Object.assign({}, baseConfig, {
                 from: path('website/public/'),
                 to: path('dist/website/')
             }
+        ]),
+        new CopyWebpackPlugin([
+            {
+                from: path('assets/fonts/'),
+                to: path('dist/website/fonts/')
+            }
         ])
         // new HtmlWebpackPlugin({
         //     title: 'Hyper Gwent',
