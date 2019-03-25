@@ -1,23 +1,17 @@
 /* Gwent Fonts */
 @font-face {
   font-family: "Gwent";
-  src: url("../assets/fonts/hinted-GWENT-ExtraBold.eot")
-      format("embedded-opentype"),
-    url("../assets/fonts/hinted-GWENT-ExtraBold.woff") format("woff"),
-    url("../assets/fonts/hinted-GWENT-ExtraBold.woff2") format("woff2"),
-    url("../assets/fonts/hinted-GWENT-ExtraBold.ttf") format("truetype");
+  src: url("./fonts/hinted-GWENT-ExtraBold.woff2") format("woff2");
   font-style: normal;
+  font-display: swap;
   font-weight: 700;
   text-rendering: optimizeLegibility;
 }
 
 @font-face {
   font-family: "HalisGR-Book";
-  src: url("../../assets/fonts/hinted-HalisGR-Book.eot")
-      format("embedded-opentype"),
-    url("../../assets/fonts/hinted-HalisGR-Book.woff2") format("woff2"),
-    url("../../assets/fonts/hinted-HalisGR-Book.woff") format("woff"),
-    url("../../assets/fonts/hinted-HalisGR-Book.ttf") format("truetype");
+  src: url("./fonts/hinted-HalisGR-Book.woff2") format("woff2");
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
   text-rendering: optimizeLegibility;
@@ -42,7 +36,7 @@ body {
   margin: 0px;
   padding: 0px;
 
-  background-image: url('./background.jpg');
+  background-image: url("./background.jpg");
   background-position-x: 50%;
   background-position-y: 0%;
   background-repeat: repeat-y;
