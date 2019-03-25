@@ -33,8 +33,8 @@ module.exports = Object.assign({}, baseConfig, {
         ]),
         new CopyWebpackPlugin([
             {
-                from: path('assets/fonts/'),
-                to: path('dist/website/fonts/')
+                from: path('dist/cards/'),
+                to: path('dist/website/')
             }
         ])
         // new HtmlWebpackPlugin({

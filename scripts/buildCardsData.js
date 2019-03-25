@@ -6,6 +6,7 @@
 */
 
 import RAW_CARDS from 'gwent-data-release/cards';
+import { exec } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 
@@ -18,17 +19,23 @@ console.log('> buildCardsData');
 /**
  * Write a JSON file in the public website directory
  */
-function writePublicJson(json: Object, filename: string) {
-    const pathname = path.join(__dirname, `../dist/website/${filename}`);
-    fs.writeFileSync(pathname, JSON.stringify(json));
+async function writePublicJson(json: Object, filename: string) {
+    const cardsDir = path.join(__dirname, '../dist/cards/');
 
-    console.log(`wrote: ${filename}`);
+    await exec(`mkdir -p ${cardsDir}`);
+
+    fs.writeFileSync(path.join(cardsDir, filename), JSON.stringify(json));
+
+    console.log(`wrote: dist/cards/${filename}`);
 }
 
-const cards = convertGwentDataReleaseCards(RAW_CARDS, IGNORED);
-writePublicJson(cards, 'cards.json');
+async function main() {
+    const cards = convertGwentDataReleaseCards(RAW_CARDS, IGNORED);
+    await writePublicJson(cards, 'cards.json');
 
-const cardList = Object.keys(cards).map(key => cards[key]);
+    const cardList = Object.keys(cards).map(key => cards[key]);
+    const dictionary = generateDictionary(cardList, ALIASES);
+    await writePublicJson(dictionary, 'dictionary.json');
+}
 
-const dictionary = generateDictionary(cardList, ALIASES);
-writePublicJson(dictionary, 'dictionary.json');
+main();
