@@ -2,17 +2,17 @@
   "private": true,
   "scripts": {
     "test": "ava",
-    "test:watch": "npm test -- --watch",
+    "test:watch": "yarn test -- --watch",
     "lint": "eslint .",
     "prebuild": "rm -rf dist",
-    "build": "npm run build:chrome && npm run build:firefox",
+    "build": "yarn run build:chrome && yarn run build:firefox",
     "build:chrome": "./scripts/buildChrome.sh",
     "build:firefox": "mkdir -p dist/firefox && cp -r dist/chrome/** dist/firefox/ && node scripts/buildFirefox.js",
     "build:website": "webpack --config ./webpack/website.js --mode production && babel-node scripts/buildCardsData.js",
     "start": "webpack-dev-server --config ./webpack/website.js",
-    "predeploy": "npm run build:website",
+    "predeploy": "yarn run build:website",
     "deploy": "gh-pages -d dist/website",
-    "prepack": "npm run build",
+    "prepack": "yarn run build",
     "pack": "bestzip chrome.zip dist/chrome/** && bestzip firefox.zip dist/firefox/**"
   },
   "dependencies": {
