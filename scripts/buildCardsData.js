@@ -13,14 +13,16 @@ import { convertGwentDataReleaseCards, generateDictionary } from '../core/data';
 import ALIASES from '../core/data/static/ALIASES';
 import IGNORED from '../core/data/static/IGNORED';
 
+console.log('> buildCardsData');
+
 /**
  * Write a JSON file in the public website directory
  */
 function writePublicJson(json: Object, filename: string) {
-    fs.writeFileSync(
-        path.join(__dirname, `../dist/website/${filename}`),
-        JSON.stringify(json)
-    );
+    const pathname = path.join(__dirname, `../dist/website/${filename}`);
+    fs.writeFileSync(pathname, JSON.stringify(json));
+
+    console.log(`wrote: ${filename}`);
 }
 
 const cards = convertGwentDataReleaseCards(RAW_CARDS, IGNORED);
