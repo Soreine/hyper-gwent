@@ -1,6 +1,8 @@
 /* Gwent Fonts */
 @font-face {
-  font-family: "Gwent";
+  /* Use a different font name to avoid clashing with extension fonts,
+   even though they are the same */
+  font-family: "Gwent-website";
   src: url("./fonts/hinted-GWENT-ExtraBold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
@@ -60,7 +62,7 @@ body {
 }
 
 .logo-title {
-  font-family: "Gwent", sans-serif;
+  font-family: "Gwent-website", sans-serif;
   font-size: 4em;
   background: -webkit-linear-gradient(rgb(28, 255, 141), rgb(16, 86, 93));
   -webkit-background-clip: text;
@@ -76,7 +78,7 @@ body {
 
 .download-link {
   align-self: center;
-  font-family: "Gwent", sans-serif;
+  font-family: "Gwent-website", sans-serif;
 
   background: linear-gradient(to bottom, #f2d259 0%, #ba862b 100%);
 

@@ -4,7 +4,7 @@
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
-import walk from '../core/walk';
+import { walk, fetchCardsData } from '../core';
 // $FlowFixMe
 import cardInfoHeader from '../assets/tooltip-header-sprite.png';
 // $FlowFixMe
@@ -24,10 +24,10 @@ async function onLoad() {
     window.document.body.appendChild(renderHomepage());
 
     // fetch card data
-    const cardsResponse = await window.fetch('./cards.json');
-    const cards = await cardsResponse.json();
-    const dictionaryResponse = await window.fetch('./dictionary.json');
-    const dictionary = await dictionaryResponse.json();
+    const { cards, dictionary } = await fetchCardsData({
+        cardsSrc: './cards.json',
+        dictionarySrc: './dictionary.json'
+    });
 
     // start extension within the page
     walk(

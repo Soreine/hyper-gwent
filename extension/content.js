@@ -1,8 +1,6 @@
 // @flow
 import browser from 'webextension-polyfill';
-import DICTIONARY from '../core/data/static/DICTIONARY';
-import CARDS from '../core/data/static/CARDS';
-import walk from '../core/walk';
+import { walk, fetchCardsData } from '../core';
 // $FlowFixMe
 import cardInfoHeader from '../assets/tooltip-header-sprite.png';
 // $FlowFixMe
@@ -22,17 +20,29 @@ const ASSETS = {
     HalisGRBold: browser.extension.getURL(HalisGRBold)
 };
 
-browser.storage.sync
-    .get({
+const CARDS_SRC = 'https://soreine.github.io/hyper-gwent/cards.json';
+const DICTIONARY_SRC = 'https://soreine.github.io/hyper-gwent/dictionary.json';
+
+async function init() {
+    const options: {
+        shouldUnderline?: boolean
+    } = await browser.storage.sync.get({
         shouldUnderline: true
-    })
-    .then((options: { shouldUnderline?: boolean }) => {
-        walk(
-            {
-                cards: CARDS,
-                dictionary: DICTIONARY,
-                assets: ASSETS
-            },
-            options
-        );
     });
+
+    const { cards, dictionary } = await fetchCardsData({
+        cardsSrc: CARDS_SRC,
+        dictionarySrc: DICTIONARY_SRC
+    });
+
+    walk(
+        {
+            cards,
+            dictionary,
+            assets: ASSETS
+        },
+        options
+    );
+}
+
+init();
