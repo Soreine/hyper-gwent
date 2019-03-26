@@ -1,8 +1,11 @@
 /* global window */
 // @flow
+import browser from 'webextension-polyfill';
 import type { Dictionary, Card } from './types';
 
-// eslint-disable-next-line no-unused-vars
+const VERSION_KEY = 'version';
+const CARDS_KEY = 'cards';
+const DICTIONARY_KEY = 'dictionary';
 
 /**
  * Fetch the latest cards data.
@@ -20,6 +23,11 @@ async function fetchCardsData({
     cards: { [CardID]: Card },
     dictionary: Dictionary<CardID>
 }> {
+    let cachedVersion: string = 'none';
+    if (browser.storage) {
+        cachedVersion = browser.storage.local.get(VERSION_KEY);
+    }
+
     const cards = await fetchJson(cardsSrc);
     const dictionary = await fetchJson(dictionarySrc);
 
