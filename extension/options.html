@@ -4,12 +4,13 @@
     <title>Hyper Gwent Options</title>
     <style>
       body {
-        padding: 10px;
+        padding: 20px;
       }
 
       label {
         display: block;
-        margin: 10px;
+        margin-bottom: 30px;
+        margin-top: 30px;
       }
 
       button {
@@ -25,6 +26,11 @@
       .visible {
         opacity: 1;
       }
+
+      .hint {
+        margin-top: 10px;
+        color: #777
+      }
     </style>
   </head>
 
@@ -34,8 +40,12 @@
     </label>
 
     <label>
-      <input type="checkbox" id="low-quality" /> Use low quality card arts. This helps display tooltips faster if you internet connection is slow.
+      <input type="checkbox" id="low-quality" /> Use low quality card arts.
+      <div class="hint">
+        This helps display tooltips faster if you internet connection is slow.
+      </div>
     </label>
+
 
     <label id="status" class="hidden"> Saved </label>
 
