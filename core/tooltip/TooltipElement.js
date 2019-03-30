@@ -13,14 +13,16 @@ const styles = TooltipCSS.locals;
 
 function TooltipElement({
     card,
-    assets
+    assets,
+    lowQualityArt
 }: {
     card: Card,
-    assets: ExtensionAssets
+    assets: ExtensionAssets,
+    lowQualityArt: boolean
 }): HTMLElement {
     return (
         <div className={styles.card}>
-            <CardArtImage art={card.art} />
+            <CardArtImage art={card.art} lowQualityArt={lowQualityArt} />
             <div className={styles.tooltip}>
                 <TooltipHeader
                     faction={card.faction}
@@ -33,17 +35,37 @@ function TooltipElement({
     );
 }
 
-function CardArtImage({ art }: { art: CardArt }): HTMLElement {
+function CardArtImage({
+    art,
+    lowQualityArt
+}: {
+    art: CardArt,
+    lowQualityArt: boolean
+}): HTMLElement {
+    const src = lowQualityArt ? art.thumbnail : art.low;
+
     return (
         <div className={styles.artFrame}>
-            <div
-                className={styles.art}
-                style={{
-                    backgroundImage: `url(${art.low})`
-                }}
-            />
+            <div className={styles.art} data-art-src={src} />
         </div>
     );
+}
+
+/*
+ * Tooltip's art is not loaded until shown. Call this on the tooltip
+ * before showing it to ensure the card art is loaded.
+ */
+function loadTooltipArt(tooltipWrapper: HTMLElement) {
+    const cardArtImage = tooltipWrapper.querySelector('[data-art-src]');
+    if (!cardArtImage) return;
+
+    const artSrc: ?string = cardArtImage.getAttribute('data-art-src');
+    if (!artSrc) return;
+
+    if (cardArtImage.getAttribute('data-art-loaded')) return;
+
+    cardArtImage.setAttribute('style', `background-image: url(${artSrc})`);
+    cardArtImage.setAttribute('data-art-loaded', 'true');
 }
 
 function TooltipHeader({
@@ -128,3 +150,4 @@ function tagKeywords(text): Array<string | HTMLElement> {
 }
 
 export default TooltipElement;
+export { loadTooltipArt };

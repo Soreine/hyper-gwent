@@ -29,9 +29,11 @@ const DICTIONARY_SRC = `${WEBSITE}/dictionary.json`;
 
 async function init() {
     const options: {
-        shouldUnderline?: boolean
+        shouldUnderline?: boolean,
+        lowQualityArt?: boolean
     } = await browser.storage.sync.get({
-        shouldUnderline: true
+        shouldUnderline: true,
+        lowQualityArt: false
     });
 
     const { cards, dictionary } = await retrieveCardsData({

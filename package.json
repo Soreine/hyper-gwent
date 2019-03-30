@@ -25,6 +25,7 @@
     "gwent-data-release": "GwentCommunityDevelopers/gwent-data-release#039f508ee2dabe5d108dba91310a849de3185b99",
     "intercalate": "^0.1.2",
     "jsx-dom": "^6.2.1",
+    "perimeter": "Soreine/perimeter.js#57381b3e6bb0a82a4d48bbe4ccb7b215276aa974",
     "pluralize": "^6.0.0",
     "remove-accents": "^0.4.1",
     "seamless-immutable": "^7.1.2",

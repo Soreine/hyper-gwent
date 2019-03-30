@@ -1,14 +1,15 @@
 // @flow
 /* @jsx createElement */
-/* global window */
+/* global window Perimeter */
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
+import 'perimeter/dist/perimeter';
 import BigText from 'big-text.js';
 
 import type { Card, ExtensionAssets } from '../types';
 import TooltipCSS from './tooltip.less';
-import TooltipElement from './TooltipElement';
+import TooltipElement, { loadTooltipArt } from './TooltipElement';
 import injectStyles from './injectStyles';
 
 const styles = TooltipCSS.locals;
@@ -18,7 +19,7 @@ class CardTooltip {
     visible = false;
 
     // Tooltipped element
-    target = <span />;
+    anchor = <span />;
 
     // Outer element used to scope CSS
     outer = <div />;
@@ -28,11 +29,24 @@ class CardTooltip {
 
     assets: ExtensionAssets;
 
-    constructor(card: Card, target: HTMLElement, assets: ExtensionAssets) {
+    constructor(
+        card: Card,
+        anchor: HTMLElement,
+        assets: ExtensionAssets,
+        options: {
+            lowQualityArt: boolean
+        }
+    ) {
         this.assets = assets;
-        this.target = target;
+        this.anchor = anchor;
 
-        const tooltip = <TooltipElement card={card} assets={assets} />;
+        const tooltip = (
+            <TooltipElement
+                card={card}
+                assets={assets}
+                lowQualityArt={options.lowQualityArt}
+            />
+        );
         const wrapper = (
             <div
                 className={styles.wrapperHidden}
@@ -58,15 +72,24 @@ class CardTooltip {
 
     // Inject this tooltip in the page
     inject() {
-        const { outer, target } = this;
+        const { outer, anchor, wrapper } = this;
 
         window.document.body.appendChild(outer);
 
         injectStyles(this.assets);
 
-        target.addEventListener('mouseenter', () => this.show());
-        target.addEventListener('mouseleave', () => this.hide());
-        target.addEventListener('mousemove', (e: MouseEvent) => this.follow(e));
+        Perimeter({
+            target: anchor,
+            outline: 100,
+            debug: true,
+            onBreach() {
+                loadTooltipArt(wrapper);
+            }
+        });
+
+        anchor.addEventListener('mouseenter', () => this.show());
+        anchor.addEventListener('mouseleave', () => this.hide());
+        anchor.addEventListener('mousemove', (e: MouseEvent) => this.follow(e));
     }
 
     hide() {
@@ -76,12 +99,7 @@ class CardTooltip {
 
     show() {
         const { wrapper } = this;
-
-        const img = wrapper.querySelector('[data-src]');
-        if (img) {
-            img.setAttribute('src', img.getAttribute('data-src'));
-            img.removeAttribute('data-src');
-        }
+        loadTooltipArt(wrapper);
 
         wrapper.className = styles.wrapperVisible;
 
@@ -137,10 +155,11 @@ function autoSizeCardName(tooltipElement) {
 
 function attachTooltip(
     card: Card,
-    target: HTMLElement,
-    assets: ExtensionAssets
+    anchor: HTMLElement,
+    assets: ExtensionAssets,
+    options: { lowQualityArt: boolean }
 ) {
-    const tooltip = new CardTooltip(card, target, assets);
+    const tooltip = new CardTooltip(card, anchor, assets, options);
     tooltip.inject();
 }
 
