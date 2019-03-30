@@ -23,7 +23,6 @@ async function onLoad() {
     // render
     window.document.body.appendChild(renderHomepage());
 
-    return;
     // fetch card data
     const [cards, dictionary] = await Promise.all([
         fetchJson('./cards.json'),
