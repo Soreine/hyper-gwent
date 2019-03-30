@@ -97,7 +97,7 @@ function renderHomepage() {
 
                 <p>
                     {
-                        "Whether you are new to the game, or you want to keep up with the latest card changes, or you can't remember crap, Hyper Gwent is here to save the day. Hyper Gwent automatically detects card names, aliases or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them."
+                        "Maybe you are new to the game. Or you have hard time keeping up with the latest card changes. Or, like me, you can't remember crap. Don't worry then, Hyper Gwent got you covered. Hyper Gwent automatically detects card names, aliases or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them."
                     }
                 </p>
 
