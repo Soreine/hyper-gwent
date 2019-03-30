@@ -5,7 +5,7 @@ import browser from 'webextension-polyfill';
 
 // Access to settings UI elements
 const UI = {
-    get save(): HTMLButtonElement {
+    get saveButton(): HTMLButtonElement {
         // $FlowFixMe
         return document.getElementById('save');
     },
@@ -15,6 +15,11 @@ const UI = {
         return document.getElementById('underline');
     },
 
+    get lowQualityArt(): HTMLInputElement {
+        // $FlowFixMe
+        return document.getElementById('low-quality');
+    },
+
     get status(): HTMLElement {
         // $FlowFixMe
         return document.getElementById('status');
@@ -22,21 +27,21 @@ const UI = {
 };
 
 // Saves options to browser.storage.sync.
-function saveOptions() {
+async function saveOptions() {
     const shouldUnderline = UI.shouldUnderline.checked;
+    const lowQualityArt = UI.lowQualityArt.checked;
 
-    browser.storage.sync
-        .set({
-            shouldUnderline
-        })
-        .then(() => {
-            // Update status to let user know options were saved.
+    await browser.storage.sync.set({
+        shouldUnderline,
+        lowQualityArt
+    });
 
-            UI.status.setAttribute('class', 'visible');
-            setTimeout(() => {
-                UI.status.setAttribute('class', 'hidden');
-            }, 1000);
-        });
+    // Update status to let user know options were saved.
+    UI.status.setAttribute('class', 'visible');
+
+    setTimeout(() => {
+        UI.status.setAttribute('class', 'hidden');
+    }, 1000);
 }
 
 // Restores select box and checkbox state using the preferences
@@ -45,12 +50,14 @@ function restoreOptions() {
     // Use default value color = 'red' and likesColor = true.
     browser.storage.sync
         .get({
-            shouldUnderline: true
+            shouldUnderline: true,
+            lowQualityArt: false
         })
         .then(items => {
             UI.shouldUnderline.checked = items.shouldUnderline;
+            UI.lowQualityArt.checked = items.lowQualityArt;
         });
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
-UI.save.addEventListener('click', saveOptions);
+UI.saveButton.addEventListener('click', saveOptions);

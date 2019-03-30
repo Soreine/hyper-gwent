@@ -23,7 +23,10 @@ function walk(
         },
         dictionary: Dictionary<CardID>
     },
-    { shouldUnderline = true }: { shouldUnderline?: boolean } = {}
+    {
+        shouldUnderline = true,
+        lowQualityArt = false
+    }: { shouldUnderline?: boolean, lowQualityArt?: boolean } = {}
 ) {
     const nodesToInspect = findNodesToInspect();
 
@@ -58,7 +61,7 @@ function walk(
         const cardId: CardID = (highlight.getAttribute(CARD_ID_ATTRIBUTE): any);
         const card = cards[cardId];
 
-        attachTooltip(card, highlight, assets);
+        attachTooltip(card, highlight, assets, { lowQualityArt });
     }
 }
 

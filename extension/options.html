@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Hyper Gwent Options</title>
-  <style>
-  body {
-    padding: 10px;
-  }
+  <head>
+    <title>Hyper Gwent Options</title>
+    <style>
+      body {
+        padding: 10px;
+      }
 
-  label {
-    display: block;
-    margin: 10px;
-  }
+      label {
+        display: block;
+        margin: 10px;
+      }
 
-  button {
-    display: block;
-    margin: 10px;
-  }
+      button {
+        display: block;
+        margin: 10px;
+      }
 
-  #status {
-  }
+      .hidden {
+        opacity: 0;
+        transition: all 0.5s;
+      }
 
-  .hidden {
-    opacity: 0;
-    transition: all 0.5s;
-  }
+      .visible {
+        opacity: 1;
+      }
+    </style>
+  </head>
 
-  .visible {
-    opacity: 1;
-  }
+  <body>
+    <label>
+      <input type="checkbox" id="underline" /> Underline card names
+    </label>
 
-  </style>
-</head>
+    <label>
+      <input type="checkbox" id="low-quality" /> Use low quality card arts. This helps display tooltips faster if you internet connection is slow.
+    </label>
 
-<body>
-  <label>
-    <input type="checkbox" id="underline">
-    Underline card names
-  </label>
+    <label id="status" class="hidden"> Saved </label>
 
-  <label id="status" class="hidden">
-    Saved
-  </label>
+    <button id="save">Save</button>
 
-  <button id="save">Save</button>
-
-  <script src="options.js"></script>
-</body>
+    <script src="options.js"></script>
+  </body>
 </html>

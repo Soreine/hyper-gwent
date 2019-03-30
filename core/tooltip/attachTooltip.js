@@ -29,11 +29,24 @@ class CardTooltip {
 
     assets: ExtensionAssets;
 
-    constructor(card: Card, anchor: HTMLElement, assets: ExtensionAssets) {
+    constructor(
+        card: Card,
+        anchor: HTMLElement,
+        assets: ExtensionAssets,
+        options: {
+            lowQualityArt: boolean
+        }
+    ) {
         this.assets = assets;
         this.anchor = anchor;
 
-        const tooltip = <TooltipElement card={card} assets={assets} />;
+        const tooltip = (
+            <TooltipElement
+                card={card}
+                assets={assets}
+                lowQualityArt={options.lowQualityArt}
+            />
+        );
         const wrapper = (
             <div
                 className={styles.wrapperHidden}
@@ -143,9 +156,10 @@ function autoSizeCardName(tooltipElement) {
 function attachTooltip(
     card: Card,
     anchor: HTMLElement,
-    assets: ExtensionAssets
+    assets: ExtensionAssets,
+    options: { lowQualityArt: boolean }
 ) {
-    const tooltip = new CardTooltip(card, anchor, assets);
+    const tooltip = new CardTooltip(card, anchor, assets, options);
     tooltip.inject();
 }
 

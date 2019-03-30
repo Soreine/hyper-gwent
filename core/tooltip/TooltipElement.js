@@ -13,14 +13,16 @@ const styles = TooltipCSS.locals;
 
 function TooltipElement({
     card,
-    assets
+    assets,
+    lowQualityArt
 }: {
     card: Card,
-    assets: ExtensionAssets
+    assets: ExtensionAssets,
+    lowQualityArt: boolean
 }): HTMLElement {
     return (
         <div className={styles.card}>
-            <CardArtImage art={card.art} />
+            <CardArtImage art={card.art} lowQualityArt={lowQualityArt} />
             <div className={styles.tooltip}>
                 <TooltipHeader
                     faction={card.faction}
@@ -33,10 +35,18 @@ function TooltipElement({
     );
 }
 
-function CardArtImage({ art }: { art: CardArt }): HTMLElement {
+function CardArtImage({
+    art,
+    lowQualityArt
+}: {
+    art: CardArt,
+    lowQualityArt: boolean
+}): HTMLElement {
+    const src = lowQualityArt ? art.thumbnail : art.low;
+
     return (
         <div className={styles.artFrame}>
-            <div className={styles.art} data-art-src={art.low} />
+            <div className={styles.art} data-art-src={src} />
         </div>
     );
 }
