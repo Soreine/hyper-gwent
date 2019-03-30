@@ -36,14 +36,25 @@ function TooltipElement({
 function CardArtImage({ art }: { art: CardArt }): HTMLElement {
     return (
         <div className={styles.artFrame}>
-            <div
-                className={styles.art}
-                style={{
-                    backgroundImage: `url(${art.low})`
-                }}
-            />
+            <div className={styles.art} data-art-src={art.low} />
         </div>
     );
+}
+
+/*
+ * Tooltip's art is not loaded until shown. Call this on the tooltip
+ * before showing it to ensure the card art is loaded.
+ */
+function loadTooltipArt(tooltipWrapper: HTMLElement) {
+    const cardArtImage = tooltipWrapper.querySelector('[data-art-src]');
+    console.log({ cardArtImage });
+    if (!cardArtImage) return;
+
+    const artSrc: ?string = cardArtImage.getAttribute('data-art-src');
+    console.log({ artSrc });
+    if (!artSrc) return;
+
+    cardArtImage.setAttribute('style', `background-image: url(${artSrc})`);
 }
 
 function TooltipHeader({
@@ -128,3 +139,4 @@ function tagKeywords(text): Array<string | HTMLElement> {
 }
 
 export default TooltipElement;
+export { loadTooltipArt };
