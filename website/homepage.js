@@ -4,19 +4,6 @@
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
-import walk from '../core/walk';
-// $FlowFixMe
-import cardInfoHeader from '../assets/tooltip-header-sprite.png';
-// $FlowFixMe
-import cardInfoBackground from '../assets/tooltip-text-background.png';
-// $FlowFixMe
-import Gwent from '../assets/fonts/hinted-GWENT-ExtraBold.woff2';
-// $FlowFixMe
-import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
-// $FlowFixMe
-import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
-import DICTIONARY from '../core/data/static/DICTIONARY';
-import CARDS from '../core/data/static/CARDS';
 
 const REDDIT = 'https://www.reddit.com/r/gwent/';
 const REPO = 'https://github.com/Soreine/hyper-gwent/issues';
