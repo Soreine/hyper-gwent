@@ -23,10 +23,11 @@ async function onLoad() {
     // render
     window.document.body.appendChild(renderHomepage());
 
+    return;
     // fetch card data
     const [cards, dictionary] = await Promise.all([
-        fetchJson.get('./cards.json'),
-        fetchJson.get('./dictionary.json')
+        fetchJson('./cards.json'),
+        fetchJson('./dictionary.json')
     ]);
 
     // start extension within the page

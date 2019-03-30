@@ -1,11 +1,13 @@
+/* @flow */
 /* global window */
-// @flow
 import browser from 'webextension-polyfill';
 import type { Dictionary, Card, VersionJson } from '../core/types';
 import VERSION from '../core/data/static/VERSION';
 
-// Extension storage key
-const CARDS_DATA_KEY = 'cards-data';
+// Extension storage keys
+const CARDS_KEY = 'cards';
+const VERSION_KEY = 'version';
+const DICTIONARY_KEY = 'dictionary';
 
 type CardsJson = { [CardID]: Card };
 type DictionaryJson = Dictionary<CardID>;
@@ -14,7 +16,7 @@ type DictionaryJson = Dictionary<CardID>;
  * Fetch the latest cards data.
  * Optimized to use a cache.
  */
-async function fetchCardsData({
+async function retrieveCardsData({
     versionSrc,
     cardsSrc,
     dictionarySrc
@@ -29,7 +31,7 @@ async function fetchCardsData({
     cards: { [CardID]: Card },
     dictionary: Dictionary<CardID>
 }> {
-    const local = getLocalData();
+    const local = await getLocalData();
     const latestVersion: VersionJson = await fetchJson(versionSrc);
 
     if (
@@ -40,19 +42,17 @@ async function fetchCardsData({
         const [cards, dictionary]: [
             CardsJson,
             DictionaryJson
-        ] = await Promise.all([
-            fetchJson.get(cardsSrc),
-            fetchJson.get(dictionarySrc)
-        ]);
+        ] = await Promise.all([fetchJson(cardsSrc), fetchJson(dictionarySrc)]);
 
         // Save it locally
-        saveLocally(latestVersion, cards, dictionary);
+        await saveLocally(latestVersion, cards, dictionary);
 
         return {
             cards,
             dictionary
         };
     }
+
     if (isCompatible(local.version)) {
         // Use the cached data
         return local;
@@ -64,12 +64,27 @@ async function fetchCardsData({
     );
 }
 
-function getLocalData(): {
+async function getLocalData(): Promise<{
     cards: CardsJson,
     dictionary: DictionaryJson,
     version: VersionJson
-} {
-    const DEFAULT = {
+}> {
+    const local = await browser.storage.local.get([
+        VERSION_KEY,
+        CARDS_KEY,
+        DICTIONARY_KEY
+    ]);
+
+    if (
+        local &&
+        local[VERSION_KEY] &&
+        local[CARDS_KEY] &&
+        local[DICTIONARY_KEY]
+    ) {
+        return local;
+    }
+
+    return {
         version: {
             major: -1,
             minor: -1
@@ -77,25 +92,18 @@ function getLocalData(): {
         cards: {},
         dictionary: {}
     };
-
-    if (browser.storage) {
-        return browser.storage.local.get(CARDS_DATA_KEY) || DEFAULT;
-    }
-    return DEFAULT;
 }
 
-function saveLocally(
+async function saveLocally(
     version: VersionJson,
     cards: CardsJson,
     dictionary: DictionaryJson
-): void {
-    if (browser.storage) {
-        browser.storage.local.set(CARDS_DATA_KEY, {
-            version,
-            cards,
-            dictionary
-        });
-    }
+): Promise<void> {
+    await browser.storage.local.set({
+        [VERSION_KEY]: version,
+        [CARDS_KEY]: cards,
+        [DICTIONARY_KEY]: dictionary
+    });
 }
 
 function isCompatible(version: VersionJson): boolean {
@@ -115,4 +123,4 @@ async function fetchJson(src: string): Promise<Object> {
     return json;
 }
 
-export default fetchCardsData;
+export default retrieveCardsData;

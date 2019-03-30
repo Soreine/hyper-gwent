@@ -12,7 +12,7 @@ import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
 // $FlowFixMe
 import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
 
-import fetchCardsData from './fetchCardsData';
+import retrieveCardsData from './retrieveCardsData';
 
 const ASSETS = {
     cardInfoHeader: browser.extension.getURL(cardInfoHeader),
@@ -22,10 +22,10 @@ const ASSETS = {
     HalisGRBold: browser.extension.getURL(HalisGRBold)
 };
 
-const WEBSITE = 'https://soreine.github.io/hyper-gwent/';
-const VERSION_SRC = `${WEBSITE}version.json`;
-const CARDS_SRC = `${WEBSITE}cards.json`;
-const DICTIONARY_SRC = `${WEBSITE}dictionary.json`;
+const WEBSITE = 'https://soreine.github.io/hyper-gwent';
+const VERSION_SRC = `${WEBSITE}/version.json`;
+const CARDS_SRC = `${WEBSITE}/cards.json`;
+const DICTIONARY_SRC = `${WEBSITE}/dictionary.json`;
 
 async function init() {
     const options: {
@@ -34,7 +34,7 @@ async function init() {
         shouldUnderline: true
     });
 
-    const { cards, dictionary } = await fetchCardsData({
+    const { cards, dictionary } = await retrieveCardsData({
         versionSrc: VERSION_SRC,
         cardsSrc: CARDS_SRC,
         dictionarySrc: DICTIONARY_SRC
