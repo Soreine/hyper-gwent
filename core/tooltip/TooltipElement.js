@@ -25,13 +25,9 @@ function TooltipElement({
                 <TooltipHeader
                     faction={card.faction}
                     name={card.name}
-                    background={assets.cardInfoHeader}
                     categories={card.categories}
                 />
-                <TooltipInfo
-                    infoRaw={card.infoRaw}
-                    background={assets.cardInfoBackground}
-                />
+                <TooltipInfo infoRaw={card.infoRaw} />
             </div>
         </div>
     );
@@ -53,13 +49,11 @@ function CardArtImage({ art }: { art: CardArt }): HTMLElement {
 function TooltipHeader({
     faction,
     name,
-    categories,
-    background
+    categories
 }: {
     faction: Faction,
     name: string,
-    categories: Array<string>,
-    background: string
+    categories: Array<string>
 }): HTMLElement {
     const categoryText = categories.join(', ').trim();
 
@@ -67,7 +61,6 @@ function TooltipHeader({
         <div className={styles.tooltipHeader}>
             <div
                 className={styles.tooltipHeaderBackground}
-                style={{ backgroundImage: `url(${background})` }}
                 data-card-faction={faction}
             />
 
@@ -90,19 +83,10 @@ function TooltipHeader({
     );
 }
 
-function TooltipInfo({
-    infoRaw,
-    background
-}: {
-    infoRaw: string,
-    background: string
-}): HTMLElement {
+function TooltipInfo({ infoRaw }: { infoRaw: string }): HTMLElement {
     return (
         <div className={styles.tooltipInfo}>
-            <div
-                className={styles.tooltipInfoBackground}
-                style={{ backgroundImage: `url(${background})` }}
-            />
+            <div className={styles.tooltipInfoBackground} />
             {infoRawToHtml(infoRaw)}
         </div>
     );

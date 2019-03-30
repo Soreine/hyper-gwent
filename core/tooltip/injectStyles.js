@@ -13,7 +13,7 @@ function fontDeclarations(assets: ExtensionAssets): string {
     return `
 @font-face {
     font-family: "Gwent";
-    src: url(${assets.Gwent}) format(woff2);
+    src: url("${assets.Gwent}") format("woff2");
     font-style: normal;
     font-display: swap;
     font-weight: 700;
@@ -22,7 +22,7 @@ function fontDeclarations(assets: ExtensionAssets): string {
 
 @font-face {
     font-family: "HalisGR";
-    src: url(${assets.HalisGRRegular}) format(woff2);
+    src: url("${assets.HalisGRRegular}") format("woff2");
     font-style: normal;
     font-display: swap;
     font-weight: 400;
@@ -31,7 +31,7 @@ function fontDeclarations(assets: ExtensionAssets): string {
 
 @font-face {
     font-family: "HalisGR";
-    src: url(${assets.HalisGRBold}) format(woff2);
+    src: url("${assets.HalisGRBold}") format("woff2");
     font-style: normal;
     font-display: swap;
     font-weight: 700;
@@ -43,8 +43,8 @@ function fontDeclarations(assets: ExtensionAssets): string {
 function cssVariablesDeclarations(assets: ExtensionAssets): string {
     return `
 :root {
-    --hyperGwent-cardInfoHeader: url(${assets.cardInfoHeader});
-    --hyperGwent-cardInfoBackground: url(${assets.cardInfoBackground});      
+    --hyperGwent-cardInfoHeader: url("${assets.cardInfoHeader}");
+    --hyperGwent-cardInfoBackground: url("${assets.cardInfoBackground}");      
 }
 `;
 }

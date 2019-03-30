@@ -1,107 +1,39 @@
 // @flow
 /* global window, document */
 
-import urlParse from 'url-parse';
-
 import findAllMatches from './findAllMatches';
 import replaceMatches from './replaceMatches';
 import { attachTooltip } from './tooltip';
-import { CARDS, DICTIONARY } from './data';
-import type { ExtensionAssets } from './types';
+import createWalker from './createWalker';
+import type { ExtensionAssets, Card, Dictionary } from './types';
 
 const CLASSNAME = 'hyper-gwent-card-highlight';
 const CARD_ID_ATTRIBUTE = 'data-card-id';
-const GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
-const GWENTDB_HOSTNAME = 'www.gwentdb.com';
-
-const IGNORED_TAGS = [
-    'STYLE',
-    'SCRIPT',
-    'TEXTAREA',
-    'INPUT',
-    'SELECT',
-    'BUTTON',
-    'CANVAS',
-    'CODE',
-    'EMBED',
-    'IFRAME',
-    'IMG',
-    'META',
-    'HEAD',
-    'NOSCRIPT',
-    'OPTGROUP',
-    'OPTION',
-    'VIDEO',
-    'AUDIO',
-    'VAR'
-];
 
 // Walk the document and highlight cards
 function walk(
-    { shouldUnderline = true }: { shouldUnderline?: boolean } = {},
-    assets: ExtensionAssets
+    {
+        assets,
+        cards,
+        dictionary
+    }: {
+        assets: ExtensionAssets,
+        cards: {
+            [CardID]: Card
+        },
+        dictionary: Dictionary<CardID>
+    },
+    { shouldUnderline = true }: { shouldUnderline?: boolean } = {}
 ) {
-    const HOSTNAME = urlParse(window.location.href).hostname;
+    const nodesToInspect = findNodesToInspect();
 
-    const walker: TreeWalker<
-        Document,
-        Element | Text
-    > = window.document.createTreeWalker(
-        window.document.body,
-        window.NodeFilter.SHOW_ELEMENT + window.NodeFilter.SHOW_TEXT,
-        // Filter out GwentDB tooltips
-        {
-            acceptNode(node) {
-                const TEXT_NODE = 3;
-                const ELEMENT_NODE = 1;
-
-                const {
-                    FILTER_ACCEPT,
-                    FILTER_REJECT,
-                    FILTER_SKIP
-                } = window.NodeFilter;
-
-                if (node.nodeType === TEXT_NODE) {
-                    return FILTER_ACCEPT;
-                }
-                if (node.nodeType === ELEMENT_NODE) {
-                    // Ignore some tags
-                    if (IGNORED_TAGS.indexOf(node.tagName) !== -1) {
-                        return FILTER_REJECT;
-                    }
-
-                    // on GwentDB, we skip existing tooltips
-                    if (
-                        HOSTNAME === GWENTDB_HOSTNAME &&
-                        node.getAttribute(GWENTDB_TOOLTIP_ATTR)
-                    ) {
-                        // Skip this node and all its children
-                        return FILTER_REJECT;
-                    }
-
-                    // Skip the node itself
-                    return FILTER_SKIP;
-                }
-                return FILTER_SKIP;
-            }
+    // Find and highlight card names in texts
+    nodesToInspect.forEach(node => {
+        const matches = findAllMatches(dictionary, node.nodeValue);
+        if (matches.length === 0) {
+            return;
         }
-    );
 
-    const nodes = [];
-
-    while (walker.nextNode()) {
-        const node = walker.currentNode;
-        const matches = findAllMatches(DICTIONARY, node.nodeValue);
-
-        if (matches.length) {
-            nodes.push({
-                node,
-                matches
-            });
-        }
-    }
-
-    nodes.forEach(({ node, matches }) => {
         const span = window.document.createElement('span');
         span.innerHTML = replaceMatches(
             node.nodeValue,
@@ -119,15 +51,25 @@ function walk(
         }
     });
 
-    // Add tooltips
+    // Add card tooltips to the DOM
     const highlights = document.getElementsByClassName(CLASSNAME);
     for (let i = 0; i < highlights.length; i += 1) {
         const highlight = highlights[i];
         const cardId: CardID = (highlight.getAttribute(CARD_ID_ATTRIBUTE): any);
-        const card = CARDS[cardId];
+        const card = cards[cardId];
 
         attachTooltip(card, highlight, assets);
     }
+}
+
+function findNodesToInspect() {
+    const nodes = [];
+    const walker = createWalker(window);
+    while (walker.nextNode()) {
+        const node = walker.currentNode;
+        nodes.push(node);
+    }
+    return nodes;
 }
 
 export default walk;

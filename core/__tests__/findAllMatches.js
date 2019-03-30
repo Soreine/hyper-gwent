@@ -1,6 +1,6 @@
 // @flow
 import test from 'ava';
-import { DICTIONARY } from '../data';
+import DICTIONARY from '../data/static/DICTIONARY';
 import findAllMatches from '../findAllMatches';
 
 const Mourntart = '132202';

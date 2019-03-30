@@ -1,6 +1,6 @@
 // @flow
 import test from 'ava';
-import ALIASES from '../ALIASES';
+import ALIASES from '../static/ALIASES';
 
 // Shouldtnot have aliases matching multiple cards
 {
