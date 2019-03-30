@@ -47,14 +47,15 @@ function CardArtImage({ art }: { art: CardArt }): HTMLElement {
  */
 function loadTooltipArt(tooltipWrapper: HTMLElement) {
     const cardArtImage = tooltipWrapper.querySelector('[data-art-src]');
-    console.log({ cardArtImage });
     if (!cardArtImage) return;
 
     const artSrc: ?string = cardArtImage.getAttribute('data-art-src');
-    console.log({ artSrc });
     if (!artSrc) return;
 
+    if (cardArtImage.getAttribute('data-art-loaded')) return;
+
     cardArtImage.setAttribute('style', `background-image: url(${artSrc})`);
+    cardArtImage.setAttribute('data-art-loaded', 'true');
 }
 
 function TooltipHeader({

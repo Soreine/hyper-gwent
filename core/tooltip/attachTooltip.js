@@ -1,9 +1,10 @@
 // @flow
 /* @jsx createElement */
-/* global window */
+/* global window Perimeter */
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
+import 'perimeter/dist/perimeter';
 import BigText from 'big-text.js';
 
 import type { Card, ExtensionAssets } from '../types';
@@ -58,11 +59,20 @@ class CardTooltip {
 
     // Inject this tooltip in the page
     inject() {
-        const { outer, anchor } = this;
+        const { outer, anchor, wrapper } = this;
 
         window.document.body.appendChild(outer);
 
         injectStyles(this.assets);
+
+        Perimeter({
+            target: anchor,
+            outline: 100,
+            debug: true,
+            onBreach() {
+                loadTooltipArt(wrapper);
+            }
+        });
 
         anchor.addEventListener('mouseenter', () => this.show());
         anchor.addEventListener('mouseleave', () => this.hide());
