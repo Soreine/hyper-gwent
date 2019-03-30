@@ -13,6 +13,7 @@ import fs from 'fs';
 import { convertGwentDataReleaseCards, generateDictionary } from '../core/data';
 import ALIASES from '../core/data/static/ALIASES';
 import IGNORED from '../core/data/static/IGNORED';
+import VERSION from '../core/data/static/VERSION';
 
 console.log('> buildCardsData');
 
@@ -30,6 +31,8 @@ async function writePublicJson(json: Object, filename: string) {
 }
 
 async function main() {
+    await writePublicJson(VERSION, 'version.json');
+
     const cards = convertGwentDataReleaseCards(RAW_CARDS, IGNORED);
     await writePublicJson(cards, 'cards.json');
 

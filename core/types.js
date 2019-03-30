@@ -43,3 +43,13 @@ export type ExtensionAssets = {
     HalisGRRegular: string,
     HalisGRBold: string
 };
+
+// Format of the card data version object that the extension
+// will fetch to update
+export type VersionJson = {
+    // Starts at 1. Incremented everytime the data format breaks
+    major: number,
+    // Starts at 0. Incremented everytime the data is updated.
+    // Back to 0 on every major increment.
+    minor: number
+};
