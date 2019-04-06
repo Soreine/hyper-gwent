@@ -1,3 +1,4 @@
+/* global MutationObserver */
 // @flow
 
 import type { ExtensionAssets, Card, Dictionary } from './types';

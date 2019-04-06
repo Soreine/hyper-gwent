@@ -1,4 +1,5 @@
 /* @flow */
+/* eslint-disable no-console */
 /*
   Run with babel-node
 

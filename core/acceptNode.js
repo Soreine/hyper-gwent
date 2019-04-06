@@ -41,6 +41,7 @@ function acceptNode(node: Node) {
         return FILTER_ACCEPT;
     }
     if (node.nodeType === ELEMENT_NODE) {
+        // $FlowFixMe node is an Element
         const element: Element = node;
         // Ignore some tags
         if (IGNORED_TAGS.indexOf(element.tagName) !== -1) {

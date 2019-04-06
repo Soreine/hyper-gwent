@@ -83,6 +83,7 @@ class CardTooltip {
 
         injectStyles(this.assets);
 
+        // $FlowFixMe Perimeter is defined
         Perimeter({
             target: anchor,
             outline: 100,
