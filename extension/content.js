@@ -1,6 +1,7 @@
+/* global window */
 // @flow
 import browser from 'webextension-polyfill';
-import { walk } from '../core';
+import { watch } from '../core';
 // $FlowFixMe
 import cardInfoHeader from '../assets/tooltip-header-sprite.png';
 // $FlowFixMe
@@ -42,7 +43,8 @@ async function init() {
         dictionarySrc: DICTIONARY_SRC
     });
 
-    walk(
+    watch(
+        window.document.body,
         {
             cards,
             dictionary,

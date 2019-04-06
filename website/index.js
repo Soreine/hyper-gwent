@@ -4,7 +4,7 @@
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
-import { walk } from '../core';
+import { watch } from '../core';
 // $FlowFixMe
 import cardInfoHeader from '../assets/tooltip-header-sprite.png';
 // $FlowFixMe
@@ -29,8 +29,9 @@ async function onLoad() {
         fetchJson('./dictionary.json')
     ]);
 
-    // start extension within the page
-    walk(
+    // Start watching the whole body for card names.
+    watch(
+        window.document.body,
         {
             cards,
             dictionary,

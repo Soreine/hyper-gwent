@@ -11,6 +11,7 @@ import type { Card, ExtensionAssets } from '../types';
 import TooltipCSS from './tooltip.less';
 import TooltipElement, { loadTooltipArt } from './TooltipElement';
 import injectStyles from './injectStyles';
+import { HG_TOOLTIP_ATTRIBUTE } from '../CONSTANTS';
 
 const styles = TooltipCSS.locals;
 
@@ -60,7 +61,11 @@ class CardTooltip {
         );
         // Outer's name attribute is just there for easier inspection
         const outer = (
-            <div className={styles.outer} data-card-name={card.name} />
+            <div
+                className={styles.outer}
+                data-card-name={card.name}
+                {...{ [HG_TOOLTIP_ATTRIBUTE]: true }}
+            />
         );
 
         wrapper.appendChild(tooltip);
@@ -78,6 +83,7 @@ class CardTooltip {
 
         injectStyles(this.assets);
 
+        // $FlowFixMe Perimeter is defined
         Perimeter({
             target: anchor,
             outline: 100,
