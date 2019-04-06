@@ -16,8 +16,6 @@ function watch(
     options?: { shouldUnderline?: boolean, lowQualityArt?: boolean }
 ) {
     function walkNode(node: Node) {
-        console.log('walkNode', node);
-
         walk(node, data, options);
     }
 
@@ -28,15 +26,14 @@ function listenToNodeChanges(
     target: Node,
     onNodeChange: (changedNode: Node) => void
 ) {
-    const logNodeChange = node => console.log('Changed', node);
     const mutationObserver = new MutationObserver(mutationList => {
         mutationList.forEach(mutation => {
             switch (mutation.type) {
                 case 'childList':
-                    mutation.addedNodes.forEach(logNodeChange);
+                    mutation.addedNodes.forEach(onNodeChange);
                     break;
                 case 'characterData':
-                    logNodeChange(mutation.target);
+                    onNodeChange(mutation.target);
                     break;
                 default:
                     break;
