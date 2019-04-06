@@ -7,11 +7,11 @@ import { attachTooltip } from './tooltip';
 import createWalker from './createWalker';
 import type { ExtensionAssets, Card, Dictionary } from './types';
 
-const CLASSNAME = 'hyper-gwent-card-highlight';
-const CARD_ID_ATTRIBUTE = 'data-card-id';
+import { GWENT_HIGHLIGHTED_CLASSNAME, CARD_ID_ATTRIBUTE } from './CONSTANTS';
 
-// Walk the document and highlight cards
+// Walk the target HTML element and highlight cards inside it
 function walk(
+    target: Node,
     {
         assets,
         cards,
@@ -28,7 +28,7 @@ function walk(
         lowQualityArt = false
     }: { shouldUnderline?: boolean, lowQualityArt?: boolean } = {}
 ) {
-    const nodesToInspect = findNodesToInspect();
+    const nodesToInspect = findNodesToInspect(target);
 
     // Find and highlight card names in texts
     nodesToInspect.forEach(node => {
@@ -37,12 +37,12 @@ function walk(
             return;
         }
 
-        const span = window.document.createElement('span');
+        const span = document.createElement('span');
         span.innerHTML = replaceMatches(
             node.nodeValue,
             matches,
             match =>
-                `<span class="${CLASSNAME}" ${CARD_ID_ATTRIBUTE}="${
+                `<span class="${GWENT_HIGHLIGHTED_CLASSNAME}" ${CARD_ID_ATTRIBUTE}="${
                     match.entryValue
                 }" ${
                     shouldUnderline ? 'style="border-bottom: 1px dashed"' : ''
@@ -55,7 +55,9 @@ function walk(
     });
 
     // Add card tooltips to the DOM
-    const highlights = document.getElementsByClassName(CLASSNAME);
+    const highlights = document.getElementsByClassName(
+        GWENT_HIGHLIGHTED_CLASSNAME
+    );
     for (let i = 0; i < highlights.length; i += 1) {
         const highlight = highlights[i];
         const cardId: CardID = (highlight.getAttribute(CARD_ID_ATTRIBUTE): any);
@@ -65,9 +67,9 @@ function walk(
     }
 }
 
-function findNodesToInspect() {
+function findNodesToInspect(target: Node) {
     const nodes = [];
-    const walker = createWalker(window);
+    const walker = createWalker(window, target);
     while (walker.nextNode()) {
         const node = walker.currentNode;
         nodes.push(node);

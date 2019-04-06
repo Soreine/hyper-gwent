@@ -1,8 +1,5 @@
 /* @flow */
-import urlParse from 'url-parse';
-
-const GWENTDB_TOOLTIP_ATTR = 'data-tooltip-url';
-const GWENTDB_HOSTNAME = 'www.gwentdb.com';
+import { GWENT_HIGHLIGHTED_CLASSNAME, HG_TOOLTIP_ATTRIBUTE } from './CONSTANTS';
 
 const IGNORED_TAGS = [
     'STYLE',
@@ -26,18 +23,26 @@ const IGNORED_TAGS = [
     'VAR'
 ];
 
-function createWalker(window: any): TreeWalker<Document, Element | Text> {
-    const HOSTNAME = urlParse(window.location.href).hostname;
+const IGNORED_ATTRIBUTES = [
+    // Hyper Gwent own tooltip
+    HG_TOOLTIP_ATTRIBUTE,
+    // GwentDB tooltips attribute
+    'data-tooltip-url'
+];
 
+function createWalker(
+    window: any,
+    target: Node
+): TreeWalker<Document, Element | Text> {
     const walker: TreeWalker<
         Document,
         Element | Text
     > = window.document.createTreeWalker(
-        window.document.body,
+        target,
         window.NodeFilter.SHOW_ELEMENT + window.NodeFilter.SHOW_TEXT,
         // Filter out GwentDB tooltips
         {
-            acceptNode(node) {
+            acceptNode(node: Node) {
                 const TEXT_NODE = 3;
                 const ELEMENT_NODE = 1;
 
@@ -51,21 +56,32 @@ function createWalker(window: any): TreeWalker<Document, Element | Text> {
                     return FILTER_ACCEPT;
                 }
                 if (node.nodeType === ELEMENT_NODE) {
+                    const element: Element = node;
                     // Ignore some tags
-                    if (IGNORED_TAGS.indexOf(node.tagName) !== -1) {
+                    if (IGNORED_TAGS.indexOf(element.tagName) !== -1) {
                         return FILTER_REJECT;
                     }
 
-                    // on GwentDB, we skip existing tooltips
+                    // Reject Hyper Gwent's own highlights
                     if (
-                        HOSTNAME === GWENTDB_HOSTNAME &&
-                        node.getAttribute(GWENTDB_TOOLTIP_ATTR)
+                        element.getAttribute('class') ===
+                        GWENT_HIGHLIGHTED_CLASSNAME
                     ) {
+                        console.log('skip highlight', element);
+                        return FILTER_REJECT;
+                    }
+
+                    if (
+                        IGNORED_ATTRIBUTES.some(attr =>
+                            element.hasAttribute(attr)
+                        )
+                    ) {
+                        console.log('skip tooltip', element);
                         // Skip this node and all its children
                         return FILTER_REJECT;
                     }
 
-                    // Skip the node itself
+                    // Skip the node itself, but walk its children
                     return FILTER_SKIP;
                 }
                 return FILTER_SKIP;
