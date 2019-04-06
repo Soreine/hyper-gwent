@@ -41,15 +41,15 @@ function listenToNodeChanges(
         });
     });
 
+    // Call once on the whole target.
+    onNodeChange(target);
+
     mutationObserver.observe(target, {
         attributes: false,
         characterData: true,
         childList: true,
         subtree: true
     });
-
-    // Call once on the whole target.
-    onNodeChange(target);
 }
 
 export default watch;
