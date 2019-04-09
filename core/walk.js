@@ -36,7 +36,7 @@ function walk(
 
     // All new highlights made will be pushed here, so that we can
     // create the associated tooltip for them
-    const newHighlights: Element[] = [];
+    const newHighlights: HTMLElement[] = [];
 
     // Find and highlight card names in texts
     textsToInspect.forEach(textNode => {
@@ -78,9 +78,6 @@ function walk(
     });
 
     // Add card tooltips to the DOM
-
-    console.log({ newHighlights });
-
     newHighlights.forEach(highlight => {
         const cardId: CardID = (highlight.getAttribute(CARD_ID_ATTRIBUTE): any);
         const card = cards[cardId];
