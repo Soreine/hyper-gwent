@@ -68,22 +68,29 @@ function walk(
     const allHighlights = document.getElementsByClassName(
         HG_HIGHLIGHT_CLASSNAME
     );
-    for (let i = 0; i < allHighlights.length; i += 1) {
-        const highlight = allHighlights[i];
-        const highlightId = parseInt(
-            highlight.getAttribute(HG_HIGHLIGHT_ID_ATTRIBUTE) || '0',
-            10
-        );
 
-        if (highlightId > startHighlightId) {
-            const cardId: CardID = (highlight.getAttribute(
-                CARD_ID_ATTRIBUTE
-            ): any);
-            const card = cards[cardId];
+    const newHighlights = (() => {
+        const result = [];
+        for (let i = 0; i < allHighlights.length; i += 1) {
+            const highlight = allHighlights[i];
+            const highlightId = parseInt(
+                highlight.getAttribute(HG_HIGHLIGHT_ID_ATTRIBUTE) || '0',
+                10
+            );
 
-            attachTooltip(card, highlight, assets, { lowQualityArt });
+            if (highlightId > startHighlightId) {
+                result.push(highlight);
+            }
         }
-    }
+        return result;
+    })();
+
+    newHighlights.forEach(highlight => {
+        const cardId: CardID = (highlight.getAttribute(CARD_ID_ATTRIBUTE): any);
+        const card = cards[cardId];
+
+        attachTooltip(card, highlight, assets, { lowQualityArt });
+    });
 }
 
 function findNodesToInspect(target: Node): Node[] {
