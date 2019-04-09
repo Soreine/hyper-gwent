@@ -1,6 +1,6 @@
 /* global window */
 /* @flow */
-import { HG_HIGHLIGHT_CLASSNAME, HG_TOOLTIP_ATTRIBUTE } from './CONSTANTS';
+import { HG_HIGHLIGHT_ATTRIBUTE, HG_TOOLTIP_ATTRIBUTE } from './CONSTANTS';
 
 const { FILTER_ACCEPT, FILTER_REJECT, FILTER_SKIP } = window.NodeFilter;
 
@@ -27,6 +27,8 @@ const IGNORED_TAGS = [
 ];
 
 const IGNORED_ATTRIBUTES = [
+    // Text already highlighted by Hyper Gwent
+    HG_HIGHLIGHT_ATTRIBUTE,
     // Hyper Gwent own tooltip
     HG_TOOLTIP_ATTRIBUTE,
     // GwentDB tooltips attribute
@@ -45,11 +47,6 @@ function acceptNode(node: Node) {
         const element: Element = node;
         // Ignore some tags
         if (IGNORED_TAGS.indexOf(element.tagName) !== -1) {
-            return FILTER_REJECT;
-        }
-
-        // Reject Hyper Gwent's own highlights
-        if (element.getAttribute('class') === HG_HIGHLIGHT_CLASSNAME) {
             return FILTER_REJECT;
         }
 
