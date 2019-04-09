@@ -16,13 +16,8 @@ import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
 // $FlowFixMe
 import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
 
-import renderHomepage from './homepage';
-
 // Setup the homepage
 async function onLoad() {
-    // render
-    window.document.body.appendChild(renderHomepage());
-
     // fetch card data
     const [cards, dictionary] = await Promise.all([
         fetchJson('./cards.json'),

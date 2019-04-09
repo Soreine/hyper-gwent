@@ -1,29 +1,104 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hyper Gwent</title>
-    <link rel="shortcut icon" href="./favicon.ico" />
 
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <title>Hyper Gwent</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
 
-    <link
-      rel="preload"
-      as="font"
-      href="./fonts/hinted-HalisGR-Book.woff2"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      href="./fonts/hinted-GWENT-ExtraBold.woff2"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link href="./website.css" rel="stylesheet" />
-  </head>
-  <body>
-    <script src="./website.js"></script>
-  </body>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preload" as="font" href="./fonts/hinted-HalisGR-Book.woff2" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" as="font" href="./fonts/hinted-GWENT-ExtraBold.woff2" type="font/woff2" crossorigin="anonymous" />
+  <link href="./website.css" rel="stylesheet" />
+</head>
+
+<body>
+  <script src="./website.js"></script>
+
+  <div class="content">
+    <div class="logo">
+      <div class="logo-title">Hyper Gwent</div>
+      <div class="logo-subtitle">Fan-made browser extension for GWENT®: The Witcher Card Game</div>
+    </div>
+
+    <div class="download-buttons">
+      <!-- These buttons are there for SEO. On page load, a script will only keep the relevant one for the user-agent -->
+      <a data-browser="chrome" class="download-link" href="https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo">Install
+        on Chrome</a>
+
+      <a data-browser="firefox" class="download-link" href="https://addons.mozilla.org/en-US/firefox/addon/hyper-gwent/">Install
+        on Firefox</a>
+    </div>
+
+
+
+    <div class="description">
+      <p>None of us can reasonably remember every possible Gwent card's name and effect. Browsing <a href="https://www.reddit.com/r/gwent/">r/gwent</a>
+        or reading deck guides can be challenging if you don't know half the cards people are talking about.</p>
+      <p>Hyper Gwent is an extension that detects card mentions and adds tooltip to them. It is running on this page.
+        See by yourself:<ul>
+          <li>Speartip asleep is almost as scary as Speartip awake.</li>
+          <li>ADC does not stand for Attack Damage Carry.</li>
+          <li>Villentretenmerth is hard to pronounce. But Borkh isn't!</li>
+          <li>I know a joke, it goes like this. Three guys named Gigni, Gyrden, Gaard enter a bar...</li>
+          <li>One recruit, two recruits, three recruits...</li>
+        </ul>
+      </p>
+      <div class="emote">
+        <div class="avatar geralt"></div>
+        <div class="emote-text">Not bad. Not bad at all.</div>
+      </div>
+      <p>Maybe you are new to the game. Or you have hard time keeping up with the latest card changes. Or, like me, you
+        can't remember crap. Don't worry then, Hyper Gwent got you covered. Hyper Gwent automatically detects card
+        names, aliases or acronyms in the pages you visit, highlights them and shows a tooltip when hovering them.</p>
+      <p>Feature list:<ul>
+          <li>Includes all existing cards, up to date with the latest patch</li>
+          <li>Support abbreviations, acronyms, plurals, missing capitals, missing accents, and missing punctuation</li>
+          <li>Non obstrusive. Add subtle highlights and does not break links.</li>
+          <li>Fast. You could enable it on any website, you would not feel it's here.</li>
+        </ul>
+      </p>
+      <p>Incoming features:<ul>
+          <li>Enable on any website with a simple click (currently only enabled on r/gwent and GwentDB)</li>
+          <li>Automatic card updates</li>
+        </ul>
+      </p>
+      <p>What do you think of that, Dandelion?</p>
+      <div class="emote">
+        <div class="avatar dandelion"></div>
+        <div class="emote-text">That… was actually rather impressive. Congratulations.</div>
+      </div>
+    </div>
+
+    <div class="download-buttons">
+      <!-- These buttons are there for SEO. On page load, a script will only keep the relevant one for the user-agent -->
+      <a data-browser="chrome" class="download-link" href="https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo">Install
+        on Chrome</a>
+
+      <a data-browser="firefox" class="download-link" href="https://addons.mozilla.org/en-US/firefox/addon/hyper-gwent/">Install
+        on Firefox</a>
+    </div>
+
+
+    <p class="issues">This is an unofficial fan work under the Gwent Fan Content Guidelines. Not approved/endorsed by
+      CD PROJEKT RED.<br>If you find bugs, if you want to submit new acronyms, request a feature, or contribute, post
+      an issue <a href="https://github.com/Soreine/hyper-gwent/issues">here</a>.<br>You can also contact <a href="https://www.reddit.com/message/compose/?to=Soreine">/u/Soreine</a>.</p>
+  </div>
+</body>
+
+<script>
+  // Remove the irrelevant download buttons
+
+  const currentBrowser =
+    (/firefox/.test(window.navigator.userAgent.toLowerCase()) && 'firefox') ||
+    (window.chrome && 'chrome');
+  const downloadButtons = document.querySelectorAll('[data-browser]')
+  downloadButtons.forEach(button => {
+    if (button.getAttribute('data-browser') !== currentBrowser) {
+      button.parentNode.removeChild(button);
+    }
+  })
+</script>
+
 </html>

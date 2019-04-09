@@ -76,6 +76,11 @@ body {
   font-size: 0.8em;
 }
 
+.download-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .download-link {
   align-self: center;
   font-family: "Gwent-website", sans-serif;
