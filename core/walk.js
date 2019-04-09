@@ -11,7 +11,7 @@ import createWalker from './createWalker';
 import type { ExtensionAssets, Card, Dictionary } from './types';
 import { shouldIgnore } from './acceptNode';
 
-import { HG_HIGHLIGHT_CLASSNAME, CARD_ID_ATTRIBUTE } from './CONSTANTS';
+import { HG_HIGHLIGHT_ATTRIBUTE, CARD_ID_ATTRIBUTE } from './CONSTANTS';
 
 // Walk the target HTML element and highlight cards inside it
 function walk(
@@ -55,7 +55,7 @@ function walk(
             },
             mapMatch(match, matchedText) {
                 const attrs = {
-                    className: HG_HIGHLIGHT_CLASSNAME,
+                    [HG_HIGHLIGHT_ATTRIBUTE]: true,
                     [CARD_ID_ATTRIBUTE]: match.entryValue,
                     style: shouldUnderline ? 'border-bottom: 1px dashed' : ''
                 };
