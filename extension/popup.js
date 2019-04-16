@@ -2,72 +2,36 @@
 /* @jsx h */
 /* global document */
 
-import { h, render, Component } from 'preact';
+import { render, Component } from 'preact';
 import browser from 'webextension-polyfill';
 
 type Options = {
     shouldUnderline: boolean,
     lowQualityArt: boolean,
-    enabledDomains: string[]
+    enabledSites: Set<string>,
+    disabledSites: Set<string>
 };
 
-const DEFAULT_OPTIONS: Options = {
+type RawOptions = {
+    shouldUnderline: boolean,
+    lowQualityArt: boolean,
+    enabledSites: Array<string>,
+    disabledSites: Array<string>
+};
+
+const DEFAULT_OPTIONS: RawOptions = {
     shouldUnderline: true,
     lowQualityArt: false,
-    enabledDomains: ['https://reddit.com/gwent']
+    enabledSites: ['https://reddit.com/gwent'],
+    disabledSites: ['https://www.gwentdb.com']
 };
-
-// Access to settings UI elements
-const UI = {
-    get shouldUnderline(): HTMLInputElement {
-        // $FlowFixMe
-        return document.getElementById('underline');
-    },
-
-    get lowQualityArt(): HTMLInputElement {
-        // $FlowFixMe
-        return document.getElementById('low-quality');
-    },
-
-    get enabledSwitch(): HTMLInputElement {
-        // $FlowFixMe
-        return document.getElementById('switch');
-    },
-
-    get enabledSwitchPin(): HTMLInputElement {
-        // $FlowFixMe
-        return document.getElementById('pin');
-    },
-
-    toggleSwitch(active: boolean) {
-        this.enabledSwitchPin.setAttribute(
-            'class',
-            active ? 'switch-pin switch-pin-on' : 'switch-pin'
-        );
-    },
-
-    // Update the UI with the given options state
-    updateForOptions(options: Options) {
-        UI.shouldUnderline.checked = options.shouldUnderline;
-        UI.lowQualityArt.checked = options.lowQualityArt;
-
-        const currentlyActive = true;
-        UI.toggleSwitch(currentlyActive);
-    }
-};
-
-// Update the options, and propagate it to the UI and the storage
-async function mutateOptions(mutator: (prevOptions: Options) => void) {
-    mutator(currentOptions);
-    UI.updateForOptions(currentOptions);
-    saveOptions(currentOptions);
-}
 
 // Saves options to browser.storage.sync.
 async function saveOptions({
     shouldUnderline,
     lowQualityArt,
-    enabledDomains
+    enabledSites,
+    disabledSites
 }: Options) {
     if (!browser.storage) {
         console.warn(
@@ -78,46 +42,115 @@ async function saveOptions({
     await browser.storage.sync.set({
         shouldUnderline,
         lowQualityArt,
-        enabledDomains
+        enabledSites: setToArray(enabledSites),
+        disabledSites: setToArray(disabledSites)
     });
 }
 
 // Restores select box and checkbox state using the preferences
 // stored in browser.storage.
-async function loadOptions(): Options {
+async function loadOptions(): Promise<Options> {
+    let rawOptions: RawOptions;
     if (!browser.storage) {
         console.warn(
             'Current context does not provide browser APIs. Skipping loading options'
         );
-        return DEFAULT_OPTIONS;
+        rawOptions = DEFAULT_OPTIONS;
+    } else {
+        rawOptions = await browser.storage.sync.get(DEFAULT_OPTIONS);
     }
-    return await browser.storage.sync.get(DEFAULT_OPTIONS);
+
+    const options = {
+        shouldUnderline: rawOptions.shouldUnderline,
+        lowQualityArt: rawOptions.lowQualityArt,
+        enabledSites: arrayToSet(rawOptions.enabledSites),
+        disabledSites: arrayToSet(rawOptions.disabledSites)
+    };
+
+    return options;
 }
 
-// UI.shouldUnderline.addEventListener('change', () => {
-//     mutateOptions(options => {
-//         options.shouldUnderline = !options.shouldUnderline;
-//     });
-// });
-// UI.lowQualityArt.addEventListener('change', () => {
-//     mutateOptions(options => {
-//         options.lowQualityArt = !options.lowQualityArt;
-//     });
-// });
-// UI.enabledSwitch.addEventListener('click', () => {
-//     mutateOptions(options => {});
-// });
+function findMatchingRule(urlSet: Set<string>, url: string): ?string {
+    return setToArray(urlSet).find(u => isSubUrl(u, url));
+}
+
+/*
+ * Is the extension enabled for the given page URL
+ */
+function isEnabledForUrl(
+    currentUrl: string,
+    enabledSites: Set<string>,
+    disabledSites: Set<string>
+): boolean {
+    const acceptingSite = findMatchingRule(enabledSites, currentUrl);
+    const rejectingSite = findMatchingRule(disabledSites, currentUrl);
+
+    if (!acceptingSite) {
+        return false;
+    }
+    if (!rejectingSite) {
+        return true;
+    }
+
+    if (isSubUrl(acceptingSite, rejectingSite)) {
+        // Reject rule is more specific
+        return false;
+    }
+    if (isSubUrl(rejectingSite, acceptingSite)) {
+        // Reject rule is more specific
+        return true;
+    }
+
+    // This should not happen
+    return false;
+}
+
+function isSubUrl(parentUrl: string, url: string): boolean {
+    return url.startsWith(parentUrl);
+}
+
+function addUrlRule(urlSet: Set<string>, url: string): Set<string> {
+    // Add url to set, and remove all more specific urls
+    urlSet.add(url);
+    urlSet.forEach(site => {
+        if (isSubUrl(url, site)) {
+            urlSet.delete(site);
+        }
+    });
+    return urlSet;
+}
+
+function removeUrlRule(urlSet: Set<string>, url: string): Set<string> {
+    // Remove url from set, and all more specific urls
+    urlSet.delete(url);
+    urlSet.forEach(site => {
+        if (isSubUrl(url, site)) {
+            urlSet.delete(site);
+        }
+    });
+    return urlSet;
+}
+
+function setToArray(set: Set<string>): Array<string> {
+    return Array.from(set.values());
+}
+
+function arrayToSet(array: Array<string>): Set<string> {
+    return new Set(array);
+}
 
 async function getCurrentUrl(): Promise<string> {
-    const tabs = await browser.tabs.query({
+    if (!browser.tabs) {
+        // For testing in normal context
+        return window.location.href;
+    }
+
+    // The only one tab returned should be the active one
+    const [activeTab] = await browser.tabs.query({
         active: true,
         currentWindow: true
     });
 
-    // since only one tab should be active and in the current window at once
-    // the return variable should only have one entry
-    const activeTab = tabs[0];
-    console.log({ activeTab, url: activeTab.url });
     return activeTab.url;
 }
 
@@ -133,27 +166,54 @@ class OptionsPanel extends Component<
         });
     }
 
-    render({}, { options, currentUrl }) {
+    componentDidUpdate(prevProps, { options: prevOptions }) {
+        const { options } = this.state;
+        if (options && prevOptions !== options) {
+            saveOptions(options);
+        }
+    }
+
+    render() {
+        const { options, currentUrl } = this.state;
         if (!options) {
             return null;
         }
 
-        const { shouldUnderline, lowQualityArt, enabledDomains } = options;
+        const {
+            shouldUnderline,
+            lowQualityArt,
+            enabledSites,
+            disabledSites
+        } = options;
+
+        const enabledOnCurrentPage = isEnabledForUrl(
+            currentUrl,
+            enabledSites,
+            disabledSites
+        );
+
+        function toggleCurrentUrl() {
+            const enable = !enabledOnCurrentPage;
+            this.setState({
+                options: {
+                    ...options,
+                    enabledSites: enable
+                        ? addUrlRule(enabledSites, currentUrl)
+                        : removeUrlRule(enabledSites, currentUrl),
+                    disabledSites: enable
+                        ? removeUrlRule(disabledSites, currentUrl)
+                        : addUrlRule(disabledSites, currentUrl)
+                }
+            });
+        }
 
         return (
             <div>
                 <label>
                     Enable Hyper Gwent on {currentUrl}
                     <Switch
-                        checked={enabledDomains}
-                        onChange={newValue => {
-                            this.setState({
-                                options: {
-                                    ...options,
-                                    enabledDomains: newValue
-                                }
-                            });
-                        }}
+                        checked={enabledOnCurrentPage}
+                        onChange={toggleCurrentUrl}
                     />
                 </label>
 
