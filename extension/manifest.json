@@ -10,24 +10,21 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  },
   "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": [
-        "http://127.0.0.1/*",
-        "https://www.reddit.com/r/gwent/*",
-        "https://www.reddit.com/r/Competitive_Gwent/*",
-        "http://www.gwentdb.com/decks/*",
-        "http://www.gwentdb.com/forums/*",
-        "https://forums.cdprojektred.com/forum/en/gwent/*"
+        "http://*/*",
+        "https://*/*"
       ],
+      "run_at": "document_idle",
+      "all_frames": true,
       "js": ["content.js"]
     }
   ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
   "web_accessible_resources": [
     "*.png",
     "*.woff2"

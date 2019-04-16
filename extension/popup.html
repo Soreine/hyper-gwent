@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hyper Gwent Options</title>
+    <style>
+      body {
+        padding: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 30px;
+        margin-top: 30px;
+      }
+
+      button {
+        display: block;
+        margin: 10px;
+      }
+
+      .hidden {
+        opacity: 0;
+        transition: all 0.5s;
+      }
+
+      .visible {
+        opacity: 1;
+      }
+
+      .hint {
+        margin-top: 10px;
+        color: #777;
+      }
+
+      .switch {
+        margin: 100px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        background: rgb(46, 46, 46);
+        height: 30px;
+        width: 180px;
+        cursor: pointer;
+      }
+
+      .switch-pin {
+        z-index: 0;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all ease-out 0.2s;
+        background: linear-gradient(rgb(119, 119, 119), rgb(80, 80, 80));
+        transform: blur(3px);
+      }
+
+      .switch-pin-on {
+        left: 50%;
+        background: linear-gradient(rgb(28, 255, 141), rgb(16, 86, 93));
+      }
+
+      .switch-label {
+        z-index: 1;
+        text-transform: uppercase;
+        text-align: center;
+        vertical-align: middle;
+        width: 50%;
+        color: white;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="switch" id="switch">
+      <div class="switch-pin" id="pin"></div>
+      <div class="switch-label">Off</div>
+      <div class="switch-label">On</div>
+    </div>
+
+    <label>
+      <input type="checkbox" id="underline" /> Underline card names
+    </label>
+
+    <label>
+      <input type="checkbox" id="low-quality" /> Use low quality card arts.
+      <div class="hint">
+        Tooltips may load faster if your internet connection is slow.
+      </div>
+    </label>
+
+    <label id="status" class="hidden"> Saved </label>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
