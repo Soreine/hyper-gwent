@@ -2,7 +2,12 @@
 /* @jsx h */
 /* global document */
 
-import { render, Component } from 'preact';
+import {
+    // eslint-disable-next-line
+    h,
+    render,
+    Component
+} from 'preact';
 import browser from 'webextension-polyfill';
 
 type Options = {
