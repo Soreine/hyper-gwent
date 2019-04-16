@@ -12,6 +12,7 @@
     "build:firefox": "mkdir -p dist/firefox && cp -r dist/chrome/** dist/firefox/ && node scripts/buildFirefox.js",
     "build:website": "webpack --config ./webpack/website.js --mode production && yarn run build:cards",
     "start": "yarn run build:cards && webpack-dev-server --config ./webpack/website.js",
+    "start:popup": "webpack-dev-server --config ./webpack/popup.js",
     "predeploy": "yarn run build:website",
     "deploy": "gh-pages -d dist/website",
     "prepack": "yarn run build",
