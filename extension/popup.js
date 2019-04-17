@@ -271,23 +271,4 @@ function CheckboxOption({
     );
 }
 
-function Switch({
-    checked,
-    onChange
-}: {
-    checked: boolean,
-    onChange: (newValue: boolean) => void
-}) {
-    return (
-        <div className="switch" id="switch" onClick={() => onChange(!checked)}>
-            <div
-                className={checked ? 'switch-pin switch-pin-on' : 'switch-pin'}
-                id="pin"
-            />
-            <div className="switch-label">Off</div>
-            <div className="switch-label">On</div>
-        </div>
-    );
-}
-
 render(<OptionsPanel />, document.body);
