@@ -100,7 +100,12 @@ async function getCurrentUrl(): Promise<URL> {
 
 class OptionsPanel extends Component<
     {},
-    { options: ?Options, currentUrl: URL }
+    {
+        options: ?Options,
+        currentUrl: URL,
+        // True if the user made some changes to the settings
+        updated: boolean
+    }
 > {
     componentDidMount() {
         setTimeout(async () => {
@@ -112,16 +117,15 @@ class OptionsPanel extends Component<
 
     updateOptions = (newOptions: Options) => {
         this.setState({
-            options: newOptions
+            options: newOptions,
+            updated: true
         });
 
-        if (newOptions) {
-            saveOptions(newOptions);
-        }
+        saveOptions(newOptions);
     };
 
     render() {
-        const { options, currentUrl } = this.state;
+        const { options, currentUrl, updated } = this.state;
 
         if (!options || !currentUrl) {
             return null;
@@ -201,6 +205,12 @@ class OptionsPanel extends Component<
                     hint="Tooltips may load faster if your internet connection is
       slow"
                 />
+
+                {updated && (
+                    <div className="reload">
+                        Reload the page for changes to take effect
+                    </div>
+                )}
             </div>
         );
     }
