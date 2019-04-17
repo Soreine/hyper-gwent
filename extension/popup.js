@@ -18,7 +18,7 @@ class OptionsPanel extends Component<
     {},
     {
         options: ?Options,
-        currentUrl: URL,
+        currentUrl: ?URL,
         // True if the user made some changes to the settings
         updated: boolean
     }
@@ -27,6 +27,7 @@ class OptionsPanel extends Component<
         setTimeout(async () => {
             const options = await loadOptions();
             const currentUrl = await getCurrentUrl();
+
             this.setState({ options, currentUrl });
         });
     }

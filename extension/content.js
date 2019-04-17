@@ -35,6 +35,10 @@ async function init() {
     const options = await loadOptions();
     const currentUrl = await getCurrentUrl();
 
+    if (!currentUrl) {
+        return;
+    }
+
     if (
         !isUrlAccepted(
             currentUrl.href,

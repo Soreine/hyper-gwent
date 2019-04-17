@@ -12,23 +12,27 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage", "activeTab", "tabs"],
   "content_scripts": [
     {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
+      "matches": ["http://*/*", "https://*/*"],
       "run_at": "document_idle",
       "all_frames": true,
       "js": ["content.js"]
     }
   ],
-  "browser_action": {
-    "default_popup": "popup.html"
+  "background": {
+    "scripts": ["background.js"]
   },
-  "web_accessible_resources": [
-    "*.png",
-    "*.woff2"
-  ]
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "40": "icon40.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "web_accessible_resources": ["*.png", "*.woff2"]
 }
