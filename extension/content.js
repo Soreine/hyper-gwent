@@ -15,7 +15,8 @@ import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
 
 import retrieveCardsData from './retrieveCardsData';
 import { loadOptions } from './options';
-import { isUrlAccepted, getCurrentUrl } from './sitelist';
+import { isUrlAccepted } from './sitelist';
+import { getCurrentUrl } from './getCurrentUrl';
 
 const ASSETS = {
     cardInfoHeader: browser.extension.getURL(cardInfoHeader),

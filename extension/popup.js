@@ -9,9 +9,10 @@ import {
     Component
 } from 'preact';
 
-import { isUrlAccepted, blacklist, whitelist, getCurrentUrl } from './sitelist';
+import { isUrlAccepted, blacklist, whitelist } from './sitelist';
 
 import { loadOptions, saveOptions, type Options } from './options';
+import { getCurrentUrl } from './getCurrentUrl';
 
 class OptionsPanel extends Component<
     {},
