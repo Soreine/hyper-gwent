@@ -83,10 +83,10 @@ async function loadOptions(): Promise<Options> {
     return options;
 }
 
-async function getCurrentUrl(): Promise<string> {
+async function getCurrentUrl(): Promise<URL> {
     if (!browser.tabs) {
         // For testing in normal context
-        return window.location.href;
+        return window.location;
     }
 
     // The only one tab returned should be the active one
@@ -95,12 +95,12 @@ async function getCurrentUrl(): Promise<string> {
         currentWindow: true
     });
 
-    return activeTab.url;
+    return new URL(activeTab.url);
 }
 
 class OptionsPanel extends Component<
     {},
-    { options: ?Options, currentUrl: string }
+    { options: ?Options, currentUrl: URL }
 > {
     componentDidMount() {
         setTimeout(async () => {
@@ -122,9 +122,13 @@ class OptionsPanel extends Component<
 
     render() {
         const { options, currentUrl } = this.state;
-        if (!options) {
+
+        if (!options || !currentUrl) {
             return null;
         }
+
+        const currentSite = currentUrl.origin;
+        const currentPage = currentUrl.href;
 
         const {
             shouldUnderline,
@@ -133,21 +137,17 @@ class OptionsPanel extends Component<
             disabledSites
         } = options;
 
-        const enabledOnCurrentPage = isUrlAccepted(
-            currentUrl,
-            enabledSites,
-            disabledSites
-        );
+        const enableUrl = (url: string) => {
+            whitelist(url, { enabledSites, disabledSites });
+            this.updateOptions({
+                ...options,
+                enabledSites,
+                disabledSites
+            });
+        };
 
-        const toggleCurrentUrl = () => {
-            const enable = !enabledOnCurrentPage;
-
-            if (enable) {
-                whitelist(currentUrl, { enabledSites, disabledSites });
-            } else {
-                blacklist(currentUrl, { enabledSites, disabledSites });
-            }
-
+        const disableUrl = (url: string) => {
+            blacklist(url, { enabledSites, disabledSites });
             this.updateOptions({
                 ...options,
                 enabledSites,
@@ -157,48 +157,118 @@ class OptionsPanel extends Component<
 
         return (
             <div>
-                <label>
-                    Enable Hyper Gwent on {currentUrl}
-                    <Switch
-                        checked={enabledOnCurrentPage}
-                        onChange={toggleCurrentUrl}
-                    />
-                </label>
+                <SiteToggleButton
+                    url={currentPage}
+                    options={options}
+                    enableText="Enable on this page"
+                    disableText="Disable on this page"
+                    enableUrl={enableUrl}
+                    disableUrl={disableUrl}
+                />
 
-                <label>
-                    <input
-                        type="checkbox"
-                        checked={shouldUnderline}
-                        onChange={({ value }) => {
-                            this.updateOptions({
-                                ...options,
-                                shouldUnderline: value
-                            });
-                        }}
-                    />
-                    Underline card names
-                </label>
+                <SiteToggleButton
+                    url={currentSite}
+                    options={options}
+                    enableText="Enable on this site"
+                    disableText="Disable on this site"
+                    enableUrl={enableUrl}
+                    disableUrl={disableUrl}
+                />
 
-                <label>
-                    <input
-                        type="checkbox"
-                        checked={lowQualityArt}
-                        onChange={({ value }) => {
-                            this.updateOptions({
-                                ...options,
-                                lowQualityArt: value
-                            });
-                        }}
-                    />
-                    Use low quality card arts.
-                    <div className="hint">
-                        Tooltips may load faster if your internet connection is
-                        slow.
-                    </div>
-                </label>
+                <CheckboxOption
+                    id="shouldUnderline"
+                    checked={shouldUnderline}
+                    onChange={e => {
+                        this.updateOptions({
+                            ...options,
+                            shouldUnderline: e.target.checked
+                        });
+                    }}
+                    description="Underline card names"
+                    hint=""
+                />
+
+                <CheckboxOption
+                    id="lowQualityArt"
+                    checked={lowQualityArt}
+                    onChange={e => {
+                        this.updateOptions({
+                            ...options,
+                            lowQualityArt: e.target.checked
+                        });
+                    }}
+                    description="Use low quality card arts"
+                    hint="Tooltips may load faster if your internet connection is
+      slow"
+                />
             </div>
         );
     }
+}
+
+function SiteToggleButton({
+    url,
+    options,
+    enableText,
+    disableText,
+    enableUrl,
+    disableUrl
+}: {
+    url: string,
+    options: Options,
+    enableText: string,
+    disableText: string,
+    enableUrl: (url: string) => void,
+    disableUrl: (url: string) => void
+}) {
+    const { enabledSites, disabledSites } = options;
+    const siteEnabled = isUrlAccepted(url, enabledSites, disabledSites);
+
+    // Result of the button
+    const willEnable = !siteEnabled;
+
+    return (
+        <button
+            type="button"
+            onClick={() => {
+                if (willEnable) {
+                    enableUrl(url);
+                } else {
+                    disableUrl(url);
+                }
+            }}
+        >
+            {willEnable ? enableText : disableText}
+        </button>
+    );
+}
+
+function CheckboxOption({
+    id,
+    checked,
+    description,
+    hint,
+    ...rest
+}: {
+    id: string,
+    checked: boolean,
+    description: string,
+    hint: string
+}) {
+    return (
+        <div>
+            <label htmlFor={id} className="checkboxLabel">
+                <input id={id} type="checkbox" {...rest} />
+                <span
+                    className={
+                        checked ? 'fakeCheckbox checked' : 'fakeCheckbox'
+                    }
+                />
+                {description}
+            </label>
+            {hint && <div className="hint">{hint}</div>}
+        </div>
+    );
 }
 
 function Switch({

@@ -4,72 +4,75 @@
     <title>Hyper Gwent Popup</title>
     <style>
       body {
-        padding: 20px;
+        position: relative;
+        padding: 0px 16px 16px;
+        width: 300px;
+
+        background: #252527;
+
+        color: rgb(217, 216, 203);
+        font-family: Helvetica, sans-serif;
+        font-size: 16px;
       }
 
-      label {
-        display: block;
-        margin-bottom: 30px;
-        margin-top: 30px;
-      }
+      /* Buttons */
 
       button {
+        font-size: 16px;
         display: block;
-        margin: 10px;
+        margin: 24px 0px;
+        outline: none;
+        border: 2px solid;
+        background: #252527;
+        color: rgb(217, 216, 203);
+        padding: 8px 16px;
+        width: 100%;
+        transition: all 0.2s ease;
       }
 
-      .hidden {
+      button:hover {
+        background: rgb(217, 216, 203);
+        color: #252527;
+      }
+
+      /* Checkboxes */
+
+      /* Hide native checkbox */
+      [type="checkbox"]:not(:checked),
+      [type="checkbox"]:checked {
         opacity: 0;
-        transition: all 0.5s;
+        position: absolute;
+        z-index: -1;
+        margin: 0;
       }
 
-      .visible {
-        opacity: 1;
+      .checkboxLabel {
+        margin: 16px 0px 0px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .fakeCheckbox {
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        margin-right: 16px;
+        border: 2px solid;
+        transition: all 0.2s ease;
+      }
+
+      .checked {
+        background: rgb(217, 216, 203);
       }
 
       .hint {
-        margin-top: 10px;
+        margin-left: 36px;
+        margin-top: 8px;
         color: #777;
-      }
-
-      .switch {
-        margin: 100px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        background: rgb(46, 46, 46);
-        height: 30px;
-        width: 180px;
-        cursor: pointer;
-      }
-
-      .switch-pin {
-        z-index: 0;
-        width: 50%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: all ease-out 0.2s;
-        background: linear-gradient(rgb(119, 119, 119), rgb(80, 80, 80));
-        transform: blur(3px);
-      }
-
-      .switch-pin-on {
-        left: 50%;
-        background: linear-gradient(rgb(28, 255, 141), rgb(16, 86, 93));
-      }
-
-      .switch-label {
-        z-index: 1;
-        text-transform: uppercase;
-        text-align: center;
-        vertical-align: middle;
-        width: 50%;
-        color: white;
-        font-size: 16px;
       }
     </style>
   </head>
