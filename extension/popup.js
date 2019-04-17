@@ -10,6 +10,14 @@ import {
 } from 'preact';
 import browser from 'webextension-polyfill';
 
+import {
+    isUrlAccepted,
+    blacklist,
+    whitelist,
+    arrayToSet,
+    setToArray
+} from './sitelist';
+
 type Options = {
     shouldUnderline: boolean,
     lowQualityArt: boolean,
@@ -75,75 +83,6 @@ async function loadOptions(): Promise<Options> {
     return options;
 }
 
-function findMatchingRule(urlSet: Set<string>, url: string): ?string {
-    return setToArray(urlSet).find(u => isSubUrl(u, url));
-}
-
-/*
- * Is the extension enabled for the given page URL
- */
-function isEnabledForUrl(
-    currentUrl: string,
-    enabledSites: Set<string>,
-    disabledSites: Set<string>
-): boolean {
-    const acceptingSite = findMatchingRule(enabledSites, currentUrl);
-    const rejectingSite = findMatchingRule(disabledSites, currentUrl);
-
-    if (!acceptingSite) {
-        return false;
-    }
-    if (!rejectingSite) {
-        return true;
-    }
-
-    if (isSubUrl(acceptingSite, rejectingSite)) {
-        // Reject rule is more specific
-        return false;
-    }
-    if (isSubUrl(rejectingSite, acceptingSite)) {
-        // Reject rule is more specific
-        return true;
-    }
-
-    // This should not happen
-    return false;
-}
-
-function isSubUrl(parentUrl: string, url: string): boolean {
-    return url.startsWith(parentUrl);
-}
-
-function addUrlRule(urlSet: Set<string>, url: string): Set<string> {
-    // Add url to set, and remove all more specific urls
-    urlSet.add(url);
-    urlSet.forEach(site => {
-        if (isSubUrl(url, site)) {
-            urlSet.delete(site);
-        }
-    });
-    return urlSet;
-}
-
-function removeUrlRule(urlSet: Set<string>, url: string): Set<string> {
-    // Remove url from set, and all more specific urls
-    urlSet.delete(url);
-    urlSet.forEach(site => {
-        if (isSubUrl(url, site)) {
-            urlSet.delete(site);
-        }
-    });
-    return urlSet;
-}
-
-function setToArray(set: Set<string>): Array<string> {
-    return Array.from(set.values());
-}
-
-function arrayToSet(array: Array<string>): Set<string> {
-    return new Set(array);
-}
-
 async function getCurrentUrl(): Promise<string> {
     if (!browser.tabs) {
         // For testing in normal context
@@ -171,12 +110,15 @@ class OptionsPanel extends Component<
         });
     }
 
-    componentDidUpdate(prevProps, { options: prevOptions }) {
-        const { options } = this.state;
-        if (options && prevOptions !== options) {
-            saveOptions(options);
+    updateOptions = (newOptions: Options) => {
+        this.setState({
+            options: newOptions
+        });
+
+        if (newOptions) {
+            saveOptions(newOptions);
         }
-    }
+    };
 
     render() {
         const { options, currentUrl } = this.state;
@@ -191,26 +133,28 @@ class OptionsPanel extends Component<
             disabledSites
         } = options;
 
-        const enabledOnCurrentPage = isEnabledForUrl(
+        console.log({ options });
+        const enabledOnCurrentPage = isUrlAccepted(
             currentUrl,
             enabledSites,
             disabledSites
         );
 
-        function toggleCurrentUrl() {
+        const toggleCurrentUrl = () => {
             const enable = !enabledOnCurrentPage;
-            this.setState({
-                options: {
-                    ...options,
-                    enabledSites: enable
-                        ? addUrlRule(enabledSites, currentUrl)
-                        : removeUrlRule(enabledSites, currentUrl),
-                    disabledSites: enable
-                        ? removeUrlRule(disabledSites, currentUrl)
-                        : addUrlRule(disabledSites, currentUrl)
-                }
+
+            if (enable) {
+                whitelist(currentUrl, { enabledSites, disabledSites });
+            } else {
+                blacklist(currentUrl, { enabledSites, disabledSites });
+            }
+
+            this.updateOptions({
+                ...options,
+                enabledSites,
+                disabledSites
             });
-        }
+        };
 
         return (
             <div>
@@ -223,12 +167,30 @@ class OptionsPanel extends Component<
                 </label>
 
                 <label>
-                    <input type="checkbox" checked={shouldUnderline} />
+                    <input
+                        type="checkbox"
+                        checked={shouldUnderline}
+                        onChange={({ value }) => {
+                            this.updateOptions({
+                                ...options,
+                                shouldUnderline: value
+                            });
+                        }}
+                    />
                     Underline card names
                 </label>
 
                 <label>
-                    <input type="checkbox" checked={lowQualityArt} />
+                    <input
+                        type="checkbox"
+                        checked={lowQualityArt}
+                        onChange={({ value }) => {
+                            this.updateOptions({
+                                ...options,
+                                lowQualityArt: value
+                            });
+                        }}
+                    />
                     Use low quality card arts.
                     <div className="hint">
                         Tooltips may load faster if your internet connection is
