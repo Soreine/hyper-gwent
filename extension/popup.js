@@ -8,95 +8,10 @@ import {
     render,
     Component
 } from 'preact';
-import browser from 'webextension-polyfill';
 
-import {
-    isUrlAccepted,
-    blacklist,
-    whitelist,
-    arrayToSet,
-    setToArray
-} from './sitelist';
+import { isUrlAccepted, blacklist, whitelist, getCurrentUrl } from './sitelist';
 
-type Options = {
-    shouldUnderline: boolean,
-    lowQualityArt: boolean,
-    enabledSites: Set<string>,
-    disabledSites: Set<string>
-};
-
-type RawOptions = {
-    shouldUnderline: boolean,
-    lowQualityArt: boolean,
-    enabledSites: Array<string>,
-    disabledSites: Array<string>
-};
-
-const DEFAULT_OPTIONS: RawOptions = {
-    shouldUnderline: true,
-    lowQualityArt: false,
-    enabledSites: ['https://reddit.com/gwent'],
-    disabledSites: ['https://www.gwentdb.com']
-};
-
-// Saves options to browser.storage.sync.
-async function saveOptions({
-    shouldUnderline,
-    lowQualityArt,
-    enabledSites,
-    disabledSites
-}: Options) {
-    if (!browser.storage) {
-        console.warn(
-            'Current context does not provide browser APIs. Skipping saving options'
-        );
-        return;
-    }
-    await browser.storage.sync.set({
-        shouldUnderline,
-        lowQualityArt,
-        enabledSites: setToArray(enabledSites),
-        disabledSites: setToArray(disabledSites)
-    });
-}
-
-// Restores select box and checkbox state using the preferences
-// stored in browser.storage.
-async function loadOptions(): Promise<Options> {
-    let rawOptions: RawOptions;
-    if (!browser.storage) {
-        console.warn(
-            'Current context does not provide browser APIs. Skipping loading options'
-        );
-        rawOptions = DEFAULT_OPTIONS;
-    } else {
-        rawOptions = await browser.storage.sync.get(DEFAULT_OPTIONS);
-    }
-
-    const options = {
-        shouldUnderline: rawOptions.shouldUnderline,
-        lowQualityArt: rawOptions.lowQualityArt,
-        enabledSites: arrayToSet(rawOptions.enabledSites),
-        disabledSites: arrayToSet(rawOptions.disabledSites)
-    };
-
-    return options;
-}
-
-async function getCurrentUrl(): Promise<URL> {
-    if (!browser.tabs) {
-        // For testing in normal context
-        return window.location;
-    }
-
-    // The only one tab returned should be the active one
-    const [activeTab] = await browser.tabs.query({
-        active: true,
-        currentWindow: true
-    });
-
-    return new URL(activeTab.url);
-}
+import { loadOptions, saveOptions, type Options } from './options';
 
 class OptionsPanel extends Component<
     {},

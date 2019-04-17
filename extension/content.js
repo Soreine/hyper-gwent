@@ -14,6 +14,8 @@ import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
 import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
 
 import retrieveCardsData from './retrieveCardsData';
+import { loadOptions } from './options';
+import { isUrlAccepted, getCurrentUrl } from './sitelist';
 
 const ASSETS = {
     cardInfoHeader: browser.extension.getURL(cardInfoHeader),
@@ -29,13 +31,18 @@ const CARDS_SRC = `${WEBSITE}/cards.json`;
 const DICTIONARY_SRC = `${WEBSITE}/dictionary.json`;
 
 async function init() {
-    const options: {
-        shouldUnderline?: boolean,
-        lowQualityArt?: boolean
-    } = await browser.storage.sync.get({
-        shouldUnderline: true,
-        lowQualityArt: false
-    });
+    const options = await loadOptions();
+    const currentUrl = await getCurrentUrl();
+
+    if (
+        !isUrlAccepted(
+            currentUrl.href,
+            options.enabledSites,
+            options.disabledSites
+        )
+    ) {
+        return;
+    }
 
     const { cards, dictionary } = await retrieveCardsData({
         versionSrc: VERSION_SRC,
