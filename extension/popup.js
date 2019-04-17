@@ -133,7 +133,6 @@ class OptionsPanel extends Component<
             disabledSites
         } = options;
 
-        console.log({ options });
         const enabledOnCurrentPage = isUrlAccepted(
             currentUrl,
             enabledSites,
