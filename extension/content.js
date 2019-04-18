@@ -14,7 +14,7 @@ import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
 import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
 
 import retrieveCardsData from './retrieveCardsData';
-import { loadOptions } from './options';
+import { loadOptions, type Options } from './options';
 import { isUrlAccepted } from './sitelist';
 
 const ASSETS = {
@@ -34,8 +34,12 @@ async function init() {
     let stopCurrentExecution = null;
     let cards = null;
     let dictionary = null;
+    // True if the extension is watching the DOM
+    let running = false;
 
-    async function runOnCurrentPage() {
+    // Make sure the extension is running, or is stopped,
+    // depending on current options and URL
+    async function updateExecution() {
         const options = await loadOptions();
         const currentUrl = window.location.href;
 
@@ -46,8 +50,29 @@ async function init() {
                 options.disabledSites
             )
         ) {
+            interrupt();
+        }
+
+        start(options);
+    }
+
+    // Interrupt any current execution
+    function interrupt() {
+        if (stopCurrentExecution) {
+            stopCurrentExecution();
+            stopCurrentExecution = null;
+        }
+        running = false;
+    }
+
+    async function start(options: Options) {
+        if (running) {
+            // Already running
             return;
         }
+
+        // Avoid having two executions at the same time.
+        interrupt();
 
         // Fetch data if needed
         if (!cards || !dictionary) {
@@ -56,12 +81,6 @@ async function init() {
                 cardsSrc: CARDS_SRC,
                 dictionarySrc: DICTIONARY_SRC
             }));
-        }
-
-        // Interrupt any previous execution
-        if (stopCurrentExecution) {
-            stopCurrentExecution();
-            stopCurrentExecution = null;
         }
 
         stopCurrentExecution = watch(
@@ -73,14 +92,16 @@ async function init() {
             },
             options
         );
+
+        running = true;
     }
 
-    runOnCurrentPage();
+    updateExecution();
 
     // on URL change
-    onHistoryChange(runOnCurrentPage);
+    onHistoryChange(updateExecution);
     // on options change
-    browser.storage.onChanged.addListener(runOnCurrentPage);
+    browser.storage.onChanged.addListener(updateExecution);
 }
 
 // Callback whenever the history changes and window.location could have changed.
