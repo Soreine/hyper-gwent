@@ -5,7 +5,7 @@ import browser from 'webextension-polyfill';
 
 import { isUrlAccepted } from './sitelist';
 
-import { loadOptions } from './options';
+import { loadOptions, type Options } from './options';
 import { getCurrentUrl } from './getCurrentUrl';
 
 /*
@@ -16,37 +16,47 @@ import { getCurrentUrl } from './getCurrentUrl';
 async function init() {
     let options = await loadOptions();
 
-    async function updateBrowserActionIcon() {
-        const currentUrl = await getCurrentUrl();
-        if (!currentUrl) {
-            return;
-        }
+    // Watch navigation, to enable/disable content script depending on URL changes.
+    // NOTE: This is the only reliable method that I could find, which works for SPA as well.
+    // For example, content scripts cannot monkey patch history.pushState because of XRay vision, which prohibits the use of modules like `url-listener`
+    browser.webNavigation.onHistoryStateUpdated.addListener(async () => {
+        const activeTabs = await browser.tabs.query({
+            currentWindow: true,
+            active: true
+        });
 
-        const accepted = isUrlAccepted(
-            currentUrl.href,
-            options.enabledSites,
-            options.disabledSites
-        );
-
-        toggleIcon(accepted);
-    }
-
-    browser.webNavigation.onHistoryStateUpdated.addListener(() => {
-        console.log('onHistoryStateUpdated');
+        activeTabs.forEach(tab => {
+            browser.tabs.sendMessage(tab.id, 'hyper-gwent/history-changed');
+        });
     });
 
     browser.tabs.onActivated.addListener(() => {
-        updateBrowserActionIcon();
+        updateBrowserActionIcon(options);
     });
 
     browser.tabs.onUpdated.addListener(() => {
-        updateBrowserActionIcon();
+        updateBrowserActionIcon(options);
     });
 
     browser.storage.onChanged.addListener(async () => {
         options = await loadOptions();
-        updateBrowserActionIcon();
+        updateBrowserActionIcon(options);
     });
+}
+
+async function updateBrowserActionIcon(options: Options) {
+    const currentUrl = await getCurrentUrl();
+    if (!currentUrl) {
+        return;
+    }
+
+    const accepted = isUrlAccepted(
+        currentUrl.href,
+        options.enabledSites,
+        options.disabledSites
+    );
+
+    toggleIcon(accepted);
 }
 
 async function toggleIcon(enabled: boolean) {

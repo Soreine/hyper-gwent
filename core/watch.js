@@ -3,6 +3,7 @@
 
 import type { ExtensionAssets, Card, Dictionary } from './types';
 import walk from './walk';
+
 type StopListeningCallback = () => void;
 
 // Watch the target HTML element and highlight cards inside it

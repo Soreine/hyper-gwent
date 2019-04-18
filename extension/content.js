@@ -60,12 +60,10 @@ async function init() {
 
         // Interrupt any previous execution
         if (stopCurrentExecution) {
-            console.log('Interrupt previous execution');
             stopCurrentExecution();
             stopCurrentExecution = null;
         }
 
-        console.log('Watch current page');
         stopCurrentExecution = watch(
             window.document.body,
             {
@@ -80,12 +78,18 @@ async function init() {
     runOnCurrentPage();
 
     // on URL change
-    onHistoryChange(window.history, runOnCurrentPage);
+    onHistoryChange(runOnCurrentPage);
     // on options change
     browser.storage.onChanged.addListener(runOnCurrentPage);
 }
 
 // Callback whenever the history changes and window.location could have changed.
-function onHistoryChange(history, callback) {}
+function onHistoryChange(callback) {
+    browser.runtime.onMessage.addListener(message => {
+        if (message === 'hyper-gwent/history-changed') {
+            callback();
+        }
+    });
+}
 
 init();
