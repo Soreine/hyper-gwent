@@ -31,6 +31,10 @@ async function init() {
         toggleIcon(accepted);
     }
 
+    browser.webNavigation.onHistoryStateUpdated.addListener(() => {
+        console.log('onHistoryStateUpdated');
+    });
+
     browser.tabs.onActivated.addListener(() => {
         updateBrowserActionIcon();
     });

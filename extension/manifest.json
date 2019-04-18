@@ -12,7 +12,7 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": ["storage", "activeTab", "tabs"],
+  "permissions": ["storage", "activeTab", "tabs", "webNavigation"],
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],

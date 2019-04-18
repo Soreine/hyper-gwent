@@ -16,7 +16,6 @@ import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
 import retrieveCardsData from './retrieveCardsData';
 import { loadOptions } from './options';
 import { isUrlAccepted } from './sitelist';
-import { getCurrentUrl } from './getCurrentUrl';
 
 const ASSETS = {
     cardInfoHeader: browser.extension.getURL(cardInfoHeader),
@@ -32,38 +31,61 @@ const CARDS_SRC = `${WEBSITE}/cards.json`;
 const DICTIONARY_SRC = `${WEBSITE}/dictionary.json`;
 
 async function init() {
-    const options = await loadOptions();
-    const currentUrl = await getCurrentUrl();
+    let stopCurrentExecution = null;
+    let cards = null;
+    let dictionary = null;
 
-    if (!currentUrl) {
-        return;
+    async function runOnCurrentPage() {
+        const options = await loadOptions();
+        const currentUrl = window.location.href;
+
+        if (
+            !isUrlAccepted(
+                currentUrl,
+                options.enabledSites,
+                options.disabledSites
+            )
+        ) {
+            return;
+        }
+
+        // Fetch data if needed
+        if (!cards || !dictionary) {
+            ({ cards, dictionary } = await retrieveCardsData({
+                versionSrc: VERSION_SRC,
+                cardsSrc: CARDS_SRC,
+                dictionarySrc: DICTIONARY_SRC
+            }));
+        }
+
+        // Interrupt any previous execution
+        if (stopCurrentExecution) {
+            console.log('Interrupt previous execution');
+            stopCurrentExecution();
+            stopCurrentExecution = null;
+        }
+
+        console.log('Watch current page');
+        stopCurrentExecution = watch(
+            window.document.body,
+            {
+                cards,
+                dictionary,
+                assets: ASSETS
+            },
+            options
+        );
     }
 
-    if (
-        !isUrlAccepted(
-            currentUrl.href,
-            options.enabledSites,
-            options.disabledSites
-        )
-    ) {
-        return;
-    }
+    runOnCurrentPage();
 
-    const { cards, dictionary } = await retrieveCardsData({
-        versionSrc: VERSION_SRC,
-        cardsSrc: CARDS_SRC,
-        dictionarySrc: DICTIONARY_SRC
-    });
-
-    watch(
-        window.document.body,
-        {
-            cards,
-            dictionary,
-            assets: ASSETS
-        },
-        options
-    );
+    // on URL change
+    onHistoryChange(window.history, runOnCurrentPage);
+    // on options change
+    browser.storage.onChanged.addListener(runOnCurrentPage);
 }
+
+// Callback whenever the history changes and window.location could have changed.
+function onHistoryChange(history, callback) {}
 
 init();

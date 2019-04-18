@@ -3,6 +3,7 @@
 
 import type { ExtensionAssets, Card, Dictionary } from './types';
 import walk from './walk';
+type StopListeningCallback = () => void;
 
 // Watch the target HTML element and highlight cards inside it
 function watch(
@@ -15,18 +16,18 @@ function watch(
         dictionary: Dictionary<CardID>
     },
     options?: { shouldUnderline?: boolean, lowQualityArt?: boolean }
-) {
-    function walkNode(node: Node) {
+): StopListeningCallback {
+    async function walkNode(node: Node) {
         walk(node, data, options);
     }
 
-    listenToNodeChanges(target, walkNode);
+    return listenToNodeChanges(target, walkNode);
 }
 
 function listenToNodeChanges(
     target: Node,
-    onNodeChange: (changedNode: Node) => void
-) {
+    onNodeChange: (changedNode: Node) => any | Promise<any>
+): StopListeningCallback {
     const mutationObserver = new MutationObserver(mutationList => {
         mutationList.forEach(mutation => {
             switch (mutation.type) {
@@ -51,6 +52,8 @@ function listenToNodeChanges(
         childList: true,
         subtree: true
     });
+
+    return () => mutationObserver.disconnect();
 }
 
 export default watch;
