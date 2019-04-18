@@ -119,8 +119,7 @@ class OptionsPanel extends Component<
                         });
                     }}
                     description="Use low quality card arts"
-                    hint="Tooltips may load faster if your internet connection is
-      slow"
+                    hint="This helps loading tooltips faster on slow internet connection"
                 />
 
                 {updated && (

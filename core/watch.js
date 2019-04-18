@@ -18,7 +18,7 @@ function watch(
     },
     options?: { shouldUnderline?: boolean, lowQualityArt?: boolean }
 ): StopListeningCallback {
-    async function walkNode(node: Node) {
+    function walkNode(node: Node) {
         walk(node, data, options);
     }
 
@@ -27,7 +27,7 @@ function watch(
 
 function listenToNodeChanges(
     target: Node,
-    onNodeChange: (changedNode: Node) => any | Promise<any>
+    onNodeChange: (changedNode: Node) => any
 ): StopListeningCallback {
     const mutationObserver = new MutationObserver(mutationList => {
         mutationList.forEach(mutation => {

@@ -31,11 +31,10 @@ const CARDS_SRC = `${WEBSITE}/cards.json`;
 const DICTIONARY_SRC = `${WEBSITE}/dictionary.json`;
 
 async function init() {
+    // Callback to stop execution when the extension is executing
     let stopCurrentExecution = null;
     let cards = null;
     let dictionary = null;
-    // True if the extension is watching the DOM
-    let running = false;
 
     // Make sure the extension is running, or is stopped,
     // depending on current options and URL
@@ -51,9 +50,9 @@ async function init() {
             )
         ) {
             interrupt();
+        } else {
+            start(options);
         }
-
-        start(options);
     }
 
     // Interrupt any current execution
@@ -62,17 +61,13 @@ async function init() {
             stopCurrentExecution();
             stopCurrentExecution = null;
         }
-        running = false;
     }
 
     async function start(options: Options) {
-        if (running) {
+        if (stopCurrentExecution) {
             // Already running
             return;
         }
-
-        // Avoid having two executions at the same time.
-        interrupt();
 
         // Fetch data if needed
         if (!cards || !dictionary) {
@@ -92,8 +87,6 @@ async function init() {
             },
             options
         );
-
-        running = true;
     }
 
     updateExecution();
