@@ -185,7 +185,7 @@ function CheckboxOption({
     return (
         <div>
             <label htmlFor={id} className="checkboxLabel">
-                <input id={id} type="checkbox" {...rest} />
+                <input id={id} checked={checked} type="checkbox" {...rest} />
                 <span
                     className={
                         checked ? 'fakeCheckbox checked' : 'fakeCheckbox'
