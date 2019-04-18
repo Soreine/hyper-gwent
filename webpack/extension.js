@@ -9,7 +9,8 @@ module.exports = Object.assign({}, baseConfig, {
     mode: 'development',
     entry: {
         content: path('extension/content.js'),
-        options: path('extension/options.js')
+        popup: path('extension/popup.js'),
+        background: path('extension/background.js')
     },
     output: {
         path: path('dist/chrome'),

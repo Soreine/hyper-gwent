@@ -64,7 +64,7 @@ body {
 .logo-title {
   font-family: "Gwent-website", sans-serif;
   font-size: 4em;
-  background: -webkit-linear-gradient(rgb(28, 255, 141), rgb(16, 86, 93));
+  background: linear-gradient(rgb(28, 255, 141), rgb(16, 86, 93));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

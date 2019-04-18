@@ -1,63 +1,68 @@
 // @flow
-/* global document */
+/* @jsx h */
 
 import browser from 'webextension-polyfill';
+import { arrayToSet, setToArray } from './sitelist';
 
-// Access to settings UI elements
-const UI = {
-    get saveButton(): HTMLButtonElement {
-        // $FlowFixMe
-        return document.getElementById('save');
-    },
-
-    get shouldUnderline(): HTMLInputElement {
-        // $FlowFixMe
-        return document.getElementById('underline');
-    },
-
-    get lowQualityArt(): HTMLInputElement {
-        // $FlowFixMe
-        return document.getElementById('low-quality');
-    },
-
-    get status(): HTMLElement {
-        // $FlowFixMe
-        return document.getElementById('status');
-    }
+export type Options = {
+    shouldUnderline: boolean,
+    lowQualityArt: boolean,
+    enabledSites: Set<string>,
+    disabledSites: Set<string>
 };
 
-// Saves options to browser.storage.sync.
-async function saveOptions() {
-    const shouldUnderline = UI.shouldUnderline.checked;
-    const lowQualityArt = UI.lowQualityArt.checked;
+// Options as saved in the local storage
+export type RawOptions = {
+    shouldUnderline: boolean,
+    lowQualityArt: boolean,
+    enabledSites: Array<string>,
+    disabledSites: Array<string>
+};
 
+export const DEFAULT_OPTIONS: RawOptions = {
+    shouldUnderline: true,
+    lowQualityArt: false,
+    enabledSites: ['https://reddit.com/r/gwent'],
+    disabledSites: ['https://www.gwentdb.com']
+};
+
+export async function saveOptions({
+    shouldUnderline,
+    lowQualityArt,
+    enabledSites,
+    disabledSites
+}: Options) {
+    if (!browser.storage) {
+        console.warn(
+            'Current context does not provide browser APIs. Skipping saving options'
+        );
+        return;
+    }
     await browser.storage.sync.set({
         shouldUnderline,
-        lowQualityArt
+        lowQualityArt,
+        enabledSites: setToArray(enabledSites),
+        disabledSites: setToArray(disabledSites)
     });
-
-    // Update status to let user know options were saved.
-    UI.status.setAttribute('class', 'visible');
-
-    setTimeout(() => {
-        UI.status.setAttribute('class', 'hidden');
-    }, 1000);
 }
 
-// Restores select box and checkbox state using the preferences
-// stored in browser.storage.
-function restoreOptions() {
-    // Use default value color = 'red' and likesColor = true.
-    browser.storage.sync
-        .get({
-            shouldUnderline: true,
-            lowQualityArt: false
-        })
-        .then(items => {
-            UI.shouldUnderline.checked = items.shouldUnderline;
-            UI.lowQualityArt.checked = items.lowQualityArt;
-        });
-}
+export async function loadOptions(): Promise<Options> {
+    let rawOptions: RawOptions;
+    if (!browser.storage) {
+        console.warn(
+            'Current context does not provide browser APIs. Skipping loading options'
+        );
+        rawOptions = DEFAULT_OPTIONS;
+    } else {
+        rawOptions = await browser.storage.sync.get(DEFAULT_OPTIONS);
+    }
 
-document.addEventListener('DOMContentLoaded', restoreOptions);
-UI.saveButton.addEventListener('click', saveOptions);
+    const options = {
+        shouldUnderline: rawOptions.shouldUnderline,
+        lowQualityArt: rawOptions.lowQualityArt,
+        enabledSites: arrayToSet(rawOptions.enabledSites),
+        disabledSites: arrayToSet(rawOptions.disabledSites)
+    };
+
+    return options;
+}

@@ -16,7 +16,7 @@ cp ./extension/manifest.json $DIST
 
 # Copy resources
 cp ./extension/icon*.png $DIST
-cp ./extension/options.html $DIST
+cp ./extension/popup.html $DIST
 
-# Build content.js and options.js
+# Build all extension JS files
 webpack --config ./webpack/extension.js --mode production

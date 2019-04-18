@@ -7,10 +7,6 @@ fs.writeFileSync(
     path.join(__dirname, '../dist/firefox/manifest.json'),
     JSON.stringify(
         Object.assign({}, manifest, {
-            options_ui: {
-                page: 'options.html',
-                browser_style: true
-            },
             applications: {
                 gecko: {
                     id: 'extension@hyper-gwent.com',
