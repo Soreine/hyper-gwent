@@ -1,4 +1,4 @@
-# hyper-gwent
+# ![Hyper Gwent](./hyper-gwent-logo.png)
 
 Chrome extension to preview cards on pages containing GwentⓇ related content.
 
