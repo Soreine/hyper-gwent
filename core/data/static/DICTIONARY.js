@@ -3,8 +3,11 @@ import CARD_LIST from './CARD_LIST';
 import ALIASES from './ALIASES';
 
 import type { Dictionary } from '../../types';
-import generateDictionary from '../generateDictionary';
+import generateDictionaryEntries from '../generateDictionaryEntries';
+import { create } from '../../dictionary';
 
-const DICTIONARY: Dictionary<CardID> = generateDictionary(CARD_LIST, ALIASES);
+const DICTIONARY: Dictionary<CardID> = create(
+    generateDictionaryEntries(CARD_LIST, ALIASES)
+);
 
 export default DICTIONARY;

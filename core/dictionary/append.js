@@ -14,31 +14,16 @@ function append<T>(
     //  Value to store at the given entry
     value: T
 ): Dictionary<T> {
-    let result = dictionary;
+    const result = dictionary;
 
     if (name === '') {
         return Immutable.set(result, '', value);
     }
     const char = name.slice(0, 1);
 
-    const possibleChars = [char];
-    if (isSpecialCharacter(char)) {
-        // Allow skipping special characters...
-        result = append(result, name.slice(1), value);
-
-        // ...or having a space instead
-        possibleChars.push(' ');
-    }
-
-    return possibleChars.reduce((res: Dictionary<T>, c) => {
-        const subDict = res[c] || Immutable({});
-        const updatedSubDict = append(subDict, name.slice(1), value);
-        return Immutable.set(res, c, updatedSubDict);
-    }, result);
-}
-
-function isSpecialCharacter(char: string): boolean {
-    return /[^\s\w]/.test(char);
+    const subDict = result[char] || Immutable({});
+    const updatedSubDict = append(subDict, name.slice(1), value);
+    return Immutable.set(result, char, updatedSubDict);
 }
 
 export default append;
