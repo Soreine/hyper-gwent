@@ -3350,9 +3350,9 @@ gwent-api-client@^3.0.0:
   dependencies:
     query-string "^4.3.4"
 
-gwent-data-release@GwentCommunityDevelopers/gwent-data-release#039f508ee2dabe5d108dba91310a849de3185b99:
+"gwent-data-release@https://github.com/GwentCommunityDevelopers/gwent-data-release/tarball/286603f7cf34dd04bafabf8fafe7e62cc6829c83/gwent-data-release.tar.gz":
   version "0.0.0"
-  resolved "https://codeload.github.com/GwentCommunityDevelopers/gwent-data-release/tar.gz/039f508ee2dabe5d108dba91310a849de3185b99"
+  resolved "https://github.com/GwentCommunityDevelopers/gwent-data-release/tarball/286603f7cf34dd04bafabf8fafe7e62cc6829c83/gwent-data-release.tar.gz#35354bab04ad98e273341a8155e699195141dac6"
 
 handle-thing@^1.2.5:
   version "1.2.5"

@@ -23,7 +23,7 @@
     "@babel/polyfill": "^7.0.0",
     "big-text.js": "^1.0.1",
     "flatmap": "^0.0.3",
-    "gwent-data-release": "GwentCommunityDevelopers/gwent-data-release#039f508ee2dabe5d108dba91310a849de3185b99",
+    "gwent-data-release": "https://github.com/GwentCommunityDevelopers/gwent-data-release/tarball/286603f7cf34dd04bafabf8fafe7e62cc6829c83/gwent-data-release.tar.gz",
     "intercalate": "^0.1.2",
     "jsx-dom": "^6.2.1",
     "perimeter": "https://github.com/Soreine/perimeter.js/tarball/57381b3e6bb0a82a4d48bbe4ccb7b215276aa974/perimeter.js.tar.gz",
