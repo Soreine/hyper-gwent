@@ -1,5 +1,5 @@
 // @flow
-import generateDictionary from './generateDictionary';
+import generateDictionaryEntries from './generateDictionaryEntries';
 import convertGwentDataReleaseCards from './convertGwentDataReleaseCards';
 
-export { generateDictionary, convertGwentDataReleaseCards };
+export { generateDictionaryEntries, convertGwentDataReleaseCards };
