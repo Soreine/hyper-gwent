@@ -18,15 +18,13 @@ type DictionaryJson = Dictionary<CardID>;
  */
 async function retrieveCardsData({
     versionSrc,
-    cardsSrc,
+    dataSrc,
     dictionarySrc
 }: {
     // URL where the latest data version can be fetched as JSON
     versionSrc: string,
-    // URL where the cards data can be fetched as JSON
-    cardsSrc: string,
-    // URL where the card dictionary can be fetched as JSON
-    dictionarySrc: string
+    // URL where the cards and dictionary data can be fetched as JSON
+    dataSrc: string
 }): Promise<{
     cards: { [CardID]: Card },
     dictionary: Dictionary<CardID>
@@ -39,18 +37,26 @@ async function retrieveCardsData({
         isMoreRecent(latestVersion, local.version)
     ) {
         // Fetch updated data
-        const [cards, dictionary]: [
-            CardsJson,
-            DictionaryJson
-        ] = await Promise.all([fetchJson(cardsSrc), fetchJson(dictionarySrc)]);
+        const data: {
+            cards: CardsJson,
+            dictionary: DictionaryJson,
+            version: VersionJson
+        } = await fetchJson(dataSrc);
 
-        // Save it locally
-        await saveLocally(latestVersion, cards, dictionary);
+        if (
+            data.version.major === latestVersion.major &&
+            data.version.minor === latestVersion.minor
+        ) {
+            // The data is indeed the one of the latest version
 
-        return {
-            cards,
-            dictionary
-        };
+            // Save it locally
+            await saveLocally(latestVersion, data.cards, data.dictionary);
+
+            return {
+                cards: data.cards,
+                dictionary: data.dictionary
+            };
+        }
     }
 
     if (isCompatible(local.version)) {

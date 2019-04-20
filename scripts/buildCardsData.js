@@ -39,12 +39,13 @@ async function main() {
     await writePublicJson(VERSION, 'version.json');
 
     const cards = convertGwentDataReleaseCards(RAW_CARDS, IGNORED);
-    await writePublicJson(cards, 'cards.json');
-
     const cardList = Object.keys(cards).map(key => cards[key]);
     const dictEntries = generateDictionaryEntries(cardList, ALIASES);
     const dictionary = Dictionary.create(dictEntries);
-    await writePublicJson(dictionary, 'dictionary.json');
+
+    // Associate data with version to avoid issues when `version.json`
+    // and `data.json` are updated with a delay between them
+    await writePublicJson({ version: VERSION, cards, dictionary }, 'data.json');
 }
 
 main();
