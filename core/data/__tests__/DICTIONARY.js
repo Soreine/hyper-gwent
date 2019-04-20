@@ -4,7 +4,6 @@ import removeAccents from 'remove-accents';
 import DICTIONARY from '../static/DICTIONARY';
 import CARD_LIST from '../static/CARD_LIST';
 import ALIASES from '../static/ALIASES';
-import NAMES from '../static/NAMES';
 import { contains } from '../../dictionary';
 import generateDictionaryEntries from '../generateDictionaryEntries';
 
@@ -12,9 +11,12 @@ test('Dictionary was created successfully', t => {
     t.truthy(DICTIONARY);
 });
 
-NAMES.forEach(name => {
-    test(`Dictionary contains: ${name}`, t => {
-        const exists = contains(DICTIONARY, removeAccents(name).toLowerCase());
+CARD_LIST.forEach(card => {
+    test(`Dictionary contains  "${card.id}": "${card.name}"`, t => {
+        const exists = contains(
+            DICTIONARY,
+            removeAccents(card.name).toLowerCase()
+        );
 
         t.truthy(exists);
     });
