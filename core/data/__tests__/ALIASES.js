@@ -2,7 +2,6 @@
 import test from 'ava';
 import ALIASES from '../static/ALIASES';
 
-// Shouldtnot have aliases matching multiple cards
 {
     const list = Object.keys(ALIASES).map(id => ({ id, aliases: ALIASES[id] }));
 
@@ -16,6 +15,7 @@ import ALIASES from '../static/ALIASES';
     }, {});
 
     Object.keys(aliasCount).forEach(alias => {
+        // An alias should match a single card
         test(`No multiple matching cards for alias: ${alias} ${
             aliasCount[alias]
         }`, t => {
