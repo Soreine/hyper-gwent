@@ -100,7 +100,7 @@ test('Should find longest match', t => {
 });
 
 test('Should match at beginning of words only', t => {
-    const text = 'Regis/Regis prefixRegisSuffix, prefixRegis'; // Contains Regis
+    const text = 'Regis/Regis prefixRegisSuffix, prefixRegis';
     const matchedRanges = findAllMatches(DICTIONARY, text);
     t.deepEqual(matchedRanges, [
         {
@@ -119,7 +119,7 @@ test('Should match at beginning of words only', t => {
 });
 
 test('Should match until end of words (and not just prefix)', t => {
-    const text = 'Regis, RegisSuffix RegisSuffix2'; // Contains Regis
+    const text = 'Regis, RegisSuffix RegisSuffix2';
     const matchedRanges = findAllMatches(DICTIONARY, text);
     t.deepEqual(matchedRanges, [
         {
@@ -132,7 +132,7 @@ test('Should match until end of words (and not just prefix)', t => {
 });
 
 test('Should consider that non-alphabetical characters mark the end of a word', t => {
-    const text = "Regis, Regis's, Regis😇 and Regis"; // Contains Regis
+    const text = "Regis, Regis's, Regis😇 and Regis";
     const matchedRanges = findAllMatches(DICTIONARY, text);
     t.deepEqual(matchedRanges, [
         {
@@ -163,7 +163,7 @@ test('Should consider that non-alphabetical characters mark the end of a word', 
 });
 
 test('Should work around non-alphabetical characters', t => {
-    const text = 'Avallach'; // Contains Regis
+    const text = 'Avallach';
     const matchedRanges = findAllMatches(DICTIONARY, text);
     t.deepEqual(matchedRanges, [
         {
