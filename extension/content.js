@@ -85,7 +85,7 @@ async function init() {
                 dictionary,
                 assets: ASSETS
             },
-            options
+            { ...options }
         );
     }
 
