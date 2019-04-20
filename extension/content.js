@@ -25,7 +25,7 @@ const ASSETS = {
     HalisGRBold: browser.extension.getURL(HalisGRBold)
 };
 
-const WEBSITE = 'https://soreine.github.io/hyper-gwent';
+const WEBSITE = 'https://soreine.dev/hyper-gwent';
 const VERSION_SRC = `${WEBSITE}/version.json`;
 const CARDS_SRC = `${WEBSITE}/cards.json`;
 const DICTIONARY_SRC = `${WEBSITE}/dictionary.json`;
