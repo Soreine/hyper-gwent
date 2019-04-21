@@ -2,6 +2,7 @@
 import test from 'ava';
 import DICTIONARY from '../data/static/DICTIONARY';
 import findAllMatches from '../findAllMatches';
+import splitAndMapMatches from '../splitAndMapMatches';
 
 const Mourntart = '132202';
 const Foglet = '132301';
@@ -17,6 +18,17 @@ const YenneferConjurer = '112113';
 const Yennefer = '112108';
 const BitingFrost = '113302';
 const Schirru = '142108';
+
+/*
+ * Yields results that are simpler to test
+ */
+function listMatches(text: string): string[] {
+    const matches = findAllMatches(DICTIONARY, text);
+    return splitAndMapMatches(text, matches, {
+        mapMatch: (match, s) => s,
+        mapNonMatch: s => null
+    }).filter(Boolean);
+}
 
 test('Should find several exact matches in a text', t => {
     const text = "I have a Grave Hag, a Foglet, and a Avallac'h in my hand";
@@ -88,7 +100,7 @@ test('Should find longest match', t => {
 });
 
 test('Should match at beginning of words only', t => {
-    const text = 'Regis/Regis prefixRegisSuffix, prefixRegis'; // Contains Regis
+    const text = 'Regis/Regis prefixRegisSuffix, prefixRegis';
     const matchedRanges = findAllMatches(DICTIONARY, text);
     t.deepEqual(matchedRanges, [
         {
@@ -107,7 +119,7 @@ test('Should match at beginning of words only', t => {
 });
 
 test('Should match until end of words (and not just prefix)', t => {
-    const text = 'Regis, RegisSuffix RegisSuffix2'; // Contains Regis
+    const text = 'Regis, RegisSuffix RegisSuffix2';
     const matchedRanges = findAllMatches(DICTIONARY, text);
     t.deepEqual(matchedRanges, [
         {
@@ -120,7 +132,7 @@ test('Should match until end of words (and not just prefix)', t => {
 });
 
 test('Should consider that non-alphabetical characters mark the end of a word', t => {
-    const text = "Regis, Regis's, Regis😇 and Regis"; // Contains Regis
+    const text = "Regis, Regis's, Regis😇 and Regis";
     const matchedRanges = findAllMatches(DICTIONARY, text);
     t.deepEqual(matchedRanges, [
         {
@@ -151,7 +163,7 @@ test('Should consider that non-alphabetical characters mark the end of a word', 
 });
 
 test('Should work around non-alphabetical characters', t => {
-    const text = 'Avallach'; // Contains Regis
+    const text = 'Avallach';
     const matchedRanges = findAllMatches(DICTIONARY, text);
     t.deepEqual(matchedRanges, [
         {
@@ -160,6 +172,17 @@ test('Should work around non-alphabetical characters', t => {
             start: 0,
             end: 8
         }
+    ]);
+});
+
+test('Should accept nothing or any non-word character instead of special characters', t => {
+    const text =
+        'Old Speartip Asleep, Old Speartip: Asleep, Old Speartip:Asleep';
+    const matches = listMatches(text);
+    t.deepEqual(matches, [
+        'Old Speartip Asleep',
+        'Old Speartip: Asleep',
+        'Old Speartip'
     ]);
 });
 

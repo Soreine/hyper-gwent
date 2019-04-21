@@ -197,4 +197,7 @@ function CheckboxOption({
     );
 }
 
-render(<OptionsPanel />, document.body);
+const { body } = document;
+if (body) {
+    render(<OptionsPanel />, body);
+}

@@ -11,7 +11,11 @@ import { exec } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 
-import { convertGwentDataReleaseCards, generateDictionary } from '../core/data';
+import {
+    convertGwentDataReleaseCards,
+    generateDictionaryEntries
+} from '../core/data';
+import * as Dictionary from '../core/dictionary';
 import ALIASES from '../core/data/static/ALIASES';
 import IGNORED from '../core/data/static/IGNORED';
 import VERSION from '../core/data/static/VERSION';
@@ -35,11 +39,13 @@ async function main() {
     await writePublicJson(VERSION, 'version.json');
 
     const cards = convertGwentDataReleaseCards(RAW_CARDS, IGNORED);
-    await writePublicJson(cards, 'cards.json');
-
     const cardList = Object.keys(cards).map(key => cards[key]);
-    const dictionary = generateDictionary(cardList, ALIASES);
-    await writePublicJson(dictionary, 'dictionary.json');
+    const dictEntries = generateDictionaryEntries(cardList, ALIASES);
+    const dictionary = Dictionary.create(dictEntries);
+
+    // Associate data with version to avoid issues when `version.json`
+    // and `data.json` are updated with a delay between them
+    await writePublicJson({ version: VERSION, cards, dictionary }, 'data.json');
 }
 
 main();

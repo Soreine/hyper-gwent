@@ -25,10 +25,9 @@ const ASSETS = {
     HalisGRBold: browser.extension.getURL(HalisGRBold)
 };
 
-const WEBSITE = 'https://soreine.github.io/hyper-gwent';
+const WEBSITE = 'https://soreine.dev/hyper-gwent';
 const VERSION_SRC = `${WEBSITE}/version.json`;
-const CARDS_SRC = `${WEBSITE}/cards.json`;
-const DICTIONARY_SRC = `${WEBSITE}/dictionary.json`;
+const DATA_SRC = `${WEBSITE}/data.json`;
 
 async function init() {
     // Callback to stop execution when the extension is executing
@@ -73,8 +72,7 @@ async function init() {
         if (!cards || !dictionary) {
             ({ cards, dictionary } = await retrieveCardsData({
                 versionSrc: VERSION_SRC,
-                cardsSrc: CARDS_SRC,
-                dictionarySrc: DICTIONARY_SRC
+                dataSrc: DATA_SRC
             }));
         }
 
@@ -85,7 +83,7 @@ async function init() {
                 dictionary,
                 assets: ASSETS
             },
-            options
+            { ...options }
         );
     }
 

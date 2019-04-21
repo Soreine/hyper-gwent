@@ -17,7 +17,7 @@ export type Card = {
 // It's a trie.
 export type Dictionary<T> = {
     // The empty string as a key indicate that the path of characters
-    // so far is a word that exist, and has the corresponding value
+    // so far is a word that exists, and has the corresponding value
     ''?: T,
     // Keys are characters
     [string]: Dictionary<T>

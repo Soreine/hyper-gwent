@@ -4,6 +4,8 @@
 const IGNORED: {
     [CardID]: true
 } = [
+    // Arnjolf the Patricide
+    '202182',
     // Shupe: Mage
     '201725',
     '201726',

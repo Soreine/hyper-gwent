@@ -19,10 +19,7 @@ import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
 // Setup the homepage
 async function onLoad() {
     // fetch card data
-    const [cards, dictionary] = await Promise.all([
-        fetchJson('./cards.json'),
-        fetchJson('./dictionary.json')
-    ]);
+    const { cards, dictionary } = await fetchJson('./data.json');
 
     // Start watching the whole body for card names.
     watch(

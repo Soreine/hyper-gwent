@@ -4,20 +4,20 @@
 import browser from 'webextension-polyfill';
 import { arrayToSet, setToArray } from './sitelist';
 
-export type Options = {
-    shouldUnderline: boolean,
-    lowQualityArt: boolean,
-    enabledSites: Set<string>,
-    disabledSites: Set<string>
-};
+export interface Options {
+    shouldUnderline: boolean;
+    lowQualityArt: boolean;
+    enabledSites: Set<string>;
+    disabledSites: Set<string>;
+}
 
 // Options as saved in the local storage
-export type RawOptions = {
-    shouldUnderline: boolean,
-    lowQualityArt: boolean,
-    enabledSites: Array<string>,
-    disabledSites: Array<string>
-};
+export interface RawOptions {
+    shouldUnderline: boolean;
+    lowQualityArt: boolean;
+    enabledSites: Array<string>;
+    disabledSites: Array<string>;
+}
 
 export const DEFAULT_OPTIONS: RawOptions = {
     shouldUnderline: true,
