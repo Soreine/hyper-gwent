@@ -59,7 +59,7 @@ function acceptNode(node: Node) {
             return FILTER_REJECT;
         }
 
-        if (ignoreOnPlaygwent(node)) {
+        if (ignoreOnPlaygwent(element)) {
             // Skip this node and all its children
             return FILTER_REJECT;
         }
