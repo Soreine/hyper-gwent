@@ -26,14 +26,18 @@ const IGNORED_TAGS = [
     'VAR'
 ];
 
+const GWENT_DB_TOOLTIP_ATTRIBUTE = 'data-tooltip-url';
+
 const IGNORED_ATTRIBUTES = [
     // Text already highlighted by Hyper Gwent
     HG_HIGHLIGHT_ATTRIBUTE,
     // Hyper Gwent own tooltip
     HG_TOOLTIP_ATTRIBUTE,
     // GwentDB tooltips attribute
-    'data-tooltip-url'
+    GWENT_DB_TOOLTIP_ATTRIBUTE
 ];
+
+const currentHost = window.location.host;
 
 function acceptNode(node: Node) {
     const TEXT_NODE = 3;
@@ -55,10 +59,32 @@ function acceptNode(node: Node) {
             return FILTER_REJECT;
         }
 
+        if (ignoreOnPlaygwent(node)) {
+            // Skip this node and all its children
+            return FILTER_REJECT;
+        }
+
         // Skip the node itself, but walk its children
         return FILTER_SKIP;
     }
     return FILTER_SKIP;
+}
+
+const PLAYGWENT_CARD = 'Card__';
+const PLAYGWENT_TOOLTIP = 'CardTootlp__Popup';
+const PLAYGWENT_HOST = 'www.playgwent.com';
+const PLAYGWENT_IGNORED_CLASSNAMES = [PLAYGWENT_CARD, PLAYGWENT_TOOLTIP];
+
+// Specific rules for playgwent.com decks
+function ignoreOnPlaygwent(element: Element): boolean {
+    if (currentHost !== PLAYGWENT_HOST) {
+        return false;
+    }
+    const className = element.getAttribute('class');
+    return Boolean(
+        className &&
+            PLAYGWENT_IGNORED_CLASSNAMES.some(c => className.indexOf(c) !== -1)
+    );
 }
 
 /* Whether a node or its children should be searched for card names */
