@@ -122,11 +122,33 @@ class OptionsPanel extends Component<
                     hint="This helps loading tooltips faster on slow internet connection"
                 />
 
-                {updated && (
-                    <div className="reload">
-                        Reload the page for changes to take effect
-                    </div>
-                )}
+                <div
+                    className="reload"
+                    style={
+                        updated
+                            ? {}
+                            : {
+                                  color: 'transparent'
+                              }
+                    }
+                >
+                    Reload the page for changes to take effect
+                </div>
+
+                <div className="footer">
+                    Make a{' '}
+                    <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://airtable.com/shrgU3jbaF1gkban7"
+                    >
+                        suggestion
+                    </a>{' '}
+                    <br /> or get help at{' '}
+                    <a href="mailto:hyper-gwent@soreine.dev">
+                        hyper-gwent@soreine.dev
+                    </a>
+                </div>
             </div>
         );
     }
