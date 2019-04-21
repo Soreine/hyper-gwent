@@ -47,8 +47,6 @@ function walk(
         }
 
         // The text node will be replaced with this container
-        const container = document.createElement('span');
-
         const containerChildren = splitAndMapMatches(text, matches, {
             mapNonMatch(nonMatchedText: string) {
                 return document.createTextNode(nonMatchedText);
@@ -61,16 +59,12 @@ function walk(
                 };
 
                 const highlight = <span {...attrs}>{matchedText}</span>;
-
                 newHighlights.push(highlight);
-
                 return highlight;
             }
         });
 
-        containerChildren.forEach(child => {
-            container.appendChild(child);
-        });
+        const container = <span>{containerChildren}</span>;
 
         if (textNode.parentNode) {
             textNode.parentNode.replaceChild(container, textNode);

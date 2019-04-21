@@ -26,14 +26,18 @@ const IGNORED_TAGS = [
     'VAR'
 ];
 
+const GWENT_DB_TOOLTIP_ATTRIBUTE = 'data-tooltip-url';
+
 const IGNORED_ATTRIBUTES = [
     // Text already highlighted by Hyper Gwent
     HG_HIGHLIGHT_ATTRIBUTE,
     // Hyper Gwent own tooltip
     HG_TOOLTIP_ATTRIBUTE,
     // GwentDB tooltips attribute
-    'data-tooltip-url'
+    GWENT_DB_TOOLTIP_ATTRIBUTE
 ];
+
+const currentHost = window.location.host;
 
 function acceptNode(node: Node) {
     const TEXT_NODE = 3;
@@ -50,7 +54,16 @@ function acceptNode(node: Node) {
             return FILTER_REJECT;
         }
 
+        if (element.getAttribute('contenteditable')) {
+            return FILTER_REJECT;
+        }
+
         if (IGNORED_ATTRIBUTES.some(attr => element.hasAttribute(attr))) {
+            // Skip this node and all its children
+            return FILTER_REJECT;
+        }
+
+        if (ignoreOnPlaygwent(element)) {
             // Skip this node and all its children
             return FILTER_REJECT;
         }
@@ -61,9 +74,32 @@ function acceptNode(node: Node) {
     return FILTER_SKIP;
 }
 
-/* Whether a node or its children should be searched for card names */
+const PLAYGWENT_CARD = 'Card__';
+const PLAYGWENT_TOOLTIP = 'CardTootlp__Popup';
+const PLAYGWENT_HOST = 'www.playgwent.com';
+const PLAYGWENT_IGNORED_CLASSNAMES = [PLAYGWENT_CARD, PLAYGWENT_TOOLTIP];
+
+// Specific rules for playgwent.com decks
+function ignoreOnPlaygwent(element: Element): boolean {
+    if (currentHost !== PLAYGWENT_HOST) {
+        return false;
+    }
+    const className = element.getAttribute('class');
+    return Boolean(
+        className &&
+            PLAYGWENT_IGNORED_CLASSNAMES.some(c => className.indexOf(c) !== -1)
+    );
+}
+
+/**
+ * True if the node and its children should not be searched for card names.
+ * This depends on the node's ancestors
+ */
 function shouldIgnore(node: Node) {
-    return acceptNode(node) === FILTER_REJECT;
+    return (
+        acceptNode(node) === FILTER_REJECT ||
+        (node.parentNode && shouldIgnore(node.parentNode))
+    );
 }
 
 export { shouldIgnore, acceptNode };
