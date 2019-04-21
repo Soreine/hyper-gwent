@@ -30,6 +30,8 @@ async function init() {
         });
     });
 
+    updateBrowserActionIcon(options);
+
     browser.tabs.onActivated.addListener(() => {
         updateBrowserActionIcon(options);
     });
@@ -61,25 +63,35 @@ async function updateBrowserActionIcon(options: Options) {
 
 async function toggleIcon(enabled: boolean) {
     if (enabled) {
-        await browser.browserAction.setIcon({
-            path: {
-                '16': 'icon16.png',
-                '32': 'icon32.png',
-                '40': 'icon40.png',
-                '48': 'icon48.png',
-                '128': 'icon128.png'
-            }
-        });
+        await Promise.all([
+            browser.browserAction.setIcon({
+                path: {
+                    '16': 'icon16.png',
+                    '32': 'icon32.png',
+                    '40': 'icon40.png',
+                    '48': 'icon48.png',
+                    '128': 'icon128.png'
+                }
+            }),
+            browser.browserAction.setTitle({
+                title: 'Hyper Gwent (on)'
+            })
+        ]);
     } else {
-        await browser.browserAction.setIcon({
-            path: {
-                '16': 'icon16-gray.png',
-                '32': 'icon32-gray.png',
-                '40': 'icon40-gray.png',
-                '48': 'icon48-gray.png',
-                '128': 'icon128-gray.png'
-            }
-        });
+        await Promise.all([
+            browser.browserAction.setIcon({
+                path: {
+                    '16': 'icon16-gray.png',
+                    '32': 'icon32-gray.png',
+                    '40': 'icon40-gray.png',
+                    '48': 'icon48-gray.png',
+                    '128': 'icon128-gray.png'
+                }
+            }),
+            browser.browserAction.setTitle({
+                title: 'Hyper Gwent (off)'
+            })
+        ]);
     }
 }
 
