@@ -54,6 +54,10 @@ function acceptNode(node: Node) {
             return FILTER_REJECT;
         }
 
+        if (element.getAttribute('contenteditable')) {
+            return FILTER_REJECT;
+        }
+
         if (IGNORED_ATTRIBUTES.some(attr => element.hasAttribute(attr))) {
             // Skip this node and all its children
             return FILTER_REJECT;
@@ -87,9 +91,15 @@ function ignoreOnPlaygwent(element: Element): boolean {
     );
 }
 
-/* Whether a node or its children should be searched for card names */
+/**
+ * True if the node and its children should not be searched for card names.
+ * This depends on the node's ancestors
+ */
 function shouldIgnore(node: Node) {
-    return acceptNode(node) === FILTER_REJECT;
+    return (
+        acceptNode(node) === FILTER_REJECT ||
+        (node.parentNode && shouldIgnore(node.parentNode))
+    );
 }
 
 export { shouldIgnore, acceptNode };
