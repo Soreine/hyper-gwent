@@ -12,27 +12,38 @@ function isUrlAccepted(
     enabledSites: Set<string>,
     disabledSites: Set<string>
 ): boolean {
+    return getEffectiveRule(currentUrl, enabledSites, disabledSites).accepted;
+}
+
+/*
+ * Return whether the URL is accepted, and returns the rule that affects it
+ */
+function getEffectiveRule(
+    currentUrl: string,
+    enabledSites: Set<string>,
+    disabledSites: Set<string>
+): { accepted: boolean, rule: string | null } {
     const acceptingSite = findMatchingRule(enabledSites, currentUrl);
     const rejectingSite = findMatchingRule(disabledSites, currentUrl);
 
     if (!acceptingSite) {
-        return false;
+        return { accepted: false, rule: null };
     }
     if (!rejectingSite) {
-        return true;
+        return { accepted: true, rule: acceptingSite };
     }
 
     if (isSubUrl(acceptingSite, rejectingSite)) {
         // Reject rule is more specific
-        return false;
+        return { accepted: false, rule: rejectingSite };
     }
     if (isSubUrl(rejectingSite, acceptingSite)) {
         // Reject rule is more specific
-        return true;
+        return { accepted: true, rule: acceptingSite };
     }
 
     // This should not happen
-    return false;
+    return { accepted: false, rule: null };
 }
 
 function blacklist(
@@ -105,4 +116,11 @@ function arrayToSet(array: Array<string>): Set<string> {
     return new Set(array);
 }
 
-export { setToArray, arrayToSet, isUrlAccepted, blacklist, whitelist };
+export {
+    setToArray,
+    arrayToSet,
+    isUrlAccepted,
+    getEffectiveRule,
+    blacklist,
+    whitelist
+};

@@ -9,7 +9,12 @@ import {
     Component
 } from 'preact';
 
-import { isUrlAccepted, blacklist, whitelist } from './sitelist';
+import {
+    isUrlAccepted,
+    getEffectiveRule,
+    blacklist,
+    whitelist
+} from './sitelist';
 
 import { loadOptions, saveOptions, type Options } from './options';
 import { getCurrentUrl } from './getCurrentUrl';
@@ -78,6 +83,7 @@ class OptionsPanel extends Component<
 
         return (
             <div>
+                <RunningIndicator url={currentPage} options={options} />
                 <SiteToggleButton
                     url={currentPage}
                     options={options}
@@ -152,6 +158,30 @@ class OptionsPanel extends Component<
             </div>
         );
     }
+}
+
+function RunningIndicator({ url, options }: { url: string, options: Options }) {
+    const { enabledSites, disabledSites } = options;
+    const { accepted, rule } = getEffectiveRule(
+        url,
+        enabledSites,
+        disabledSites
+    );
+
+    let message: string;
+    if (accepted) {
+        if (rule) {
+            message = `Enabled on ${rule}`;
+        } else {
+            message = `Enabled on ${url}`;
+        }
+    } else if (rule) {
+        message = `Disabled on ${rule}`;
+    } else {
+        message = `Not enabled on ${url}`;
+    }
+
+    return <div>{message}</div>;
 }
 
 function SiteToggleButton({
