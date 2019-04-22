@@ -55,6 +55,7 @@ class CardTooltip {
                     position: 'fixed',
                     transform: 'translateY(-40%)',
                     pointerEvents: 'none',
+                    padding: '0px 16px',
                     zIndex: 999999999
                 }}
             />

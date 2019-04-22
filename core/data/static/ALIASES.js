@@ -156,12 +156,7 @@ const ALIASES: { [CardID]: string[] } = {
     '132407': ['Imperial Golem', 'golem'],
     '132408': ['Old Speartip', 'speartip'],
     '132409': ['Hideous Feast'],
-    '133301': [
-        'Wyvern Scale Shield',
-        'Scale Shield',
-        'Wyvern Shield',
-        'Shield'
-    ],
+    '133301': ['Wyvern Scale Shield', 'Scale Shield', 'Wyvern Shield'],
     '133302': ['Arachas Nest'],
     '142101': ['Saesenthessis'],
     '142102': ['Isengrim Faoiltiarna', 'Isengrim'],
@@ -229,7 +224,7 @@ const ALIASES: { [CardID]: string[] } = {
     '152304': ['Brokvar Hunter'],
     '152305': ['Dimun Pirate', 'pirate'],
     '152306': ['Dimun Pirate Captain', 'pirate captain'],
-    '152307': ['Drummond Queensguard', 'queensguards'],
+    '152307': ['Drummond Queensguard', 'queensguards', 'qg'],
     '152308': ['Heymaey Skald', 'Skald'],
     '152309': ['Dimun Light Longship', 'Light Longship'],
     '152310': ["Freya's Blessing", 'Freya Blessing'],

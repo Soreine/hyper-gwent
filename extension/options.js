@@ -22,7 +22,7 @@ export interface RawOptions {
 export const DEFAULT_OPTIONS: RawOptions = {
     shouldUnderline: true,
     lowQualityArt: false,
-    enabledSites: ['https://reddit.com/r/gwent'],
+    enabledSites: ['https://www.reddit.com/r/gwent'],
     disabledSites: ['https://www.gwentdb.com']
 };
 
