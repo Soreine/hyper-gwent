@@ -36,22 +36,22 @@ test('Should whitelist a site', t => {
     const enabledSites = new Set([]);
     const disabledSites = new Set([]);
 
-    whitelist('https://reddit.com/gwent', { enabledSites, disabledSites });
+    whitelist('https://www.reddit.com/gwent', { enabledSites, disabledSites });
 
     check(
         t,
         { enabledSites, disabledSites },
         {
-            enabledSites: ['https://reddit.com/gwent'],
+            enabledSites: ['https://www.reddit.com/gwent'],
             disabledSites: [],
             accepted: [
-                'https://reddit.com/gwent',
-                'https://reddit.com/gwent/some-page'
+                'https://www.reddit.com/gwent',
+                'https://www.reddit.com/gwent/some-page'
             ],
             rejected: [
                 'http://reddit.com/gwent',
-                'https://reddit.com',
-                'https://reddit.com/gwen'
+                'https://www.reddit.com',
+                'https://www.reddit.com/gwen'
             ]
         }
     );
@@ -59,7 +59,7 @@ test('Should whitelist a site', t => {
 
 test('Should blacklist a site', t => {
     const enabledSites = new Set([
-        'https://reddit.com/gwent',
+        'https://www.reddit.com/gwent',
         'https://gwentdb.com/'
     ]);
     const disabledSites = new Set([]);
@@ -70,19 +70,19 @@ test('Should blacklist a site', t => {
         t,
         { enabledSites, disabledSites },
         {
-            enabledSites: ['https://reddit.com/gwent'],
+            enabledSites: ['https://www.reddit.com/gwent'],
             disabledSites: ['https://gwentdb.com/'],
             accepted: [
-                'https://reddit.com/gwent',
-                'https://reddit.com/gwent/some-page'
+                'https://www.reddit.com/gwent',
+                'https://www.reddit.com/gwent/some-page'
             ],
             rejected: [
                 'https://gwentdb.com/',
                 'https://gwentdb.com/somepage',
 
                 'http://reddit.com/gwent',
-                'https://reddit.com',
-                'https://reddit.com/gwen'
+                'https://www.reddit.com',
+                'https://www.reddit.com/gwen'
             ]
         }
     );
@@ -110,10 +110,10 @@ test('Should whitelist a specific site subpage', t => {
 });
 
 test('Should blacklist a specific site subpage', t => {
-    const enabledSites = new Set(['https://reddit.com/']);
-    const disabledSites = new Set(['https://reddit.com/disallowed1']);
+    const enabledSites = new Set(['https://www.reddit.com/']);
+    const disabledSites = new Set(['https://www.reddit.com/disallowed1']);
 
-    blacklist('https://reddit.com/disallowed2', {
+    blacklist('https://www.reddit.com/disallowed2', {
         enabledSites,
         disabledSites
     });
@@ -122,17 +122,20 @@ test('Should blacklist a specific site subpage', t => {
         t,
         { enabledSites, disabledSites },
         {
-            enabledSites: ['https://reddit.com/'],
+            enabledSites: ['https://www.reddit.com/'],
             disabledSites: [
-                'https://reddit.com/disallowed1',
-                'https://reddit.com/disallowed2'
+                'https://www.reddit.com/disallowed1',
+                'https://www.reddit.com/disallowed2'
             ],
-            accepted: ['https://reddit.com/', 'https://reddit.com/allowed'],
+            accepted: [
+                'https://www.reddit.com/',
+                'https://www.reddit.com/allowed'
+            ],
             rejected: [
-                'https://reddit.com/disallowed1',
-                'https://reddit.com/disallowed2',
-                'https://reddit.com/disallowed1/subpage',
-                'https://reddit.com/disallowed2/subpage'
+                'https://www.reddit.com/disallowed1',
+                'https://www.reddit.com/disallowed2',
+                'https://www.reddit.com/disallowed1/subpage',
+                'https://www.reddit.com/disallowed2/subpage'
             ]
         }
     );
