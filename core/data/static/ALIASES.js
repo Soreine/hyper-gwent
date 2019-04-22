@@ -229,7 +229,7 @@ const ALIASES: { [CardID]: string[] } = {
     '152304': ['Brokvar Hunter'],
     '152305': ['Dimun Pirate', 'pirate'],
     '152306': ['Dimun Pirate Captain', 'pirate captain'],
-    '152307': ['Drummond Queensguard', 'queensguards'],
+    '152307': ['Drummond Queensguard', 'queensguards', 'qg'],
     '152308': ['Heymaey Skald', 'Skald'],
     '152309': ['Dimun Light Longship', 'Light Longship'],
     '152310': ["Freya's Blessing", 'Freya Blessing'],
