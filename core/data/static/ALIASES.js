@@ -156,12 +156,7 @@ const ALIASES: { [CardID]: string[] } = {
     '132407': ['Imperial Golem', 'golem'],
     '132408': ['Old Speartip', 'speartip'],
     '132409': ['Hideous Feast'],
-    '133301': [
-        'Wyvern Scale Shield',
-        'Scale Shield',
-        'Wyvern Shield',
-        'Shield'
-    ],
+    '133301': ['Wyvern Scale Shield', 'Scale Shield', 'Wyvern Shield'],
     '133302': ['Arachas Nest'],
     '142101': ['Saesenthessis'],
     '142102': ['Isengrim Faoiltiarna', 'Isengrim'],
