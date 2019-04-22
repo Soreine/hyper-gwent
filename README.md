@@ -2,9 +2,9 @@
 <h4 align="center">Browser extension to preview cards on pages containing GwentⓇ related content.</h4>
 <p align="center"><i>This is an unofficial fan work under the Gwent Fan Content Guidelines. Not approved/endorsed by CD PROJEKT RED</i></p>
 
-Hyper Gwent is a browser extension for Chrome and Firefox, which can detect Gwent card names in the page you visit and highlights them with a tooltip showing the card art and description. 
+Hyper Gwent is a browser extension for Chrome and Firefox, which can detect Gwent card names in the page you visit. Hovering any card name shows the card art and description.
 
-The extension is fast. It is tolerant and tries to match plurals, inexact spellings ("ciri dash" instead of "Ciri: Dash"), and even common appelation for cards ("ADC", "gigni" etc.). And you can also choose on which sites the extension should run.
+The extension is fast. It is tolerant and tries to match plurals, inexact spellings ("ciri dash" instead of "Ciri: Dash"), and even common appellation for cards ("ADC", "gigni" etc.). And you can also choose on which sites the extension should run.
 
 ---
 
