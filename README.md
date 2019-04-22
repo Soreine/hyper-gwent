@@ -10,7 +10,7 @@ The extension is fast. It is tolerant and tries to match plurals, inexact spelli
 
 ## Suggesting alternatives for card names
 
-You can suggest new alternate names for cards. The complete list is here: https://github.com/Soreine/hyper-gwent/blob/master/src/core/data/ALIASES.js
+You can suggest new alternate names for cards. Here is the [complete list](https://github.com/Soreine/hyper-gwent/blob/master/core/data/static/ALIASES.js)
 
 These include:
 
@@ -23,6 +23,7 @@ The following don't need to be in this list though:
 - Alternate case. For example "cIrI DASH" is automatically handled.
 - Plurals. For example "QGs" for Queensguard and "dun banner light cavalries" are automatically handled.
 - Alternate accentuation. For example "Schirru" is automatically recognized as Schirrú.
+- Missing colons `:`, dashes `-`, apostrophes `'` are handled as well.
 
 ## Installation
 
@@ -32,39 +33,32 @@ The following don't need to be in this list though:
 Now, run the following commands to generate the extension code from the sources:
 
 ```
-yarn
-yarn run build
+cd hyper-gwent/
+yarn install
+yarn build
 ```
 
 The generated code is now available in `dist/chrome` and `dist/firefox`.
 Choose the relevant directory in order to load the unpacked extension for development.
 
-Note: you can also build the sources with the regular `npm` command, simply replace `yarn` with `npm`:
-
-```
-npm
-npm run build
-```
-
 ## Updating cards
 
 After every Gwent patch release, the cards data need to be updated. Here's how:
 
-- Clear cached data `rm src/core/tmp/cards.json`
-- Fetch the new cards list `yarn run dictionary`
-- Update the `ALIASES.js` list with missing entries (in the case of new cards).
-  You can easily determine differences by running the tests: `yarn run test`. One test checks for missing cards in `ALIASES.js`.
-- Check that all tests pass: `yarn run test`.
-- Commit the updated data.
+- Upgrade to the latest version of `gwent-data-release`. You must use the master's commit SHA as dependency. Run `yarn`.
+- `yarn test` and fix any issues: missing new cards in `ALIASES.js`, or name conflicts because of new card names. Until `yarn test` passes.
+- Bump the `minor` field of `VERSION.js`. Since it's just a data update, the new data should work with the current builds of the extension, so it's a minor version.
+- Commit the changes.
+- `yarn deploy` to deploy the new data.
 
-## Releasing a new version
+## Releasing a new extension version
 
 To release a new version:
 
 - Make sure all tests pass `yarn run test`.
 - Determine the new version number (using SEMVER) and update `CHANGELOG.md`
 - Set the new version in `manifest.json`
-- Build `yarn run build` and test extensions locally (Chrome and Firefox).
+- Build `yarn build` and test extensions locally (Chrome and Firefox).
 - Release on Chrome (ask @Soreine)
   - `yarn run pack`
   - Upload `chrome.zip` to the Chrome Web Store.
