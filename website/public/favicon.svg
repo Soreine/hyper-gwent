@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="360px" viewBox="0 0 360 360" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Favicon Simple</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#1CFF8D" offset="0%"></stop>
+            <stop stop-color="#10565D" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="264.49 318 219.76 318 219.76 171.385 140.24 192.685 140.24 318 95.51 318 95.51 42.52 140.24 42.52 140.24 150.085 219.76 128.785 219.76 42.52 264.49 42.52"></polygon>
+    </defs>
+    <g id="Favicon-Simple" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="H" fill-rule="nonzero">
+            <use fill="#3884FF" xlink:href="#path-2"></use>
+            <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+        </g>
+    </g>
+</svg>
