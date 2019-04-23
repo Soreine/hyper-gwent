@@ -8,8 +8,9 @@ import {
     render,
     Component
 } from 'preact';
+import type { Card } from '../core/types';
 
-const CHANGE_CARD_DELAY = 1000; // ms
+const CHANGE_CARD_DELAY = 3000; // ms
 
 function getRandomCard(cards: { [CardID]: Card }): Card {
     const ids = Object.keys(cards);
@@ -40,7 +41,6 @@ class RandomCard extends Component<
 
     componentDidMount() {
         this.interval = setInterval(this.changeCard, CHANGE_CARD_DELAY);
-        // this.interval = setTimeout(this.changeCard, CHANGE_CARD_DELAY * 2);
     }
 
     componentWillUnmount() {
@@ -59,7 +59,8 @@ class RandomCard extends Component<
         const { card } = this.state;
         return (
             <div>
-                {card.name} <br />
+                {card.name}
+                <br />
             </div>
         );
     }
