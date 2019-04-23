@@ -5136,10 +5136,6 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
 
-"perimeter@https://github.com/Soreine/perimeter.js/tarball/57381b3e6bb0a82a4d48bbe4ccb7b215276aa974/perimeter.js.tar.gz":
-  version "0.3.0"
-  resolved "https://github.com/Soreine/perimeter.js/tarball/57381b3e6bb0a82a4d48bbe4ccb7b215276aa974/perimeter.js.tar.gz#cd6563b0812c27ed808db9af88d433fbaf1bbb44"
-
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"

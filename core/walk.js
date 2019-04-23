@@ -1,6 +1,6 @@
 // @flow
 /* @jsx createElement */
-/* global document */
+/* global document, window */
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
@@ -9,7 +9,7 @@ import splitAndMapMatches from './splitAndMapMatches';
 import { attachTooltip } from './tooltip';
 import createWalker from './createWalker';
 import type { ExtensionAssets, Card, Dictionary } from './types';
-import { shouldIgnore } from './acceptNode';
+import { shouldIgnore, acceptNode } from './acceptNode';
 
 import { HG_HIGHLIGHT_ATTRIBUTE, CARD_ID_ATTRIBUTE } from './CONSTANTS';
 
@@ -85,12 +85,18 @@ function findTextNodesToInspect(target: Node): Node[] {
         return [];
     }
 
-    const nodes = [];
     const walker = createWalker(target);
-    while (walker.nextNode()) {
-        const node = walker.currentNode;
-        nodes.push(node);
+    const nodes = [];
+
+    // Include targets itself, to handle walking text nodes
+    if (acceptNode(walker.currentNode) === window.NodeFilter.FILTER_ACCEPT) {
+        nodes.push(walker.currentNode);
     }
+
+    while (walker.nextNode()) {
+        nodes.push(walker.currentNode);
+    }
+
     return nodes;
 }
 
