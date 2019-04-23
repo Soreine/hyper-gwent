@@ -1,13 +1,13 @@
 // @flow
 /* @jsx createElement */
-/* global window Perimeter */
+/* global window */
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
-import 'perimeter/dist/perimeter';
 import BigText from 'big-text.js';
 
 import type { Card, ExtensionAssets } from '../types';
+import Perimeter from './Perimeter';
 import TooltipCSS from './tooltip.less';
 import TooltipElement, { loadTooltipArt } from './TooltipElement';
 import injectStyles from './injectStyles';
@@ -84,8 +84,7 @@ class CardTooltip {
 
         injectStyles(this.assets);
 
-        // $FlowFixMe Perimeter is defined
-        Perimeter({
+        const perimeter = new Perimeter({
             target: anchor,
             outline: 100,
             debug: true,
@@ -94,17 +93,26 @@ class CardTooltip {
             }
         });
 
-        anchor.addEventListener('mouseenter', () => this.show());
-        anchor.addEventListener('mouseleave', () => this.hide());
-        anchor.addEventListener('mousemove', (e: MouseEvent) => this.follow(e));
+        anchor.addEventListener('mouseenter', this.show);
+        anchor.addEventListener('mouseleave', this.hide);
+        anchor.addEventListener('mousemove', this.follow);
+
+        onRemoveElement(anchor, () => {
+            anchor.removeEventListener('mouseenter', this.show);
+            anchor.removeEventListener('mouseleave', this.hide);
+            anchor.removeEventListener('mousemove', this.follow);
+            perimeter.destroy();
+            this.hide();
+            window.document.body.removeChild(outer);
+        });
     }
 
-    hide() {
+    hide = () => {
         this.wrapper.className = styles.wrapperHidden;
         this.visible = false;
-    }
+    };
 
-    show() {
+    show = () => {
         const { wrapper } = this;
         loadTooltipArt(wrapper);
 
@@ -113,9 +121,9 @@ class CardTooltip {
         this.visible = true;
 
         autoSizeCardName(this.outer);
-    }
+    };
 
-    follow(mouseEvent: MouseEvent) {
+    follow = (mouseEvent: MouseEvent) => {
         const { wrapper, visible } = this;
         if (!visible) {
             return;
@@ -146,7 +154,7 @@ class CardTooltip {
 
         wrapper.style.top = `${top}px`;
         wrapper.style.left = `${left}px`;
-    }
+    };
 }
 
 function autoSizeCardName(tooltipElement) {
@@ -158,6 +166,31 @@ function autoSizeCardName(tooltipElement) {
             maximumFontSize: 24
         })
     );
+}
+
+function onRemoveElement(element, onDetachCallback) {
+    // https://stackoverflow.com/questions/31798816/simple-mutationobserver-version-of-domnoderemovedfromdocument
+    const observer = new MutationObserver(() => {
+        function isDetached(el) {
+            if (el.parentNode === window.document) {
+                return false;
+            }
+            if (el.parentNode === null) {
+                return true;
+            }
+            return isDetached(el.parentNode);
+        }
+
+        if (isDetached(element)) {
+            observer.disconnect();
+            onDetachCallback();
+        }
+    });
+
+    observer.observe(window.document, {
+        childList: true,
+        subtree: true
+    });
 }
 
 function attachTooltip(

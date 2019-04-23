@@ -26,7 +26,6 @@
     "gwent-data-release": "https://github.com/GwentCommunityDevelopers/gwent-data-release/tarball/286603f7cf34dd04bafabf8fafe7e62cc6829c83/gwent-data-release.tar.gz",
     "intercalate": "^0.1.2",
     "jsx-dom": "^6.2.1",
-    "perimeter": "https://github.com/Soreine/perimeter.js/tarball/57381b3e6bb0a82a4d48bbe4ccb7b215276aa974/perimeter.js.tar.gz",
     "pluralize": "^6.0.0",
     "preact": "^8.4.2",
     "remove-accents": "^0.4.1",
