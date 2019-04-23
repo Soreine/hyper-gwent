@@ -146,6 +146,7 @@ Perimeter.prototype.recalculate = function recalculate() {
         }
     } else {
         i = instances.length;
+        // eslint-disable-next-line
         while (i--) {
             inst = instances[i];
             inst.rects = inst.getClientRect(inst.target);
@@ -168,7 +169,10 @@ Perimeter.prototype.trigger = function trigger(event) {
         leave: this.options.onLeave
     };
 
-    if (events.hasOwnProperty(event) && events[event] instanceof Function) {
+    if (
+        Object.prototype.hasOwnProperty.call(events, event) &&
+        events[event] instanceof Function
+    ) {
         events[event].apply(this, []);
     }
 };
@@ -187,12 +191,12 @@ Perimeter.prototype.formatOutline = function formatOutline(outline) {
     let i = 0;
 
     while (i < 4) {
-        if (!isNaN(outline)) {
+        if (!Number.isNaN(outline)) {
             arr.push(parseInt(outline, 10));
         } else {
             arr.push(!outline[i] ? 0 : parseInt(outline[i], 10));
         }
-        i++;
+        i += 1;
     }
 
     return arr;

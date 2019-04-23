@@ -1,6 +1,6 @@
 // @flow
 /* @jsx createElement */
-/* global window */
+/* global window, MutationObserver */
 
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
@@ -172,9 +172,11 @@ function onRemoveElement(element, onDetachCallback) {
     // https://stackoverflow.com/questions/31798816/simple-mutationobserver-version-of-domnoderemovedfromdocument
     const observer = new MutationObserver(() => {
         function isDetached(el) {
+            // $FlowFixMe
             if (el.parentNode === window.document) {
                 return false;
             }
+            // $FlowFixMe
             if (el.parentNode === null) {
                 return true;
             }
