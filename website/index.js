@@ -5,7 +5,6 @@
 // eslint-disable-next-line no-unused-vars
 import { createElement } from 'jsx-dom';
 import { watch } from '../core';
-import * as RandomCard from './RandomCard';
 // $FlowFixMe
 import cardInfoHeader from '../assets/tooltip-header-sprite.png';
 // $FlowFixMe
@@ -38,8 +37,6 @@ async function onLoad() {
         },
         { shouldUnderline: true }
     );
-
-    RandomCard.start(cards);
 }
 
 async function fetchJson(src: string): Promise<Object> {
