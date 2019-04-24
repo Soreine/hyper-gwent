@@ -12,70 +12,119 @@ type WeightedMatch<T> = Match<T> & {
 function getMatch<T>(
     dictionary: Dictionary<T>,
     text: string,
-    index: number = 0,
+    index: number
+): Match<T> | null {
+    const potentialMatches = getAllMatches(dictionary, text, index);
+    console.log(potentialMatches);
+    return bestMatch(potentialMatches);
+}
+
+/**
+ * Find the longest match at the given index in the text
+ */
+function getAllMatches<T>(
+    dictionary: Dictionary<T>,
+    text: string,
+    index: number,
     acc: {
-        // the piece of text matched so far, for example "CIRI: da"
-        matchedString: string,
-        // the matched key so far, for example "ciri: da"
+        // The length of text matched so far
+        matchedStringLength: number,
+        // the matched key so far
         key: string,
         // Number of typos so far (missing letter, extra letter, or letter switch)
         errorDistance: number,
         // When assuming two chars could have been swithed,
         // what character are we expecting next
         switchedChar: string | null
-    } = { matchedString: '', key: '', errorDistance: 0, switchedChar: null }
-): WeightedMatch<T> | null {
-    const { matchedString, key, errorDistance, switchedChar } = acc;
+    } = {
+        matchedStringLength: 0,
+        key: '',
+        errorDistance: 0,
+        switchedChar: null
+    }
+): Array<WeightedMatch<T>> {
+    const { matchedStringLength, key, errorDistance, switchedChar } = acc;
 
     if (errorDistance > 2) {
         // This is not a match
-        return null;
+        return [];
     }
 
     const nextChar = text[index];
     const isSpace = !/\w/.test(nextChar);
     const endOfWord = nextChar === undefined || isSpace;
 
-    const potentialMatches: Array<WeightedMatch<T>> = (() => {
-        // Have we found a match yet?
-        const isMatch = dictionary[''] && endOfWord;
-        const match = isMatch
-            ? {
-                  start: index - matchedString.length,
-                  end: index,
-                  entryValue: ((dictionary['']: any): T),
-                  entryKey: key,
-                  errorDistance
-              }
-            : null;
+    const nextKeys = Object.keys(dictionary);
 
-        if (nextChar === undefined) {
-            return [match];
-        }
+    const potentialMatches: Array<Array<WeightedMatch<T>>> = nextKeys
+        .map((dictKey: string) => {
+            if (dictKey === '') {
+                if (dictionary[''] && endOfWord) {
+                    // We have an exact match
+                    return [
+                        {
+                            start: index - matchedStringLength,
+                            end: index,
+                            entryValue: ((dictionary['']: any): T),
+                            entryKey: key,
+                            errorDistance
+                        }
+                    ];
+                }
 
-        const subDict = dictionary[nextChar];
-        if (!subDict) {
-            return [match];
-        }
+                return null;
+            }
 
-        const longerMatch = getMatch(subDict, text, index + 1, {
-            matchedString: matchedString + nextChar,
-            key: key + nextChar,
-            errorDistance,
-            switchedChar
-        });
+            if (nextChar === undefined) {
+                return null;
+            }
 
-        return [longerMatch, match];
-    })().filter(Boolean);
+            const subDict: Dictionary<T> = (dictionary[dictKey]: any);
 
-    return bestMatch(potentialMatches);
+            let newErrorDistance;
+            let newSwitchedChar;
+            if (dictKey === nextChar) {
+                newErrorDistance = errorDistance;
+                newSwitchedChar = switchedChar;
+            } else if (
+                dictKey === switchedChar &&
+                key[key.length - 1] === nextChar
+            ) {
+                newErrorDistance = errorDistance;
+                newSwitchedChar = null;
+            } else {
+                newErrorDistance = errorDistance + 1;
+                newSwitchedChar = nextChar;
+            }
+
+            return getAllMatches(subDict, text, index + 1, {
+                matchedStringLength: matchedStringLength + 1,
+                key: key + dictKey,
+                errorDistance: newErrorDistance,
+                switchedChar: newSwitchedChar
+            });
+        })
+        .filter(Boolean);
+
+    return [].concat(...potentialMatches);
 }
 
 function bestMatch<T>(
     matches: Array<WeightedMatch<T>>
 ): WeightedMatch<T> | null {
+    // For each matched value, pick the one with the least mistakes
+    const bestByValue: Map<T, WeightedMatch<T>> = new Map();
+    matches.forEach(match => {
+        const existing = bestByValue.get(match.entryValue);
+        const isBetter =
+            !existing || existing.errorDistance > match.errorDistance;
+        if (isBetter) {
+            bestByValue.set(match.entryValue, match);
+        }
+    });
+
     return (
-        matches
+        Array.from(bestByValue.values())
             .sort((a: WeightedMatch<T>, b: WeightedMatch<T>) => {
                 const vA = matchRank(a);
                 const vB = matchRank(b);
@@ -92,8 +141,8 @@ function bestMatch<T>(
     );
 }
 
-function matchRank({ start, end, errorDistance }: WeightedMatch<any>): number {
-    return end - start + 0.001 * errorDistance;
+function matchRank({ entryKey, errorDistance }: WeightedMatch<any>): number {
+    return entryKey.length - 0.001 * errorDistance;
 }
 
 function isGoodEnoughMatch({

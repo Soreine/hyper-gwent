@@ -307,10 +307,22 @@ test('Should find longest match with bad case', t => {
     ]);
 });
 
-test('Should tolerate one missing letter', t => {
+test.only('Should tolerate one missing letter', t => {
     const text = 'Yenefer';
     const matches = listMatches(text);
     t.deepEqual(matches, ['Yenefer']);
+});
+
+test('Should not prefer mistake over exact match', t => {
+    const text = 'Ciri,';
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Ciri']);
+});
+
+test('Should prefer longer match with mistake', t => {
+    const text = 'Ciri: Dach';
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Ciri: Dach']);
 });
 
 test('Should tolerate one extra letter', t => {
