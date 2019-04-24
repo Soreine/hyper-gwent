@@ -1,15 +1,15 @@
 // @flow
 
-export type Card = {
-    name: string,
-    id: CardID,
-    art: CardArt,
-    faction: Faction,
-    categories: Array<string>,
-    info: string,
-    infoRaw: string,
-    rarity: CardRarity
-};
+export interface Card {
+    name: string;
+    id: CardID;
+    art: CardArt;
+    faction: Faction;
+    categories: Array<string>;
+    info: string;
+    infoRaw: string;
+    rarity: CardRarity;
+}
 
 // Text search algorithm
 
@@ -24,14 +24,14 @@ export type Dictionary<T> = {
 };
 
 // A range of matched text
-export type Match<T> = {
-    start: number,
-    end: number,
+export interface Match<T> {
+    start: number;
+    end: number;
     // The matched key path in the dictionary
-    entryKey: string,
+    entryKey: string;
     // The value at the dictionary's entry
-    entryValue: T
-};
+    entryValue: T;
+}
 
 // Assets packaged in extension
 export type ExtensionAssets = {

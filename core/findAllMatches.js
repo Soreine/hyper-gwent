@@ -1,6 +1,6 @@
 // @flow
 import removeAccents from 'remove-accents';
-import { matches } from './dictionary';
+import { getMatch } from './dictionary';
 
 import type { Dictionary, Match } from './types';
 
@@ -16,7 +16,7 @@ function findAllMatches<T>(
     for (let i = 0; i < cleanText.length; i += 1) {
         const isWord = /\w/.test(cleanText[i]);
         if (wasNotWord && isWord) {
-            const match = matches(dictionary, cleanText, i);
+            const match = getMatch(dictionary, cleanText, i);
             if (match) {
                 result.push(match);
 
