@@ -14,15 +14,13 @@
  *  @see     : http://github.e-sites.nl/perimeter.js/
  */
 
-const win = window;
-
 const doc = window.document;
 
 const docElem = doc.documentElement;
 
 const docBody = doc.body;
 
-const instances = [];
+let instances = [];
 
 function addEventListener(obj, evt, fn) {
     obj.addEventListener(evt, fn, false);
@@ -73,11 +71,6 @@ function Perimeter(options) {
         typeof options.target === 'string'
             ? doc.getElementById(options.target)
             : options.target;
-
-    /**
-     * Boundary used for debugging purposes
-     */
-    this.boundary = null;
 
     /**
      * Bounding rectangles
@@ -134,25 +127,19 @@ Perimeter.prototype.getClientRect = function getClientRect(elem) {
 };
 
 /**
- * When triggered via onresize it will recalculate the clientRect and reflow all existing boundaries
+ * When triggered via onresize it will recalculate the clientRect
  */
 Perimeter.prototype.recalculate = function recalculate() {
     let inst;
     let i;
     if (this instanceof Perimeter) {
         this.outline = this.formatOutline(this.outline);
-        if (this.options.debug && this.boundary) {
-            this.boundary.reflow();
-        }
     } else {
         i = instances.length;
         // eslint-disable-next-line
         while (i--) {
             inst = instances[i];
             inst.rects = inst.getClientRect(inst.target);
-            if (inst.options.debug && inst.boundary) {
-                inst.boundary.reflow();
-            }
         }
     }
 };
@@ -214,13 +201,8 @@ Perimeter.prototype.init = function init(options) {
     // Keep track of all instances
     instances.push(this);
 
-    // Create and show boundary when debug option is passed
-    if (options.debug && typeof this.Boundary !== 'undefined') {
-        this.boundary = new this.Boundary(this);
-    }
-
     addEventListener(options.monitor || doc, 'mousemove', this.monitor.observe);
-    addEventListener(win, 'resize', this.recalculate);
+    addEventListener(window, 'resize', this.recalculate);
 
     // Due to different browser behavior when it comes to triggering the mousemove event
     // while scrolling using the mousehweel, we need to listen to this event as well
@@ -229,12 +211,14 @@ Perimeter.prototype.init = function init(options) {
 
     // teardown
     this.destroy = () => {
+        instances = instances.filter(i => i !== this);
+
         removeEventListener(
             options.monitor || doc,
             'mousemove',
             this.monitor.observe
         );
-        removeEventListener(win, 'resize', this.recalculate);
+        removeEventListener(window, 'resize', this.recalculate);
         removeEventListener(doc, 'DOMMouseScroll', this.monitor.observe);
         removeEventListener(doc, 'mousewheel', this.monitor.observe);
     };
@@ -326,73 +310,6 @@ Perimeter.prototype.Monitor = function Monitor(perimeter) {
     };
 
     return this.event;
-};
-
-Perimeter.prototype.Boundary = function Boundary(perimeter) {
-    /**
-     * Boundary division element
-     *
-     * @type {HTMLDivElement}
-     */
-    this.elem = null;
-
-    /**
-     * Recalculates rectangle offset and dimensions based on new outline
-     *
-     * @return {Object} newRect
-     * @private
-     */
-    function recalculateRect(target, outline) {
-        const rects = perimeter.rects || perimeter.getClientRect(target);
-
-        const newRect = {};
-
-        newRect.width = rects.width + (outline[1] + outline[3]);
-        newRect.height = rects.height + (outline[0] + outline[2]);
-        newRect.top = rects.top - outline[0];
-        newRect.left = rects.left - outline[3];
-
-        return newRect;
-    }
-
-    /**
-     * Creates the division and injects it into the DOM
-     *
-     * @return {Object}
-     */
-    this.create = function create() {
-        this.elem = doc.createElement('div');
-        this.elem.className = 'boundary';
-
-        this.reflow(perimeter.target, perimeter.outline);
-
-        doc.body.appendChild(this.elem);
-
-        return this;
-    };
-
-    /**
-     * Repositions the boundary element
-     *
-     * @param  {Object} target
-     * @param  {Number} outline
-     * @return {Object}
-     */
-    this.reflow = function reflow(target, pOutline) {
-        const box = target || perimeter.target;
-
-        const outline = perimeter.formatOutline(pOutline || perimeter.outline);
-        const rect = recalculateRect(box, outline);
-
-        this.elem.style.top = `${rect.top}px`;
-        this.elem.style.left = `${rect.left}px`;
-        this.elem.style.width = `${rect.width}px`;
-        this.elem.style.height = `${rect.height}px`;
-
-        return this;
-    };
-
-    return this.create();
 };
 
 export default Perimeter;
