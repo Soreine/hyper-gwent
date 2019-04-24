@@ -279,3 +279,45 @@ test('Should find longest match with bad case', t => {
         }
     ]);
 });
+
+test('Should tolerate one missing letter', t => {
+    const text = 'Yenefer';
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Yenefer']);
+});
+
+test('Should tolerate one extra letter', t => {
+    const text = 'Yenneffer';
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Yenneffer']);
+});
+
+test('Should tolerate two switched letters', t => {
+    const text = 'Yenenfer';
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Yenenfer']);
+});
+
+test('Should NOT tolerate two missing letters', t => {
+    const text = 'Yenfer';
+    const matches = listMatches(text);
+    t.deepEqual(matches, []);
+});
+
+test('Should NOT tolerate two extra letter', t => {
+    const text = 'Yenneeffer';
+    const matches = listMatches(text);
+    t.deepEqual(matches, []);
+});
+
+test('Should NOT tolerate two switched letters', t => {
+    const text = 'Yenenefr';
+    const matches = listMatches(text);
+    t.deepEqual(matches, []);
+});
+
+test('Should NOT tolerate a missing letter and an extra letters', t => {
+    const text = 'Yeneffer';
+    const matches = listMatches(text);
+    t.deepEqual(matches, []);
+});
