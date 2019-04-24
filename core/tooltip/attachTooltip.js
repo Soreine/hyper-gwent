@@ -88,7 +88,7 @@ class CardTooltip {
             target: anchor,
             outline: 100,
             debug: true,
-            onBreach() {
+            onBreach: () => {
                 loadTooltipArt(wrapper);
             }
         });
