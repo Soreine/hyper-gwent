@@ -307,22 +307,10 @@ test('Should find longest match with bad case', t => {
     ]);
 });
 
-test.only('Should tolerate one missing letter', t => {
+test('Should tolerate one missing letter', t => {
     const text = 'Yenefer';
     const matches = listMatches(text);
     t.deepEqual(matches, ['Yenefer']);
-});
-
-test('Should not prefer mistake over exact match', t => {
-    const text = 'Ciri,';
-    const matches = listMatches(text);
-    t.deepEqual(matches, ['Ciri']);
-});
-
-test('Should prefer longer match with mistake', t => {
-    const text = 'Ciri: Dach';
-    const matches = listMatches(text);
-    t.deepEqual(matches, ['Ciri: Dach']);
 });
 
 test('Should tolerate one extra letter', t => {
@@ -331,7 +319,7 @@ test('Should tolerate one extra letter', t => {
     t.deepEqual(matches, ['Yenneffer']);
 });
 
-test('Should tolerate two switched letters', t => {
+test.only('Should tolerate two switched letters', t => {
     const text = 'Yenenfer';
     const matches = listMatches(text);
     t.deepEqual(matches, ['Yenenfer']);
@@ -359,4 +347,16 @@ test('Should NOT tolerate a missing letter and an extra letters', t => {
     const text = 'Yeneffer';
     const matches = listMatches(text);
     t.deepEqual(matches, []);
+});
+
+test('Should not prefer mistake over exact match', t => {
+    const text = 'Ciri,';
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Ciri']);
+});
+
+test('Should prefer longer match with mistake', t => {
+    const text = 'Ciri: Dach';
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Ciri: Dach']);
 });

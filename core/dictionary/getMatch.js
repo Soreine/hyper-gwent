@@ -35,78 +35,125 @@ function getAllMatches<T>(
         errorDistance: number,
         // When assuming two chars could have been swithed,
         // what character are we expecting next
-        switchedChar: string | null
+        expectedSwitchedChar: string | null
     } = {
         matchedStringLength: 0,
         key: '',
         errorDistance: 0,
-        switchedChar: null
+        expectedSwitchedChar: null
     }
 ): Array<WeightedMatch<T>> {
-    const { matchedStringLength, key, errorDistance, switchedChar } = acc;
+    const {
+        matchedStringLength,
+        key,
+        errorDistance,
+        expectedSwitchedChar
+    } = acc;
 
     if (errorDistance > 2) {
         // This is not a match
         return [];
     }
 
+    const endOfText = index >= text.length;
     const nextChar = text[index];
     const isSpace = !/\w/.test(nextChar);
     const endOfWord = nextChar === undefined || isSpace;
+    const nextKeys: string[] = Object.keys(dictionary);
 
-    const nextKeys = Object.keys(dictionary);
+    // Have we matched a word completely
+    const isMatch = dictionary[''] && endOfWord;
+    const currentMatch = isMatch
+        ? [
+              {
+                  start: index - matchedStringLength,
+                  end: index,
+                  entryValue: ((dictionary['']: any): T),
+                  entryKey: key,
+                  errorDistance
+              }
+          ]
+        : [];
 
-    const potentialMatches: Array<Array<WeightedMatch<T>>> = nextKeys
-        .map((dictKey: string) => {
-            if (dictKey === '') {
-                if (dictionary[''] && endOfWord) {
-                    // We have an exact match
-                    return [
-                        {
-                            start: index - matchedStringLength,
-                            end: index,
-                            entryValue: ((dictionary['']: any): T),
-                            entryKey: key,
-                            errorDistance
-                        }
-                    ];
-                }
+    // Exact spelling
+    const exactSpellingMatches =
+        endOfText || !dictionary[nextChar]
+            ? []
+            : getAllMatches(dictionary[nextChar], text, index + 1, {
+                  matchedStringLength: matchedStringLength + 1,
+                  key: key + nextChar,
+                  errorDistance,
+                  expectedSwitchedChar: null
+              });
 
-                return null;
-            }
-
-            if (nextChar === undefined) {
-                return null;
-            }
-
-            const subDict: Dictionary<T> = (dictionary[dictKey]: any);
-
-            let newErrorDistance;
-            let newSwitchedChar;
-            if (dictKey === nextChar) {
-                newErrorDistance = errorDistance;
-                newSwitchedChar = switchedChar;
-            } else if (
-                dictKey === switchedChar &&
-                key[key.length - 1] === nextChar
-            ) {
-                newErrorDistance = errorDistance;
-                newSwitchedChar = null;
-            } else {
-                newErrorDistance = errorDistance + 1;
-                newSwitchedChar = nextChar;
-            }
-
-            return getAllMatches(subDict, text, index + 1, {
-                matchedStringLength: matchedStringLength + 1,
+    // Omitted letter
+    const ommittedLetterMatches = flatten(
+        nextKeys.map(dictKey =>
+            getAllMatches(dictionary[dictKey], text, index, {
+                matchedStringLength,
                 key: key + dictKey,
-                errorDistance: newErrorDistance,
-                switchedChar: newSwitchedChar
-            });
-        })
-        .filter(Boolean);
+                errorDistance: errorDistance + 1,
+                expectedSwitchedChar: null
+            })
+        )
+    );
 
-    return [].concat(...potentialMatches);
+    // Extra letter
+    const extraLetterMatches = endOfText
+        ? []
+        : getAllMatches(dictionary, text, index + 1, {
+              matchedStringLength: matchedStringLength + 1,
+              key,
+              errorDistance: errorDistance + 1,
+              expectedSwitchedChar: null
+          });
+
+    // Different letter
+    const differentLetterMatches = endOfText
+        ? []
+        : flatten(
+              nextKeys.map(dictKey => {
+                  const subdict = dictionary[dictKey];
+                  if (!subdict) {
+                      return [];
+                  }
+
+                  const previousKey = key[key.length - 1];
+                  const isSwitch =
+                      dictKey === expectedSwitchedChar &&
+                      nextChar === previousKey;
+
+                  if (isSwitch) {
+                      return getAllMatches(subdict, text, index + 1, {
+                          matchedStringLength: matchedStringLength + 1,
+                          key: key + dictKey,
+                          // Count the two stiched letters as only 1 error
+                          errorDistance,
+                          // This different letter could reveal to be switched letter
+                          expectedSwitchedChar: null
+                      });
+                  }
+                  return getAllMatches(subdict, text, index + 1, {
+                      matchedStringLength: matchedStringLength + 1,
+                      key: key + dictKey,
+                      errorDistance,
+                      // This different letter could reveal to be switched letter
+                      expectedSwitchedChar: nextChar
+                  });
+              })
+          );
+
+    return flatten([
+        currentMatch,
+        exactSpellingMatches,
+        ommittedLetterMatches,
+        extraLetterMatches,
+        differentLetterMatches
+    ]);
+}
+
+function flatten<T>(arr: Array<Array<T> | T>): Array<T> {
+    return [].concat(...arr);
 }
 
 function bestMatch<T>(
