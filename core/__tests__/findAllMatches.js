@@ -319,10 +319,22 @@ test('Should tolerate one extra letter', t => {
     t.deepEqual(matches, ['Yenneffer']);
 });
 
-test.only('Should tolerate two switched letters', t => {
+test('Should tolerate two switched letters', t => {
     const text = 'Yenenfer';
     const matches = listMatches(text);
     t.deepEqual(matches, ['Yenenfer']);
+});
+
+test('Should not accept spaces as extra letters', t => {
+    const text = 'a Grave Hag';
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Grave Hag']);
+});
+
+test('Should not accept special characters as extra letters', t => {
+    const text = 'Then -Grave Hag-';
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Grave Hag']);
 });
 
 test('Should NOT tolerate two missing letters', t => {
