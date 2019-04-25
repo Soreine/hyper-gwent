@@ -86,61 +86,65 @@ function getAllMatches<T>(
               });
 
     // Omitted letter
-    const ommittedLetterMatches = flatten(
-        nextKeys.map(dictKey =>
-            getAllMatches(dictionary[dictKey], text, index, {
-                matchedStringLength,
-                key: key + dictKey,
-                errorDistance: errorDistance + 1,
-                expectedSwitchedChar: null
-            })
-        )
-    );
-
-    // Extra letter
-    const extraLetterMatches = endOfText
-        ? []
-        : getAllMatches(dictionary, text, index + 1, {
-              matchedStringLength: matchedStringLength + 1,
-              key,
-              errorDistance: errorDistance + 1,
-              expectedSwitchedChar: null
-          });
-
-    // Different letter
-    const differentLetterMatches = endOfText
+    const ommittedLetterMatches = isSpace
         ? []
         : flatten(
-              nextKeys.map(dictKey => {
-                  const subdict = dictionary[dictKey];
-                  if (!subdict) {
-                      return [];
-                  }
+              nextKeys.map(dictKey =>
+                  getAllMatches(dictionary[dictKey], text, index, {
+                      matchedStringLength,
+                      key: key + dictKey,
+                      errorDistance: errorDistance + 1,
+                      expectedSwitchedChar: null
+                  })
+              )
+          );
 
-                  const previousKey = key[key.length - 1];
-                  const isSwitch =
-                      dictKey === expectedSwitchedChar &&
-                      nextChar === previousKey;
+    // Extra letter
+    const extraLetterMatches =
+        endOfText || isSpace
+            ? []
+            : getAllMatches(dictionary, text, index + 1, {
+                  matchedStringLength: matchedStringLength + 1,
+                  key,
+                  errorDistance: errorDistance + 1,
+                  expectedSwitchedChar: null
+              });
 
-                  if (isSwitch) {
+    // Different letter
+    const differentLetterMatches =
+        endOfText || isSpace
+            ? []
+            : flatten(
+                  nextKeys.map(dictKey => {
+                      const subdict = dictionary[dictKey];
+                      if (!subdict || dictKey === nextChar) {
+                          return [];
+                      }
+
+                      const previousKey = key[key.length - 1];
+                      const isSwitch =
+                          dictKey === expectedSwitchedChar &&
+                          nextChar === previousKey;
+
+                      if (isSwitch) {
+                          return getAllMatches(subdict, text, index + 1, {
+                              matchedStringLength: matchedStringLength + 1,
+                              key: key + dictKey,
+                              // Count the two stiched letters as only 1 error
+                              errorDistance,
+                              // This different letter could reveal to be switched letter
+                              expectedSwitchedChar: null
+                          });
+                      }
                       return getAllMatches(subdict, text, index + 1, {
                           matchedStringLength: matchedStringLength + 1,
                           key: key + dictKey,
-                          // Count the two stiched letters as only 1 error
-                          errorDistance,
+                          errorDistance: errorDistance + 1,
                           // This different letter could reveal to be switched letter
-                          expectedSwitchedChar: null
+                          expectedSwitchedChar: nextChar
                       });
-                  }
-                  return getAllMatches(subdict, text, index + 1, {
-                      matchedStringLength: matchedStringLength + 1,
-                      key: key + dictKey,
-                      errorDistance,
-                      // This different letter could reveal to be switched letter
-                      expectedSwitchedChar: nextChar
-                  });
-              })
-          );
+                  })
+              );
 
     return flatten([
         currentMatch,
