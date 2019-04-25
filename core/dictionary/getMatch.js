@@ -58,7 +58,7 @@ function getAllMatches<T>(
     const nextChar = text[index];
     const isSpace = !/\w/.test(nextChar);
     const endOfWord = nextChar === undefined || isSpace;
-    const nextKeys: string[] = Object.keys(dictionary);
+    const nextKeys: string[] = nextDictKeys(dictionary);
 
     // Have we matched a word completely
     const isMatch = dictionary[''] && endOfWord;
@@ -149,6 +149,19 @@ function getAllMatches<T>(
         extraLetterMatches,
         differentLetterMatches
     ]);
+}
+
+// Memoized
+const nextDictKeysCache: Map<Dictionary, Array<string>> = new Map();
+function nextDictKeys<T>(dict: Dictionary<T>): Array<string> {
+    const cached = nextDictKeysCache.get(dict);
+    if (cached) {
+        return cached;
+    }
+    const computed = Object.keys(dict).filter(key => key !== '');
+    nextDictKeysCache.set(dict, computed);
+
+    return computed;
 }
 
 function flatten<T>(arr: Array<Array<T> | T>): Array<T> {
