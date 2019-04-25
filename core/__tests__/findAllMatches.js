@@ -198,7 +198,7 @@ test('Should accept nothing or any non-word character instead of special charact
     t.deepEqual(matches, [
         'Old Speartip Asleep',
         'Old Speartip: Asleep',
-        'Old Speartip'
+        'Old Speartip:Asleep'
     ]);
 });
 
