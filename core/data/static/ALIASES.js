@@ -7,7 +7,7 @@ const ALIASES: { [CardID]: string[] } = {
     '112105': ['Regis: Higher Vampire', 'rhv'],
     '112106': ['Triss Merigold', 'triss'],
     '112107': ['Villentretenmerth', 'borkh'],
-    '112108': ['Yennefer of Vengerberg', 'yen'],
+    '112108': ['Yennefer of Vengerberg', 'yen', 'yennefer'],
     '112109': ['Zoltan: Scoundrel', 'scoundrel'],
     '112110': ['Ciri: Dash', 'cdash', 'ciri dash'],
     '112111': ['Geralt: Aard', 'aard', 'gaard'],

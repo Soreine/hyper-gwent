@@ -13,7 +13,7 @@ function getMatch<T>(
     dictionary: Dictionary<T>,
     text: string,
     index: number
-): Match<T> | null {
+): Match<T> | void {
     const potentialMatches = getAllMatches(dictionary, text, index);
     return bestMatch(potentialMatches);
 }
@@ -56,12 +56,15 @@ function getAllMatches<T>(
 
     const endOfText = index >= text.length;
     const nextChar = text[index];
-    const isSpace = !/\w/.test(nextChar);
-    const endOfWord = nextChar === undefined || isSpace;
+    const isWordChar = /\w/.test(nextChar);
+    const endOfWord = nextChar === undefined || !isWordChar;
     const nextKeys: string[] = nextDictKeys(dictionary);
 
     // Have we matched a word completely
-    const isMatch = dictionary[''] && endOfWord;
+    const isMatch =
+        dictionary[''] &&
+        endOfWord &&
+        isGoodEnoughMatch(matchedStringLength, errorDistance);
     const currentMatch = isMatch
         ? [
               {
@@ -76,48 +79,45 @@ function getAllMatches<T>(
 
     // Exact spelling
     const exactSpellingMatches =
-        endOfText || !dictionary[nextChar]
-            ? []
-            : getAllMatches(dictionary[nextChar], text, index + 1, {
+        !endOfText && dictionary[nextChar]
+            ? getAllMatches(dictionary[nextChar], text, index + 1, {
                   matchedStringLength: matchedStringLength + 1,
                   key: key + nextChar,
                   errorDistance,
                   expectedSwitchedChar: null
-              });
+              })
+            : [];
 
     // Omitted letter
-    const ommittedLetterMatches = isSpace
-        ? []
-        : flatten(
-              nextKeys.map(dictKey =>
-                  getAllMatches(dictionary[dictKey], text, index, {
-                      matchedStringLength,
-                      key: key + dictKey,
-                      errorDistance: errorDistance + 1,
-                      expectedSwitchedChar: null
-                  })
-              )
-          );
+    const ommittedLetterMatches = flatten(
+        nextKeys.map(dictKey =>
+            getAllMatches(dictionary[dictKey], text, index, {
+                matchedStringLength,
+                key: key + dictKey,
+                errorDistance: errorDistance + 1,
+                expectedSwitchedChar: null
+            })
+        )
+    );
 
     // Extra letter
     const extraLetterMatches =
-        endOfText || isSpace
-            ? []
-            : getAllMatches(dictionary, text, index + 1, {
+        !endOfText && isWordChar
+            ? getAllMatches(dictionary, text, index + 1, {
                   matchedStringLength: matchedStringLength + 1,
                   key,
                   errorDistance: errorDistance + 1,
                   expectedSwitchedChar: null
-              });
+              })
+            : [];
 
     // Different letter
     const differentLetterMatches =
-        endOfText || isSpace
-            ? []
-            : flatten(
+        !endOfText && isWordChar
+            ? flatten(
                   nextKeys.map(dictKey => {
                       const subdict = dictionary[dictKey];
-                      if (!subdict || dictKey === nextChar) {
+                      if (dictKey === nextChar) {
                           return [];
                       }
 
@@ -130,7 +130,7 @@ function getAllMatches<T>(
                           return getAllMatches(subdict, text, index + 1, {
                               matchedStringLength: matchedStringLength + 1,
                               key: key + dictKey,
-                              // Count the two stiched letters as only 1 error
+                              // Count the two swiched letters as only 1 error
                               errorDistance,
                               // This different letter could reveal to be switched letter
                               expectedSwitchedChar: null
@@ -144,7 +144,8 @@ function getAllMatches<T>(
                           expectedSwitchedChar: nextChar
                       });
                   })
-              );
+              )
+            : [];
 
     return flatten([
         currentMatch,
@@ -156,7 +157,7 @@ function getAllMatches<T>(
 }
 
 // Memoized
-const nextDictKeysCache: Map<Dictionary, Array<string>> = new Map();
+const nextDictKeysCache: Map<Dictionary<any>, Array<string>> = new Map();
 function nextDictKeys<T>(dict: Dictionary<T>): Array<string> {
     const cached = nextDictKeysCache.get(dict);
     if (cached) {
@@ -174,7 +175,7 @@ function flatten<T>(arr: Array<Array<T> | T>): Array<T> {
 
 function bestMatch<T>(
     matches: Array<WeightedMatch<T>>
-): WeightedMatch<T> | null {
+): WeightedMatch<T> | void {
     // For each matched value, pick the one with the least mistakes
     const bestByValue: Map<T, WeightedMatch<T>> = new Map();
     matches.forEach(match => {
@@ -186,35 +187,33 @@ function bestMatch<T>(
         }
     });
 
-    return (
-        Array.from(bestByValue.values())
-            .sort((a: WeightedMatch<T>, b: WeightedMatch<T>) => {
-                const vA = matchRank(a);
-                const vB = matchRank(b);
+    return Array.from(bestByValue.values())
+        .sort((a: WeightedMatch<T>, b: WeightedMatch<T>) => {
+            const vA = matchRank(a);
+            const vB = matchRank(b);
 
-                if (vA < vB) {
-                    return 1;
-                }
-                if (vA > vB) {
-                    return -1;
-                }
-                return 0;
-            })
-            .find(isGoodEnoughMatch) || null
-    );
+            if (vA < vB) {
+                return 1;
+            }
+            if (vA > vB) {
+                return -1;
+            }
+            return 0;
+        })
+        .find(match => {
+            const { start, end, errorDistance } = match;
+            const goodEnough = isGoodEnoughMatch(end - start, errorDistance);
+            return goodEnough;
+        });
 }
 
 function matchRank({ entryKey, errorDistance }: WeightedMatch<any>): number {
     return entryKey.length - 0.001 * errorDistance;
 }
 
-function isGoodEnoughMatch({
-    start,
-    end,
-    errorDistance
-}: WeightedMatch<any>): boolean {
+function isGoodEnoughMatch(textLength: number, errorDistance: number): boolean {
     // Errors must not account for more than a fourth of the text
-    return errorDistance / (end - start) < 0.25;
+    return errorDistance / textLength <= 0.25;
 }
 
 export default getMatch;
