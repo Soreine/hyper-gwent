@@ -355,6 +355,12 @@ test('Should tolerate a missing letter and an extra letters', t => {
     t.deepEqual(matches, ['Yeneffer']);
 });
 
+test('Should NOT tolerate more than two mistakes', t => {
+    const text = 'yneffer yenneeffeerr eynenefr';
+    const matches = listMatches(text);
+    t.deepEqual(matches, []);
+});
+
 test('Should not prefer mistake over exact match', t => {
     const text = 'Ciri,';
     const matches = listMatches(text);
