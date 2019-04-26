@@ -319,12 +319,6 @@ test('Should tolerate one extra letter', t => {
     t.deepEqual(matches, ['Yenneffer']);
 });
 
-test('Should tolerate two switched letters', t => {
-    const text = 'Ynenefre';
-    const matches = listMatches(text);
-    t.deepEqual(matches, ['Ynenefre']);
-});
-
 test('Should not accept spaces as extra letters', t => {
     const text = 'a Grave Hag';
     const matches = listMatches(text);
@@ -332,9 +326,15 @@ test('Should not accept spaces as extra letters', t => {
 });
 
 test('Should not accept special characters as extra letters', t => {
-    const text = 'Then -Grave Hag-';
+    const text = 'Then -Grave Hag';
     const matches = listMatches(text);
     t.deepEqual(matches, ['Grave Hag']);
+});
+
+test('Should  NOT tolerate two switched letters', t => {
+    const text = 'Ynenefre';
+    const matches = listMatches(text);
+    t.deepEqual(matches, []);
 });
 
 test('Should NOT tolerate two missing letters', t => {
@@ -343,19 +343,19 @@ test('Should NOT tolerate two missing letters', t => {
     t.deepEqual(matches, []);
 });
 
-test('Should tolerate two extra letter', t => {
+test('Should NOT tolerate two extra letters', t => {
     const text = 'Yenneeffer';
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Yenneeffer']);
+    t.deepEqual(matches, []);
 });
 
-test('Should tolerate a missing letter and an extra letters', t => {
+test('Should NOT tolerate a missing letter and an extra letters', t => {
     const text = 'Yeneffer';
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Yeneffer']);
+    t.deepEqual(matches, []);
 });
 
-test('Should NOT tolerate more than two mistakes', t => {
+test('Should NOT tolerate more than one mistake', t => {
     const text = 'yneffer yenneeffeerr eynenefr';
     const matches = listMatches(text);
     t.deepEqual(matches, []);
