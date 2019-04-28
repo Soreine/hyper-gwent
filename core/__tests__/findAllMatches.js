@@ -307,16 +307,22 @@ test('Should find longest match with bad case', t => {
     ]);
 });
 
-test('Should tolerate one missing letter', t => {
+test('Should tolerate missing double letter', t => {
     const text = 'Yenefer';
     const matches = listMatches(text);
     t.deepEqual(matches, ['Yenefer']);
 });
 
-test('Should tolerate one extra letter', t => {
+test('Should tolerate doubled letter', t => {
     const text = 'Yenneffer';
     const matches = listMatches(text);
     t.deepEqual(matches, ['Yenneffer']);
+});
+
+test('Should tolerate as many doubled letters mistakes', t => {
+    const text = 'Yeneffer Yenneeffer';
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Yeneffer', 'Yenneeffer']);
 });
 
 test('Should not accept spaces as extra letters', t => {
@@ -337,26 +343,8 @@ test('Should  NOT tolerate two switched letters', t => {
     t.deepEqual(matches, []);
 });
 
-test('Should NOT tolerate two missing letters', t => {
-    const text = 'Yenfer';
-    const matches = listMatches(text);
-    t.deepEqual(matches, []);
-});
-
-test('Should NOT tolerate two extra letters', t => {
-    const text = 'Yenneeffer';
-    const matches = listMatches(text);
-    t.deepEqual(matches, []);
-});
-
-test('Should NOT tolerate a missing letter and an extra letters', t => {
-    const text = 'Yeneffer';
-    const matches = listMatches(text);
-    t.deepEqual(matches, []);
-});
-
-test('Should NOT tolerate more than one mistake', t => {
-    const text = 'yneffer yenneeffeerr eynenefr';
+test('Should NOT tolerate a missing letter', t => {
+    const text = 'Yenffer';
     const matches = listMatches(text);
     t.deepEqual(matches, []);
 });
