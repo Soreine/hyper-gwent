@@ -495,7 +495,7 @@ const ALIASES: { [CardID]: string[] } = {
     // '201741': ['Shupe: Knight'],
     // '201742': ['Shupe: Knight'],
 
-    '201743': ['Arachas Queen'],
+    '201743': ['Arachas Queen', 'AQ'],
     '201744': ['Spores'],
     '201748': ["Foltest's Pride", 'Foltest Pride'],
     '201749': ['Golden Froth', 'Froth'],
