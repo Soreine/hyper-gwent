@@ -137,9 +137,9 @@ function getAllMatches<T>(
     //     potentialMatches.push(differentLetterMatches);
     // }
 
-    // Duplicate letter ('Gerralt' instead of 'Geralt')
+    // Duplicate letter ('Yenneffer' instead of 'Yennefer')
     const previousChar = key[key.length - 1];
-    const isDuplicate = previousChar === nextChar;
+    const isDuplicate = previousChar === currentChar;
     if (isDuplicate) {
         const doubledLetterMatches = getAllMatches(dictionary, text, index, {
             matchedStringLength: matchedStringLength + 1,
