@@ -152,18 +152,17 @@ function getAllMatches<T>(
     // Ommitted double letter ('Detlaf' instead of 'Dettlaff')
     const isMissingDoubleLetter =
         !isFirstLetter &&
-        hasNextChar &&
-        dictionary[nextChar] &&
-        dictionary[nextChar][nextChar];
+        dictionary[currentChar] &&
+        dictionary[currentChar][currentChar];
 
     if (isMissingDoubleLetter) {
         const missingDoubleLetterMatches = getAllMatches(
-            dictionary[nextChar][nextChar],
+            dictionary[currentChar][currentChar],
             text,
             index,
             {
                 matchedStringLength: matchedStringLength + 1,
-                key: key + nextChar + nextChar,
+                key: key + currentChar + currentChar,
                 errorDistance
             }
         );
