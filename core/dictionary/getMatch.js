@@ -205,8 +205,8 @@ function bestMatch<T>(
         });
 }
 
-function matchRank({ entryKey, errorDistance }: WeightedMatch<any>): number {
-    return entryKey.length - 0.001 * errorDistance;
+function matchRank({ start, end, errorDistance }: WeightedMatch<any>): number {
+    return end - start - 0.001 * errorDistance;
 }
 
 function isGoodEnoughMatch(textLength: number, errorDistance: number): boolean {
