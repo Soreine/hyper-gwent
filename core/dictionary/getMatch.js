@@ -45,7 +45,7 @@ function getAllMatches<T>(
         return [];
     }
 
-    const isStart = matchedStringLength === 0;
+    const isFirstLetter = matchedStringLength === 0;
     const endOfText = index >= text.length;
     const currentChar = text[index];
     const isWordChar = /\w/.test(currentChar);
@@ -88,7 +88,7 @@ function getAllMatches<T>(
     }
 
     // Omitted letter
-    if (!isStart && errorDistance === 0) {
+    if (!isFirstLetter && errorDistance === 0) {
         const ommittedLetterMatches = flatten(
             nextKeys.map(dictKey =>
                 getAllMatches(dictionary[dictKey], text, index, {
@@ -127,6 +127,7 @@ function getAllMatches<T>(
 
     // Letter switches
     const isSwitch =
+        !isFirstLetter &&
         hasNextChar &&
         nextChar !== currentChar &&
         dictionary[nextChar] &&
