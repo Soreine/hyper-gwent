@@ -67,11 +67,7 @@ function walk(
                     style: shouldUnderline ? UNDERLINE_STYLE : ''
                 };
 
-                const highlight = (
-                    <span className="highlight" {...attrs}>
-                        {matchedText}
-                    </span>
-                );
+                const highlight = <span {...attrs}>{matchedText}</span>;
                 newHighlights.push(highlight);
                 return highlight;
             }
