@@ -368,7 +368,7 @@ test('Should not prefer mistake over exact match', t => {
 });
 
 test('Should prefer longer match with mistake', t => {
-    const text = 'Ciri: Dach';
+    const text = 'Ciri: Dsah';
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Ciri: Dach']);
+    t.deepEqual(matches, ['Ciri: Dsah']);
 });

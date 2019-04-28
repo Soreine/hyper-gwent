@@ -24,6 +24,7 @@ function getMatch<T>(
 function getAllMatches<T>(
     dictionary: Dictionary<T>,
     text: string,
+    // Index in the text where we are looking for a match
     index: number,
     acc: {
         // The length of text matched so far
@@ -46,13 +47,19 @@ function getAllMatches<T>(
     }
 
     const isFirstLetter = matchedStringLength === 0;
-    const endOfText = index >= text.length;
-    const currentChar = text[index];
+
+    const currentCharIndex = index + matchedStringLength;
+    const endOfText = currentCharIndex >= text.length;
+    const currentChar = text[currentCharIndex];
     const isWordChar = /\w/.test(currentChar);
-    const hasNextChar = index + 1 >= text.length && /\w/.test(text[index + 1]);
-    const nextChar = text[index + 1];
+
+    const nextCharIndex = currentCharIndex + 1;
+    const hasNextChar =
+        nextCharIndex < text.length && /\w/.test(text[nextCharIndex]);
+    const nextChar = text[nextCharIndex];
+
     const endOfWord = currentChar === undefined || !isWordChar;
-    const nextKeys: string[] = nextDictKeys(dictionary);
+    // const nextKeys: string[] = nextDictKeys(dictionary);
 
     const potentialMatches = [];
 
@@ -63,8 +70,8 @@ function getAllMatches<T>(
         isGoodEnoughMatch(matchedStringLength, errorDistance);
     if (isMatch) {
         const currentMatch = {
-            start: index - matchedStringLength,
-            end: index,
+            start: index,
+            end: index + matchedStringLength,
             entryValue: ((dictionary['']: any): T),
             entryKey: key,
             errorDistance
@@ -72,12 +79,17 @@ function getAllMatches<T>(
         potentialMatches.push([currentMatch]);
     }
 
+    if (endOfText) {
+        // No more characters to process
+        return flatten(potentialMatches);
+    }
+
     // Exact spelling
-    if (!endOfText && dictionary[currentChar]) {
+    if (dictionary[currentChar]) {
         const exactSpellingMatches = getAllMatches(
             dictionary[currentChar],
             text,
-            index + 1,
+            index,
             {
                 matchedStringLength: matchedStringLength + 1,
                 key: key + currentChar,
@@ -87,42 +99,75 @@ function getAllMatches<T>(
         potentialMatches.push(exactSpellingMatches);
     }
 
-    // Omitted letter
-    if (!isFirstLetter && errorDistance === 0) {
-        const ommittedLetterMatches = flatten(
-            nextKeys.map(dictKey =>
-                getAllMatches(dictionary[dictKey], text, index, {
-                    matchedStringLength,
-                    key: key + dictKey,
-                    errorDistance: errorDistance + 1
-                })
-            )
-        );
-        potentialMatches.push(ommittedLetterMatches);
-    }
+    // // Omitted letter
+    // if (!isFirstLetter && errorDistance === 0) {
+    //     const ommittedLetterMatches = flatten(
+    //         nextKeys.map(dictKey =>
+    //             getAllMatches(dictionary[dictKey], text, index, {
+    //                 matchedStringLength,
+    //                 key: key + dictKey,
+    //                 errorDistance: errorDistance + 1
+    //             })
+    //         )
+    //     );
+    //     potentialMatches.push(ommittedLetterMatches);
+    // }
 
-    // Extra letter
-    if (!endOfText && isWordChar) {
-        const extraLetterMatches = getAllMatches(dictionary, text, index + 1, {
+    // // Extra letter
+    // if (isWordChar) {
+    //     const extraLetterMatches = getAllMatches(dictionary, text, index, {
+    //         matchedStringLength: matchedStringLength + 1,
+    //         key,
+    //         errorDistance: errorDistance + 1
+    //     });
+    //     potentialMatches.push(extraLetterMatches);
+    // }
+
+    // // Different letter
+    // if (isWordChar) {
+    //     const differentLetterMatches = flatten(
+    //         nextKeys.map(dictKey =>
+    //             getAllMatches(dictionary[dictKey], text, index, {
+    //                 matchedStringLength: matchedStringLength + 1,
+    //                 key: key + dictKey,
+    //                 errorDistance: errorDistance + 1
+    //             })
+    //         )
+    //     );
+    //     potentialMatches.push(differentLetterMatches);
+    // }
+
+    // Duplicate letter ('Gerralt' instead of 'Geralt')
+    const previousChar = key[key.length - 1];
+    const isDuplicate = previousChar === nextChar;
+    if (isDuplicate) {
+        const doubledLetterMatches = getAllMatches(dictionary, text, index, {
             matchedStringLength: matchedStringLength + 1,
             key,
-            errorDistance: errorDistance + 1
+            errorDistance
         });
-        potentialMatches.push(extraLetterMatches);
+        potentialMatches.push(doubledLetterMatches);
     }
 
-    // Different letter
-    if (!endOfText && isWordChar) {
-        const differentLetterMatches = flatten(
-            nextKeys.map(dictKey =>
-                getAllMatches(dictionary[dictKey], text, index + 1, {
-                    matchedStringLength: matchedStringLength + 1,
-                    key: key + dictKey,
-                    errorDistance: errorDistance + 1
-                })
-            )
+    // Ommitted double letter ('Detlaf' instead of 'Dettlaff')
+    const isMissingDoubleLetter =
+        !isFirstLetter &&
+        hasNextChar &&
+        dictionary[nextChar] &&
+        dictionary[nextChar][nextChar];
+
+    if (isMissingDoubleLetter) {
+        const missingDoubleLetterMatches = getAllMatches(
+            dictionary[nextChar][nextChar],
+            text,
+            index,
+            {
+                matchedStringLength: matchedStringLength + 1,
+                key: key + nextChar + nextChar,
+                errorDistance
+            }
         );
-        potentialMatches.push(differentLetterMatches);
+        potentialMatches.push(missingDoubleLetterMatches);
     }
 
     // Letter switches
@@ -137,11 +182,11 @@ function getAllMatches<T>(
         const switchedLetterMatches = getAllMatches(
             dictionary[nextChar][currentChar],
             text,
-            index + 2,
+            index,
             {
                 matchedStringLength: matchedStringLength + 2,
                 key: key + nextChar + currentChar,
-                // Count the two swiched letters as only 1 error
+                // Count the two swiched letters as 1 error
                 errorDistance: errorDistance + 1
             }
         );
