@@ -56,14 +56,24 @@ function generateSpecialCharactersVariants(name: string): string[] {
         const subvariants = variantsOf(str.slice(1));
         const unchanged = subvariants.map(subvariant => str[0] + subvariant);
 
+        let variants = [...unchanged];
+
         if (/^[^\s\w]/.test(str)) {
             const withSpace = subvariants.map(subvariant => ` ${subvariant}`);
             const skipped = subvariants;
 
-            return [...unchanged, ...withSpace, ...skipped];
+            variants = variants.concat(withSpace, skipped);
+        }
+        // Followed by a space (like in "Speartip: Asleep")
+        if (/^[^\s\w ]/.test(str)) {
+            const skipSpaceOnly = variantsOf(str.slice(2)).map(
+                subvariant => str[0] + subvariant
+            );
+
+            variants = variants.concat(skipSpaceOnly);
         }
 
-        return unchanged;
+        return variants;
     };
 
     return variantsOf(name);

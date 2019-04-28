@@ -7,7 +7,7 @@ const ALIASES: { [CardID]: string[] } = {
     '112105': ['Regis: Higher Vampire', 'rhv'],
     '112106': ['Triss Merigold', 'triss'],
     '112107': ['Villentretenmerth', 'borkh'],
-    '112108': ['Yennefer of Vengerberg', 'yen'],
+    '112108': ['Yennefer of Vengerberg', 'yen', 'yennefer'],
     '112109': ['Zoltan: Scoundrel', 'scoundrel'],
     '112110': ['Ciri: Dash', 'cdash', 'ciri dash'],
     '112111': ['Geralt: Aard', 'aard', 'gaard'],
@@ -310,12 +310,7 @@ const ALIASES: { [CardID]: string[] } = {
     '200049': ['Battering Ram'],
     '200050': ['Vreemde'],
     '200052': ['Golyat'],
-    '200053': [
-        'Artefact Compression',
-        'artefact',
-        'artifact',
-        'artifact compression'
-    ],
+    '200053': ['Artefact Compression', 'artifact compression'],
     '200055': ['Unseen Elder', 'elder'],
     '200056': ['Aguara: True Form'],
     '200058': ["Uma's Curse", 'Uma Curse'],
@@ -495,7 +490,7 @@ const ALIASES: { [CardID]: string[] } = {
     // '201741': ['Shupe: Knight'],
     // '201742': ['Shupe: Knight'],
 
-    '201743': ['Arachas Queen'],
+    '201743': ['Arachas Queen', 'AQ'],
     '201744': ['Spores'],
     '201748': ["Foltest's Pride", 'Foltest Pride'],
     '201749': ['Golden Froth', 'Froth'],
