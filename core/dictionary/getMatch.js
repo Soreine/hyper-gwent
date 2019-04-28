@@ -59,7 +59,6 @@ function getAllMatches<T>(
     const nextChar = text[nextCharIndex];
 
     const endOfWord = currentChar === undefined || !isWordChar;
-    // const nextKeys: string[] = nextDictKeys(dictionary);
 
     const potentialMatches = [];
 
@@ -98,44 +97,6 @@ function getAllMatches<T>(
         );
         potentialMatches.push(exactSpellingMatches);
     }
-
-    // // Omitted letter
-    // if (!isFirstLetter && errorDistance === 0) {
-    //     const ommittedLetterMatches = flatten(
-    //         nextKeys.map(dictKey =>
-    //             getAllMatches(dictionary[dictKey], text, index, {
-    //                 matchedStringLength,
-    //                 key: key + dictKey,
-    //                 errorDistance: errorDistance + 1
-    //             })
-    //         )
-    //     );
-    //     potentialMatches.push(ommittedLetterMatches);
-    // }
-
-    // // Extra letter
-    // if (isWordChar) {
-    //     const extraLetterMatches = getAllMatches(dictionary, text, index, {
-    //         matchedStringLength: matchedStringLength + 1,
-    //         key,
-    //         errorDistance: errorDistance + 1
-    //     });
-    //     potentialMatches.push(extraLetterMatches);
-    // }
-
-    // // Different letter
-    // if (isWordChar) {
-    //     const differentLetterMatches = flatten(
-    //         nextKeys.map(dictKey =>
-    //             getAllMatches(dictionary[dictKey], text, index, {
-    //                 matchedStringLength: matchedStringLength + 1,
-    //                 key: key + dictKey,
-    //                 errorDistance: errorDistance + 1
-    //             })
-    //         )
-    //     );
-    //     potentialMatches.push(differentLetterMatches);
-    // }
 
     // Duplicate letter ('Yenneffer' instead of 'Yennefer')
     const previousChar = key[key.length - 1];
@@ -193,22 +154,6 @@ function getAllMatches<T>(
     }
 
     return flatten(potentialMatches);
-}
-
-// Memoized
-const nextDictKeysCache: WeakMap<
-    Dictionary<any>,
-    Array<string>
-> = new WeakMap();
-function nextDictKeys<T>(dict: Dictionary<T>): Array<string> {
-    const cached = nextDictKeysCache.get(dict);
-    if (cached) {
-        return cached;
-    }
-    const computed = Object.keys(dict).filter(key => key !== '');
-    nextDictKeysCache.set(dict, computed);
-
-    return computed;
 }
 
 function flatten<T>(arr: Array<Array<T> | T>): Array<T> {
