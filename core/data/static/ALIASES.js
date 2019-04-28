@@ -310,12 +310,7 @@ const ALIASES: { [CardID]: string[] } = {
     '200049': ['Battering Ram'],
     '200050': ['Vreemde'],
     '200052': ['Golyat'],
-    '200053': [
-        'Artefact Compression',
-        'artefact',
-        'artifact',
-        'artifact compression'
-    ],
+    '200053': ['Artefact Compression', 'artifact compression'],
     '200055': ['Unseen Elder', 'elder'],
     '200056': ['Aguara: True Form'],
     '200058': ["Uma's Curse", 'Uma Curse'],
