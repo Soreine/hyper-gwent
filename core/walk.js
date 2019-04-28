@@ -13,6 +13,15 @@ import { shouldIgnore, acceptNode } from './acceptNode';
 
 import { HG_HIGHLIGHT_ATTRIBUTE, CARD_ID_ATTRIBUTE } from './CONSTANTS';
 
+// We use this CSS trickery to make sure the dotted underline is visible
+// (for obscure reasons, sometimes it was not on Reddit)
+const UNDERLINE_STYLE = `
+background-image: linear-gradient(90deg, currentColor 0%, currentColor 50%, transparent 50%, transparent 100%);
+background-repeat: repeat-x;
+background-size: 6px 1px;
+background-position: 0 100%;
+`;
+
 // Walk the target HTML element and highlight cards inside it
 function walk(
     target: Node,
@@ -55,10 +64,14 @@ function walk(
                 const attrs = {
                     [HG_HIGHLIGHT_ATTRIBUTE]: true,
                     [CARD_ID_ATTRIBUTE]: match.entryValue,
-                    style: shouldUnderline ? 'border-bottom: 1px dashed' : ''
+                    style: shouldUnderline ? UNDERLINE_STYLE : ''
                 };
 
-                const highlight = <span {...attrs}>{matchedText}</span>;
+                const highlight = (
+                    <span className="highlight" {...attrs}>
+                        {matchedText}
+                    </span>
+                );
                 newHighlights.push(highlight);
                 return highlight;
             }
