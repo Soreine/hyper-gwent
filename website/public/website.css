@@ -67,12 +67,12 @@ body {
   font-size: 0.8em;
 }
 
-.download-buttons {
+.buttons {
   display: flex;
   justify-content: space-evenly;
 }
 
-.download-link {
+.button {
   align-self: center;
   font-family: "Gwent-website", sans-serif;
 
@@ -132,9 +132,21 @@ a {
   border-bottom: 1px solid;
 }
 
+h1 {
+  margin-top: 1em;
+  font-size: 1.5em;
+}
+
 p {
   margin-top: 0;
   margin-bottom: 2em;
+}
+
+.example {
+  display: block;
+  margin-top: 0.5em;
+  padding-left: 1em;
+  border-left: 1px solid;
 }
 
 #random-card {
