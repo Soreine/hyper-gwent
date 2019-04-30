@@ -15,8 +15,6 @@ import Gwent from '../assets/fonts/hinted-GWENT-ExtraBold.woff2';
 import HalisGRRegular from '../assets/fonts/hinted-HalisGR-Regular.woff2';
 // $FlowFixMe
 import HalisGRBold from '../assets/fonts/hinted-HalisGR-Bold.woff2';
-// $FlowFixMe importing so that it is copied to the font folder
-import '../assets/fonts/hinted-HalisGR-Book.woff2';
 
 // Setup the homepage
 async function onLoad() {

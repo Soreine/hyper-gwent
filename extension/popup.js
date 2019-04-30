@@ -160,11 +160,9 @@ class OptionsPanel extends Component<
                         href="https://airtable.com/shrgU3jbaF1gkban7"
                     >
                         suggestion
-                    </a>{' '}
-                    <br /> or get help at{' '}
-                    <a href="mailto:hyper-gwent@soreine.dev">
-                        hyper-gwent@soreine.dev
                     </a>
+                    , or get{' '}
+                    <a href="https://soreine.dev/hyper-gwent/help">help</a>
                 </div>
             </div>
         );
