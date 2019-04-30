@@ -14,7 +14,6 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="preload" as="font" href="./fonts/hinted-HalisGR-Book.woff2" type="font/woff2" crossorigin="anonymous" />
   <link rel="preload" as="font" href="./fonts/hinted-GWENT-ExtraBold.woff2" type="font/woff2" crossorigin="anonymous" />
   <link href="./website.css" rel="stylesheet" />
 </head>
@@ -28,12 +27,12 @@
       <div class="logo-subtitle">Fan-made browser extension for GWENT®: The Witcher Card Game</div>
     </div>
 
-    <div class="download-buttons">
+    <div class="buttons">
       <!-- These buttons are there for SEO. On page load, a script will only keep the relevant one for the user-agent -->
-      <a data-browser="chrome" class="download-link" href="https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo">Install
+      <a data-browser="chrome" class="button" href="https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo">Install
         on Chrome</a>
 
-      <a data-browser="firefox" class="download-link" href="https://addons.mozilla.org/en-US/firefox/addon/hyper-gwent/">Install
+      <a data-browser="firefox" class="button" href="https://addons.mozilla.org/en-US/firefox/addon/hyper-gwent/">Install
         on Firefox</a>
     </div>
 
@@ -69,7 +68,8 @@
           <li>Enabled on any website with a simple click. It is enabled by default on <a href="https://www.reddit.com/r/gwent/">r/gwent</a>,
             but can be enabled on <a href="https://messenger.com">messenger.com</a> for example.</li>
           <li>Includes all existing cards, up to date with the latest patch.</li>
-          <li>Supports abbreviations, acronyms, plurals, missing capitals, missing accents, and missing punctuation.</li>
+          <li>Recognizes abbreviations, acronyms, plurals, missing capitals, missing accents, missing punctuation, and
+            common typos.</li>
           <li>Non obstrusive. Add subtle highlights and does not break links.</li>
           <li>Fast. You could enable it on any website, you would not feel it's here.</li>
         </ul>
@@ -82,19 +82,31 @@
       </div>
     </div>
 
-    <div class="download-buttons">
+    <div class="buttons">
       <!-- These buttons are there for SEO. On page load, a script will only keep the relevant one for the user-agent -->
-      <a data-browser="chrome" class="download-link" href="https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo">Install
+      <a data-browser="chrome" class="button" href="https://chrome.google.com/webstore/detail/hyper-gwent/ihaocjeiipaghnmnagdnacpeaeljgneo">Install
         on Chrome</a>
 
-      <a data-browser="firefox" class="download-link" href="https://addons.mozilla.org/en-US/firefox/addon/hyper-gwent/">Install
+      <a data-browser="firefox" class="button" href="https://addons.mozilla.org/en-US/firefox/addon/hyper-gwent/">Install
         on Firefox</a>
     </div>
 
 
-    <p class="issues">This is an unofficial fan work under the Gwent Fan Content Guidelines. Not approved/endorsed by
-      CD PROJEKT RED.<br>If you find bugs, if you want to submit new acronyms, request a feature, or contribute, you
-      can send me a message <a href="https://airtable.com/shrgU3jbaF1gkban7">here</a>.</p>
+    <div class="footer">
+      <p>
+        This is an <a href="https://github.com/Soreine/hyper-gwent">open
+          source</a>, unofficial fan work under the Gwent Fan Content Guidelines. Not approved/endorsed by
+        CD PROJEKT RED.
+      </p>
+      <p>
+        My name is <a href="https://github.com/Soreine">Soreine</a>, I am the author, and I want to thank <a href="https://github.com/Zhouzi">Zhouzi</a> for his help, and <a href="https://github.com/jamieadkins95">Jamie
+          Adkins</a> for his work on <a href="https://github.com/GwentCommunityDevelopers/gwent-data">gwent-data</a>.
+      </p>
+      <p>
+        You can report bugs, submit new acronyms, request a feature, or simply get in touch, by sending me a message <a
+          href="https://airtable.com/shrgU3jbaF1gkban7">here</a>.
+      </p>
+    </div>
   </div>
 </body>
 
