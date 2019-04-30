@@ -3,17 +3,56 @@
   <head>
     <title>Hyper Gwent Popup</title>
     <style>
+      :root {
+        --primary: rgb(230, 229, 218);
+        --secondary: rgb(146, 145, 130);
+        --background: #252527;
+      }
+
       body {
         position: relative;
         padding: 0px 16px 16px;
         width: 320px;
 
-        background: #252527;
+        background: var(--background);
 
-        color: rgb(217, 216, 203);
+        color: var(--primary);
         font-family: Helvetica, sans-serif;
         font-size: 16px;
         line-height: 1.3;
+      }
+
+      .runningIndicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 16px 0px;
+      }
+
+      .running {
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1.2em;
+        line-height: 2em;
+        text-transform: uppercase;
+        background: linear-gradient(rgb(28, 255, 141), rgb(16, 86, 93));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 0px 8px;
+      }
+
+      .not.running {
+        filter: grayscale();
+      }
+
+      .currentWebsite {
+        font-family: "Menlo", monospace;
+        font-size: 0.7em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 100%;
       }
 
       /* Buttons */
@@ -21,20 +60,26 @@
       button {
         cursor: pointer;
         font-size: 16px;
+        font-weight: bold;
         display: block;
-        margin: 24px 0px;
+        margin: 24px auto;
         outline: none;
         border: 2px solid;
-        background: #252527;
-        color: rgb(217, 216, 203);
+        background: var(--background);
+        color: var(--primary);
         padding: 8px 16px;
-        width: 100%;
+        min-width: 70%;
         transition: all 0.2s ease;
       }
 
       button:hover {
         background: rgb(217, 216, 203);
-        color: #252527;
+        color: var(--background);
+      }
+
+      button.secondary {
+        font-weight: normal;
+        border: 1px solid;
       }
 
       /* Checkboxes */
@@ -68,21 +113,24 @@
       }
 
       .checked {
-        background: rgb(217, 216, 203);
+        background: var(--primary);
       }
 
       .hint {
         margin-left: 36px;
         margin-top: 8px;
-        color: #777;
+        color: var(--secondary);
+      }
+
+      .hr {
+        height: 1px;
+        width: 100%;
+        background: var(--secondary);
+        margin: 16px 0px;
       }
 
       .footer {
-        border-top: 1px solid;
-        padding-top: 8px;
-        margin-top: 16px;
-        color: #777;
-        line-height: 1.5;
+        color: var(--secondary);
         text-align: center;
       }
 
@@ -94,8 +142,8 @@
       }
 
       .reload {
-        margin-top: 16px;
-        color: rgb(217, 216, 203);
+        margin: 16px 0px;
+        color: var(--primary);
         font-style: italic;
         text-align: center;
         transition: all 0.4s ease;

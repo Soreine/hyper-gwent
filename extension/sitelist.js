@@ -26,23 +26,28 @@ function getEffectiveRule(
     const acceptingSite = findMatchingRule(enabledSites, currentUrl);
     const rejectingSite = findMatchingRule(disabledSites, currentUrl);
 
-    if (!acceptingSite) {
-        return { accepted: false, rule: null };
-    }
-    if (!rejectingSite) {
-        return { accepted: true, rule: acceptingSite };
-    }
-
-    if (isSubUrl(acceptingSite, rejectingSite)) {
-        // Reject rule is more specific
+    if (acceptingSite && rejectingSite) {
+        if (isSubUrl(acceptingSite, rejectingSite)) {
+            // Reject rule is more specific
+            return { accepted: false, rule: rejectingSite };
+        }
+        if (isSubUrl(rejectingSite, acceptingSite)) {
+            // Reject rule is more specific
+            return { accepted: true, rule: acceptingSite };
+        }
+        // This should not happen
         return { accepted: false, rule: rejectingSite };
     }
-    if (isSubUrl(rejectingSite, acceptingSite)) {
-        // Reject rule is more specific
+
+    if (acceptingSite && !rejectingSite) {
         return { accepted: true, rule: acceptingSite };
     }
 
-    // This should not happen
+    if (!acceptingSite && rejectingSite) {
+        return { accepted: false, rule: rejectingSite };
+    }
+
+    // !acceptingSite && !rejectingSite
     return { accepted: false, rule: null };
 }
 

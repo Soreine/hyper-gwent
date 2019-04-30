@@ -83,24 +83,46 @@ class OptionsPanel extends Component<
 
         return (
             <div>
-                <RunningIndicator url={currentPage} options={options} />
-                <SiteToggleButton
-                    url={currentPage}
+                <div
+                    className="reload"
+                    style={
+                        updated
+                            ? {}
+                            : {
+                                  color: 'transparent'
+                              }
+                    }
+                >
+                    Reload the page for changes to take effect
+                </div>
+
+                <RunningIndicator
+                    page={currentPage}
+                    site={currentSite}
                     options={options}
-                    enableText="Enable on this page"
-                    disableText="Disable on this page"
-                    enableUrl={enableUrl}
-                    disableUrl={disableUrl}
                 />
 
                 <SiteToggleButton
                     url={currentSite}
+                    secondary={false}
                     options={options}
                     enableText="Enable on this site"
                     disableText="Disable on this site"
                     enableUrl={enableUrl}
                     disableUrl={disableUrl}
                 />
+
+                <SiteToggleButton
+                    url={currentPage}
+                    secondary
+                    options={options}
+                    enableText="Enable on this page only"
+                    disableText="Disable on this page only"
+                    enableUrl={enableUrl}
+                    disableUrl={disableUrl}
+                />
+
+                <div className="hr" />
 
                 <CheckboxOption
                     id="shouldUnderline"
@@ -128,18 +150,7 @@ class OptionsPanel extends Component<
                     hint="This helps loading tooltips faster on slow internet connection"
                 />
 
-                <div
-                    className="reload"
-                    style={
-                        updated
-                            ? {}
-                            : {
-                                  color: 'transparent'
-                              }
-                    }
-                >
-                    Reload the page for changes to take effect
-                </div>
+                <div className="hr" />
 
                 <div className="footer">
                     Make a{' '}
@@ -160,10 +171,18 @@ class OptionsPanel extends Component<
     }
 }
 
-function RunningIndicator({ url, options }: { url: string, options: Options }) {
+function RunningIndicator({
+    page,
+    site,
+    options
+}: {
+    page: string,
+    site: string,
+    options: Options
+}) {
     const { enabledSites, disabledSites } = options;
     const { accepted, rule } = getEffectiveRule(
-        url,
+        page,
         enabledSites,
         disabledSites
     );
@@ -171,17 +190,30 @@ function RunningIndicator({ url, options }: { url: string, options: Options }) {
     let message: string;
     if (accepted) {
         if (rule) {
-            message = `Enabled on ${rule}`;
+            message = `Enabled on`;
         } else {
-            message = `Enabled on ${url}`;
+            message = `Enabled on`;
         }
     } else if (rule) {
-        message = `Disabled on ${rule}`;
+        message = `Disabled on`;
     } else {
-        message = `Not enabled on ${url}`;
+        message = `Not enabled`;
     }
 
-    return <div>{message}</div>;
+    const displayedUrl = rule || site;
+
+    return (
+        <div className="runningIndicator">
+            <div className={accepted ? 'running' : 'not running'}>
+                {message}
+            </div>
+            {displayedUrl && (
+                <div className="currentWebsite" title={displayedUrl}>
+                    {shortenUrl(displayedUrl)}
+                </div>
+            )}
+        </div>
+    );
 }
 
 function SiteToggleButton({
@@ -190,12 +222,14 @@ function SiteToggleButton({
     enableText,
     disableText,
     enableUrl,
-    disableUrl
+    disableUrl,
+    secondary
 }: {
     url: string,
     options: Options,
     enableText: string,
     disableText: string,
+    secondary: boolean,
     enableUrl: (url: string) => void,
     disableUrl: (url: string) => void
 }) {
@@ -208,6 +242,7 @@ function SiteToggleButton({
     return (
         <button
             type="button"
+            className={secondary ? 'secondary' : ''}
             onClick={() => {
                 if (willEnable) {
                     enableUrl(url);
@@ -247,6 +282,10 @@ function CheckboxOption({
             {hint && <div className="hint">{hint}</div>}
         </div>
     );
+}
+
+function shortenUrl(url: string) {
+    return url.replace(/^.*:\/\//, '');
 }
 
 const { body } = document;
