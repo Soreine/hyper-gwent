@@ -3,7 +3,7 @@
     [
       "@babel/preset-env",
       {
-        "targets": "last 8 Chrome versions, last 4 Firefox versions, Chrome >= 55, Firefox >= 53",
+        "targets": "defaults",
         "useBuiltIns": "usage",
         "corejs": "3.0.0"
       }
