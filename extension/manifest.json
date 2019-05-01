@@ -17,8 +17,8 @@
     "activeTab",
     "tabs",
     "webNavigation",
-    "*://soreine.dev/hyper-gwent/*",
-    "*://soreine.github.io/hyper-gwent/*"
+    "https://soreine.dev/hyper-gwent/*",
+    "https://soreine.github.io/hyper-gwent/*"
   ],
   "content_scripts": [
     {
