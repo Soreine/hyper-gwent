@@ -5,7 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.1.0] - 2019-05-01
+
+- Firefox-ready
+- Support for common typos
+- Add help page
+- Free resources and delete tooltips when the content is removed from the page.
+- More explicit enabled status in the extension menu
+- Fixed edge cases where underline style was invisible
+
+
+## [2.0.0] - 2019-04-22
+
+[Chrome-only release]
+
+- Updated extension for Homecoming, with cool fonts and backgrounds
+- Cards data are fetched and no longer packed with the extension. Updates can be made separately.
+- Run on dynamic content (content that changes in the page, like on messenger.com)
+- Options to enable on any website
+- Option to use low quality card arts
+- Added link to contact form in the extension menu
 
 ## [1.1.0] - 2017-08-31
 
