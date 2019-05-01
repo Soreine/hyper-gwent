@@ -12,7 +12,14 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": ["storage", "activeTab", "tabs", "webNavigation"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "webNavigation",
+    "https://soreine.dev/hyper-gwent/*",
+    "https://soreine.github.io/hyper-gwent/*"
+  ],
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
