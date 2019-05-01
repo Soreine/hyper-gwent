@@ -38,12 +38,14 @@ export async function saveOptions({
         );
         return;
     }
-    await browser.storage.sync.set({
+    const rawOptions = {
         shouldUnderline,
         lowQualityArt,
         enabledSites: setToArray(enabledSites),
         disabledSites: setToArray(disabledSites)
-    });
+    };
+
+    await browser.storage.sync.set(rawOptions);
 }
 
 export async function loadOptions(): Promise<Options> {
