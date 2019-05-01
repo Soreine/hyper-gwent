@@ -1,6 +1,7 @@
 // @flow
 import pluralize from 'pluralize';
 import removeAccents from 'remove-accents';
+import flatmap from 'flatmap';
 
 import type { Card } from '../types';
 
@@ -36,7 +37,7 @@ function generateVariants(names: string[]): string[] {
         variants.push(pluralize(cleanName));
     });
 
-    return flatMap(variants, generateSpecialCharactersVariants);
+    return flatmap(variants, generateSpecialCharactersVariants);
 }
 
 /*
@@ -84,10 +85,6 @@ function generateSpecialCharactersVariants(name: string): string[] {
  */
 function normalizeName(name: string): string {
     return removeAccents(name).toLowerCase();
-}
-
-function flatMap(arr: *, fn: any) {
-    return arr.reduce((acc, x) => acc.concat(fn(x)), []);
 }
 
 export default generateDictionaryEntries;
