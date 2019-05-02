@@ -16,7 +16,7 @@
     "start:popup": "webpack-dev-server --config ./webpack/popup.js",
     "deploy": "yarn run build:website && gh-pages -d dist/website",
     "prepack": "yarn run build",
-    "pack": "bestzip chrome.zip dist/chrome/** && bestzip firefox.zip dist/firefox/**"
+    "pack": "web-ext build -s dist/chrome/ -o -a chrome-build && web-ext build -s dist/firefox/ -o -a firefox-build"
   },
   "dependencies": {
     "@babel/node": "^7.0.0",
@@ -44,7 +44,6 @@
     "ava": "^1.0.0-rc.2",
     "babel-loader": "^8.0.4",
     "benchmark": "^2.1.4",
-    "bestzip": "^2.1.2",
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",
@@ -66,6 +65,7 @@
     "prettier": "^1.15.2",
     "style-loader": "^0.23.1",
     "svg-inline-loader": "^0.8.0",
+    "web-ext": "^3.0.0",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
