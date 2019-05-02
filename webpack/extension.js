@@ -1,5 +1,4 @@
 const Path = require('path');
-const webpack = require('webpack');
 const baseConfig = require('./base');
 
 function path(p) {
@@ -8,14 +7,6 @@ function path(p) {
 
 module.exports = Object.assign({}, baseConfig, {
     mode: 'development',
-    node: {
-        global: false
-    },
-    plugins: [
-        new webpack.DefinePlugin({
-            global: require.resolve('./global.js')
-        })
-    ],
     entry: {
         content: path('extension/content.js'),
         popup: path('extension/popup.js'),
@@ -24,5 +15,6 @@ module.exports = Object.assign({}, baseConfig, {
     output: {
         path: path('dist/chrome'),
         filename: '[name].js'
-    }
+    },
+    plugins: []
 });
