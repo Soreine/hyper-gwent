@@ -88,23 +88,14 @@ test('Should ignore case', t => {
 
 test('Should find longest match', t => {
     const text = 'Ciri: Dash and Ciri';
-    const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
-        {
-            entryKey: 'ciri: dash',
-            entryValue: CiriDash,
-            errorDistance: 0,
-            start: 0,
-            end: 10
-        },
-        {
-            entryKey: 'ciri',
-            entryValue: Ciri,
-            errorDistance: 0,
-            start: 15,
-            end: 19
-        }
-    ]);
+    const matchedRanges = listMatches(text);
+    t.deepEqual(matchedRanges, ['Ciri: Dash', 'Ciri']);
+});
+
+test('Should find longest match even before commas', t => {
+    const text = "Fringilla Vigo, and Gregoire de Gorgon's names";
+    const matches = listMatches(text);
+    t.deepEqual(matches, ['Fringilla Vigo', 'Gregoire de Gorgon']);
 });
 
 test('Should match at beginning of words only', t => {

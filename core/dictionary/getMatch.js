@@ -15,6 +15,7 @@ function getMatch<T>(
     index: number
 ): Match<T> | void {
     const potentialMatches = getAllMatches(dictionary, text, index);
+    console.log({ potentialMatches });
     return bestMatch(potentialMatches);
 }
 
@@ -167,8 +168,8 @@ function bestMatch<T>(
     const bestByValue: Map<T, WeightedMatch<T>> = new Map();
     matches.forEach(match => {
         const existing = bestByValue.get(match.entryValue);
-        const isBetter =
-            !existing || existing.errorDistance > match.errorDistance;
+        const isBetter = !existing || matchRank(existing) < matchRank(match);
+
         if (isBetter) {
             bestByValue.set(match.entryValue, match);
         }
