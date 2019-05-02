@@ -15,7 +15,6 @@ function getMatch<T>(
     index: number
 ): Match<T> | void {
     const potentialMatches = getAllMatches(dictionary, text, index);
-    console.log({ potentialMatches });
     return bestMatch(potentialMatches);
 }
 
