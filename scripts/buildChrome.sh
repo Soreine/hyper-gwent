@@ -19,4 +19,4 @@ cp ./extension/icon*.png $DIST
 cp ./extension/popup.html $DIST
 
 # Build all extension JS files
-webpack --config ./webpack/extension.js --mode production
+webpack --config ./webpack/extension.js

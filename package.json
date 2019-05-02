@@ -70,6 +70,10 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   },
+  "resolutions": {
+    "regenerator-runtime":
+    "https://github.com/facebook/regenerator/tarball/d4ccc3ba278753c7c37e2db2147834007b9075b1/regenerator.tar.gz"
+  },
   "ava": {
     "require": [
       "@babel/register"

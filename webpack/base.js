@@ -1,5 +1,6 @@
 module.exports = {
     devtool: 'source-map',
+    target: 'web',
     module: {
         rules: [
             {
