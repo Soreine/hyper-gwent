@@ -27,7 +27,7 @@ The following don't need to be in this list though:
 
 ## Installation
 
-1. [Install Node.js](https://nodejs.org/)
+1. [Install Node.js](https://nodejs.org/) version 10 or more
 2. Install yarn: `npm install yarn --global`
 
 Now, run the following commands to generate the extension code from the sources:
@@ -35,21 +35,47 @@ Now, run the following commands to generate the extension code from the sources:
 ```
 cd hyper-gwent/
 yarn install
-yarn build
 ```
 
-The generated code is now available in `dist/chrome` and `dist/firefox`.
-Choose the relevant directory in order to load the unpacked extension for development.
+## Running the website
+
+You can run the website locally (which includes the extension code running in the page):
+
+```
+yarn run start
+```
+
+And visit [localhost:8080](localhost:8080)
+
+
+## Build
+
+Build the cards data, the website files, and the extension files for Chrome and Firefox using
+
+```
+yarn run build
+```
+
+The generated extension code is now available in `dist/chrome` and `dist/firefox`.
+You can load the unpacked extension for development in Chrome.
+
+If you need to package the extension for publishing, or testing under Firefox:
+
+```
+yarn run pack
+```
+
+The resulting archive can be found in `chrome-build/hyper-gwent.zip` and `firefox-build/hyper-gwent.zip`
 
 ## Updating cards
 
 After every Gwent patch release, the cards data need to be updated. Here's how:
 
 - Upgrade to the latest version of `gwent-data-release`. You must use the master's commit SHA as dependency. Run `yarn`.
-- `yarn test` and fix any issues: missing new cards in `ALIASES.js`, or name conflicts because of new card names. Until `yarn test` passes.
+- `yarn run test` and fix any issues: missing new cards in `ALIASES.js`, or name conflicts because of new card names. Until `yarn run test` passes.
 - Bump the `minor` field of `VERSION.js`. Since it's just a data update, the new data should work with the current builds of the extension, so it's a minor version.
 - Commit the changes.
-- `yarn deploy` to deploy the new data.
+- `yarn run deploy` to deploy the new data.
 
 ## Releasing a new extension version
 
@@ -58,7 +84,7 @@ To release a new version:
 - Make sure all tests pass `yarn run test`.
 - Determine the new version number (using SEMVER) and update `CHANGELOG.md`
 - Set the new version in `manifest.json`
-- Build `yarn build` and test extensions locally (Chrome and Firefox).
+- Build `yarn run build` and test extensions locally (Chrome and Firefox).
 - Release on Chrome (ask @Soreine)
   - `yarn run pack`
   - Upload `chrome.zip` to the Chrome Web Store.
