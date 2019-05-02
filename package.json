@@ -24,7 +24,7 @@
     "big-text.js": "^1.0.1",
     "core-js": "3",
     "flatmap": "^0.0.3",
-    "gwent-data-release": "https://github.com/GwentCommunityDevelopers/gwent-data-release/tarball/286603f7cf34dd04bafabf8fafe7e62cc6829c83/gwent-data-release.tar.gz",
+    "gwent-data-release": "https://github.com/GwentCommunityDevelopers/gwent-data-release/tarball/fab042f287cfe93ff6c8023fcc9a97fa8990dc03/gwent-data-release.tar.gz",
     "intercalate": "^0.1.2",
     "jsx-dom": "^6.2.1",
     "pluralize": "^6.0.0",
