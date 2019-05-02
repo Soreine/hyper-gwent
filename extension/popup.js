@@ -106,8 +106,8 @@ class OptionsPanel extends Component<
                     url={currentSite}
                     secondary={false}
                     options={options}
-                    enableText="Enable on this site"
-                    disableText="Disable on this site"
+                    enableText="Enable on whole site"
+                    disableText="Disable on whole site"
                     enableUrl={enableUrl}
                     disableUrl={disableUrl}
                 />
@@ -116,8 +116,8 @@ class OptionsPanel extends Component<
                     url={currentPage}
                     secondary
                     options={options}
-                    enableText="Enable on this page only"
-                    disableText="Disable on this page only"
+                    enableText="Enable on current page only"
+                    disableText="Disable on current page only"
                     enableUrl={enableUrl}
                     disableUrl={disableUrl}
                 />
@@ -240,6 +240,7 @@ function SiteToggleButton({
     return (
         <button
             type="button"
+            title={url}
             className={secondary ? 'secondary' : ''}
             onClick={() => {
                 if (willEnable) {
