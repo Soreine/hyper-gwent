@@ -10,7 +10,7 @@ fs.writeFileSync(
             applications: {
                 gecko: {
                     id: 'extension@hyper-gwent.com',
-                    strict_min_version: '53.0'
+                    strict_min_version: '57.0'
                 }
             }
         }),
