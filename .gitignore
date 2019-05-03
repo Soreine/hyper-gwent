@@ -2,6 +2,8 @@
 dist
 chrome.zip
 firefox.zip
+chrome-build/
+firefox-build/
 
 ### Node ###
 # Logs
