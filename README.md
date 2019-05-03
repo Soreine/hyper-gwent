@@ -87,7 +87,8 @@ To release a new version:
 - Build `yarn run build` and test extensions locally (Chrome and Firefox).
 - Release on Chrome (ask @Soreine)
   - `yarn run pack`
-  - Upload `chrome.zip` to the Chrome Web Store.
+  - Upload `dist/chrome.zip` to the Chrome Web Store.
 - Release on Firefox (ask @Zhouzi)
   - `yarn run pack`
-  - Upload `firefox.zip` to the Firefox store.
+  - Generate an archive of the source code by running `./scripts/zipSourceCode.sh`.
+  - Upload `dist/firefox.zip` and the source code `dist/hyper-gwent-source.tar.gz` to the Firefox store.
