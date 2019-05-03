@@ -63,7 +63,7 @@ function acceptNode(node: Node) {
             return FILTER_REJECT;
         }
 
-        if (ignoreOnPlaygwent(element)) {
+        if (ignoreOnPlaygwent(element) || ignoreOnTeamAretuza(element)) {
             // Skip this node and all its children
             return FILTER_REJECT;
         }
@@ -88,6 +88,29 @@ function ignoreOnPlaygwent(element: Element): boolean {
     return Boolean(
         className &&
             PLAYGWENT_IGNORED_CLASSNAMES.some(c => className.indexOf(c) !== -1)
+    );
+}
+
+const TEAMARETUZA_CARD = 'arena-card-parent';
+const TEAMARETUZA_TOOLTIP_ID = 'card-hover';
+const TEAMARETUZA_HOST = 'teamaretuza.com';
+const TEAMARETUZA_IGNORED_CLASSNAMES = [TEAMARETUZA_CARD];
+
+// Specific rules for teamaretuza.com
+function ignoreOnTeamAretuza(element: Element): boolean {
+    if (currentHost !== TEAMARETUZA_HOST) {
+        return false;
+    }
+    if (element.id === TEAMARETUZA_TOOLTIP_ID) {
+        return true;
+    }
+
+    const className = element.getAttribute('class');
+    return Boolean(
+        className &&
+            TEAMARETUZA_IGNORED_CLASSNAMES.some(
+                c => className.indexOf(c) !== -1
+            )
     );
 }
 
