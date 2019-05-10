@@ -162,7 +162,13 @@ class OptionsPanel extends Component<
                         suggestion
                     </a>
                     , or get{' '}
-                    <a href="https://soreine.dev/hyper-gwent/help">help</a>
+                    <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://soreine.dev/hyper-gwent/help"
+                    >
+                        help
+                    </a>
                 </div>
             </div>
         );
