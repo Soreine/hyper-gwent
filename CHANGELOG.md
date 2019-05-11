@@ -5,9 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2.1.2] - 2019-11-03
+
+- Fix help link
+- Show for which Gwent patch the extension is up-to-date
+
 ## [2.1.1] - 2019-05-03
 
-- Fixed issues where shorter names where preferred over longer names ("Fringilla" in "Fringilla Vigo").
+- Fix issues where shorter names were preferred over longer names ("Fringilla" in "Fringilla Vigo").
 - Better wording for enable/disable buttons
 - Better interaction with TeamAretuza.com
 
@@ -18,33 +23,33 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add help page
 - Free resources and delete tooltips when the content is removed from the page.
 - More explicit enabled status in the extension menu
-- Fixed edge cases where underline style was invisible
+- Fix edge cases where underline style was invisible
 
 
 ## [2.0.0] - 2019-04-22
 
 [Chrome-only release]
 
-- Updated extension for Homecoming, with cool fonts and backgrounds
+- Update extension for Homecoming, with cool fonts and backgrounds
 - Cards data are fetched and no longer packed with the extension. Updates can be made separately.
 - Run on dynamic content (content that changes in the page, like on messenger.com)
-- Options to enable on any website
-- Option to use low quality card arts
-- Added link to contact form in the extension menu
+- Add options to enable on any website
+- Add option to use low quality card arts
+- Add link to contact form in the extension menu
 - Compatible with PlayGwent.com
 
 
 ## [1.1.0] - 2017-08-31
 
 - Add support for Firefox
-- Gold Immunity Patch: Updated with updated and new cards and artworks.
-- Enabled extension on https://forums.cdprojektred.com/forum/en/gwent
-- Fixed a bug where editing areas were cleared (for example when modifying a post on Reddit).
-- Tweaked some card aliases
+- Gold Immunity Patch: Update with new cards and artworks.
+- Enable extension on https://forums.cdprojektred.com/forum/en/gwent
+- Fix a bug where editing areas were cleared (for example when modifying a post on Reddit).
+- Tweak some card aliases
 
 ## [1.0.4] - 2017-08-10
 
-- Fixed aliases for
+- Fix aliases for
   - Assire var Anahid
   - Clan an Craite Warcrier
   - Clan an Craite Warrior
