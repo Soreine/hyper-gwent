@@ -54,10 +54,6 @@ ul {
   margin-bottom: 2em;
 }
 
-li {
-  margin-bottom: 1em;
-}
-
 .content {
   display: flex;
   flex-direction: column;
