@@ -29,7 +29,7 @@ async function retrieveCardsData({
     cards: { [CardID]: Card },
     dictionary: Dictionary<CardID>
 }> {
-    const local = await getLocalData();
+    const local = await getLocalCardsData();
     const latestVersion: VersionJson = await fetchJson(versionSrc);
 
     if (
@@ -70,24 +70,26 @@ async function retrieveCardsData({
     );
 }
 
-async function getLocalData(): Promise<{
+async function getLocalCardsData(): Promise<{
     cards: CardsJson,
     dictionary: DictionaryJson,
     version: VersionJson
 }> {
-    const local = await browser.storage.local.get([
-        VERSION_KEY,
-        CARDS_KEY,
-        DICTIONARY_KEY
-    ]);
+    if (browser.storage) {
+        const local = await browser.storage.local.get([
+            VERSION_KEY,
+            CARDS_KEY,
+            DICTIONARY_KEY
+        ]);
 
-    if (
-        local &&
-        local[VERSION_KEY] &&
-        local[CARDS_KEY] &&
-        local[DICTIONARY_KEY]
-    ) {
-        return local;
+        if (
+            local &&
+            local[VERSION_KEY] &&
+            local[CARDS_KEY] &&
+            local[DICTIONARY_KEY]
+        ) {
+            return local;
+        }
     }
 
     return {
@@ -130,3 +132,5 @@ async function fetchJson(src: string): Promise<Object> {
 }
 
 export default retrieveCardsData;
+
+export { getLocalCardsData };

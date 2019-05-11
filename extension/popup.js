@@ -17,12 +17,14 @@ import {
 } from './sitelist';
 
 import { loadOptions, saveOptions, type Options } from './options';
+import { getLocalCardsData } from './retrieveCardsData';
 import { getCurrentUrl } from './getCurrentUrl';
 
 class OptionsPanel extends Component<
     {},
     {
         options: ?Options,
+        gwentVersion: ?string,
         currentUrl: ?URL,
         // True if the user made some changes to the settings
         updated: boolean
@@ -31,9 +33,17 @@ class OptionsPanel extends Component<
     componentDidMount() {
         setTimeout(async () => {
             const options = await loadOptions();
+            const data = await getLocalCardsData();
             const currentUrl = await getCurrentUrl();
 
-            this.setState({ options, currentUrl });
+            this.setState({
+                options,
+                currentUrl,
+                gwentVersion:
+                    data.version.gwent ||
+                    // 2.1.1 was the version before version.gwent was added
+                    '2.1.1'
+            });
         });
     }
 
@@ -47,7 +57,7 @@ class OptionsPanel extends Component<
     };
 
     render() {
-        const { options, currentUrl, updated } = this.state;
+        const { options, currentUrl, updated, gwentVersion } = this.state;
 
         if (!options || !currentUrl) {
             return null;
@@ -153,22 +163,29 @@ class OptionsPanel extends Component<
                 <div className="hr" />
 
                 <div className="footer">
-                    Make a{' '}
-                    <a
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href="https://airtable.com/shrgU3jbaF1gkban7"
-                    >
-                        suggestion
-                    </a>
-                    , or get{' '}
-                    <a
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href="https://soreine.dev/hyper-gwent/help"
-                    >
-                        help
-                    </a>
+                    <div>
+                        <a
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            href="https://soreine.dev/hyper-gwent/help"
+                        >
+                            Help
+                        </a>
+                    </div>
+                    <div>
+                        <a
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            href="https://airtable.com/shrgU3jbaF1gkban7"
+                        >
+                            Feedback
+                        </a>
+                    </div>
+                    {gwentVersion && (
+                        <div className="version">
+                            Updated for patch: {gwentVersion}
+                        </div>
+                    )}
                 </div>
             </div>
         );

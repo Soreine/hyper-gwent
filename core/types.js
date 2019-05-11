@@ -51,5 +51,7 @@ export type VersionJson = {
     major: number,
     // Starts at 0. Incremented everytime the data is updated.
     // Back to 0 on every major increment.
-    minor: number
+    minor: number,
+    // The version number of the Gwent patch this is for
+    gwent?: string
 };
