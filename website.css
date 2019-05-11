@@ -23,7 +23,7 @@ html {
 body {
   font-family: Helvetica, sans-serif;
   font-size: 1.3rem;
-  color: rgb(217, 216, 203);
+  color: rgb(190, 189, 173);
   font-weight: 300;
   line-height: 1.5;
   margin: 0px;
@@ -43,13 +43,19 @@ a {
 }
 
 h1 {
+  color: rgb(30, 189, 109);
   margin-top: 1em;
   font-size: 1.5em;
 }
 
-p {
+p,
+ul {
   margin-top: 0;
   margin-bottom: 2em;
+}
+
+li {
+  margin-bottom: 1em;
 }
 
 .content {
@@ -70,11 +76,17 @@ p {
 }
 
 .logo-title {
+  display: block;
   font-family: "Gwent-website", sans-serif;
   font-size: 4em;
   background: linear-gradient(rgb(28, 255, 141), rgb(16, 86, 93));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  /* When used as link */
+  text-decoration: none;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .noextension {
