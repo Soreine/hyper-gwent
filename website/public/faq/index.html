@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hyper Gwent - Help</title>
+    <title>Hyper Gwent - FAQ</title>
 
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon32.png" />
     <link rel="icon" type="image/png" sizes="40x40" href="../favicon40.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="../favicon48.png" />
-    <link rel="icon" type="image/png" sizes="128x128" href="../favicon128.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="128x128"
+      href="../favicon128.png"
+    />
 
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,14 +30,13 @@
   <body>
     <div class="content">
       <div class="logo">
-        <div class="logo-title">Help</div>
+        <a href="../" class="logo-title">Hyper Gwent</a>
         <div class="logo-subtitle">
-          This is the help page for the browser extension
-          <a href="../">Hyper Gwent</a>
+          Frequently Asked Questions
         </div>
       </div>
 
-      <h1>Configuring Hyper Gwent</h1>
+      <h1>How to configure Hyper Gwent?</h1>
       <p>
         By default, Hyper Gwent is only enabled for the Gwent subreddit. But you
         can enable it for any website.
@@ -42,7 +46,7 @@
         status and options from the extension icon in your browser menu.
       </p>
 
-      <h1>Enable Hyper Gwent on any website</h1>
+      <h1>How do I enable Hyper Gwent on a website?</h1>
 
       <p>
         You can tell if the extension is running on any page by checking the
@@ -78,19 +82,61 @@
         </span>
       </p>
 
-      <h1>Limitations</h1>
+      <h1>Can it work anywhere?</h1>
 
       <p>
-        Hyper Gwent is not meant to be enabled on every website. It does its
-        best to work on apps like messenger.com without breaking them. But Hyper
-        Gwent might not play well with some websites. If you have issues
-        interacting with a website after enabling Hyper Gwent, disable the
-        extension and tell me about it.
+        In theory, Hyper Gwent can work anywhere. It does its best to work on
+        complex apps like twitch.tv. But it can happen that Hyper Gwent does not
+        play well with a particular website. If you have issues interacting with
+        a website after enabling Hyper Gwent, disable the extension and tell me
+        about it.
+      </p>
+
+      <h1 id="security">Is it safe?</h1>
+      <p>
+        Yes, the extension is safe. But this is a legitimate concern. Firstly,
+        you should know that the extension
+        <a href="https://github.com/Soreine/hyper-gwent">source code</a>
+        is public. You can know everything about it, and you could even build
+        the extension yourself and install it manually on your computer.
+        Secondly, the extension is verified by Chrome and Firefox teams, before
+        it is published on their store.
+      </p>
+      <p>
+        You may also be worried by the permissions requested by the extensions.
+        On installation, your browser will warn you about what the extension
+        will have access to. I did my best to limit the required permissions to
+        the minimum. Here is an explanation for each one:
+      </p>
+
+      <ul>
+        <li>
+          <i
+            >"The extension can read and change all your data on the websites
+            you visit."</i
+          ><br />
+          This is because you should be able to enable the extension on any
+          website, and to find cards in the page you visit, it needs to read the
+          page's content.
+        </li>
+        <li>
+          <i>"The extension can read your browsing history."</i><br />
+          The extension must know the website you are currently visiting, so
+          that it can be enabled on the websites of your choice, and so it can
+          activates when your current tab is one of those websites. As a result,
+          the extension knows the websites you visit. In other words, it could
+          read your browsing history.
+        </li>
+      </ul>
+
+      <p>
+        I hope this answers any worries you might have, otherwise do not
+        hesitate to contact me.
       </p>
 
       <div class="buttons">
         <a class="button" href="https://airtable.com/shrgU3jbaF1gkban7"
-          >Contact form</a
+          >Contact</a
         >
       </div>
     </div>

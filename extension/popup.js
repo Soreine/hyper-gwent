@@ -167,7 +167,7 @@ class OptionsPanel extends Component<
                         <a
                             rel="noopener noreferrer"
                             target="_blank"
-                            href="https://soreine.dev/hyper-gwent/help"
+                            href="https://soreine.dev/hyper-gwent/faq"
                         >
                             Help
                         </a>
