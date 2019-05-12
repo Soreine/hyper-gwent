@@ -22,9 +22,9 @@ html {
 
 body {
   font-family: Helvetica, sans-serif;
-  font-size: 1.3rem;
   color: rgb(190, 189, 173);
   font-weight: 300;
+  font-size: 1rem;
   line-height: 1.5;
   margin: 0px;
   padding: 0px;
@@ -33,6 +33,12 @@ body {
   background-position-x: 50%;
   background-position-y: 0%;
   background-repeat: repeat-y;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.3rem;
+  }
 }
 
 a {
@@ -60,7 +66,13 @@ ul {
   align-items: stretch;
   margin: auto;
   max-width: 800px;
-  padding: 3em;
+  padding: 1.5em;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 3em;
+  }
 }
 
 .logo {
@@ -69,12 +81,13 @@ ul {
   flex-direction: column;
   align-items: center;
   margin-bottom: 3em;
+  text-align: center;
 }
 
 .logo-title {
   display: block;
   font-family: "Gwent-website", sans-serif;
-  font-size: 4em;
+  font-size: 3em;
   background: linear-gradient(rgb(28, 255, 141), rgb(16, 86, 93));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -83,6 +96,12 @@ ul {
   text-decoration: none;
   padding-bottom: 0;
   border-bottom: none;
+}
+
+@media (min-width: 425px) {
+  .logo-title {
+    font-size: 4em;
+  }
 }
 
 .noextension {
