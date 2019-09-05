@@ -1,8 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "ava",
-    "test:watch": "yarn test -- --watch",
+    "test": "jest",
     "lint": "eslint .",
     "benchmark": "babel-node ./benchmarks/index.js",
     "prebuild": "rm -rf dist",
@@ -69,11 +68,6 @@
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
-  },
-  "ava": {
-    "require": [
-      "@babel/register"
-    ]
   },
   "sideEffects": []
 }
