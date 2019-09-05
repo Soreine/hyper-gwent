@@ -4858,9 +4858,9 @@ gwent-api-client@^3.0.0:
   dependencies:
     query-string "^4.3.4"
 
-"gwent-data-release@https://github.com/GwentCommunityDevelopers/gwent-data-release/tarball/ccff0f9c1d10180aa7902f2445d90bb023c7b4b1/gwent-data-release.tar.gz":
+"gwent-data-release@https://github.com/GwentCommunityDevelopers/gwent-data-release/tarball/afa8f06389e1bc2b3b0781be4836168de5419ebf/gwent-data-release.tar.gz":
   version "0.0.0"
-  resolved "https://github.com/GwentCommunityDevelopers/gwent-data-release/tarball/ccff0f9c1d10180aa7902f2445d90bb023c7b4b1/gwent-data-release.tar.gz#e3e5469fba5efd0a5976f8a54a00b581d847a132"
+  resolved "https://github.com/GwentCommunityDevelopers/gwent-data-release/tarball/afa8f06389e1bc2b3b0781be4836168de5419ebf/gwent-data-release.tar.gz#d8583646514b334b87d567aad96470a1039d3702"
 
 handle-thing@^2.0.0:
   version "2.0.0"

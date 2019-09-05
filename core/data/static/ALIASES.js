@@ -754,7 +754,8 @@ const ALIASES: { [CardID]: string[] } = {
     '112213': ['Francis Bedlam'],
     '122216': ['Carlo Varese'],
     '122303': ['Bombardment'],
-    '201621': ['Mad Kiyan']
+    '201621': ['Mad Kiyan'],
+    '202392': ["Walter Veritas"]
 };
 
 export default ALIASES;
