@@ -13,7 +13,7 @@ import ALIASES from '../core/data/static/ALIASES';
 import IGNORED from '../core/data/static/IGNORED';
 
 function printAliasesEntry(card) {
-    console.log(`'${card.id}': ['${card.name}'],`);
+    console.log(`'${card.id}': [${JSON.stringify(card.name)}],`);
 }
 
 const cards = convertGwentDataReleaseCards(RAW_CARDS, IGNORED);
