@@ -11,7 +11,7 @@ function check(
         disabledSites?: string[]
     }
 ) {
-    const { 
+    const {
         accepted,
         rejected,
         enabledSites: expectedEnabledSites,

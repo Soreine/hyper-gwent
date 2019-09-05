@@ -89,7 +89,7 @@ test('Should ignore case', () => {
 test('Should find longest match', () => {
     const text = 'Ciri: Dash and Ciri';
     const matchedRanges = listMatches(text);
-    expect(matchedRanges).toEqual( ['Ciri: Dash', 'Ciri']);
+    expect(matchedRanges).toEqual(['Ciri: Dash', 'Ciri']);
 });
 
 test('Should find longest match even before commas', () => {
@@ -122,7 +122,7 @@ test('Should match at beginning of words only', () => {
 test('Should match until end of words (and not just prefix)', () => {
     const text = 'Regis, RegisSuffix RegisSuffix2';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-     expect(matchedRanges).toEqual([
+    expect(matchedRanges).toEqual([
         {
             entryKey: 'regis',
             entryValue: Regis,
@@ -136,7 +136,7 @@ test('Should match until end of words (and not just prefix)', () => {
 test('Should consider that non-alphabetical characters mark the end of a word', () => {
     const text = "Regis, Regis's, Regis😇 and Regis";
     const matchedRanges = findAllMatches(DICTIONARY, text);
-     expect(matchedRanges).toEqual([
+    expect(matchedRanges).toEqual([
         {
             entryKey: 'regis',
             entryValue: Regis,
@@ -171,7 +171,7 @@ test('Should consider that non-alphabetical characters mark the end of a word', 
 test('Should work around non-alphabetical characters', () => {
     const text = 'Avallach';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-     expect(matchedRanges).toEqual([
+    expect(matchedRanges).toEqual([
         {
             entryKey: 'avallach',
             entryValue: Avallach,
@@ -196,7 +196,7 @@ test('Should accept nothing or any non-word character instead of special charact
 test('Should detect plurals', () => {
     const text = 'Regises, Spotters and Alba Armored Cavalries';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-     expect(matchedRanges).toEqual([
+    expect(matchedRanges).toEqual([
         {
             entryKey: 'spotters',
             entryValue: Spotter,
@@ -217,7 +217,7 @@ test('Should detect plurals', () => {
 test('Should detect aliases', () => {
     const text = 'Frost, Yen, YenCon, GIGNI and armored cavalries and ADC';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-     expect(matchedRanges).toEqual([
+    expect(matchedRanges).toEqual([
         {
             entryKey: 'frost',
             entryValue: BitingFrost,
@@ -266,7 +266,7 @@ test('Should detect aliases', () => {
 test('Should work around accentuated letters', () => {
     const text = 'Schirru';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-     expect(matchedRanges).toEqual([
+    expect(matchedRanges).toEqual([
         {
             entryKey: 'schirru',
             entryValue: Schirru,
@@ -280,7 +280,7 @@ test('Should work around accentuated letters', () => {
 test('Should find longest match with bad case', () => {
     const text = 'ciri dash and ciri';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-     expect(matchedRanges).toEqual([
+    expect(matchedRanges).toEqual([
         {
             entryKey: 'ciri dash',
             entryValue: CiriDash,

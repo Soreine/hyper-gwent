@@ -12,16 +12,6 @@ test('Dictionary was created successfully', () => {
     expect(DICTIONARY).toBeTruthy();
 });
 
-function listDictEntries(dictionary: Dictionary, prefix = ''): Array<string> {
-    const keys = Object.keys(dictionary)
-    return [].concat(...keys.map(key => {
-        if (key === '') {
-            return prefix;
-        }
-        return listDictEntries(dictionary[key], prefix + key);
-    }))
-}
-
 // All cards are listed
 CARD_LIST.forEach(card => {
     test(`Dictionary contains  "${card.id}": "${card.name}"`, () => {
