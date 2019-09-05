@@ -9,7 +9,7 @@ import { contains } from '../../dictionary';
 import generateDictionaryEntries from '../generateDictionaryEntries';
 
 test('Dictionary was created successfully', () => {
-    expect(DICTIONARY).toBe(true);
+    expect(DICTIONARY).toBeTruthy();
 });
 
 function listDictEntries(dictionary: Dictionary, prefix = ''): Array<string> {
@@ -22,39 +22,22 @@ function listDictEntries(dictionary: Dictionary, prefix = ''): Array<string> {
     }))
 }
 
-const ALZUR = CARDS['113209'];
-
-
-test.only(`Dictionary contains  "${ALZUR.id}": "${ALZUR.name}"`, () => {
-    const exists = contains(
-        DICTIONARY,
-        removeAccents(ALZUR.name).toLowerCase()
-    );
-
-    expect(exists).toBe(true);
-});
-
 // All cards are listed
-// CARD_LIST.forEach(card => {
-//     test(`Dictionary contains  "${card.id}": "${card.name}"`, () => {
-//         const exists = contains(
-//             DICTIONARY,
-//             removeAccents(card.name).toLowerCase()
-//         );
-//         if (!exists) {
-//                     t.deepEqual("alzur's double-cross",             removeAccents(card.name).toLowerCase()
-//                     )
-
-//         }
-//         expect(exists).toBe(true);
-//     });
-// });
+CARD_LIST.forEach(card => {
+    test(`Dictionary contains  "${card.id}": "${card.name}"`, () => {
+        const exists = contains(
+            DICTIONARY,
+            removeAccents(card.name).toLowerCase()
+        );
+        expect(exists).toBeTruthy();
+    });
+});
 
 // No extra cards are listed
 Object.keys(ALIASES).forEach(id => {
     test(`Card "${id}" still exists"`, () => {
         const exists = CARDS[id];
-        expect(exists).toBe(true);
+        expect(exists).toBeTruthy();
     });
 });
 
