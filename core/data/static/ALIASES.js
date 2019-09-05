@@ -90,7 +90,7 @@ const ALIASES: { [CardID]: string[] } = {
     '122214': ['Kaedweni Sergeant'],
     '122301': ['Ballista'],
     '122302': ['Reinforced Ballista'],
-    '122303': ['Trebuchet'],
+    '122303': ['Bombardment'],
     '122304': ['Siege Tower'],
     '122309': ['Siege Support'],
     '122310': ['Blue Stripes Scout', 'bss'],
@@ -428,7 +428,7 @@ const ALIASES: { [CardID]: string[] } = {
     '201618': ['Seltkirk of Gulet', 'Seltkirk'],
     '201619': ['Ointment'],
     '201620': ['Vandergrift'],
-    '201621': ['Kiyan'],
+    '201621': ['Mad Kiyan', 'Kiyan'],
     '201622': ['Kaedweni Knight'],
     '201623': ['Giant Boar'],
     '201624': ['Kaedweni Revenant'],
@@ -753,9 +753,7 @@ const ALIASES: { [CardID]: string[] } = {
     '202390': ['Cleaver'],
     '112213': ['Francis Bedlam'],
     '122216': ['Carlo Varese'],
-    '122303': ['Bombardment'],
-    '201621': ['Mad Kiyan'],
-    '202392': ["Walter Veritas"]
+    '202392': ['Walter Veritas']
 };
 
 export default ALIASES;
