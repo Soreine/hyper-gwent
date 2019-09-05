@@ -1,45 +1,50 @@
 // @flow
-import test from 'ava';
+import expect from 'expect';
 import { isUrlAccepted, blacklist, whitelist, setToArray } from '../sitelist';
 
 function check(
-    t: *,
     { enabledSites, disabledSites }: *,
-    expect: {
+    expected: {
         accepted?: string[],
         rejected?: string[],
         enabledSites?: string[],
         disabledSites?: string[]
     }
 ) {
-    if (expect.enabledSites) {
-        t.deepEqual(setToArray(enabledSites), expect.enabledSites);
+    const { 
+        accepted,
+        rejected,
+        enabledSites: expectedEnabledSites,
+        disabledSites: expectedDisabledSites
+    } = expected;
+
+    if (expectedEnabledSites) {
+        expect(setToArray(enabledSites)).toEqual(expectedEnabledSites);
     }
-    if (expect.disabledSites) {
-        t.deepEqual(setToArray(disabledSites), expect.disabledSites);
+    if (expectedDisabledSites) {
+        expect(setToArray(disabledSites)).toEqual(expectedDisabledSites);
     }
 
-    if (expect.accepted) {
-        expect.accepted.forEach(url =>
-            t.true(isUrlAccepted(url, enabledSites, disabledSites))
+    if (accepted) {
+        accepted.forEach(url =>
+            expect(isUrlAccepted(url, enabledSites, disabledSites)).toBe(true)
         );
     }
 
-    if (expect.rejected) {
-        expect.rejected.forEach(url =>
-            t.false(isUrlAccepted(url, enabledSites, disabledSites))
+    if (rejected) {
+        rejected.forEach(url =>
+            expect(isUrlAccepted(url, enabledSites, disabledSites)).toBe(false)
         );
     }
 }
 
-test('Should whitelist a site', t => {
+test('Should whitelist a site', () => {
     const enabledSites = new Set([]);
     const disabledSites = new Set([]);
 
     whitelist('https://www.reddit.com/gwent', { enabledSites, disabledSites });
 
     check(
-        t,
         { enabledSites, disabledSites },
         {
             enabledSites: ['https://www.reddit.com/gwent'],
@@ -57,7 +62,7 @@ test('Should whitelist a site', t => {
     );
 });
 
-test('Should blacklist a site', t => {
+test('Should blacklist a site', () => {
     const enabledSites = new Set([
         'https://www.reddit.com/gwent',
         'https://gwentdb.com/'
@@ -67,7 +72,6 @@ test('Should blacklist a site', t => {
     blacklist('https://gwentdb.com/', { enabledSites, disabledSites });
 
     check(
-        t,
         { enabledSites, disabledSites },
         {
             enabledSites: ['https://www.reddit.com/gwent'],
@@ -88,14 +92,13 @@ test('Should blacklist a site', t => {
     );
 });
 
-test('Should whitelist a specific site subpage', t => {
+test('Should whitelist a specific site subpage', () => {
     const enabledSites = new Set([]);
     const disabledSites = new Set(['https://gwentdb.com/']);
 
     whitelist('https://gwentdb.com/allowed', { enabledSites, disabledSites });
 
     check(
-        t,
         { enabledSites, disabledSites },
         {
             enabledSites: ['https://gwentdb.com/allowed'],
@@ -109,7 +112,7 @@ test('Should whitelist a specific site subpage', t => {
     );
 });
 
-test('Should blacklist a specific site subpage', t => {
+test('Should blacklist a specific site subpage', () => {
     const enabledSites = new Set(['https://www.reddit.com/']);
     const disabledSites = new Set(['https://www.reddit.com/disallowed1']);
 
@@ -119,7 +122,6 @@ test('Should blacklist a specific site subpage', t => {
     });
 
     check(
-        t,
         { enabledSites, disabledSites },
         {
             enabledSites: ['https://www.reddit.com/'],

@@ -1,5 +1,5 @@
 // @flow
-import test from 'ava';
+import expect from 'expect';
 import DICTIONARY from '../data/static/DICTIONARY';
 import findAllMatches from '../findAllMatches';
 import splitAndMapMatches from '../splitAndMapMatches';
@@ -30,10 +30,10 @@ function listMatches(text: string): string[] {
     }).filter(Boolean);
 }
 
-test('Should find several exact matches in a text', t => {
+test('Should find several exact matches in a text', () => {
     const text = "I have a Grave Hag, a Foglet, and a Avallac'h in my hand";
     const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
+    expect(matchedRanges).toEqual([
         {
             entryKey: 'grave hag',
             entryValue: Mourntart,
@@ -58,10 +58,10 @@ test('Should find several exact matches in a text', t => {
     ]);
 });
 
-test('Should ignore case', t => {
+test('Should ignore case', () => {
     const text = "I have a grave hag, a foGleT, and a AVALLAC'H in my hand";
     const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
+    expect(matchedRanges).toEqual([
         {
             entryKey: 'grave hag',
             entryValue: Mourntart,
@@ -86,22 +86,22 @@ test('Should ignore case', t => {
     ]);
 });
 
-test('Should find longest match', t => {
+test('Should find longest match', () => {
     const text = 'Ciri: Dash and Ciri';
     const matchedRanges = listMatches(text);
-    t.deepEqual(matchedRanges, ['Ciri: Dash', 'Ciri']);
+    expect(matchedRanges).toEqual( ['Ciri: Dash', 'Ciri']);
 });
 
-test('Should find longest match even before commas', t => {
+test('Should find longest match even before commas', () => {
     const text = "Fringilla Vigo, and Gregoire de Gorgon's names";
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Fringilla Vigo', 'Gregoire de Gorgon']);
+    expect(matches).toEqual(['Fringilla Vigo', 'Gregoire de Gorgon']);
 });
 
-test('Should match at beginning of words only', t => {
+test('Should match at beginning of words only', () => {
     const text = 'Regis/Regis prefixRegisSuffix, prefixRegis';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
+    expect(matchedRanges).toEqual([
         {
             entryKey: 'regis',
             entryValue: Regis,
@@ -119,10 +119,10 @@ test('Should match at beginning of words only', t => {
     ]);
 });
 
-test('Should match until end of words (and not just prefix)', t => {
+test('Should match until end of words (and not just prefix)', () => {
     const text = 'Regis, RegisSuffix RegisSuffix2';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
+     expect(matchedRanges).toEqual([
         {
             entryKey: 'regis',
             entryValue: Regis,
@@ -133,10 +133,10 @@ test('Should match until end of words (and not just prefix)', t => {
     ]);
 });
 
-test('Should consider that non-alphabetical characters mark the end of a word', t => {
+test('Should consider that non-alphabetical characters mark the end of a word', () => {
     const text = "Regis, Regis's, Regis😇 and Regis";
     const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
+     expect(matchedRanges).toEqual([
         {
             entryKey: 'regis',
             entryValue: Regis,
@@ -168,10 +168,10 @@ test('Should consider that non-alphabetical characters mark the end of a word', 
     ]);
 });
 
-test('Should work around non-alphabetical characters', t => {
+test('Should work around non-alphabetical characters', () => {
     const text = 'Avallach';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
+     expect(matchedRanges).toEqual([
         {
             entryKey: 'avallach',
             entryValue: Avallach,
@@ -182,21 +182,21 @@ test('Should work around non-alphabetical characters', t => {
     ]);
 });
 
-test('Should accept nothing or any non-word character instead of special characters', t => {
+test('Should accept nothing or any non-word character instead of special characters', () => {
     const text =
         'Old Speartip Asleep, Old Speartip: Asleep, Old Speartip:Asleep';
     const matches = listMatches(text);
-    t.deepEqual(matches, [
+    expect(matches).toEqual([
         'Old Speartip Asleep',
         'Old Speartip: Asleep',
         'Old Speartip:Asleep'
     ]);
 });
 
-test('Should detect plurals', t => {
+test('Should detect plurals', () => {
     const text = 'Regises, Spotters and Alba Armored Cavalries';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
+     expect(matchedRanges).toEqual([
         {
             entryKey: 'spotters',
             entryValue: Spotter,
@@ -214,10 +214,10 @@ test('Should detect plurals', t => {
     ]);
 });
 
-test('Should detect aliases', t => {
+test('Should detect aliases', () => {
     const text = 'Frost, Yen, YenCon, GIGNI and armored cavalries and ADC';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
+     expect(matchedRanges).toEqual([
         {
             entryKey: 'frost',
             entryValue: BitingFrost,
@@ -263,10 +263,10 @@ test('Should detect aliases', t => {
     ]);
 });
 
-test('Should work around accentuated letters', t => {
+test('Should work around accentuated letters', () => {
     const text = 'Schirru';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
+     expect(matchedRanges).toEqual([
         {
             entryKey: 'schirru',
             entryValue: Schirru,
@@ -277,10 +277,10 @@ test('Should work around accentuated letters', t => {
     ]);
 });
 
-test('Should find longest match with bad case', t => {
+test('Should find longest match with bad case', () => {
     const text = 'ciri dash and ciri';
     const matchedRanges = findAllMatches(DICTIONARY, text);
-    t.deepEqual(matchedRanges, [
+     expect(matchedRanges).toEqual([
         {
             entryKey: 'ciri dash',
             entryValue: CiriDash,
@@ -298,56 +298,56 @@ test('Should find longest match with bad case', t => {
     ]);
 });
 
-test('Should tolerate missing double letter', t => {
+test('Should tolerate missing double letter', () => {
     const text = 'Yenefer';
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Yenefer']);
+    expect(matches).toEqual(['Yenefer']);
 });
 
-test('Should tolerate doubled letter', t => {
+test('Should tolerate doubled letter', () => {
     const text = 'Yenneffer';
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Yenneffer']);
+    expect(matches).toEqual(['Yenneffer']);
 });
 
-test('Should tolerate as many doubled letters mistakes', t => {
+test('Should tolerate as many doubled letters mistakes', () => {
     const text = 'Yeneffer Yenneeffer';
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Yeneffer', 'Yenneeffer']);
+    expect(matches).toEqual(['Yeneffer', 'Yenneeffer']);
 });
 
-test('Should not accept spaces as extra letters', t => {
+test('Should not accept spaces as extra letters', () => {
     const text = 'a Grave Hag';
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Grave Hag']);
+    expect(matches).toEqual(['Grave Hag']);
 });
 
-test('Should not accept special characters as extra letters', t => {
+test('Should not accept special characters as extra letters', () => {
     const text = 'Then -Grave Hag';
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Grave Hag']);
+    expect(matches).toEqual(['Grave Hag']);
 });
 
-test('Should  NOT tolerate two switched letters', t => {
+test('Should  NOT tolerate two switched letters', () => {
     const text = 'Ynenefre';
     const matches = listMatches(text);
-    t.deepEqual(matches, []);
+    expect(matches).toEqual([]);
 });
 
-test('Should NOT tolerate a missing letter', t => {
+test('Should NOT tolerate a missing letter', () => {
     const text = 'Yenffer';
     const matches = listMatches(text);
-    t.deepEqual(matches, []);
+    expect(matches).toEqual([]);
 });
 
-test('Should not prefer mistake over exact match', t => {
+test('Should not prefer mistake over exact match', () => {
     const text = 'Ciri,';
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Ciri']);
+    expect(matches).toEqual(['Ciri']);
 });
 
-test('Should prefer longer match with mistake', t => {
+test('Should prefer longer match with mistake', () => {
     const text = 'Ciri: Dsah';
     const matches = listMatches(text);
-    t.deepEqual(matches, ['Ciri: Dsah']);
+    expect(matches).toEqual(['Ciri: Dsah']);
 });
