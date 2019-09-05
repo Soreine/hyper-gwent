@@ -65,6 +65,11 @@ function generateSpecialCharactersVariants(name: string): string[] {
 
             variants = variants.concat(withSpace, skipped);
         }
+        // When using an actual em-dash instead of the minus sign.
+        if (str[0] === '–') {
+            const withMinus = subvariants.map(subvariant => `-${subvariant}`);
+            variants = variants.concat(withMinus)
+        }
         // Followed by a space (like in "Speartip: Asleep")
         if (/^[^\s\w ]/.test(str)) {
             const skipSpaceOnly = variantsOf(str.slice(2)).map(
