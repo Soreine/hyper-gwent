@@ -8,6 +8,8 @@ Hyper Gwent is a browser extension for Chrome and Firefox, which can detect Gwen
 
 The extension is fast. It is tolerant and tries to match plurals, inexact spellings ("ciri dash" instead of "Ciri: Dash"), and even common appellation for cards ("ADC", "gigni" etc.). And you can also choose on which sites the extension should run.
 
+![](preview.png)
+
 ---
 
 ## Suggesting alternatives for card names
