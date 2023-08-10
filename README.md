@@ -1,3 +1,5 @@
+<h1 align="center">DEPRECATED</h1>
+
 <h1 align="center"><img src="./hyper-gwent-logo.png" alt="Hyper Gwent" /></h1>
 <h4 align="center">Browser extension to preview cards on pages containing GwentⓇ related content.</h4>
 <p align="center"><i>This is an unofficial fan work under the Gwent Fan Content Guidelines. Not approved/endorsed by CD PROJEKT RED</i></p>
